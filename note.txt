@@ -1,0 +1,35 @@
+env 			kết nối db, tạo localhost
+database > migrations	tạo tables
+app>models		kết nối db với controller
+app>http>controller	sử dụng các function trong view (crud)
+app>http>midleware	chia quyền user
+routes>web.php		chạy views
+resources>views		tạo giao diện các page
+public			add các giao diện có sẵn trên mạng
+
+git config --global user.name "abc"
+git config --global user.email "abc@gmail.com"
+
+git remote add origin link
+git push -u origin main / git push
+git clone link
+
+C:\xampp\php\php.exe -S localhost:8000
+
+C:\xampp\mysql\bin\mysql.exe -u root -p
+
+php artisan migrate
+
+php artisan db:seed --class=BranchesTableSeeder
+
+php artisan make:controller BranchController
+
+php artisan make:model Branch
+
+php artisan make:seeder BlogsTableSeeder
+php artisan db:seed --class=BlogsTableSeeder
+
+php artisan make:controller BlogController
+
+php artisan make:seeder UsersTableSeeder
+php artisan db:seed --class=UsersTableSeeder
