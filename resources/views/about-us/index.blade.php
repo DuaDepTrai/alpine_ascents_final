@@ -17,7 +17,12 @@
         height: 40px;
         padding: 10px;
         margin-left: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
         border: none;
+        background-color: #5c715e;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+
     }
     #overview{
         margin-left: 50px;
@@ -26,9 +31,12 @@
     #para{
         font: 1.2rem "Fira Sans", sans-serif;        
         padding: 20px 50px;
-        margin-left: -8px;
-        margin-right: -8px;
-        background-color: #faffff;
+        margin-left: 15px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+        border-radius: 10px;
+        background-color: #ddeedf;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     #btns{
@@ -79,47 +87,48 @@
     <br>Email: contact@alpineascentsvn.com`;
 
     function resetColor(){
-        document.getElementById('overview').style.backgroundColor = "#f0f0f0";
-        document.getElementById('now_and_then').style.backgroundColor = "#f0f0f0";
-        document.getElementById('director_statement').style.backgroundColor = "#f0f0f0";
-        document.getElementById('achievements').style.backgroundColor = "#f0f0f0";
-        document.getElementById('contact').style.backgroundColor = "#f0f0f0";
+        document.getElementById('overview').style.backgroundColor = "#5c715e";
+        document.getElementById('now_and_then').style.backgroundColor = "#5c715e";
+        document.getElementById('director_statement').style.backgroundColor = "#5c715e";
+        document.getElementById('achievements').style.backgroundColor = "#5c715e";
+        document.getElementById('contact').style.backgroundColor = "#5c715e";
     }
+
 
     document.addEventListener('DOMContentLoaded',function(){
         document.getElementById('para').innerHTML = overview;
-        document.getElementById('overview').style.backgroundColor = "#faffff";
+        document.getElementById('overview').style.backgroundColor = "#ddeedf";
     });
 
     document.getElementById('overview').addEventListener('click',function(){
         resetColor();
         document.getElementById('para').innerHTML = overview;
-        document.getElementById('overview').style.backgroundColor = "#faffff";
+        document.getElementById('overview').style.backgroundColor = "#ddeedf";
     });
 
     document.getElementById('now_and_then').addEventListener('click',function(){
         resetColor();
         document.getElementById('para').innerHTML = now_and_then;
-        document.getElementById('now_and_then').style.backgroundColor = "#faffff";
+        document.getElementById('now_and_then').style.backgroundColor = "#ddeedf";
     });
 
     document.getElementById('director_statement').addEventListener('click',function(){
         resetColor();
         document.getElementById('para').innerHTML = director_statement;
-        document.getElementById('director_statement').style.backgroundColor = "#faffff";
+        document.getElementById('director_statement').style.backgroundColor = "#ddeedf";
     });
 
     document.getElementById('achievements').addEventListener('click',function(){
         resetColor();
         document.getElementById('para').innerHTML = achievements;
-        document.getElementById('achievements').style.backgroundColor = "#faffff";
+        document.getElementById('achievements').style.backgroundColor = "#ddeedf";
     });
 
 
     document.getElementById('contact').addEventListener('click',function(){
         resetColor();
         document.getElementById('para').innerHTML = contact;
-        document.getElementById('contact').style.backgroundColor = "#faffff";
+        document.getElementById('contact').style.backgroundColor = "#ddeedf";
     });
 
 
