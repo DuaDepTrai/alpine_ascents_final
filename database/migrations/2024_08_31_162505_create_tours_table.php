@@ -13,13 +13,13 @@ class CreateToursTable extends Migration
             $table->string('name');
             $table->integer('price');
             $table->text('image');
-            $table->text('introduce');
-            $table->text('types');
-            $table->text('techniques');
-            $table->text('records');
-            $table->text('requirement');
-            $table->text('sheltering')->nullable();
-            $table->text('hazards')->nullable();
+            $table->text('location');
+            $table->text('features');
+            $table->text('besttime');
+            $table->text('directions');
+            $table->text('trekkingroutes');
+            $table->text('items')->nullable();
+            $table->text('cautions')->nullable();
             $table->timestamps();
         });
     }

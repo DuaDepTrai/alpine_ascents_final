@@ -18,6 +18,7 @@ C:\xampp\php\php.exe -S localhost:8000
 
 C:\xampp\mysql\bin\mysql.exe -u root -p
 
+php artisan make:migration create_gallery_table
 php artisan migrate
 
 php artisan db:seed --class=BranchesTableSeeder
@@ -25,9 +26,6 @@ php artisan db:seed --class=BranchesTableSeeder
 php artisan make:controller BranchController
 
 php artisan make:model Branch
-
-php artisan make:seeder BlogsTableSeeder
-php artisan db:seed --class=BlogsTableSeeder
 
 php artisan make:controller BlogController
 
