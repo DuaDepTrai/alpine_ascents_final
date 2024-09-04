@@ -35,3 +35,4 @@ php artisan make:seeder UsersTableSeeder
 php artisan db:seed --class=UsersTableSeeder
 
 php artisan make:controller AboutUsController
+
