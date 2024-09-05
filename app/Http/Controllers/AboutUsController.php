@@ -11,8 +11,4 @@ class AboutUsController extends Controller
         return view('about-us.index');
     }
 
-    public function blogs1()
-    {
-        return view('blogs-1.index');
-    }
 }

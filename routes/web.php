@@ -5,11 +5,11 @@ use App\Http\Controllers\BranchController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VerificationController;
+use App\Http\Controllers\MediaLibraryController;
 
 Route::get('/branches', [BranchController::class, 'index']);
 
 Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
-Route::get('/blogs-1', [AboutUsController::class, 'blogs1']);
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');
@@ -19,3 +19,5 @@ Route::post('verify', [VerificationController::class, 'verify'])->name('verify')
 
 Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
+
+Route::get('/media', [MediaLibraryController::class, 'index'])->name('media.index');
