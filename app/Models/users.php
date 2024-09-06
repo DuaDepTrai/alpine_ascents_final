@@ -29,11 +29,6 @@ class users extends Authenticatable
         'role' => 'boolean',
     ];
 
-    public function blogs()
-    {
-        return $this->hasMany(blogs::class);
-    }
-
     public function orders()
     {
         return $this->hasMany(orders_tours::class);

@@ -20,6 +20,7 @@ class CreateToursTable extends Migration
             $table->text('trekkingroutes');
             $table->text('items')->nullable();
             $table->text('cautions')->nullable();
+            $table->text('conditions');
             $table->timestamps();
         });
     }

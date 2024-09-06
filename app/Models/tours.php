@@ -13,13 +13,14 @@ class tours extends Model
         'name',
         'price',
         'image',
-        'introduce',
-        'types',
-        'techniques',
-        'records',
-        'requirement',
-        'sheltering',
-        'hazards',
+        'location',
+        'features',
+        'besttime',
+        'directions',
+        'trekkingroutes',
+        'items',
+        'cautions',
+        'conditions',
     ];
 
     public function orders()
