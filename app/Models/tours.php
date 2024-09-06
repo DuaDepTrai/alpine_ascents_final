@@ -20,7 +20,7 @@ class tours extends Model
         'trekkingroutes',
         'items',
         'cautions',
-        'conditions',
+        'requirements',
     ];
 
     public function orders()
