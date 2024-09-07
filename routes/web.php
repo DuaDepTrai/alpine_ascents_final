@@ -6,7 +6,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VerificationController;
-use App\Http\Controllers\MediaLibraryController;
+use App\Http\Controllers\GalleriesController;
 
 Route::get('/branches', [BranchController::class, 'index']);
 
@@ -23,4 +23,4 @@ Route::post('verify', [VerificationController::class, 'verify'])->name('verify')
 Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
 
-Route::get('/media', [MediaLibraryController::class, 'index'])->name('media.index');
+Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');

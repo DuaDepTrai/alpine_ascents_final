@@ -30,6 +30,6 @@ class tours extends Model
 
     public function galleries()
     {
-        return $this->hasMany(media_libraries::class);
+        return $this->hasMany(galleries::class);
     }
 }

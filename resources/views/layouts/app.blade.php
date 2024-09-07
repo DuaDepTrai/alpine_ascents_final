@@ -49,7 +49,8 @@
         .media-library img.img-thumbnail {
             cursor: pointer;
             width: 100px; /* Đặt chiều rộng cố định */
-            height: 100px; /* Đặt chiều cao cố định */
+            height: auto; /* Chiều cao tự động để giữ tỷ lệ */
+            max-height: 100px; /* Đặt chiều cao tối đa */
             object-fit: cover; /* Đảm bảo ảnh không bị méo */
             opacity: 0.5; /* Đặt độ trong suốt mặc định */
             transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
@@ -66,13 +67,13 @@
         }
 
         .thumbnail-container img.img-thumbnail {
-            width: 10%; /* Chiều rộng cố định */
-            height: 100px; /* Chiều cao cố định */
+            width: 100px; /* Đặt chiều rộng cố định */
+            height: auto; /* Chiều cao tự động để giữ tỷ lệ */
+            max-height: 100px; /* Đặt chiều cao tối đa */
             object-fit: cover; /* Đảm bảo ảnh không bị méo */
             opacity: 0.5; /* Đặt độ trong suốt mặc định */
             transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
         }
-
     </style>
 </head>
 <body>
@@ -90,8 +91,27 @@
 
             carousel.addEventListener('slid.bs.carousel', function () {
                 const activeIndex = Array.from(carouselInner.children).findIndex(item => item.classList.contains('active'));
+                
+                // Dừng video trên slide hiện tại
+                const iframes = carouselInner.querySelectorAll('iframe');
+                iframes.forEach(iframe => {
+                    const src = iframe.getAttribute('src');
+                    iframe.setAttribute('src', '');
+                    iframe.setAttribute('src', src);
+                });
+
+                // Cập nhật độ trong suốt của thumbnail
                 thumbnails.forEach((thumbnail, index) => {
                     thumbnail.style.opacity = (index === activeIndex) ? '1' : '0.5';
+                });
+            });
+
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const slideTo = this.getAttribute('data-slide-to');
+                    const target = this.getAttribute('data-target');
+                    const carouselInstance = new bootstrap.Carousel(document.querySelector(target));
+                    carouselInstance.to(parseInt(slideTo));
                 });
             });
         });
