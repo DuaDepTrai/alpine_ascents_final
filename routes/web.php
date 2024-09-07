@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\MediaLibraryController;
 
 Route::get('/branches', [BranchController::class, 'index']);
+
+Route::get('/information',[InformationController::class, 'infor']);
 
 Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
 
