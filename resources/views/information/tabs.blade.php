@@ -19,153 +19,133 @@
             <div class="tab-content">
                 <div id="overview_history" class="tab-pane"> <!-- Phần nội dung tab "Giới thiệu" -->
                     <h2 style="font-style:italic">Overview and History</h2>
-                    <br>Chào mừng bạn đến với trang web của Alpine Ascents VietNam – điểm đến lý tưởng cho những ai đam mê khám phá và chinh phục các đỉnh núi hùng vĩ tại VietNam. Chúng tôi là một tổ chức chuyên cung cấp các tour leo núi và treking chất lượng cao, mang đến cho bạn cơ hội trải nghiệm những thử thách đầy kích thích và phong cảnh ngoạn mục. Được thành lập với sứ mệnh kết nối những người yêu thích leo núi và thiên nhiên, Alpine Ascents VietNam cam kết cung cấp dịch vụ chuyên nghiệp, an toàn và tận tâm.
+                    <p>Welcome to the website of Alpine Ascents Vietnam – the ideal destination for those who are passionate about exploring and conquering the majestic mountain peaks of Vietnam. We are an organization specializing in providing high-quality mountain climbing and trekking tours, offering you the opportunity to experience exciting challenges and breathtaking scenery. Founded with the mission to connect mountain and nature lovers, Alpine Ascents Vietnam is committed to providing professional, safe, and dedicated services.</p>
                     <img src="public/images/tf_images/tf_trekking">
-                    <br><br>Trang web của chúng tôi cung cấp thông tin chi tiết về các chuyến leo núi và hành trình khám phá từ những đỉnh núi cao nhất như Fansipan, Ba Na, đến những cung đường trekking đẹp mắt tại các công viên quốc gia và khu bảo tồn thiên nhiên. Chúng tôi tự hào là đối tác của nhiều hướng dẫn viên và chuyên gia leo núi dày dạn kinh nghiệm, sẵn sàng đồng hành cùng bạn trong từng bước đi, từ việc chuẩn bị trang thiết bị đến hỗ trợ kỹ thuật và an toàn.
-                    <br><br>Tại Alpine Ascents VietNam, chúng tôi hiểu rằng mỗi chuyến đi đều là một cuộc phiêu lưu cá nhân, vì vậy chúng tôi cung cấp các gói tour linh hoạt, phù hợp với nhiều mức độ kỹ năng và sở thích khác nhau. Bạn có thể dễ dàng tìm thấy các thông tin chi tiết về lịch trình, giá cả và dịch vụ hỗ trợ trên trang web của chúng tôi. Ngoài ra, chúng tôi còn cung cấp các bài viết và hướng dẫn hữu ích, giúp bạn chuẩn bị tốt nhất cho chuyến đi của mình.
-                    <br><br>Hãy cùng chúng tôi khám phá vẻ đẹp hoang sơ và sự kỳ vĩ của thiên nhiên VietNam qua các tour leo núi và trekking. Đừng ngần ngại liên hệ với chúng tôi để nhận được sự tư vấn tận tình và thông tin chi tiết về các chuyến đi. Alpine Ascents VietNam mong muốn đồng hành cùng bạn trên từng bước hành trình, để mỗi chuyến đi không chỉ là một cuộc chinh phục, mà còn là một trải nghiệm đáng nhớ.
-                    <br><br><br><br><br><h3 style="font-style:italic">Lịch sử hình thành</h3>
-                    <br>Trang web Alpine Ascents Việt Nam được thành lập vào năm 2010 bởi một nhóm các nhà leo núi nhiệt huyết với mong muốn tạo ra một nền tảng chia sẻ kinh nghiệm và kết nối cộng đồng leo núi tại Việt Nam. Khi mới bắt đầu, trang web chỉ đơn thuần là một diễn đàn nhỏ, nơi những người yêu thích môn thể thao leo núi có thể trao đổi thông tin về các tuyến đường, kỹ thuật leo núi và các trải nghiệm cá nhân. Tuy nhiên, với sự gia tăng nhanh chóng của phong trào leo núi và trekking tại Việt Nam, Alpine Ascents Việt Nam đã nhanh chóng phát triển và mở rộng, trở thành một nguồn tài nguyên trực tuyến uy tín và toàn diện trong lĩnh vực này.
-                    <br><br>Trong suốt quá trình phát triển, Alpine Ascents Việt Nam đã không ngừng mở rộng nội dung và tính năng của trang web để đáp ứng ngày càng tốt hơn nhu cầu của người dùng. Trang web hiện cung cấp thông tin chi tiết về các dãy núi nổi tiếng như Fansipan, Ba Na, và các khu vực trekking nổi bật khác, cùng với các hướng dẫn chuyên sâu về chuẩn bị hành trang, an toàn trong leo núi và các kỹ thuật cần thiết. Đặc biệt, chúng tôi còn cung cấp các bài viết và video hướng dẫn giúp người dùng dễ dàng nắm bắt và áp dụng các kiến thức cần thiết trước mỗi chuyến đi.
-                    <br><br>Alpine Ascents Việt Nam còn kết nối với nhiều tổ chức và cộng đồng leo núi quốc tế, tham gia tích cực vào các chương trình bảo vệ môi trường và thúc đẩy du lịch bền vững. Chúng tôi hợp tác với các tổ chức phi chính phủ và các nhóm bảo tồn để bảo vệ các khu vực núi non quý giá, đồng thời nâng cao nhận thức về tầm quan trọng của việc giữ gìn thiên nhiên cho các thế hệ sau.
-                    <br><br>Với hơn một thập kỷ hoạt động, Alpine Ascents Việt Nam không chỉ là một trang web thông tin mà còn là một cộng đồng sôi động và gắn bó, nơi mọi người có thể chia sẻ niềm đam mê và khát khao khám phá. Chúng tôi tổ chức các sự kiện, hội thảo và chuyến đi cộng đồng để kết nối những người yêu thích leo núi, tạo cơ hội cho họ gặp gỡ và học hỏi lẫn nhau. Nhờ sự ủng hộ mạnh mẽ từ cộng đồng, trang web đã đóng góp không nhỏ vào việc thúc đẩy phong trào leo núi tại Việt Nam, đồng thời truyền cảm hứng cho các thế hệ mới của những người yêu thích môn thể thao mạo hiểm này.
-                    <br><br>Alpine Ascents Việt Nam tự hào là một phần của cộng đồng leo núi đang phát triển mạnh mẽ và hy vọng sẽ tiếp tục là cầu nối quan trọng giữa những người đam mê leo núi và vẻ đẹp hùng vĩ của thiên nhiên Việt Nam trong những năm tới.`;
+                    <p>Our website offers detailed information about climbing trips and exploration journeys, from the highest peaks like Fansipan, Ba Na, to the scenic trekking routes in national parks and nature reserves. We are proud to be partners with many experienced guides and mountain climbing experts, ready to accompany you every step of the way, from equipment preparation to technical and safety support.</p>
+                    <p>At Alpine Ascents Vietnam, we understand that each journey is a personal adventure, so we offer flexible tour packages tailored to various skill levels and preferences. You can easily find detailed information on schedules, prices, and support services on our website. Additionally, we provide helpful articles and guides to help you prepare your best for the trip.</p>
+                    <p>Join us in discovering the pristine beauty and grandeur of Vietnam's nature through our mountain climbing and trekking tours. Don’t hesitate to contact us for dedicated advice and detailed information about the trips. Alpine Ascents Vietnam looks forward to accompanying you on every step of your journey, so that each trip is not just a conquest, but also a memorable experience.</p>
+                    <h3 style="font-style:italic">Formation History</h3>
+                    <p>The Alpine Ascents Vietnam website was established in 2010 by a group of passionate mountaineers with the desire to create a platform for sharing experiences and connecting the mountain climbing community in Vietnam. Initially, the website was just a small forum where mountain sports enthusiasts could exchange information about routes, climbing techniques, and personal experiences. However, with the rapid growth of the climbing and trekking movement in Vietnam, Alpine Ascents Vietnam quickly expanded and became a reputable and comprehensive online resource in this field.</p>
+                    <p>Throughout its development, Alpine Ascents Vietnam has continuously expanded its content and features to better meet users’ needs. The website now provides detailed information about famous mountain ranges such as Fansipan, Ba Na, and other notable trekking areas, along with in-depth guides on gear preparation, safety in climbing, and essential techniques. Notably, we also offer articles and instructional videos to help users easily grasp and apply the necessary knowledge before each trip.</p>
+                    <p>Alpine Ascents Vietnam also connects with many international climbing organizations and communities, actively participating in environmental protection programs and promoting sustainable tourism. We collaborate with NGOs and conservation groups to protect valuable mountain areas while raising awareness of the importance of preserving nature for future generations.</p>
+                    <p>With over a decade of activity, Alpine Ascents Vietnam is not only an information website but also a vibrant and cohesive community where people can share their passion and desire to explore. We organize events, workshops, and community trips to connect mountain enthusiasts, giving them opportunities to meet and learn from each other. Thanks to strong support from the community, the website has contributed significantly to promoting the climbing movement in Vietnam while inspiring new generations of adventure sports lovers.</p>
+                    <p>Alpine Ascents Vietnam is proud to be part of the thriving mountain climbing community and hopes to continue serving as an important bridge between mountain lovers and the majestic beauty of Vietnam’s nature in the years to come.</p>
                 
                 </div>
 
                 <div id="types_forms" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Các Loại Hình Thức" -->
                     <h2 style="font-style:italic">Types and Forms</h2>
-                    <br>Walking là hoạt động di chuyển bằng cách đi bộ trên mặt đất, thường được thực hiện trên những địa hình bằng phẳng hoặc có độ dốc nhẹ. Đây là hình thức cơ bản nhất của vận động và có thể được thực hiện ở bất kỳ đâu, từ công viên, vỉa hè cho đến các con đường mòn trong khu vực đô thị. Trong leo núi, walking thường đóng vai trò là giai đoạn khởi đầu hoặc là một phần của hành trình dài hơn, giúp người tham gia làm quen với môi trường và duy trì thể lực. Mặc dù walking không đòi hỏi quá nhiều kỹ thuật hay trang bị đặc biệt, nhưng việc lựa chọn giày phù hợp và bảo vệ cơ thể khỏi thời tiết là rất quan trọng để đảm bảo sự thoải mái và an toàn.
+                    <p>Walking is the act of moving by walking on the ground, usually done on flat or slightly sloped terrain. It is the most basic form of movement and can be done anywhere, from parks and sidewalks to trails in urban areas. In mountain climbing, walking often serves as the initial phase or a part of a longer journey, helping participants get used to the environment and maintain fitness. Although walking doesn't require much technical skill or special equipment, choosing the right shoes and protecting your body from the weather is essential to ensure comfort and safety.</p>
 
-                    <br><br><br><br><h3 id="trekking" style="font-style:italic">Trekking</h3>
-                    <br>Trekking là một hoạt động khám phá các khu vực hoang dã hơn và thường yêu cầu di chuyển trên những con đường mòn phức tạp hoặc các địa hình gồ ghề. Đây là hình thức leo núi có tính chất mạo hiểm hơn so với walking, đòi hỏi người tham gia phải có sức khỏe tốt, kỹ năng định hướng và khả năng xử lý các tình huống khó khăn. Trekking thường kéo dài nhiều ngày và bao gồm việc mang theo trang thiết bị camping, thực phẩm và nước uống. Hoạt động này không chỉ mang lại trải nghiệm gần gũi với thiên nhiên mà còn giúp xây dựng sự bền bỉ và khả năng thích ứng với môi trường khắc nghiệt.
+                    <h3 id="trekking" style="font-style:italic">Trekking</h3>
+                    <p>Trekking is an activity that explores wilder areas and often requires moving on complex trails or rugged terrain. It is a more adventurous form of climbing compared to walking, requiring participants to have good physical health, orientation skills, and the ability to handle difficult situations. Trekking usually lasts several days and includes carrying camping equipment, food, and water. This activity not only provides a close experience with nature but also builds endurance and adaptability to harsh environments.</p>
 
-                    <br><br><br><br><h3 id="hiking" style="font-style:italic">Hiking</h3>
-                    <br>Hiking là một hình thức leo núi kết hợp giữa walking và trekking, thường được thực hiện trên các con đường mòn núi non hoặc các khu vực địa hình dốc hơn. Hoạt động này có thể kéo dài từ vài giờ đến một vài ngày, tùy thuộc vào độ khó của địa hình và mục tiêu của chuyến đi. Hiking thường yêu cầu người tham gia có trang bị đầy đủ như giày leo núi, ba lô, nước uống và đồ ăn nhẹ. Đặc biệt, hiking có thể bao gồm việc leo lên các đỉnh núi hoặc vượt qua các đoạn đường khó khăn, giúp người tham gia thử thách bản thân và thưởng thức những cảnh quan ngoạn mục. Kỹ năng định hướng và chuẩn bị kỹ lưỡng là yếu tố then chốt để đảm bảo chuyến đi hạnh phúc và an toàn.
+                    <h3 id="hiking" style="font-style:italic">Hiking</h3>
+                    <p>Hiking is a form of climbing that combines walking and trekking, often done on mountain trails or steeper terrains. This activity can last from a few hours to several days, depending on the difficulty of the terrain and the goals of the trip. Hiking typically requires participants to be fully equipped, such as with hiking boots, backpacks, water, and snacks. Notably, hiking may involve climbing mountain peaks or traversing challenging paths, allowing participants to challenge themselves and enjoy spectacular scenery. Orientation skills and thorough preparation are key factors in ensuring a happy and safe trip.</p>
 
-                    <br><br><br><br><h3 style="font-style:italic">Traditional Climbing</h3>
-                    <br>Traditional climbing, thường được gọi là "trad climbing," là một phương pháp leo núi trong đó người leo sử dụng các thiết bị bảo vệ để tạo điểm neo vào các khe nứt hoặc cấu trúc đá tự nhiên trên vách núi. Đây là kiểu leo núi cổ điển nhất, yêu cầu người leo núi phải có kỹ năng lắp đặt và tháo gỡ thiết bị bảo vệ trong suốt hành trình. Trong traditional climbing, các thiết bị như cam, chốt và dây móc được sử dụng để đảm bảo an toàn khi leo lên các đoạn đường không có điểm bám cố định. Phương pháp này không chỉ đòi hỏi kỹ thuật cao mà còn cần sự tính toán chính xác và kinh nghiệm phong phú trong việc chọn lựa thiết bị phù hợp cho từng đoạn leo.
+                    <h3 style="font-style:italic">Traditional Climbing</h3>
+                    <p>Traditional climbing, often referred to as "trad climbing," is a method of climbing in which the climber uses protective equipment to create anchor points in cracks or natural rock formations on the cliff. This is the most classic form of climbing, requiring the climber to have the skills to install and remove protective gear throughout the journey. In traditional climbing, devices such as cams, nuts, and carabiners are used to ensure safety while ascending routes without fixed anchor points. This method not only requires high technical skill but also precise calculation and extensive experience in selecting the appropriate equipment for each climbing segment.</p>
 
-                    <br><br><br><br><h3 style="font-style:italic">Sport Climbing</h3>
-                    <br>Sport climbing là một kiểu leo núi tập trung vào việc chinh phục các vách đá được trang bị sẵn các điểm neo và móc sẵn. Các điểm bảo vệ này được cố định chắc chắn trên vách đá, cho phép người leo chỉ cần tập trung vào việc vượt qua các thử thách và kỹ thuật leo. Sport climbing thường sử dụng các dây đai, móc và dây an toàn để tạo ra một hệ thống bảo vệ hiệu quả. Đây là một phương pháp leo núi phổ biến trong các khu vực leo núi đã được trang bị và phát triển, giúp giảm thiểu rủi ro và cho phép người leo tập trung vào kỹ thuật và sức mạnh.
+                    <h3 style="font-style:italic">Sport Climbing</h3>
+                    <p>Sport climbing is a style of climbing focused on conquering rock faces that are pre-equipped with anchor points and fixed bolts. These protection points are securely fixed to the rock, allowing climbers to focus solely on overcoming challenges and climbing techniques. Sport climbing often uses harnesses, clips, and safety ropes to create an effective protection system. This is a popular climbing method in developed climbing areas, helping reduce risks and allowing climbers to concentrate on their technique and strength.</p>
 
-                    <br><br><br><br><h3 style="font-style:italic">Bouldering</h3>
-                    <br>Bouldering là một kiểu leo núi đặc biệt tập trung vào việc leo lên các tảng đá lớn hoặc các đoạn vách đá thấp mà không sử dụng thiết bị bảo vệ hay dây an toàn. Đây là một hình thức leo núi đòi hỏi kỹ thuật và sức mạnh tay, cùng với sự chính xác cao trong từng động tác. Người leo bouldering thường sử dụng các đệm đỡ dưới chân để giảm thiểu nguy cơ chấn thương nếu có sự rơi hoặc trượt. Các bài tập bouldering thường được thực hiện trên các khối đá tự nhiên hoặc trong các nhà tập luyện bouldering trong nhà, nơi các vấn đề leo được thiết kế và thay đổi thường xuyên để thử thách người leo.
+                    <h3 style="font-style:italic">Bouldering</h3>
+                    <p>Bouldering is a unique type of climbing focused on climbing large boulders or low rock walls without the use of protective equipment or safety ropes. This is a form of climbing that requires technique and hand strength, along with high precision in each movement. Bouldering climbers often use crash pads to minimize the risk of injury if there is a fall or slip. Bouldering exercises are often done on natural rock blocks or in indoor bouldering gyms, where climbing problems are designed and regularly changed to challenge climbers.</p>
 
-                    <br><br><br><br><h3 style="font-style:italic">Ice Climbing</h3>
-                    <br>Ice climbing là một kiểu leo núi đặc biệt dành cho các bức tường băng hoặc tuyết, yêu cầu sử dụng thiết bị chuyên dụng như đinh cắm băng, băng tay cầm, và dây leo đặc biệt. Trong ice climbing, người leo sử dụng các công cụ để cắm vào băng và hỗ trợ quá trình leo lên các đoạn đường băng hoặc thác nước đóng băng. Phương pháp này không chỉ đòi hỏi kỹ năng về kỹ thuật leo núi mà còn yêu cầu sự chuẩn bị tốt về trang thiết bị và hiểu biết sâu rộng về điều kiện thời tiết và cấu trúc băng. Ice climbing thường được thực hiện trong các khu vực núi cao, nơi có điều kiện băng tuyết phù hợp, và là một trong những hình thức leo núi thử thách nhất.
+                    <h3 style="font-style:italic">Ice Climbing</h3>
+                    <p>Ice climbing is a specialized form of climbing on ice walls or snow, requiring the use of specialized equipment such as ice screws, ice axes, and special climbing ropes. In ice climbing, climbers use tools to grip the ice and support the climb on icy paths or frozen waterfalls. This method not only requires climbing skills but also good preparation in terms of equipment and in-depth knowledge of weather conditions and ice structure. Ice climbing is often performed in high mountainous areas with suitable icy conditions and is one of the most challenging forms of climbing.</p>                
+            
                 </div>
 
                 <div id="technique" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Kỹ Thuật" -->
                     <h2 style="font-style:italic">Technique</h2>
-                    Đây là kỹ thuật cơ bản để bảo đảm an toàn cho người leo. Khi leo núi, một người sẽ chịu trách nhiệm giữ dây an toàn cho người leo chính, đảm bảo rằng trong trường hợp trượt chân hoặc ngã, người leo sẽ được giữ lại. Thiết bị belay được sử dụng để điều chỉnh độ căng của dây và giảm sốc khi có sự cố xảy ra.
+                    <p>This is the basic technique to ensure the climber's safety. When climbing, one person is responsible for securing the safety rope for the lead climber, ensuring that in the event of a slip or fall, the climber is held in place. A belay device is used to adjust the rope tension and absorb shock in case of an incident.</p>
 
-<br><br><br><br>
-<h5 style="font-style:italic; font-weight:bold;">Kỹ thuật leo núi tự do (Free Climbing)</h5>
-Đây là kỹ thuật leo núi chỉ sử dụng tay chân để leo, còn dây và các thiết bị khác chỉ dùng để bảo vệ trong trường hợp ngã. Người leo cần có sự linh hoạt, sức bền, và kỹ năng cân bằng tốt để có thể di chuyển mượt mà qua các tảng đá hoặc bề mặt khó khăn.
+                    <h5 style="font-style:italic; font-weight:bold;">Free Climbing Technique</h5>
+                    <p>This is a climbing technique that only uses hands and feet to climb, while ropes and other equipment are used solely for protection in case of a fall. Climbers need flexibility, endurance, and good balancing skills to move smoothly across rocks or difficult surfaces.</p>
 
-<br><br><br><br>
-<h5 style="font-style:italic; font-weight:bold;">Kỹ thuật leo núi bằng trang bị (Aid Climbing)</h5>
-Trái với leo núi tự do, kỹ thuật này sử dụng các thiết bị như móc, kẹp hoặc dây thừng để hỗ trợ người leo tiến lên, đặc biệt khi bề mặt quá khó hoặc không có điểm bám tay, bám chân.
+                    <h5 style="font-style:italic; font-weight:bold;">Aid Climbing Technique</h5>
+                    <p>In contrast to free climbing, this technique uses equipment like hooks, clamps, or ropes to assist the climber, especially when the surface is too difficult or lacks proper handholds and footholds.</p>
 
-<br><br><br><br>
-<h5 style="font-style:italic; font-weight:bold;">Kỹ thuật nút thắt (Knots)</h5>
-Kỹ năng thắt nút là yếu tố không thể thiếu. Các nút thắt phổ biến như nút tám, nút đôi hay nút bulin giúp tạo ra các mối liên kết chặt chẽ và an toàn giữa dây thừng, người leo và các thiết bị hỗ trợ khác.
+                    <h5 style="font-style:italic; font-weight:bold;">Knots Technique</h5>
+                    <p>Knot-tying skills are essential. Common knots like the figure-eight knot, double knot, or bowline knot help create secure and safe connections between ropes, climbers, and other supporting equipment.</p>
 
-<br><br><br><br>
-                    <h5 style="font-style:italic; font-weight:bold;">Kỹ thuật kiểm soát hơi thở và nhịp độ (Pacing and Breathing)</h5>
-                    Khi leo núi, việc duy trì hơi thở đều đặn và kiểm soát tốc độ là rất quan trọng. Nếu di chuyển quá nhanh, người leo dễ bị kiệt sức, đặc biệt trong các chuyến leo dài. Hơi thở ổn định giúp duy trì sức lực và sự tập trung trong suốt quá trình leo.
+                    <h5 style="font-style:italic; font-weight:bold;">Pacing and Breathing Technique</h5>
+                    <p>When climbing, maintaining regular breathing and controlling the pace is crucial. Moving too fast can lead to exhaustion, especially on long climbs. Stable breathing helps maintain strength and focus throughout the climb.</p>
 
-                    <br><br><br><br>
-                    <h5 style="font-style:italic; font-weight:bold;">Kỹ thuật di chuyển theo bề mặt đá (Footwork and Grip)</h5>
-                    Kỹ năng đặt chân và bám tay đúng vị trí là yếu tố quan trọng để đảm bảo an toàn và hiệu quả. Người leo cần học cách đặt trọng tâm cơ thể, sử dụng lực từ chân thay vì chỉ dựa vào tay để leo. Điều này giúp tiết kiệm năng lượng và tăng khả năng cân bằng.
+                    <h5 style="font-style:italic; font-weight:bold;">Footwork and Grip Technique</h5>
+                    <p>Proper foot placement and grip are key to ensuring safety and efficiency. Climbers need to learn how to position their body weight and use leg strength rather than just relying on their hands for climbing. This helps conserve energy and improve balance.</p>
 
-                    <br><br><br><br>
-                    <h5 style="font-style:italic; font-weight:bold;">Kỹ thuật định hướng và quan sát (Route Finding)</h5>
-                    Khả năng định vị và lựa chọn tuyến đường an toàn là một phần không thể thiếu trong leo núi. Trước khi bắt đầu leo, người tham gia cần phải quan sát kỹ địa hình, dự đoán các khó khăn và rủi ro, từ đó chọn lựa con đường tốt nhất.
+                    <h5 style="font-style:italic; font-weight:bold;">Route Finding Technique</h5>
+                    <p>The ability to navigate and choose a safe path is an essential part of climbing. Before starting a climb, participants must carefully observe the terrain, anticipate challenges and risks, and choose the best route accordingly.</p>
 
-                    <br><br><br><br>
-                    <h5 style="font-style:italic; font-weight:bold;">Kỹ thuật sử dụng thiết bị leo núi (Gear Management)</h5>
-                    Việc biết cách sử dụng và bảo quản các thiết bị leo núi như móc carabiner, dây thừng, đai bảo hiểm, và mũ bảo hộ là rất quan trọng. Người leo phải kiểm tra thiết bị kỹ càng trước khi leo để đảm bảo chúng hoạt động tốt, từ đó giảm thiểu rủi ro.
+                    <h5 style="font-style:italic; font-weight:bold;">Gear Management Technique</h5>
+                    <p>Knowing how to use and maintain climbing gear such as carabiners, ropes, harnesses, and helmets is critical. Climbers must thoroughly check their equipment before climbing to ensure they function well, thereby minimizing risks.</p>
 
-                    <br><br><br><br>
-                    <h5 style="font-style:italic; font-weight:bold;">Kỹ thuật giao tiếp (Communication)</h5>
-                    Trong leo núi, giao tiếp rõ ràng giữa người leo và người giữ dây là yếu tố sống còn. Các tín hiệu âm thanh và cử chỉ tay thường được sử dụng để truyền đạt các thông tin quan trọng như yêu cầu thêm dây, dừng lại, hay sự cố.
+                    <h5 style="font-style:italic; font-weight:bold;">Communication Technique</h5>
+                    <p>Clear communication between the climber and the belayer is vital in climbing. Verbal cues and hand signals are often used to convey important information such as requests for more rope, stopping, or emergencies.</p>
 
-                    <br><br><br><br>
-                    <h5 style="font-style:italic; font-weight:bold;">Kỹ thuật leo núi mùa đông (Ice Climbing)</h5>
-                    Khi leo núi vào mùa đông hoặc trên các bề mặt băng giá, người leo cần sử dụng thêm các thiết bị như giày đinh, rìu băng và bu-lông băng để bám và leo lên các bề mặt trơn trượt. Kỹ thuật này yêu cầu sự tập trung và kỹ năng cao, bởi điều kiện thời tiết khắc nghiệt và nguy cơ băng tuyết sụp lở.
+                    <h5 style="font-style:italic; font-weight:bold;">Ice Climbing Technique</h5>
+                    <p>When climbing during winter or on icy surfaces, climbers need to use additional equipment such as crampons, ice axes, and ice screws to grip and ascend slippery surfaces. This technique requires high concentration and skills, as the harsh weather conditions and the risk of avalanches pose significant dangers.</p>
 
-                    <br><br><br>Leo núi là một môn thể thao đầy thử thách nhưng cũng mang lại nhiều phần thưởng tinh thần và thể chất. Những kỹ thuật trên giúp người leo vượt qua các chướng ngại vật và chinh phục những đỉnh núi cao, đồng thời đảm bảo an toàn cho bản thân và đồng đội trong suốt hành trình.
+                    <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>
                     
                 </div>
 
                 <div id="shelter" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Nơi Trú Ẩn" -->
                     <h2 style="font-style:italic">Shelter</h2>
-                    Đây là nơi trú ẩn được dựng lên tại khu vực chân núi hoặc điểm khởi đầu của một chuyến leo núi dài. Trại dã chiến thường bao gồm các lều lớn để nhóm người leo có thể nghỉ ngơi, chuẩn bị thực phẩm và trang bị trước khi tiến lên các độ cao nguy hiểm hơn. Những nơi này thường có nguồn nước gần, nơi an toàn để cắm trại, và có thể nằm ở vùng có khí hậu ít khắc nghiệt hơn so với độ cao trên đỉnh núi.
+                
+                        <p>This is a shelter set up at the base of the mountain or the starting point of a long climbing expedition. The camp usually consists of large tents where climbers can rest, prepare food, and gear up before advancing to more dangerous altitudes. These camps are often located near a water source, in safe camping areas, and in regions with less harsh climates compared to higher elevations.</p>
 
-                        <br><br><br><br>
-                        <h5 style="font-style:italic; font-weight:bold;">Lều leo núi (Tent)</h5>
-                        Lều là loại hình trú ẩn di động phổ biến nhất trong leo núi. Lều hiện đại được thiết kế nhỏ gọn, nhẹ, chống thấm nước và chịu được gió mạnh, phù hợp với những điều kiện thời tiết khắc nghiệt trên núi. Lều có thể được dựng ở các điểm dừng chân tạm thời khi người leo cần nghỉ ngơi trong hành trình dài. Một số loại lều còn được trang bị các tính năng giữ ấm và cách nhiệt tốt cho những khu vực có tuyết.
+                        <h5 style="font-style:italic; font-weight:bold;">Tent</h5>
+                        <p>The tent is the most common form of portable shelter in climbing. Modern tents are designed to be compact, lightweight, waterproof, and wind-resistant, suitable for the harsh weather conditions of the mountains. Tents can be set up at temporary stops when climbers need to rest during long journeys. Some tents also come with thermal insulation features for areas with snow.</p>
 
-                        <br><br><br><br>
-                        <h5 style="font-style:italic; font-weight:bold;">Hang đá (Cave)</h5>
-                        Ở những vùng núi cao có địa hình phức tạp, hang đá tự nhiên có thể trở thành nơi trú ẩn lý tưởng. Hang đá bảo vệ người leo khỏi gió mạnh và mưa, tuy nhiên, cần kiểm tra kỹ lưỡng để đảm bảo hang an toàn trước khi sử dụng. Những hang sâu có thể cung cấp không gian rộng rãi hơn lều, nhưng thường lạnh và ẩm ướt hơn, do đó cần sử dụng túi ngủ hoặc tấm cách nhiệt để giữ ấm.
+                        <h5 style="font-style:italic; font-weight:bold;">Cave</h5>
+                        <p>In high mountain regions with complex terrain, natural caves can become ideal shelters. Caves protect climbers from strong winds and rain; however, it’s essential to thoroughly check the cave to ensure it is safe before use. Deep caves may provide more space than tents, but they are usually colder and more humid, so sleeping bags or insulation mats are necessary to keep warm.</p>
 
-                        <br><br><br><br>
-                        <h5 style="font-style:italic; font-weight:bold;">Nhà gỗ hoặc chòi trên núi (Mountain Huts)</h5>
-                        Ở những khu vực núi cao, nhất là tại các điểm leo núi nổi tiếng, chính quyền địa phương hoặc các tổ chức leo núi có thể xây dựng các nhà gỗ hoặc chòi nghỉ nhỏ cho người leo. Những nơi này cung cấp chỗ nghỉ ngơi khép kín, tránh mưa gió và có thể có các tiện ích cơ bản như bếp nấu ăn hoặc giường ngủ. Nhà gỗ thường được đặt tại các trạm dừng cố định, giúp người leo núi nghỉ ngơi và bổ sung năng lượng.
+                        <h5 style="font-style:italic; font-weight:bold;">Mountain Huts</h5>
+                        <p>In high mountain areas, especially at popular climbing spots, local authorities or climbing organizations may construct small wooden huts or shelters for climbers. These provide enclosed shelter, protection from wind and rain, and may offer basic amenities like cooking facilities or beds. Mountain huts are usually located at fixed resting points, allowing climbers to recharge and refuel.</p>
 
-                        <br><br><br><br>
-                        <h5 style="font-style:italic; font-weight:bold;">Trạm dừng chân (Shelter)</h5>
-                        Trên những con đường leo núi phổ biến, nhiều quốc gia đã xây dựng các trạm dừng chân nhỏ, là nơi trú ẩn khẩn cấp khi thời tiết xấu đột ngột xảy ra. Các trạm này không lớn và không trang bị nhiều tiện nghi, nhưng đủ để bảo vệ người leo khỏi các yếu tố thiên nhiên. Các trạm thường nằm rải rác dọc theo các tuyến đường leo núi dài, giúp người leo có thể nghỉ chân mà không cần phải dựng lều.
+                        <h5 style="font-style:italic; font-weight:bold;">Shelter</h5>
+                        <p>On popular climbing routes, many countries have built small emergency shelters to provide refuge in case of sudden bad weather. These shelters are not large and lack many amenities, but they are sufficient to protect climbers from the elements. They are often scattered along long climbing routes, allowing climbers to rest without needing to set up tents.</p>
 
-                        <br><br><br><br>
-                        <h5 style="font-style:italic; font-weight:bold;">Igloo và nơi trú ẩn tuyết (Snow Shelter)</h5>
-                        Ở các vùng núi có tuyết, nơi trú ẩn tuyết hoặc igloo là một giải pháp khả thi trong tình huống khẩn cấp. Người leo núi có thể tự xây dựng những nơi trú này bằng cách sử dụng các công cụ cắt tuyết để tạo ra các bức tường dày, giúp cách nhiệt và bảo vệ khỏi gió lạnh. Tuy nhiên, kỹ thuật xây dựng igloo yêu cầu người leo có kinh nghiệm và kỹ năng, bởi việc tạo dựng phải đảm bảo cấu trúc đủ vững chắc và an toàn.
-                        
-                        <br><br><br><br>Leo núi là một môn thể thao đầy thử thách nhưng cũng mang lại nhiều phần thưởng tinh thần và thể chất. Những kỹ thuật trên giúp người leo vượt qua các chướng ngại vật và chinh phục những đỉnh núi cao, đồng thời đảm bảo an toàn cho bản thân và đồng đội trong suốt hành trình.
-                        
+                        <h5 style="font-style:italic; font-weight:bold;">Igloo and Snow Shelter</h5>
+                        <p>In snowy mountain regions, snow shelters or igloos are viable options in emergency situations. Climbers can build these shelters by using snow-cutting tools to create thick walls that insulate and protect from cold winds. However, constructing an igloo requires experience and skill, as the structure must be solid and safe.</p>
+
+                        <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>                        
+                
                 </div>
 
                 <div id="danger" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Các Mối Nguy Hiểm" -->
                     <h2 style="font-style:italic">Danger</h2>
-                    Ngoài ra, một mối nguy hiểm khác là <p style="font-weight: bold">sạt lở đất và đá</p>. Địa hình núi đá thường không ổn định, đặc biệt là sau những cơn mưa hoặc thời tiết xấu. Đá và đất có thể bất ngờ lăn xuống từ trên cao, gây nguy hiểm cho người leo bên dưới. Đây là lý do tại sao việc theo dõi thời tiết và điều kiện địa hình là cực kỳ quan trọng trước khi bắt đầu leo.  
-                        <br><br>
-                        <p style="font-weight: bold">Thời tiết khắc nghiệt</p> cũng là một yếu tố nguy hiểm trong việc leo núi. Ở độ cao lớn, thời tiết có thể thay đổi nhanh chóng từ nắng ráo sang mưa bão, gió mạnh, hoặc tuyết rơi. Sự thay đổi đột ngột của thời tiết không chỉ làm giảm tầm nhìn mà còn làm cho địa hình trở nên nguy hiểm hơn. Người leo núi cần phải trang bị đầy đủ quần áo chống nước, giữ ấm, và các thiết bị cần thiết để đối phó với điều kiện thời tiết bất lợi.  
-                        <br><br>
-                        
-                        Khi leo lên các độ cao lớn, <p style="font-weight: bold">bệnh độ cao</p> (altitude sickness) là một mối nguy hiểm đáng lo ngại. Ở những nơi có độ cao trên 2.500m so với mực nước biển, không khí loãng và thiếu oxy có thể gây ra các triệu chứng như chóng mặt, buồn nôn, khó thở, và mệt mỏi. Nếu không xử lý kịp thời, bệnh độ cao có thể dẫn đến phù não hoặc phù phổi, gây tử vong. Việc thích nghi dần với độ cao và leo từ từ là rất quan trọng để giảm thiểu nguy cơ này.  
-                        <br><br>
-                        
-                        Một vấn đề khác thường gặp là <p style="font-weight: bold">mất phương hướng</p>. Khi ở trên núi, đặc biệt là những nơi có địa hình phức tạp và ít dấu hiệu nhận biết, người leo có thể dễ dàng bị lạc. Sương mù dày đặc hoặc thiếu các thiết bị định vị có thể làm mất phương hướng, khiến cho người leo mất nhiều thời gian tìm đường và làm tăng nguy cơ gặp phải các yếu tố nguy hiểm khác như thời tiết xấu hoặc thiếu nước, thực phẩm.  
-                        <br><br>
-                        <p style="font-weight: bold">Thiếu nước và dinh dưỡng</p> cũng là một nguy cơ khi leo núi. Khi leo ở những độ cao lớn, người leo thường phải đối mặt với tình trạng mất nước nhanh chóng do sự thay đổi về nhiệt độ và nhu cầu năng lượng cao. Thiếu nước và dinh dưỡng không chỉ làm suy giảm sức khỏe mà còn ảnh hưởng đến tinh thần và sự tập trung, làm tăng nguy cơ xảy ra tai nạn. Do đó, việc chuẩn bị đủ lượng nước và thực phẩm phù hợp cho hành trình là rất quan trọng.  
-                        <br><br>
-                        
-                        Cuối cùng, <p style="font-weight: bold">sự cố về thiết bị</p> cũng có thể dẫn đến nguy hiểm. Các thiết bị như dây leo, móc khóa, hoặc giày dép nếu không được kiểm tra kỹ lưỡng trước khi leo hoặc gặp hỏng hóc giữa chừng có thể gây tai nạn nghiêm trọng. Do đó, việc kiểm tra kỹ lưỡng và sử dụng thiết bị chất lượng cao là yếu tố không thể thiếu để đảm bảo an toàn.  
-                        <br><br>
-                        
-                        Leo núi không chỉ đòi hỏi về mặt thể lực mà còn yêu cầu người tham gia phải hiểu rõ các nguy hiểm tiềm ẩn và có kế hoạch đối phó. Từ những nguy cơ về thời tiết, địa hình cho đến sức khỏe cá nhân, việc chuẩn bị kỹ lưỡng và trang bị đầy đủ là cách tốt nhất để giảm thiểu rủi ro khi chinh phục các đỉnh cao.
+                        <p>Another danger is <strong>landslides and rockfalls</strong>. Mountainous terrain is often unstable, especially after heavy rains or bad weather. Rocks and soil can unexpectedly tumble down from higher elevations, posing a serious risk to climbers below. This is why monitoring weather conditions and terrain stability is extremely important before starting a climb.</p>
+
+                        <p><strong>Extreme weather</strong> is also a significant danger in mountaineering. At high altitudes, the weather can change rapidly from clear skies to storms, strong winds, or snow. Sudden weather shifts not only reduce visibility but also make the terrain more treacherous. Climbers must be equipped with waterproof clothing, insulation, and essential gear to handle adverse weather conditions.</p>
+
+                        <p>At high elevations, <strong>altitude sickness</strong> is a concerning hazard. At altitudes above 2,500 meters, thin air and reduced oxygen levels can cause symptoms like dizziness, nausea, shortness of breath, and fatigue. If not addressed promptly, altitude sickness can lead to cerebral or pulmonary edema, which can be fatal. Gradual acclimatization and a slow ascent are crucial to minimizing this risk.</p>
+
+                        <p>Another common issue is <strong>getting lost</strong>. On mountains, especially in areas with complex terrain and few recognizable landmarks, climbers can easily lose their way. Dense fog or the lack of navigation tools can disorient climbers, causing them to spend more time searching for the right path and increasing the likelihood of encountering other dangers like bad weather or dehydration.</p>
+
+                        <p><strong>Dehydration and malnutrition</strong> are also risks during mountaineering. At high altitudes, climbers often face rapid dehydration due to temperature changes and high energy demands. Lack of water and proper nutrition not only deteriorates physical health but also impairs mental focus, increasing the chance of accidents. Therefore, it's crucial to prepare adequate water and food supplies for the journey.</p>
+
+                        <p>Finally, <strong>equipment failure</strong> can lead to serious danger. Climbing gear such as ropes, carabiners, or shoes, if not thoroughly inspected before climbing or if they malfunction mid-climb, can cause severe accidents. Ensuring the use of high-quality gear and conducting regular checks is essential for safety.</p>
+
+                        <p>Mountaineering not only requires physical endurance but also demands that participants understand the inherent risks and have a plan to address them. From weather and terrain hazards to personal health concerns, careful preparation and proper equipment are the best ways to reduce risks when conquering great heights.</p>
                         
                 </div>
 
                 <div id="record" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Kỷ Lục" -->
                     <h2 style="font-style:italic">Record</h2>
-                     Alpine Ascent Vietnam là một trang web chuyên về leo núi và các hoạt động khám phá thiên nhiên, đã đạt được nhiều thành tựu ấn tượng trong lĩnh vực du lịch mạo hiểm. Được thành lập với sứ mệnh thúc đẩy tình yêu thiên nhiên và sự tôn trọng đối với môi trường, Alpine Ascent Vietnam đã nhanh chóng khẳng định vị thế của mình trong cộng đồng leo núi quốc tế. Một trong những thành tựu lớn nhất của trang web là việc tổ chức các chuyến thám hiểm leo núi chuyên nghiệp, mang lại những trải nghiệm đầy thử thách cho hàng nghìn người tham gia từ khắp nơi trên thế giới. Những hành trình này không chỉ giúp người leo khám phá những đỉnh núi hùng vĩ tại Việt Nam mà còn giúp họ rèn luyện sức khỏe và tinh thần bền bỉ.
+                        <p>Alpine Ascent Vietnam is a specialized website for mountaineering and nature exploration, achieving remarkable success in the field of adventure tourism. Founded with a mission to promote a love for nature and respect for the environment, Alpine Ascent Vietnam quickly established its reputation within the international mountaineering community. One of its most significant achievements is organizing professional mountain expeditions, offering challenging experiences for thousands of participants from around the world. These journeys not only allow climbers to discover Vietnam's majestic peaks but also help them build physical endurance and mental resilience.</p>
 
-                    <br><br>
-                    Một điểm nổi bật khác của Alpine Ascent Vietnam là sự hợp tác với các chuyên gia leo núi quốc tế để đảm bảo rằng các chương trình leo núi luôn tuân thủ các tiêu chuẩn an toàn cao nhất. Nhờ đó, trang web đã giành được nhiều giải thưởng uy tín về an toàn và tổ chức leo núi, đặc biệt là từ các tổ chức du lịch và môi trường. Điều này khẳng định uy tín của Alpine Ascent Vietnam trong việc tổ chức các chuyến leo núi không chỉ đầy thử thách mà còn an toàn và đáng tin cậy.
+                        <p>Another notable aspect of Alpine Ascent Vietnam is its collaboration with international mountaineering experts to ensure that all climbing programs adhere to the highest safety standards. Thanks to this, the website has won numerous prestigious awards for safety and mountaineering organization, especially from tourism and environmental organizations. This recognition solidifies Alpine Ascent Vietnam's reputation for organizing not only challenging but also safe and reliable mountain expeditions.</p>
 
-                    <br><br>
-                    Trang web cũng được vinh danh bởi nhiều tạp chí và tổ chức du lịch vì những đóng góp trong việc phát triển du lịch bền vững và bảo tồn thiên nhiên. Bằng cách kết hợp các hoạt động leo núi với giáo dục về bảo vệ môi trường, Alpine Ascent Vietnam đã tạo ra những giá trị lớn lao cho cộng đồng địa phương và du khách quốc tế. Điều này thể hiện qua việc trang web đã nhận được nhiều phản hồi tích cực từ người tham gia, cũng như đạt được điểm đánh giá cao trên các nền tảng du lịch trực tuyến.
+                        <p>The website has also been honored by various travel magazines and organizations for its contributions to sustainable tourism and nature conservation. By combining mountaineering activities with environmental education, Alpine Ascent Vietnam has created significant value for both the local community and international tourists. This is reflected in the positive feedback from participants and the high ratings it receives on online travel platforms.</p>
 
-                    <br><br>
-                    Ngoài ra, Alpine Ascent Vietnam còn nhận được nhiều giải thưởng về phát triển cộng đồng. Trang web thường xuyên tổ chức các chương trình từ thiện, giúp đỡ các cộng đồng dân tộc thiểu số sống tại những vùng núi khó khăn. Những phần thưởng này không chỉ là sự công nhận cho các nỗ lực vì cộng đồng mà còn là động lực để trang web tiếp tục phát triển và lan tỏa tinh thần yêu thiên nhiên.
+                        <p>Additionally, Alpine Ascent Vietnam has garnered many awards for community development. The website frequently organizes charity programs to assist ethnic minority communities living in remote mountainous areas. These recognitions are not only a testament to their community efforts but also a motivation for the website to continue growing and spreading the love for nature.</p>
 
-                    <br><br>
-                    Với những thành tựu và phần thưởng đáng kể, Alpine Ascent Vietnam không chỉ là một trang web du lịch thông thường mà còn là một cầu nối giữa con người và thiên nhiên. Các chương trình của họ không chỉ tập trung vào việc khám phá mà còn thúc đẩy nhận thức về bảo tồn và phát triển bền vững.
-                    `;
+                        <p>With its numerous accomplishments and awards, Alpine Ascent Vietnam is more than just a travel website—it's a bridge between people and nature. Their programs focus not only on exploration but also on raising awareness about conservation and sustainable development.</p>
+
                 </div>
             </div>
         </div>
