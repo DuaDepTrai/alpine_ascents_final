@@ -17,7 +17,7 @@
 
             <!-- Nội dung của các tab -->
             <div class="tab-content">
-                <div id="overview" class="tab-pane"> <!-- Phần nội dung tab "Giới thiệu" -->
+                <div id="overview" class="tab-pane" style="display: block;"> <!-- Phần nội dung tab "Giới thiệu" -->
                     <h2 style="font-style:italic">Overview</h2>
                     <p>The Alpine Ascents Vietnam website is a premier online destination for mountain climbing enthusiasts and nature explorers in Vietnam.</p>
                     <p>Designed to cater to both beginners and professional climbers, the website offers a rich and diverse resource of prominent destinations such as Fansipan, Bach Ma, Yen Tu, Pu Luong, and many other mountain ranges spanning from north to south.</p>
@@ -69,8 +69,10 @@
 
 @push('scripts') <!-- Đẩy mã JavaScript vào stack "scripts" -->
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-    openTab(event, 'overview'); // Mở tab 'Overview' mặc định
+     // Đảm bảo tab 'Overview' được mở mặc định khi trang tải
+     document.addEventListener("DOMContentLoaded", function(event) {
+        // Simulate click on the default active tab button
+        document.querySelector('.tab-button.active').click();
     });
     // Hàm để mở tab và hiển thị nội dung tương ứng
     function openTab(evt, tabName) {

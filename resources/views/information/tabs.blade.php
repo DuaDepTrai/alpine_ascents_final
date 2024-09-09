@@ -17,10 +17,10 @@
 
             <!-- Nội dung của các tab -->
             <div class="tab-content">
-                <div id="overview_history" class="tab-pane"> <!-- Phần nội dung tab "Giới thiệu" -->
+                <div id="overview_history" class="tab-pane" style="display: block;"> <!-- Phần nội dung tab "Giới thiệu" -->
                     <h2 style="font-style:italic">Overview and History</h2>
                     <p>Welcome to the website of Alpine Ascents Vietnam – the ideal destination for those who are passionate about exploring and conquering the majestic mountain peaks of Vietnam. We are an organization specializing in providing high-quality mountain climbing and trekking tours, offering you the opportunity to experience exciting challenges and breathtaking scenery. Founded with the mission to connect mountain and nature lovers, Alpine Ascents Vietnam is committed to providing professional, safe, and dedicated services.</p>
-                    <img src="public/images/tf_walking.png">
+                    <img src="images/tf_walking.png">
                     <p>Our website offers detailed information about climbing trips and exploration journeys, from the highest peaks like Fansipan, Ba Na, to the scenic trekking routes in national parks and nature reserves. We are proud to be partners with many experienced guides and mountain climbing experts, ready to accompany you every step of the way, from equipment preparation to technical and safety support.</p>
                     <p>At Alpine Ascents Vietnam, we understand that each journey is a personal adventure, so we offer flexible tour packages tailored to various skill levels and preferences. You can easily find detailed information on schedules, prices, and support services on our website. Additionally, we provide helpful articles and guides to help you prepare your best for the trip.</p>
                     <p>Join us in discovering the pristine beauty and grandeur of Vietnam's nature through our mountain climbing and trekking tours. Don’t hesitate to contact us for dedicated advice and detailed information about the trips. Alpine Ascents Vietnam looks forward to accompanying you on every step of your journey, so that each trip is not just a conquest, but also a memorable experience.</p>
@@ -155,9 +155,11 @@
 
 @push('scripts') <!-- Đẩy mã JavaScript vào stack "scripts" -->
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-        openTab(event, 'overview_history'); // Mở tab 'Overview' mặc định
-        });
+        // Đảm bảo tab 'Overview' được mở mặc định khi trang tải
+     document.addEventListener("DOMContentLoaded", function(event) {
+        // Simulate click on the default active tab button
+        document.querySelector('.tab-button.active').click();
+    });
     // Hàm để mở tab và hiển thị nội dung tương ứng
     function openTab(evt, tabName) {
         var i, tabContent, tabButtons;
