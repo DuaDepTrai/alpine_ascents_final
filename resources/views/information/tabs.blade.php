@@ -1,6 +1,7 @@
 @extends('layouts.app')  <!-- Kế thừa layout chung có tên là 'app' -->
 
 @section('content')  <!-- Bắt đầu phần nội dung chính của trang -->
+
 <div class="container mt-5">  <!-- Container để tạo khoảng cách xung quanh nội dung -->
     <div class="row">
         <div class="col-12">
@@ -19,6 +20,7 @@
                 <div id="overview_history" class="tab-pane"> <!-- Phần nội dung tab "Giới thiệu" -->
                     <h2 style="font-style:italic">Overview and History</h2>
                     <br>Chào mừng bạn đến với trang web của Alpine Ascents VietNam – điểm đến lý tưởng cho những ai đam mê khám phá và chinh phục các đỉnh núi hùng vĩ tại VietNam. Chúng tôi là một tổ chức chuyên cung cấp các tour leo núi và treking chất lượng cao, mang đến cho bạn cơ hội trải nghiệm những thử thách đầy kích thích và phong cảnh ngoạn mục. Được thành lập với sứ mệnh kết nối những người yêu thích leo núi và thiên nhiên, Alpine Ascents VietNam cam kết cung cấp dịch vụ chuyên nghiệp, an toàn và tận tâm.
+                    <img src="public/images/tf_images/tf_trekking">
                     <br><br>Trang web của chúng tôi cung cấp thông tin chi tiết về các chuyến leo núi và hành trình khám phá từ những đỉnh núi cao nhất như Fansipan, Ba Na, đến những cung đường trekking đẹp mắt tại các công viên quốc gia và khu bảo tồn thiên nhiên. Chúng tôi tự hào là đối tác của nhiều hướng dẫn viên và chuyên gia leo núi dày dạn kinh nghiệm, sẵn sàng đồng hành cùng bạn trong từng bước đi, từ việc chuẩn bị trang thiết bị đến hỗ trợ kỹ thuật và an toàn.
                     <br><br>Tại Alpine Ascents VietNam, chúng tôi hiểu rằng mỗi chuyến đi đều là một cuộc phiêu lưu cá nhân, vì vậy chúng tôi cung cấp các gói tour linh hoạt, phù hợp với nhiều mức độ kỹ năng và sở thích khác nhau. Bạn có thể dễ dàng tìm thấy các thông tin chi tiết về lịch trình, giá cả và dịch vụ hỗ trợ trên trang web của chúng tôi. Ngoài ra, chúng tôi còn cung cấp các bài viết và hướng dẫn hữu ích, giúp bạn chuẩn bị tốt nhất cho chuyến đi của mình.
                     <br><br>Hãy cùng chúng tôi khám phá vẻ đẹp hoang sơ và sự kỳ vĩ của thiên nhiên VietNam qua các tour leo núi và trekking. Đừng ngần ngại liên hệ với chúng tôi để nhận được sự tư vấn tận tình và thông tin chi tiết về các chuyến đi. Alpine Ascents VietNam mong muốn đồng hành cùng bạn trên từng bước hành trình, để mỗi chuyến đi không chỉ là một cuộc chinh phục, mà còn là một trải nghiệm đáng nhớ.
