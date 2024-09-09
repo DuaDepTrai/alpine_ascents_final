@@ -69,6 +69,9 @@
 
 @push('scripts') <!-- Đẩy mã JavaScript vào stack "scripts" -->
 <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    openTab(event, 'overview'); // Mở tab 'Overview' mặc định
+    });
     // Hàm để mở tab và hiển thị nội dung tương ứng
     function openTab(evt, tabName) {
         var i, tabContent, tabButtons;

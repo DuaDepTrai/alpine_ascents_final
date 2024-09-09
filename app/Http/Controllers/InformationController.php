@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class InformationController extends Controller
 {
     public function infor(){
-        return view('information.infor');
+        return view('information.tabs');
     }
 }
