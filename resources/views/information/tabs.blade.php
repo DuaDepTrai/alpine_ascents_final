@@ -30,37 +30,31 @@
                     <p>Alpine Ascents Vietnam also connects with many international climbing organizations and communities, actively participating in environmental protection programs and promoting sustainable tourism. We collaborate with NGOs and conservation groups to protect valuable mountain areas while raising awareness of the importance of preserving nature for future generations.</p>
                     <p>With over a decade of activity, Alpine Ascents Vietnam is not only an information website but also a vibrant and cohesive community where people can share their passion and desire to explore. We organize events, workshops, and community trips to connect mountain enthusiasts, giving them opportunities to meet and learn from each other. Thanks to strong support from the community, the website has contributed significantly to promoting the climbing movement in Vietnam while inspiring new generations of adventure sports lovers.</p>
                     <p>Alpine Ascents Vietnam is proud to be part of the thriving mountain climbing community and hopes to continue serving as an important bridge between mountain lovers and the majestic beauty of Vietnam’s nature in the years to come.</p>
-
+                
                 </div>
 
                 <div id="types_forms" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Các Loại Hình Thức" -->
-                    <h3 style="font-style:italic">Walking</h3>
-                    <p>Walking is the activity of moving by walking on the ground, typically done on flat or slightly sloped terrain. It is the most basic form of movement and can be performed anywhere, from parks and sidewalks to trails in urban areas. In mountaineering, walking often serves as a starting phase or part of a longer journey, helping participants acclimate to the environment and maintain physical fitness. While walking does not require much technique or special equipment, choosing suitable shoes and protecting the body from weather is crucial for comfort and safety.</p>
-                    <img src="/images/information/tf_walking.png">
+                    <h2 style="font-style:italic">Types and Forms</h2>
+                    <p>Walking is the act of moving by walking on the ground, usually done on flat or slightly sloped terrain. It is the most basic form of movement and can be done anywhere, from parks and sidewalks to trails in urban areas. In mountain climbing, walking often serves as the initial phase or a part of a longer journey, helping participants get used to the environment and maintain fitness. Although walking doesn't require much technical skill or special equipment, choosing the right shoes and protecting your body from the weather is essential to ensure comfort and safety.</p>
 
-                    <h3 style="font-style:italic">Trekking</h3>
-                    <p>Trekking is an activity that explores more remote and wild areas, often requiring movement on complex trails or rugged terrain. This form of mountaineering is more adventurous than walking and demands good health, navigation skills, and the ability to handle challenging situations. Trekking usually lasts several days and involves carrying camping gear, food, and water. This activity not only offers a close connection to nature but also helps build endurance and adaptability to harsh environments.</p>
-                    <img src="/images/information/tf_trekking.png">
+                    <h3 id="trekking" style="font-style:italic">Trekking</h3>
+                    <p>Trekking is an activity that explores wilder areas and often requires moving on complex trails or rugged terrain. It is a more adventurous form of climbing compared to walking, requiring participants to have good physical health, orientation skills, and the ability to handle difficult situations. Trekking usually lasts several days and includes carrying camping equipment, food, and water. This activity not only provides a close experience with nature but also builds endurance and adaptability to harsh environments.</p>
 
-                    <h3 style="font-style:italic">Hiking</h3>
-                    <p>Hiking is a form of mountaineering that combines walking and trekking, usually performed on mountain trails or steeper terrain. This activity can last from a few hours to several days, depending on the difficulty of the terrain and the goal of the trip. Hiking typically requires participants to have adequate equipment such as hiking boots, backpacks, water, and snacks. It may also include climbing peaks or traversing difficult paths, challenging participants while allowing them to enjoy stunning landscapes. Navigation skills and thorough preparation are key to ensuring a safe and enjoyable trip.</p>
-                    <img src="/images/information/tf_hiking.png">
+                    <h3 id="hiking" style="font-style:italic">Hiking</h3>
+                    <p>Hiking is a form of climbing that combines walking and trekking, often done on mountain trails or steeper terrains. This activity can last from a few hours to several days, depending on the difficulty of the terrain and the goals of the trip. Hiking typically requires participants to be fully equipped, such as with hiking boots, backpacks, water, and snacks. Notably, hiking may involve climbing mountain peaks or traversing challenging paths, allowing participants to challenge themselves and enjoy spectacular scenery. Orientation skills and thorough preparation are key factors in ensuring a happy and safe trip.</p>
 
                     <h3 style="font-style:italic">Traditional Climbing</h3>
-                    <p>Traditional climbing, often referred to as "trad climbing," is a method of climbing where the climber uses protection equipment to create anchor points in natural cracks or rock formations on the cliff. This is the most classic form of climbing, requiring climbers to install and remove protective gear throughout the climb. In traditional climbing, devices like cams, nuts, and slings are used to ensure safety on routes without fixed anchors. This method not only demands high technical skill but also requires precise judgment and extensive experience in selecting appropriate gear for each climbing section.</p>
-                    <img src="/images/information/tf_trad_climbing.png">
+                    <p>Traditional climbing, often referred to as "trad climbing," is a method of climbing in which the climber uses protective equipment to create anchor points in cracks or natural rock formations on the cliff. This is the most classic form of climbing, requiring the climber to have the skills to install and remove protective gear throughout the journey. In traditional climbing, devices such as cams, nuts, and carabiners are used to ensure safety while ascending routes without fixed anchor points. This method not only requires high technical skill but also precise calculation and extensive experience in selecting the appropriate equipment for each climbing segment.</p>
 
                     <h3 style="font-style:italic">Sport Climbing</h3>
-                    <p>Sport climbing is a style of climbing that focuses on conquering rock faces equipped with pre-installed anchor points and bolts. These protective points are securely fixed to the rock, allowing climbers to focus solely on overcoming challenges and climbing techniques. Sport climbing often uses harnesses, carabiners, and ropes to create an effective protection system. This is a popular climbing method in developed and equipped climbing areas, reducing risks and allowing climbers to concentrate on technique and strength.</p>
-                    <img src="/images/information/tf_sport_climbing.png">
+                    <p>Sport climbing is a style of climbing focused on conquering rock faces that are pre-equipped with anchor points and fixed bolts. These protection points are securely fixed to the rock, allowing climbers to focus solely on overcoming challenges and climbing techniques. Sport climbing often uses harnesses, clips, and safety ropes to create an effective protection system. This is a popular climbing method in developed climbing areas, helping reduce risks and allowing climbers to concentrate on their technique and strength.</p>
 
                     <h3 style="font-style:italic">Bouldering</h3>
-                    <p>Bouldering is a unique form of climbing focused on climbing large boulders or low rock faces without using protective gear or ropes. This type of climbing requires strength and precision in every move. Bouldering climbers often use crash pads to minimize the risk of injury from falls or slips. Bouldering exercises are commonly performed on natural boulders or in indoor bouldering gyms, where climbing problems are designed and changed frequently to challenge climbers.</p>
-                    <img src="/images/information/tf_bouldering.png">
+                    <p>Bouldering is a unique type of climbing focused on climbing large boulders or low rock walls without the use of protective equipment or safety ropes. This is a form of climbing that requires technique and hand strength, along with high precision in each movement. Bouldering climbers often use crash pads to minimize the risk of injury if there is a fall or slip. Bouldering exercises are often done on natural rock blocks or in indoor bouldering gyms, where climbing problems are designed and regularly changed to challenge climbers.</p>
 
                     <h3 style="font-style:italic">Ice Climbing</h3>
-                    <p>Ice climbing is a specialized form of climbing focused on ice walls or snow, requiring the use of equipment such as ice screws, ice tools, and special climbing ropes. In ice climbing, climbers use tools to secure themselves in ice while climbing frozen waterfalls or ice-covered routes. This method requires not only technical climbing skills but also thorough preparation regarding equipment and an in-depth understanding of weather conditions and ice structures. Ice climbing is typically performed in high mountain areas where icy conditions are suitable, making it one of the most challenging forms of climbing.</p>
-                    <img src="/images/information/tf_ice_climbing.png">
+                    <p>Ice climbing is a specialized form of climbing on ice walls or snow, requiring the use of specialized equipment such as ice screws, ice axes, and special climbing ropes. In ice climbing, climbers use tools to grip the ice and support the climb on icy paths or frozen waterfalls. This method not only requires climbing skills but also good preparation in terms of equipment and in-depth knowledge of weather conditions and ice structure. Ice climbing is often performed in high mountainous areas with suitable icy conditions and is one of the most challenging forms of climbing.</p>                
+            
                 </div>
 
                 <div id="technique" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Kỹ Thuật" -->
@@ -95,12 +89,12 @@
                     <p>When climbing during winter or on icy surfaces, climbers need to use additional equipment such as crampons, ice axes, and ice screws to grip and ascend slippery surfaces. This technique requires high concentration and skills, as the harsh weather conditions and the risk of avalanches pose significant dangers.</p>
 
                     <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>
-
+                    
                 </div>
 
                 <div id="shelter" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Nơi Trú Ẩn" -->
                     <h2 style="font-style:italic">Shelter</h2>
-
+                
                         <p>This is a shelter set up at the base of the mountain or the starting point of a long climbing expedition. The camp usually consists of large tents where climbers can rest, prepare food, and gear up before advancing to more dangerous altitudes. These camps are often located near a water source, in safe camping areas, and in regions with less harsh climates compared to higher elevations.</p>
 
                         <h5 style="font-style:italic; font-weight:bold;">Tent</h5>
@@ -118,8 +112,8 @@
                         <h5 style="font-style:italic; font-weight:bold;">Igloo and Snow Shelter</h5>
                         <p>In snowy mountain regions, snow shelters or igloos are viable options in emergency situations. Climbers can build these shelters by using snow-cutting tools to create thick walls that insulate and protect from cold winds. However, constructing an igloo requires experience and skill, as the structure must be solid and safe.</p>
 
-                        <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>
-
+                        <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>                        
+                
                 </div>
 
                 <div id="danger" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Các Mối Nguy Hiểm" -->
@@ -137,7 +131,7 @@
                         <p>Finally, <strong>equipment failure</strong> can lead to serious danger. Climbing gear such as ropes, carabiners, or shoes, if not thoroughly inspected before climbing or if they malfunction mid-climb, can cause severe accidents. Ensuring the use of high-quality gear and conducting regular checks is essential for safety.</p>
 
                         <p>Mountaineering not only requires physical endurance but also demands that participants understand the inherent risks and have a plan to address them. From weather and terrain hazards to personal health concerns, careful preparation and proper equipment are the best ways to reduce risks when conquering great heights.</p>
-
+                        
                 </div>
 
                 <div id="record" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Kỷ Lục" -->
