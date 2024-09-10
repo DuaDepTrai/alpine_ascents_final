@@ -99,7 +99,6 @@
             <p>Trekking is an activity that explores more remote and wild areas, often requiring movement on complex trails or rugged terrain. This form of mountaineering is more adventurous than walking and demands good health, navigation skills, and the ability to handle challenging situations. Trekking usually lasts several days and involves carrying camping gear, food, and water. This activity not only offers a close connection to nature but also helps build endurance and adaptability to harsh environments.</p>
             <img src="/images/information/tf_trekking.png">
 
-
             <h3 style="font-style:italic">Hiking</h3>
             <p>Hiking is a form of mountaineering that combines walking and trekking, usually performed on mountain trails or steeper terrain. This activity can last from a few hours to several days, depending on the difficulty of the terrain and the goal of the trip. Hiking typically requires participants to have adequate equipment such as hiking boots, backpacks, water, and snacks. It may also include climbing peaks or traversing difficult paths, challenging participants while allowing them to enjoy stunning landscapes. Navigation skills and thorough preparation are key to ensuring a safe and enjoyable trip.</p>
             <img src="/images/information/tf_hiking.png">
@@ -119,7 +118,6 @@
             <h3 style="font-style:italic">Ice Climbing</h3>
             <p>Ice climbing is a specialized form of climbing focused on ice walls or snow, requiring the use of equipment such as ice screws, ice tools, and special climbing ropes. In ice climbing, climbers use tools to secure themselves in ice while climbing frozen waterfalls or ice-covered routes. This method requires not only technical climbing skills but also thorough preparation regarding equipment and an in-depth understanding of weather conditions and ice structures. Ice climbing is typically performed in high mountain areas where icy conditions are suitable, making it one of the most challenging forms of climbing.</p>
             <img src="/images/information/tf_ice_climbing.png">
-
         </div>
     `;
 
