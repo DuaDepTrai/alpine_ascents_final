@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 09, 2024 at 02:54 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th9 10, 2024 lúc 07:32 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,37 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel`
+-- Cơ sở dữ liệu: `laravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `blogs`
---
-
-CREATE TABLE `blogs` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `image` text NOT NULL,
-  `content` text NOT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL,
-  `status` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `blogs`
---
-
-INSERT INTO `blogs` (`id`, `title`, `image`, `content`, `user_id`, `status`, `created_at`) VALUES
-(1, 'Fansipan Adventure', 'images/fansipan/fansipan (1).jpg', '<h2>Địa điểm</h2> \n                                <p>Fansipan, nằm tại huyện Sa Pa, tỉnh Lào Cai, được mệnh danh là \"Nóc nhà Đông Dương\", là đỉnh núi cao nhất trong dãy Hoàng Liên Sơn, với độ cao 3,143 mét so với mực nước biển.</p>\n                                <p>Địa điểm này không chỉ thu hút những người yêu thích chinh phục bởi sự vĩ đại của nó mà còn bởi vẻ đẹp thiên nhiên hùng vĩ. Fansipan là điểm đến mơ ước của nhiều trekkers và du khách, mang đến cảm giác chiến thắng khi đứng trên đỉnh núi cao nhất Đông Dương, hòa mình vào biển mây trắng xóa và chiêm ngưỡng cảnh quan rộng lớn xung quanh. </p>\n                                <h2>Đặc điểm địa hình </h2>\n                                <p>Fansipan có địa hình núi đá vôi hiểm trở với những đoạn đường dốc đứng và gập ghềnh. </p>\n                                <p>Dọc lộ trình lên đỉnh, bạn sẽ đi qua những khu rừng rậm rạp, suối nước trong xanh, và những đồng cỏ xanh mướt. Đường lên đỉnh thường xuyên bị bao phủ bởi sương mù, tạo nên một khung cảnh huyền bí và kỳ vĩ. Các hang động nhỏ và thác nước đẹp mắt dọc theo lộ trình cũng là những điểm nhấn thú vị. </p>\n                                <p>Mùa mưa có thể làm cho con đường trở nên trơn trượt và khó khăn hơn, nhưng bù lại là cảnh sắc thiên nhiên tươi đẹp và không khí trong lành. </p>\n                                <h2>Thời điểm lý tưởng trong năm để khám phá</h2>\n                                <p>Thời điểm lý tưởng để chinh phục Fansipan là từ tháng 10 đến tháng 4. </p>\n                                <p>Trong khoảng thời gian này, thời tiết khô ráo và mát mẻ, với nhiệt độ dao động từ 10 đến 20 độ C, là điều kiện lý tưởng cho việc trekking. </p>\n                                <p>Mùa xuân và mùa thu là thời điểm tuyệt vời nhất để ngắm cảnh, với các cánh đồng hoa dã quỳ vàng rực rỡ hoặc sắc xanh của các thảm thực vật. Mùa hè có thể gặp mưa nhiều, ảnh hưởng đến việc di chuyển và tham quan. Mùa đông có thể rất lạnh và có thể có băng tuyết, làm cho việc chinh phục trở nên khó khăn hơn và cần chuẩn bị kỹ lưỡng. </p>\n                                <h2>Cách di chuyển </h2>\n                                <p>Đi tàu hỏa hoặc xe khách từ Hà Nội đến Sa Pa, thời gian di chuyển khoảng 6-8 giờ. </p>\n                                <p>Từ Sa Pa, thuê xe máy hoặc taxi để di chuyển đến khu vực chân núi. </p>\n                                <h2>Lộ trình chinh phục</h2>\n                                <p>Bắt đầu từ khu vực chân núi, hành trình sẽ dẫn bạn qua các con đường mòn uốn lượn qua các khu rừng rậm và thung lũng tuyệt đẹp. Trên đường, bạn sẽ có cơ hội ngắm nhìn những phong cảnh hùng vĩ và trải nghiệm sự thay đổi rõ rệt về khí hậu và cảnh quan từ chân núi lên đỉnh. Đêm đầu tiên, bạn sẽ nghỉ tại các trại hoặc nhà nghỉ dựng tạm giữa núi để hồi phục sức lực. </p>\n                                <p>Vào ngày thứ hai, bạn sẽ tiếp tục chinh phục các đoạn đường dốc đứng và rừng mây để đạt đến đỉnh Fansipan, nơi bạn sẽ được thưởng ngoạn toàn cảnh hùng vĩ của dãy Hoàng Liên Sơn. </p>\n                                <h2>Các vật dụng cần thiết</h2>\n                                <p>Giày trekking chống nước và chống trượt</p>\n                                <p>Áo khoác chống gió và mưa</p>\n                                <p>Đồ ăn nhẹ và nước uống</p>\n                                <p>Gậy trekking</p>\n                                <p>Kem chống nắng và thuốc chống muỗi</p>\n                                <p>Đèn pin và pin dự phòng</p>\n                                <p>Áo ấm và mũ len nếu đi vào mùa đông</p>\n                                <h2>Các lưu ý khác</h2>\n                                <p>Kiểm tra thời tiết trước khi khởi hành để đảm bảo điều kiện thuận lợi. </p>\n                                <p>Tuân thủ hướng dẫn của các hướng dẫn viên, không rời xa lộ trình. </p>\n                                <p>Mang theo các đồ bảo vệ để tránh bị thương và giữ gìn vệ sinh môi trường xung quanh. </p>\n                                ', 1, 'published', '2024-09-02 09:49:03'),
-(2, 'Trekking Khám Phá Cột Cờ Lũng Cú - Hà Giang', 'images/cot-co-lung-cu/cot-co-lung-cu (1).jpg', '<h2>Địa điểm</h2> \n                                <p>Cột Cờ Lũng Cú nằm ở xã Lũng Cú, huyện Đồng Văn, tỉnh Hà Giang, là điểm cực Bắc của Việt Nam. </p>\n                                <p>Địa điểm này không chỉ có ý nghĩa về mặt địa lý mà còn là một biểu tượng của lòng yêu nước và sự kiên cường. </p>\n                                <p>Cột cờ được xây dựng trên đỉnh một ngọn đồi, mang đến một tầm nhìn rộng lớn và tuyệt đẹp ra toàn bộ khu vực biên giới. </p>\n                                <h2>Đặc điểm địa hình </h2>\n                                <p>Cờ Lũng Cú nằm trên đỉnh một ngọn đồi cao khoảng 1,470 mét so với mực nước biển. Địa hình xung quanh chủ yếu là núi đá vôi và các cánh đồng xanh tươi. </p>\n                                <p>Để lên được cột cờ, bạn sẽ phải leo lên hàng trăm bậc thang đá và đi qua các con đường mòn dốc đứng. </p>\n                                <p>Từ trên đỉnh, bạn sẽ có cái nhìn toàn cảnh về các cánh đồng, thung lũng và núi non hùng vĩ xung quanh, tạo nên một cảnh quan thiên nhiên ngoạn mục và rộng lớn. </p>\n                                <h2>Thời điểm lý tưởng trong năm để khám phá</h2>\n                                <p>Thời điểm lý tưởng để tham quan Cột Cờ Lũng Cú là từ tháng 9 đến tháng 12. </p>\n                                <p>Thời gian này thời tiết khô ráo và mát mẻ, giúp bạn dễ dàng leo lên đỉnh và thưởng ngoạn cảnh quan. </p>\n                                <p>Mùa hè có thể có mưa nhiều, làm cho việc di chuyển trở nên khó khăn. </p>\n                                <p>Mùa đông có thể lạnh và có sương mù, nhưng cũng mang đến một cảnh sắc tuyệt đẹp và huyền bí. </p>\n                                <h2>Cách di chuyển </h2>\n                                <p>Từ Hà Nội, bạn có thể đi xe khách hoặc thuê xe riêng đến Hà Giang, thời gian di chuyển khoảng 6-8 giờ. </p>\n                                <p>Từ Hà Giang, tiếp tục di chuyển bằng xe máy hoặc taxi đến xã Lũng Cú, mất khoảng 2-3 giờ. </p>\n                                <h2>Lộ trình chinh phục</h2>\n                                <p>Chúng tôi cung cấp tour trekking trong ngày đến Cột Cờ Lũng Cú, bắt đầu từ chân đồi và đi qua các con đường mòn được trang bị để bạn dễ dàng leo lên đỉnh. </p>\n                                <p>Trên đường đi, bạn sẽ trải nghiệm vẻ đẹp của các cánh đồng và núi non xung quanh. </p> \n                                <p>Từ đỉnh cột cờ, bạn sẽ có cơ hội chiêm ngưỡng toàn cảnh khu vực biên giới và cảm nhận được sự vĩ đại của điểm cực Bắc của Việt Nam. </p>\n                                <h2>Các vật dụng cần thiết</h2>\n                                <p>Giày đi bộ chống trượt</p>\n                                <p>Áo khoác chống gió và mưa</p>\n                                <p>Đồ ăn nhẹ và nước uống</p>\n                                <p>Kem chống nắng và thuốc chống muỗi</p>\n                                <p>Đèn pin và pin dự phòng</p>\n                                <h2>Các lưu ý khác</h2>\n                                <p>Chuẩn bị tinh thần và thể lực tốt trước khi leo lên đỉnh cột cờ. </p>\n                                <p>Tuân thủ các quy định bảo vệ môi trường và giữ gìn vệ sinh khu vực xung quanh. </p>\n                                ', 1, 'published', '2024-09-02 09:49:03');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `branches`
+-- Cấu trúc bảng cho bảng `branches`
 --
 
 CREATE TABLE `branches` (
@@ -60,7 +36,7 @@ CREATE TABLE `branches` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `branches`
+-- Đang đổ dữ liệu cho bảng `branches`
 --
 
 INSERT INTO `branches` (`id`, `name`, `address`, `phone`, `positioning`) VALUES
@@ -78,7 +54,31 @@ INSERT INTO `branches` (`id`, `name`, `address`, `phone`, `positioning`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `galleries`
+--
+
+CREATE TABLE `galleries` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `tours_id` bigint(20) UNSIGNED NOT NULL,
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL CHECK (json_valid(`images`)),
+  `videos` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`videos`)),
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `tours_id`, `images`, `videos`, `created_at`, `updated_at`) VALUES
+(1, 1, '[\"\\/images\\/fansipan\\/fansipan (1).jpg\",\"\\/images\\/fansipan\\/fansipan (2).jpg\",\"\\/images\\/fansipan\\/fansipan (3).jpg\",\"\\/images\\/fansipan\\/fansipan (4).jpg\",\"\\/images\\/fansipan\\/fansipan (5).jpg\",\"\\/images\\/fansipan\\/fansipan (6).jpg\",\"\\/images\\/fansipan\\/fansipan (7).jpg\",\"\\/images\\/fansipan\\/fansipan (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=-AREhw2Ot3o\"]', NULL, NULL),
+(2, 2, '[\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (1).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (2).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (3).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (4).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (5).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (6).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (7).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=yOtqF9DRI-s\"]', NULL, NULL),
+(3, 3, '[\"\\/images\\/ta-xua\\/ta-xua (1).jpg\",\"\\/images\\/ta-xua\\/ta-xua (2).jpg\",\"\\/images\\/ta-xua\\/ta-xua (3).jpg\",\"\\/images\\/ta-xua\\/ta-xua (4).jpg\",\"\\/images\\/ta-xua\\/ta-xua (5).jpg\",\"\\/images\\/ta-xua\\/ta-xua (6).jpg\",\"\\/images\\/ta-xua\\/ta-xua (7).jpg\",\"\\/images\\/ta-xua\\/ta-xua (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=hO_VjQXSjAQ\"]', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -88,7 +88,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -97,12 +97,19 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2024_08_31_162511_create_orders_tours_table', 1),
 (4, '2024_08_31_162515_create_blogs_table', 1),
 (5, '2024_08_31_162519_create_branches_table', 1),
-(6, '2024_09_01_164408_create_sessions_table', 1);
+(6, '2024_09_01_164408_create_sessions_table', 2),
+(7, '2024_09_04_163005_create_gallery_table', 3),
+(8, '2024_09_04_163005_create_media_libraries_table', 4),
+(9, '2024_09_07_164723_create_gallery_table', 5),
+(10, '2024_09_07_173553_create_gallery_table', 6),
+(12, '2024_09_07_173553_create_galleries_table', 7),
+(13, '2024_09_07_182510_create_galleries_table', 8),
+(14, '2024_09_07_185222_create_galleries_table', 9);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders_tours`
+-- Cấu trúc bảng cho bảng `orders_tours`
 --
 
 CREATE TABLE `orders_tours` (
@@ -119,7 +126,7 @@ CREATE TABLE `orders_tours` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sessions`
+-- Cấu trúc bảng cho bảng `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -132,17 +139,21 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sessions`
+-- Đang đổ dữ liệu cho bảng `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('TDLUxVPQhKd0q34nYrfTjhMLtFXVqBTh98C9hlSq', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiNlk5TGdHTEozRlVIZmdKOG5VOFVoVlViaWRSbzZMd3JkZHdhclRqWSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbmZvcm1hdGlvbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1725885612),
-('uC8EzlBhDc8ikVksAf1P5ocQMI2kiP4TFwIQ1WNS', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZ05remcxVmw5TkZpdVVldjV3S0RlVG1IbHZRMWhXNVBnOGVJZ0VrVSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9sb2dpbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1725454447);
+('e5bRGWMKfs73YnnzZdGkaIG8ZiBubadxBMkpGpcv', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTFZLZmJuM1g2T081UGdWcHRHWDRRVGNyNElXemZObVQ0U2t6Tkd3ZCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9nYWxsZXJpZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1725741500),
+('Ft4TuZGfdG4ASmXafOMLugce8de7kMOyVNodtps4', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSExKZGxDak83Uzk3V2JTOU9MbHU4S2xRWDNLcGgxNmJHUG01ZmxpYSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9nYWxsZXJpZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1725896002),
+('kcwGaHddtuzO5T5nobSOVN2Z3Ps7fngItq6PVxOM', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiRGZCV0xWZWNSRHA5SFg4M0xNcjB2T3M3VUZpRHRQUHQ5MnhqWFVLOSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9nYWxsZXJpZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1725989274),
+('ns24KhoBnJnzgoaWOTGD88s84aFYcBu6saGUh64I', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiblB0ZXV5elRaMEh6QUlLcnVsZ2JLb29pWHZCNUF5Z2p6S2paeFc3VyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9nYWxsZXJpZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1725896351),
+('Txa975ca3z5c3TniB8g7aNHNcn187WEPLTMWGitt', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic0VuOUMxS2FYZWY0V3IwSDEwdFBxakh1Tm5KVnkxZUc5aUtmOGt6cCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbmZvcm1hdGlvbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1725896002),
+('X90uBAESiEzhoOLsyDT2bsoajaDNvLTTZhE54upG', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiU0QxVmhLTWVmS1VxUW9FUEJHRjhmUElHSFdzOFJsSEpGcGVubldYSyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9nYWxsZXJpZXMiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1725811263);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tours`
+-- Cấu trúc bảng cho bảng `tours`
 --
 
 CREATE TABLE `tours` (
@@ -150,21 +161,31 @@ CREATE TABLE `tours` (
   `name` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
   `image` text NOT NULL,
-  `introduce` text NOT NULL,
-  `types` text NOT NULL,
-  `techniques` text NOT NULL,
-  `records` text NOT NULL,
-  `requirement` text NOT NULL,
-  `sheltering` text DEFAULT NULL,
-  `hazards` text DEFAULT NULL,
+  `location` text NOT NULL,
+  `features` text NOT NULL,
+  `besttime` text NOT NULL,
+  `directions` text NOT NULL,
+  `trekkingroutes` text NOT NULL,
+  `items` text DEFAULT NULL,
+  `cautions` text DEFAULT NULL,
+  `requirements` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `tours`
+--
+
+INSERT INTO `tours` (`id`, `name`, `price`, `image`, `location`, `features`, `besttime`, `directions`, `trekkingroutes`, `items`, `cautions`, `requirements`, `created_at`, `updated_at`) VALUES
+(1, 'Fansipan Expedition', 3500000, 'images/fansipan/fansipan (2).png', '<p>Fansipan, located in Sa Pa district, Lào Cai province, is known as the \"Roof of Indochina\" and is the highest peak in the Hoang Lien Son range, standing at 3,143 meters above sea level.</p> <p>This location not only attracts adventure enthusiasts due to its grandeur but also because of its majestic natural beauty. Fansipan is a dream destination for many trekkers and travelers, offering a sense of triumph when standing on the highest peak of Indochina, immersing in the sea of white clouds, and admiring the vast surrounding landscapes.</p>', '<p>Fansipan features rugged limestone terrain with steep and uneven paths.</p> <p>Along the route to the summit, you will pass through dense forests, clear streams, and lush green meadows. The path to the top is often shrouded in mist, creating a mysterious and magnificent scene. Small caves and beautiful waterfalls along the route are also interesting highlights.</p> <p>The rainy season can make the road slippery and more challenging, but it is compensated by the beautiful natural scenery and fresh air.</p>', ' <p>The ideal time to conquer Fansipan is from October to April.</p> <p>During this period, the weather is dry and cool, with temperatures ranging from 10 to 20 degrees Celsius, making it ideal for trekking.</p> <p>Spring and autumn are the best times to enjoy the scenery, with fields of vibrant yellow wild sunflowers or the green hues of vegetation. Summer may bring heavy rains, affecting travel and sightseeing. Winter can be very cold, with possible ice and snow, making the conquest more difficult and requiring careful preparation.</p>', '<p>Take a train or bus from Hanoi to Sa Pa, with travel time around 6-8 hours.</p> <p>From Sa Pa, rent a motorbike or take a taxi to reach the base of the mountain.</p>', '<p>Starting from the base of the mountain, the journey will lead you through winding trails across dense forests and beautiful valleys. Along the way, you will have the opportunity to admire magnificent landscapes and experience the drastic changes in climate and scenery from the base to the summit. On the first night, you will rest at camps or temporary lodges in the mountains to regain your strength.</p> <p>On the second day, you will continue to conquer steep paths and cloud forests to reach the summit of Fansipan, where you will be rewarded with a panoramic view of the majestic Hoang Lien Son range.</p>', '<p>Waterproof and non-slip trekking shoes</p> <p>Windproof and rainproof jacket</p> <p>Snacks and water</p> <p>Trekking poles</p> <p>Sunscreen and mosquito repellent</p> <p>Flashlight and spare batteries</p> <p>Warm clothing and woolen hat if trekking in winter</p>', '<p>Check the weather before departing to ensure favorable conditions.</p> <p>Follow the guides instructions and do not stray from the route.</p> <p>Carry protective gear to avoid injury and maintain the cleanliness of the surrounding environment.</p>', '', '2024-09-05 11:03:33', '2024-09-05 11:03:33'),
+(2, 'Phong Nha - Ke Bang Trekking', 3000000, 'images/phong-nha-ke-bang/phong-nha-ke-bang (1).jpg', '<p>Phong Nha - Ke Bang, located in Quang Binh province, is a UNESCO World Heritage site known for its magnificent cave systems.</p> <p>This area is famous for large caves such as Son Doong, Phong Nha, and Tien Son, offering a unique and rich natural exploration experience.</p> <p>With rivers, waterfalls, and majestic landscapes, it is an ideal destination for those passionate about caves and exploring pristine nature.</p>', '<p>Phong Nha - Ke Bang features limestone terrain with a vast cave system.</p> <p>Son Doong, the worlds largest cave, stands out with its unique stalactites and stalagmites. Other caves like Phong Nha and Tien Son are equally impressive, with fascinating geological structures and stunning natural landscapes.</p> <p>The surrounding terrain mainly consists of limestone mountains and tropical forests, creating a majestic and mysterious natural setting.</p> <p>Each cave has its own unique beauty, from clear blue lakes to rich ecosystems.</p> ', '<p>The ideal time to explore Phong Nha - Ke Bang is from September to December.</p> <p>During this period, the weather is dry with little rain, making it suitable for cave visits and exploring the surrounding areas.</p> <p>Summer may bring heavy rains, affecting travel and sightseeing.</p> <p>Winter can be cold and damp, making cave exploration more challenging.</p>', '<p>From Hanoi, you can take a train or fly to Dong Hoi.</p> <p>From Dong Hoi, continue by taxi or bus to Phong Nha - Ke Bang, which takes about 1-2 hours.</p> ', '<p>With a 4-day 3-night tour, the journey begins at the foot of the mountain, where a professional guide will lead you into the heart of Phong Nha Cave.</p> <p>With spacious pathways and fascinating limestone formations, you will have the opportunity to admire beautiful stalactites and the unique ecosystem within the cave. The cave tour typically lasts about 2-3 hours, depending on your pace and interest.</p> <p>After that, you will explore Son Doong Cave, where you will have to navigate narrow tunnels, swim through underground lakes, and conquer uncharted areas to enjoy the pristine beauty of nature.</p> ', '<p>Waterproof walking shoes</p> <p>Rainproof and windproof jacket</p> <p>Flashlight and spare batteries</p> <p>Snacks and water</p> <p>Sunscreen and mosquito repellent</p> <p>Protective gear such as hats and gloves</p>', '<p>Follow the guides instructions and avoid harming the environment.</p> <p>Protect sensitive areas and maintain silence to avoid disturbing the wildlife and surrounding ecosystems.</p>', '', '2024-09-05 11:03:33', '2024-09-05 11:03:33'),
+(3, 'Ta Xua Trekking', 2500000, 'images/ta-xua/ta-xua (1).jpg', '<p>Ta Xua, located in Bac Yen district, Son La province, is famous for its majestic mountain ranges and sea of white clouds.</p> <p>This location is a paradise for those who love trekking and want to experience the natural beauty of Vietnam Northwest region.</p> <p>Ta Xua is also an ideal place to enjoy the pristine scenery and misty clouds, creating a mesmerizing natural landscape.</p>', '<p>Ta Xua stands at approximately 2,865 meters high and is characterized by rugged limestone terrain.</p> <p>The path to the summit is often covered in mist and early morning fog, creating a mysterious and majestic landscape. You will pass through forests, lush green fields, and steep trails.</p> <p>Notably, Ta Xua has narrow and challenging trails, requiring good physical fitness and trekking skills to overcome.</p> <p>Other highlights include lush green meadows and deep valleys.</p> ', '<p>The ideal time to explore Ta Xua is from October to April.</p> <p>During this period, the weather is dry and cool, perfect for trekking and viewing the sea of clouds.</p> <p>Summer can bring heavy rains, making travel difficult.</p> <p>Winter can be cold and damp, so thorough preparation is necessary for the trip.</p>', '<p>From Hanoi, take a bus or train to Son La.</p> <p>From Son La, continue by taxi or motorbike to the Ta Xua area.</p>', '<p>Starting the journey from the foot of Ta Xua Mountain, you will trek through winding trails and lush green tea hills.</p> <p>We will guide you to ideal stops to admire the stunning scenery of clouds and mist. The first night will be spent at camps or guesthouses in the mountain area.</p> <p>On the second day, you will continue to conquer higher peaks and enjoy the breathtaking panorama of the Ta Xua mountain range.</p>', 'p>Waterproof and non-slip trekking shoes</p> <p>Windproof and rainproof jacket</p> <p>Snacks and water</p> <p>Trekking poles</p> <p>Sunscreen and mosquito repellent</p> <p>Flashlight and spare batteries</p> <p>Warm clothing and a wool hat</p> ', '<p>Prepare mentally and physically before starting the journey.</p> <p>Follow safety instructions and protect the surrounding environment.</p>', '', '2024-09-05 11:03:33', '2024-09-05 11:03:33');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -180,38 +201,30 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `avatar`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', '0987654321', 'admin@gmail.com', '$2y$12$dZmGDSl9QpJO5oGqDTiCZulOElDflEDYnzFtasTU79dm3jtQVOYVS', NULL, 1, '2024-09-02 09:48:55', NULL),
-(2, 'Nguyễn Hiếu', '0123456789', 'hieu1@gmail.com', '$2y$12$VS5HvLOHa4R6evN0uJImreo1d1B.5aqz83oQ88xVqEyn8FiEA1Ray', NULL, 1, '2024-09-04 05:49:16', '2024-09-04 05:49:16');
-
---
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `blogs`
---
-ALTER TABLE `blogs`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `blogs_user_id_foreign` (`user_id`);
-
---
--- Indexes for table `branches`
+-- Chỉ mục cho bảng `branches`
 --
 ALTER TABLE `branches`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `galleries`
+--
+ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `galleries_tour_id_foreign` (`tours_id`);
+
+--
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders_tours`
+-- Chỉ mục cho bảng `orders_tours`
 --
 ALTER TABLE `orders_tours`
   ADD PRIMARY KEY (`id`),
@@ -219,7 +232,7 @@ ALTER TABLE `orders_tours`
   ADD KEY `orders_tours_tour_id_foreign` (`tour_id`);
 
 --
--- Indexes for table `sessions`
+-- Chỉ mục cho bảng `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -227,13 +240,13 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Indexes for table `tours`
+-- Chỉ mục cho bảng `tours`
 --
 ALTER TABLE `tours`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -241,57 +254,57 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `blogs`
---
-ALTER TABLE `blogs`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `branches`
+-- AUTO_INCREMENT cho bảng `branches`
 --
 ALTER TABLE `branches`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `galleries`
 --
-ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `galleries`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `orders_tours`
+-- AUTO_INCREMENT cho bảng `migrations`
+--
+ALTER TABLE `migrations`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT cho bảng `orders_tours`
 --
 ALTER TABLE `orders_tours`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tours`
+-- AUTO_INCREMENT cho bảng `tours`
 --
 ALTER TABLE `tours`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT cho bảng `users`
+--
+ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `blogs`
+-- Các ràng buộc cho bảng `galleries`
 --
-ALTER TABLE `blogs`
-  ADD CONSTRAINT `blogs_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ALTER TABLE `galleries`
+  ADD CONSTRAINT `galleries_tour_id_foreign` FOREIGN KEY (`tours_id`) REFERENCES `tours` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `orders_tours`
+-- Các ràng buộc cho bảng `orders_tours`
 --
 ALTER TABLE `orders_tours`
   ADD CONSTRAINT `orders_tours_tour_id_foreign` FOREIGN KEY (`tour_id`) REFERENCES `tours` (`id`),
