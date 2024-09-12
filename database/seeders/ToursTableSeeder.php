@@ -58,5 +58,9 @@ class ToursTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ]);
+        {
+        Tour::create(['name' => 'Tour 1', 'price' => 100.00]);
+        Tour::create(['name' => 'Tour 2', 'price' => 150.00]);
+        }
     }
 }
