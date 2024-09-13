@@ -10,15 +10,15 @@ class CreateOrdersToursTable extends Migration
     {
         Schema::create('orders_tours', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
+            $table->foreignId('user_id')->nullable()->constrained('users');
             $table->foreignId('tour_id')->constrained('tours');
-            $table->string('phone');
             $table->string('email')->nullable();
             $table->integer('quantity');
             $table->integer('total');
+            $table->string('phone')->default('000-000-0000');
             $table->text('note')->nullable();
             $table->timestamps();
-        });
+        });`
     }
 
     public function down()
