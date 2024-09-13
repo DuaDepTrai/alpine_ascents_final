@@ -39,9 +39,14 @@
                 <input type="text" class="form-control" id="phone" name="phone" required>
             </div>
             <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
                 <label for="quantity">Số lượng</label>
                 <input type="number" class="form-control" id="quantity" name="quantity" required>
             </div>
+            
             <div class="form-group">
                 <label for="tour">Tours</label>
                 <select class="form-control" id="tour" name="tour_id" required>
