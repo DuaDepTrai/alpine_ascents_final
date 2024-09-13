@@ -7,11 +7,13 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
+
+use App\Http\Controllers\OrderController;
+
 use App\Http\Controllers\UserController;
 
-Route::get('/branches', [BranchController::class, 'index']);
 
-Route::get('/user',[UserController::class,'index']);
+Route::get('/branches', [BranchController::class, 'index']);
 
 Route::get('/information',[InformationController::class, 'infor']);
 
@@ -27,3 +29,8 @@ Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
 
 Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
+
+
+Route::get('/order', [OrderController::class, 'create']);
+Route::post('/order', [OrderController::class, 'store']);
+
