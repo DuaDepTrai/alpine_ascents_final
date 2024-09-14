@@ -2,29 +2,49 @@
 
 @section('content')
 
-<h1>User Account Main Page</h1>
-<div class="container">
-    <div class="container_sidebar_pri">
-        <button id="personalinfo">Personal Info</button>
-        <button id="account_setting">Account Setting</button>
-        <button id="logout">Log Out</button>
+<div class="container d-flex mx-auto mt-5 rounded">
+    <div class="btn_container w-25">
+        <button class="btn_personal_infor mx-auto mb-3 mt-4" id="btn_personal_infor">Personal Info</button>
+        <button class="btn_account_setting mx-auto mb-3" id="btn_account_setting">Account Setting</button>
+        <button class="btn_logout mx-auto mb-3" id="btn_logout">Log Out</button>
     </div>
-    <div class="container_content_pri">
-        <div class="avt_name_role_pri">
-            <div class="avatar_pri">
-                <img src="">
-            </div>
-            <div class="name_role_pri">
-                <div class="name_pri">John Doe</div>
-                <div class="role_pri">Software Engineering</div>
-            </div>
+    <div class="seperate1 h-100"></div>
+
+    <div class="content_container w-75 d-block">
+        <div class="avatar mt-4 bg-white rounded-circle">
+            <img src="" alt="">
         </div>
-        <div class="phone_email_pri">
-            <div class="phone_pri">Phone Number : 0991277852</div>
-            <div class="email_pri">Email : hoangnguyen23567@gmail.com</div>
+
+        <div class="seperate2 mx-auto mt-4 mb-4"></div>
+        <h3 class="ms-4 mb-3">Personal Information</h3>
+        <div class="name">
+            <span class="infor_field">Username:</span>
+            <span id="output_name">John Doe</span>
+        </div>
+        <div class="role">
+            <span class="infor_field">Role:</span>
+            <span id="output_role">Software Engineering</span>
+            </div>
+
+        <div class="seperate2 mx-auto mt-4 mb-4"></div>
+        <h3 class="ms-4 mb-3">Account Information</h3>
+        <div class="phone">
+            <span class="infor_field">Phone Number:</span>
+            <span id="output_phone">0992133755</span>
+        </div>
+        <div class="email">
+            <span class="infor_field">Email:</span>
+            <span id="output_email">johndoe1998@gmail.com</span>
         </div>
     </div>
 </div>
+<div class="logout_messagebox d-none"></div>
+    <p class="fs-3 text-center text-primary mt-5">Alert !</p>
+    <p class="fs-4 text-center mt-2">Do you want to log out ?</p>
+    <button class="btn_logout_yes btn btn-primary" id="btn_logout_yes">Yes</button>
+    <button class="btn_logout_no btn btn-primary" id="btn_logout_no">No</button>
+</div>
+
 
 @endsection
 
@@ -175,8 +195,28 @@ button{
 @endpush
 
 
-@push(scripts)
+@push('scripts')
 <script>
+addEventListener('DOMContentLoaded',function(){
+    var btn_personal_infor = this.document.getElementById('btn_personal_infor');
+    var btn_account_setting = this.document.getElementById('btn_account_setting');
+    var btn_logout = this.document.getElementById('btn_logout');
+    var logout_messagebox = this.document.getElementById("logout_messagebox");
 
+    var btn_logout_yes = this.document.getElementById('btn_logout_yes');
+    var btn_logout_no = this.document.getElementById('btn_logout_no');
+
+    btn_logout.addEventListener('click',function(){
+        logout_messagebox.style.display = "block";
+        btn_logout_yes.addEventListener('click',function(){
+            alert('Log out succesfully');
+            logout_messagebox.style.display = "none";
+        });
+
+        btn_logout_no.addEventListener('click',function(){
+            logout_messagebox.style.display = "none";
+        });
+    });
+});
 </script>
 @endpush

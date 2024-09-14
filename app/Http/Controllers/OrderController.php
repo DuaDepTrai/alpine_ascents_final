@@ -19,28 +19,32 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         // Kiểm tra nếu người dùng chưa đăng nhập
-        if (!auth()->check()) {
-            return redirect()->back()->with('error', 'Bạn cần đăng nhập để đặt hàng.');
-        }
+    
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'phone' => 'nullable|string|max:15',
-            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:15', // phone bắt buộc
+            'email' => 'nullable|email|max:255', // email không bắt buộc
             'quantity' => 'required|integer|min:1',
             'tour_id' => 'required|exists:tours,id',
         ]);
 
+        // Tính tổng số tiền
         $tour = Tours::find($request->tour_id);
         $total = $tour->price * $request->quantity;
 
+        // Kiểm tra nếu người dùng chưa đăng nhập thì để "khách Vãng Lai"
+        $userId = auth()->check() ? auth()->user()->id : null;
+        $userName = auth()->check() ? auth()->user()->name : 'Khách Vãng Lai';
+
+        // Tạo đơn hàng
         $order = orders_tours::create([
-            'user_id' => auth()->user()->id, // Bắt buộc user_id
+            'user_id' => $userId, // Nếu đăng nhập thì lấy user_id, không thì null
             'tour_id' => $request->tour_id,
             'quantity' => $request->quantity,
             'total' => $total,
-            'email' => $request->email,
-            'phone' => $request->phone,
+            'email' => $request->email, // email không bắt buộc
+            'phone' => $request->phone, // phone bắt buộc
             'note' => $request->note,
         ]);
 

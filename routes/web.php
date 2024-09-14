@@ -15,8 +15,6 @@ use App\Http\Controllers\UserController;
 
 Route::get('/branches', [BranchController::class, 'index']);
 
-Route::get('/user',[UserController::class,'index']);
-
 Route::get('/information',[InformationController::class, 'infor']);
 
 Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
