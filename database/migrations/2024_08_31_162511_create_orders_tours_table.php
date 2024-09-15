@@ -11,6 +11,7 @@ class CreateOrdersToursTable extends Migration
         Schema::create('orders_tours', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained('users');
+            $table->string('guest_name')->nullable();
             $table->foreignId('tour_id')->constrained('tours');
             $table->string('phone')->default('000-000-0000');
             $table->string('email')->nullable();

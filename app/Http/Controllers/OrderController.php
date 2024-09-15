@@ -30,16 +30,19 @@ class OrderController extends Controller
         ]);
 
         // Tính tổng số tiền
-        $tour = Tours::find($request->tour_id);
-        $total = $tour->price * $request->quantity;
+            $tour = Tours::find($request->tour_id);
+            $total = $tour->price * $request->quantity;
 
-        // Kiểm tra nếu người dùng chưa đăng nhập thì để "khách Vãng Lai"
-        $userId = auth()->check() ? auth()->user()->id : null;
-        $userName = auth()->check() ? auth()->user()->name : 'Khách Vãng Lai';
+         // Nếu người dùng đăng nhập, sử dụng user_id, nếu không, dùng tên từ request làm 'khách vãng lai'
+            $userId = auth()->check() ? auth()->user()->id : null;
+        
+        // Lấy tên từ bảng users nếu người dùng đăng nhập, nếu không lấy từ form
+            $userName = auth()->check() ? auth()->user()->name : $request->name;
 
-        // Tạo đơn hàng
+        // Tạo đơn hàng  
         $order = orders_tours::create([
             'user_id' => $userId, // Nếu đăng nhập thì lấy user_id, không thì null
+            'guest_name' => $userName, // Nếu không đăng nhập, lưu tên vào guest_name
             'tour_id' => $request->tour_id,
             'quantity' => $request->quantity,
             'total' => $total,
@@ -48,7 +51,7 @@ class OrderController extends Controller
             'note' => $request->note,
         ]);
 
-        return redirect()->back()->with('success', 'Đặt hàng thành công!');
+        return redirect()->back()->with('success', 'Đặt hàng thành công bởi: ' . $userName);
     }
 }
 

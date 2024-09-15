@@ -13,6 +13,7 @@ class orders_tours extends Model
 
     protected $fillable = [
         'user_id',
+        'guest_name',
         'tour_id',
         'phone',
         'email',

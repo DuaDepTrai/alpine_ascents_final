@@ -114,7 +114,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 
 CREATE TABLE `orders_tours` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NULL,
+  `guest_name` VARCHAR(255) NULL,
   `tour_id` bigint(20) UNSIGNED NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
