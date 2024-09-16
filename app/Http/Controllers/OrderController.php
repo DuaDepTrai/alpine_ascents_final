@@ -6,6 +6,7 @@ use App\Models\orders_tours;
 use App\Models\tours;
 use Illuminate\Http\Request;
 
+
 class OrderController extends Controller
 {
     // Hiển thị form đặt hàng với danh sách tours
@@ -33,16 +34,10 @@ class OrderController extends Controller
             $tour = Tours::find($request->tour_id);
             $total = $tour->price * $request->quantity;
 
-         // Nếu người dùng đăng nhập, sử dụng user_id, nếu không, dùng tên từ request làm 'khách vãng lai'
-            $userId = auth()->check() ? auth()->user()->id : null;
-        
-        // Lấy tên từ bảng users nếu người dùng đăng nhập, nếu không lấy từ form
-            $userName = auth()->check() ? auth()->user()->name : $request->name;
-
+       
         // Tạo đơn hàng  
         $order = orders_tours::create([
-            'user_id' => $userId, // Nếu đăng nhập thì lấy user_id, không thì null
-            'guest_name' => $userName, // Nếu không đăng nhập, lưu tên vào guest_name
+            'user_id' => Auth::user()->id,
             'tour_id' => $request->tour_id,
             'quantity' => $request->quantity,
             'total' => $total,
@@ -51,7 +46,7 @@ class OrderController extends Controller
             'note' => $request->note,
         ]);
 
-        return redirect()->back()->with('success', 'Order successfully placed by: ' . $userName);
+        return redirect()->back()->with('success', 'Order successfully placed by: ');
     }
 }
 
