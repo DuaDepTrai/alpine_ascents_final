@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\galleries;
 use App\Models\tours;
 
-class GalleriesController extends Controller
+class ToursController extends Controller
 {
     public function index()
     {
         $galleries = tours::with('galleries')->get();
-        return view('galleries.index', compact('galleries'));
+        return view('admin.tours.index', compact('galleries'));
     }
 }

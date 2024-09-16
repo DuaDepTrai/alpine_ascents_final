@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ToursController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\AboutUsController;
@@ -13,6 +14,8 @@ Route::get('/branches', [BranchController::class, 'index']);
 Route::get('/information',[InformationController::class, 'infor']);
 
 Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
+
+Route::get('/admin/tours', [ToursController::class, 'index']);
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');
