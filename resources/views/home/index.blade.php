@@ -19,13 +19,13 @@
             <button class="tour_button" id="tour_button">OUR CLIMBING TOURS</button>
         </div>
         <div class="custom_container_right ms-3">
-            <img class="img_tour" src="images/img_tour.png" alt="">
+            <img class="img_tour" src="images/home/img_tour.png" alt="">
         </div>
     </div>
 
     <div class="container_gallery mx-auto mb-3 d-flex">
         <div class="custom_container_left">
-            <img class="img_gallery" src="images/img_gallery.png" alt="">
+            <img class="img_gallery" src="images/home/img_gallery.png" alt="">
         </div>
         <div class="custom_container_right ms-3 p-4">
             <h3 class="heading">GALLERY</h3>
@@ -36,18 +36,18 @@
 
     <div class="container_information mx-auto mb-3 d-flex">
         <div class="custom_container_left p-4">
-            <h3 class="heading">INFORMATION AND MOUNTAINEERING TECHNIQUE</h3>
+            <h3 class="heading">INFORMATION AND TECHNIQUE</h3>
             <p>Our mountain climbing tours offer a range of exciting adventures tailored to various skill levels. From beginner-friendly hikes to challenging ascents, each tour is designed to showcase the stunning beauty of Vietnam's landscapes. Our experienced guides will provide detailed instruction on essential mountaineering techniques, ensuring safety and skill development. You'll learn key climbing skills, such as proper use of gear, navigation, and safety protocols.</p>
             <button class="information_button" id="information_button">MORE INFORMATION</button>
         </div>
         <div class="custom_container_right ms-3">
-            <img class="img_information" src="images/img_information.png" alt="">
+            <img class="img_information" src="images/home/img_information.png" alt="">
         </div>
     </div>
 
     <div class="container_branches mx-auto mb-3 d-flex">
         <div class="custom_container_left">
-            <img class="img_branches" src="images/img_branches.png" alt="">
+            <img class="img_branches" src="images/home/img_branches.png" alt="">
         </div>
         <div class="custom_container_right ms-3 p-4">
             <h3 class="heading">OUR BRANCHES</h3>
