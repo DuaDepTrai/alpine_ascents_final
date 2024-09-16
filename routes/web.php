@@ -7,11 +7,12 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
-
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 
 use App\Http\Controllers\UserController;
 
+Route::get('/home',[HomeController::class,'index'])->name('home');
 
 Route::get('/branches', [BranchController::class, 'index']);
 
