@@ -12,6 +12,8 @@ class CreateOrdersToursTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('tour_id')->constrained('tours');
+            $table->string('phone')->default('000-000-0000');
+            $table->string('email')->nullable();
             $table->integer('quantity');
             $table->integer('total');
             $table->text('note')->nullable();
