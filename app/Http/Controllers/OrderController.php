@@ -30,23 +30,25 @@ class OrderController extends Controller
             'tour_id' => 'required|exists:tours,id',
         ]);
 
-        // Tính tổng số tiền
-            $tour = Tours::find($request->tour_id);
-            $total = $tour->price * $request->quantity;
-
        
         // Tạo đơn hàng  
         $order = orders_tours::create([
             'user_id' => Auth::user()->id,
             'tour_id' => $request->tour_id,
             'quantity' => $request->quantity,
-            'total' => $total,
+            'total' => $this->calculateTotal($request->tour_id, $request->quantity),
             'email' => $request->email, // email không bắt buộc
             'phone' => $request->phone, // phone bắt buộc
             'note' => $request->note,
         ]);
 
         return redirect()->back()->with('success', 'Order successfully placed by: ');
+    }
+    // Hàm tính tổng tiền
+    protected function calculateTotal($tourId, $quantity)
+    {
+        $tour = Tour::find($tourId);
+        return $tour->price * $quantity;
     }
 }
 
