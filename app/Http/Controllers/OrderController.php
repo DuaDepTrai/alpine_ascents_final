@@ -51,7 +51,7 @@ class OrderController extends Controller
             'note' => $request->note,
         ]);
 
-        return redirect()->back()->with('success', 'Đặt hàng thành công bởi: ' . $userName);
+        return redirect()->back()->with('success', 'Order successfully placed by: ' . $userName);
     }
 }
 

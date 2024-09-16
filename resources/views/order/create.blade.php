@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Đặt Hàng</title>
+    <title>Booking Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Trang đặt hàng</h2>
+        <h2>Booking Page</h2>
 
         <!-- Hiển thị thông báo thành công -->
         @if(session('success'))
@@ -31,11 +31,11 @@
         <form action="/order" method="POST">
             @csrf
             <div class="form-group">
-                <label for="name">Tên</label>
+                <label for="name">Name</label>
                 <input type="text" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
-                <label for="phone">Số điện thoại</label>
+                <label for="phone">Phone Number</label>
                 <input type="text" class="form-control" id="phone" name="phone" required>
             </div>
             <div class="form-group">
@@ -43,14 +43,14 @@
                 <input type="email" class="form-control" id="email" name="email" >
             </div>
             <div class="form-group">
-                <label for="quantity">Số lượng</label>
+                <label for="quantity">Quantity</label>
                 <input type="number" class="form-control" id="quantity" name="quantity" required>
             </div>
             
             <div class="form-group">
                 <label for="tour">Tours</label>
                 <select class="form-control" id="tour" name="tour_id" required>
-                    <option value="">Chọn tour</option>
+                    <option value="">Choose a tour</option>
                     <!-- Hiển thị danh sách tours từ database -->
                     @foreach($tours as $tour)
                         <option value="{{ $tour->id }}" data-price="{{ $tour->price }}">
@@ -60,14 +60,14 @@
                 </select>
             </div>
             <div class="form-group">
-                <label for="total">Tổng tiền</label>
+                <label for="total">Total Price</label>
                 <input type="text" class="form-control" id="total" readonly>
             </div>
             <div class="form-group">
-                <label for="note">Ghi chú</label>
+                <label for="note">Notes</label>
                 <textarea class="form-control" id="note" name="note"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Đặt hàng</button>
+            <button type="submit" class="btn btn-primary">Book Now</button>
         </form>
     </div>
 
