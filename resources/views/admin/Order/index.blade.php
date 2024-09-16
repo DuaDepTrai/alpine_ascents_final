@@ -113,14 +113,14 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="/UserManagement">
+                  <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="/tours">
+                  <a href="/admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,15 +128,15 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/Bill">
-                    <i class="fa fa-table"></i> <span>Bill</span>
+                  <a href="/admin/Order">
+                    <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/galleries">
+                  <a href="/admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
