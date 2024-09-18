@@ -31,7 +31,12 @@ Route::get('/admin/tours', [AdminToursController::class, 'index']);
 
 Route::get('/admin/galleries', [AdminGalleriesController::class, 'index']);
 
-Route::get('/admin/Order', [AdminOrderController::class, 'index']);
+Route::get('admin/order', [AdminOrderController::class, 'index'])->name('admin.order.index');
+Route::get('admin/order', [AdminOrderController::class, 'edit'])->name('admin.order.edit');
+Route::put('admin/order', [AdminOrderController::class, 'update'])->name('admin.order.update');
+Route::delete('admin/order', [AdminOrderController::class, 'destroy'])->name('admin.order.destroy');
+
+
 
 Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index']);
 

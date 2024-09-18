@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+    
+
     // Hiển thị form đặt hàng với danh sách tours
     public function create()
     {
@@ -50,6 +52,8 @@ class OrderController extends Controller
         $tour = tours::find($tourId);
         return $tour->price * $quantity;
     }
+    
+
 }
 
 
