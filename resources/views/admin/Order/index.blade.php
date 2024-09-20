@@ -48,21 +48,6 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
-<<<<<<< HEAD
-        <header class="main-header">
-            <!-- Logo -->
-            <a href="index2.html" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
-            </a>
-            <!-- Header Navbar: style can be found in header.less -->
-            <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-=======
     <header class="main-header">
         <!-- Logo -->
         <a href="index2.html" class="logo">
@@ -78,19 +63,6 @@
             <span class="sr-only">Toggle navigation</span>
           </a>
 
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
-
-
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
-                </a>
-
-<<<<<<< HEAD
                 <div class="navbar-custom-menu">
                     <ul class="nav navbar-nav">
 
@@ -142,7 +114,6 @@
                     <div class="pull-left image">
                         <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle"
                             alt="User Image">
-=======
                     <p>
                         {{--  {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
@@ -153,7 +124,6 @@
                   <li class="user-footer">
                     <div class="pull-left">
                       <a href="#" class="btn btn-default btn-flat">Profile</a>
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     </div>
                     <div class="pull-left info">
                         {{-- <p>{{auth()->user()->name }}</p> --}}
@@ -194,7 +164,6 @@
                         </a>
                     </li>
                 </ul>
-<<<<<<< HEAD
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -262,7 +231,6 @@
     </div>
     </div>
     </section>
-=======
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
@@ -391,8 +359,6 @@
             </div>
             <!-- /.box -->
         </section>
-
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
     <!-- right col -->
     </div>
     <!-- /.row (main row) -->
