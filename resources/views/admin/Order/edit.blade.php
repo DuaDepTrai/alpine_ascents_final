@@ -127,7 +127,7 @@
                       </a>
                     <li class="treeview">
                       <a href="/RestaurantManagement">
-                        <i class="fa fa-edit"></i> <span>Restaurant</span>
+                        <i class="fa fa-edit"></i> <span>Tour</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -135,7 +135,7 @@
                     </li>
                     <li class="treeview">
                       <a href="/DishManagement">
-                        <i class="fa fa-table"></i> <span>Dish</span>
+                        <i class="fa fa-table"></i> <span>Order</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -143,7 +143,7 @@
                     </li>
                     <li class="treeview">
                       <a href="/LunchRequestManagement">
-                        <i class="fa fa-share"></i> <span>Lunch Request</span>
+                        <i class="fa fa-share"></i> <span>Galleries</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
                         </span>
