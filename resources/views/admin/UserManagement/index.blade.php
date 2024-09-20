@@ -128,7 +128,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/admin/Order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -195,7 +195,7 @@
                     <td class="text-center text-nowrap align-middle">{{  $users->phone }}</td>
                     <td class="text-center text-nowrap align-middle">{{  $users->email }}</td>
                     <td class="text-center text-nowrap align-middle">{{  $users->avatar }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->role }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $users->role == 1 ? 'Admin' : 'User' }}</td>
                     <td>
                         <a href="{{ route('admin.UserManagement.edit', $users->id) }}" class="btn btn-primary btn-sm">Edit</a>
                           <form action="{{ route('admin.UserManagement.destroy', $users->id) }}" method="POST" style="display:inline;">
