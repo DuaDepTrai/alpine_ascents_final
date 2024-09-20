@@ -64,7 +64,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">{{auth()->user()->name }}</span>
+                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -72,7 +72,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                        {{auth()->user()->name }}
+                        {{--  {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +106,21 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>{{auth()->user()->name }}</p>
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="/UserManagement">
+                  <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="/tours">
+                  <a href="/admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +128,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/Order">
+                  <a href="/admin/Order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -136,7 +136,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/galleries">
+                  <a href="/admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -170,15 +170,13 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>Restaurants</h3>
+              <h3>Gallery Management</h3>
             </div>
 
             <div class="icon">
-
-              <i class="ion ion-bag"></i>
             </div>
             </div>
-            {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
+            {{--   <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
                     <tr>
                         <th class="text-center text-nowrap align-middle">STT</th>
@@ -188,7 +186,7 @@
                         <th class="text-center text-nowrap align-middle">Delete</th>
                     </tr>
                 </thead>
-                <tbody>
+              <tbody>
                     @foreach ($restaurants as $key => $restaurant)
                     <tr>
                         <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
@@ -203,7 +201,72 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
+            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
+            <div class="container">
+              <!-- Thêm kiểm tra thông báo thành công -->
+                @if(session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+                @endif
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Gallery</th>
+                            <th>Ảnh</th>
+                            <th>Video</th>
+                            <th>Ngày tạo</th>
+                            <th>Ngày cập nhật</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($galleries as $gallery)
+                            <tr>
+                                <td>{{ $gallery->id }}</td>
+                                <td>{{ $gallery->tour->name ?? 'Không có tên tour' }}</td> <!-- Hiển thị tên tour -->
+                                <td>
+                                    @if($gallery->images)
+                                        @php
+                                            $images = json_decode($gallery->images, true);
+                                        @endphp
+                                        @foreach($images as $image)
+                                            <img src="{{ asset($image) }}" alt="{{ $gallery->name }}" style="width: 100px;">
+                                        @endforeach
+                                    @endif
+                                </td>
+                                <td>
+                                    @if($gallery->videos)
+                                        @php
+                                            $videos = json_decode($gallery->videos, true);
+                                        @endphp
+                                        @foreach($videos as $video)
+                                            <a href="{{ $video }}" target="_blank">{{ $video }}</a><br>
+                                        @endforeach
+                                    @endif
+                                </td>
+                                <td>{{ $gallery->created_at }}</td>
+                                <td>{{ $gallery->updated_at }}</td>
+                                <td>
+                                    <!-- Thêm các nút hành động -->
+                                    <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-warning">Sửa</a>
+                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                  </table>
+              </div>
+          
+              <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">Thêm mới</a>
+          
+              <!-- Hiển thị danh sách các tour và các gallery của chúng -->
+          </div>
     </div>
     </div>
         </div>

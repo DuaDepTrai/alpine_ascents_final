@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
+    
+
     // Hiển thị form đặt hàng với danh sách tours
     public function create()
     {
@@ -29,11 +31,14 @@ class OrderController extends Controller
             'tour_id' => 'required|exists:tours,id',
         ]);
 
-
+        // Lấy user_id nếu người dùng đã đăng nhập, nếu không để null
+            $userId = Auth::check() ? Auth::user()->id : null;
+        
         // Tạo đơn hàng
         $order = orders_tours::create([
-            'user_id' => Auth::user()->id,
+            'user_id' =>  $userId,
             'tour_id' => $request->tour_id,
+            'name' => $request->name,
             'quantity' => $request->quantity,
             'total' => $this->calculateTotal($request->tour_id, $request->quantity),
             'email' => $request->email, // email không bắt buộc
@@ -41,7 +46,7 @@ class OrderController extends Controller
             'note' => $request->note,
         ]);
 
-        return redirect()->back()->with('success', 'Order successfully placed by: ');
+        return redirect()->back()->with('success', 'Order successfully placed by: '.$request->name);
     }
     // Hàm tính tổng tiền
     protected function calculateTotal($tourId, $quantity)
@@ -49,6 +54,8 @@ class OrderController extends Controller
         $tour = tours::find($tourId);
         return $tour->price * $quantity;
     }
+    
+
 }
 
 

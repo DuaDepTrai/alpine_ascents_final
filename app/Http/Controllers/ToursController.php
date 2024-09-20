@@ -9,6 +9,6 @@ class ToursController extends Controller
     public function index()
     {
         $galleries = tours::with('galleries')->get();
-        return view('admin.tours.index', compact('galleries'));
+        return view('tours.index', compact('galleries'));
     }
 }

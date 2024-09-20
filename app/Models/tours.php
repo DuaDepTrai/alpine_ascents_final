@@ -30,11 +30,8 @@ class tours extends Model
 
     public function galleries()
     {
-        return $this->hasMany(galleries::class);
+        return $this->hasMany(galleries::class, 'tours_id');
     }
-}
-class Tour extends Model
-{
+
     protected $table = 'tours'; // Tên bảng trong database
-    protected $fillable = ['name', 'price']; // Các cột có thể thay đổi được
 }

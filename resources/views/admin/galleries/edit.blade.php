@@ -170,13 +170,13 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>Restaurants</h3>
+              <h3>Gallery Management</h3>
             </div>
 
             <div class="icon">
             </div>
             </div>
-            {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
+            {{--   <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
                     <tr>
                         <th class="text-center text-nowrap align-middle">STT</th>
@@ -186,7 +186,7 @@
                         <th class="text-center text-nowrap align-middle">Delete</th>
                     </tr>
                 </thead>
-                <tbody>
+              <tbody>
                     @foreach ($restaurants as $key => $restaurant)
                     <tr>
                         <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
@@ -201,7 +201,43 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
+            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
+            <div class="container">
+              <h1>Sửa Gallery: {{ $gallery->tour->name }}</h1>
+      
+              @if(session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+              @endif
+      
+              <form>
+                  @csrf
+                  @method('PUT')
+      
+                  <!-- Danh sách ảnh -->
+                  <div class="form-group">
+                      <h3>Danh sách ảnh:</h3>
+                      @if($gallery->images)
+                          @php
+                              $images = json_decode($gallery->images, true);
+                          @endphp
+                          @foreach($images as $image)
+                              <div class="image-item" style="display: inline-block; margin: 10px;">
+                                  <img src="{{ asset($image) }}" alt="Image" style="width: 150px;">
+                                  <form action="{{ route('admin.galleries.deleteImage', $gallery->id) }}" method="POST" style="display:inline;">
+                                      @csrf
+                                      <input type="hidden" name="image" value="{{ $image }}">
+                                      <button type="submit" class="btn btn-danger mt-2">Xóa</button>
+                                  </form>
+                              </div>
+                          @endforeach
+                      @endif
+                  </div>
+                </form>
+        
+                <a href="{{ route('admin.galleries.index') }}" class="btn btn-secondary mt-3">Quay lại</a>
+            </div>
     </div>
     </div>
         </div>

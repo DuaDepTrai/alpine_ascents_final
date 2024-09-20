@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container">
     <h2>Booking Page</h2>
 
     <!-- Hiển thị thông báo thành công -->
@@ -64,15 +64,6 @@
     </form>
 </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Lấy trạng thái đăng nhập từ server
-            const isLoggedIn = {{ Auth::check() ? 'true' : 'false' }};
-
-            if (!isLoggedIn) {
-                alert('Please log in to book a tour.');
-                window.location.href = '/login';  // Chuyển hướng người dùng đến trang đăng nhập
-            }
-        });
         document.addEventListener('DOMContentLoaded', function() {
             const tourSelect = document.getElementById('tour');
             const quantityInput = document.getElementById('quantity');

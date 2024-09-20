@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -64,7 +65,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">{{auth()->user()->name }}</span>
+                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -72,7 +73,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                        {{auth()->user()->name }}
+                        {{--  {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +107,21 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>{{auth()->user()->name }}</p>
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="/UserManagement">
+                  <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="/tours">
+                  <a href="/admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +129,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/Order">
+                  <a href="/admin/Order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -136,7 +137,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/galleries">
+                  <a href="/admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -162,55 +163,60 @@
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-xs-12">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>Restaurants</h3>
+            <!-- Default box -->
+            <div class="box">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Orders List</h3>
+                </div>
+                <div class="box-body">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Name</th>
+                                <th>Tour</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Note</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($orders as $order)
+                            <tr>
+                                <td>{{ $order->id }}</td>
+                                <td>{{ $order->user->id ?? 'N/A' }}</td>
+                                <td>{{ $order->name }}</td>
+                                <td>{{ $order->tour->name ?? 'N/A' }}</td>
+                                <td>{{ $order->quantity }}</td>
+                                <td>{{ $order->total }}</td>
+                                <td>{{ $order->email }}</td>
+                                <td>{{ $order->phone }}</td>
+                                <td>{{ $order->note }}</td>
+                                <td>{{ $order->created_at->format('d-m-Y H:i:s') }}</td>
+                                <td>
+                                    <a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    <form action="{{ route('admin.order.destroy', $order->id) }}" method="POST" style="display:inline;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.box-body -->
             </div>
+            <!-- /.box -->
+        </section>
 
-            <div class="icon">
-
-              <i class="ion ion-bag"></i>
-            </div>
-            </div>
-            {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
-                <thead class="table-light">
-                    <tr>
-                        <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
-                    <tr>
-                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button>Delete</button></form></td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
-    </div>
-    </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
     <!-- right col -->
       </div>
       <!-- /.row (main row) -->
@@ -455,3 +461,4 @@
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
+
