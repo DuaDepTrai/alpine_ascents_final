@@ -51,7 +51,7 @@ class AdminOrderController extends Controller
     }
 
     // Xóa đơn hàng
-    public function destroy($id)
+        public function destroy($id)
     {
         $order = orders_tours::findOrFail($id);
         $order->delete();
