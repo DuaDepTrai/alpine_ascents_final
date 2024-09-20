@@ -14,14 +14,8 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
-<<<<<<< HEAD
 use Illuminate\Database\QueryException;
 
-
-use App\Http\Controllers\UserController;
-
-=======
-use App\Http\Controllers\UserController;
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
 
@@ -60,7 +54,6 @@ Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::cl
 Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Xử lý cập nhật thông tin người dùng
 Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Xử lý xóa người dùng
 
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');
 
@@ -70,10 +63,16 @@ Route::post('verify', [VerificationController::class, 'verify'])->name('verify')
 Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
 
+Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
+
+Route::get('/order', [OrderController::class, 'create']);
+Route::post('/order', [OrderController::class, 'store']);
+
+
+
 Route::middleware(['auth', 'is_admin:0'])->group(function () {
     Route::get('/branches', [BranchController::class, 'index']);
 
-<<<<<<< HEAD
     Route::get('/information',[InformationController::class, 'infor']);
 
     Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
@@ -100,7 +99,3 @@ Route::middleware(['auth', 'is_admin:1'])->group(function () {
     Route::post('/order', [OrderController::class, 'store']);
 
 });
-=======
-Route::get('/order', [OrderController::class, 'create']);
-Route::post('/order', [OrderController::class, 'store']);
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
