@@ -4,16 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use PhpParser\Node\Stmt\TryCatch;
 
 class UsersController extends Controller
 {
-    public function index()
+    public function index(users $user)
     {
-        $users = users::all();
-        return view('users.index', compact('users'));
+        return view('users.index', compact('user'));
     }
 
     public function showRegistrationForm()
@@ -50,8 +51,9 @@ public function showLoginForm()
     {
         return view('auth.login');
     }
-public function login(Request $request)
-{
+
+    public function login(Request $request)
+{    
     $request->validate([
         'email' => 'required|email',
         'password' => 'required',
@@ -59,14 +61,27 @@ public function login(Request $request)
 
     $user = users::where('email', $request->email)->first();
 
-    if ($user && !$user->verification_code) {
-        // Đăng nhập thành công
-        if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('home')->with('success', 'Đăng nhập thành công.');
+    if($user){
+        if($user->password == $request->password){
+            return redirect()->route('users.edit',['user' => $user]);
+        }
+        else{
+            return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
         }
     }
+    else{
+        return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
+    }
 
-    return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
+    // if ($user && !$user->verification_code) {
+    //     // Đăng nhập thành công
+    //     if (Auth::attempt($request->only('email', 'password'))) {
+    //         // return redirect()->route('home')->with('success', 'Đăng nhập thành công.');
+    //         return redirect()->route('users.edit',['user' => $user]);
+    //     }
+    // }
+
+    // return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
 }
 
 
@@ -109,11 +124,11 @@ public function login(Request $request)
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'phone' => 'required|numeric|digits:10',
         ]);
-
-        $user->update($request->only('name', 'email'));
-
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        
+        $user->update($request->only('name','email','phone'));
+        return redirect()->route('users.index',['user' => $user]);
     }
 
     public function destroy(users $user)

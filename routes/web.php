@@ -14,8 +14,8 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
-
-use App\Http\Controllers\UserController;
+use Illuminate\Auth\Events\Verified;
+use Mockery\VerificationDirector;
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
 
@@ -43,14 +43,21 @@ Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'inde
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');
 
+Route::get('/forgetpass',[VerificationController::class,'showForgetPassForm'])->name('forgetpass.form');
 Route::get('verification.form', [VerificationController::class, 'showForm'])->name('verification.form');
+Route::post('verification.code',[VerificationController::class,'sendVerificationCode'])->name('sendVerificationCode');
 Route::post('verify', [VerificationController::class, 'verify'])->name('verify');
 
 Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
 
-Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
 
+Route::get('/users/{user}',[UsersController::class,'index'])->name('users.index');
+
+Route::get('/users/{user}/edit',[UsersController::class,'edit'])->name('users.edit');
+Route::put('/users/{user}',[UsersController::class,'update'])->name('users.update');
+
+Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
 
 
 Route::get('/order', [OrderController::class, 'create']);
