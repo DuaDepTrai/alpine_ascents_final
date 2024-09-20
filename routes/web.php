@@ -39,7 +39,12 @@ Route::delete('admin/galleries/{id}', [AdminGalleriesController::class, 'destroy
 
 
 
-Route::get('/admin/Order', [AdminOrderController::class, 'index']);
+Route::get('/admin/order', [AdminOrderController::class, 'index'])->name('admin.order.index');
+Route::get('/admin/order/{id}/edit', [AdminOrderController::class, 'edit'])->name('admin.order.edit');
+Route::put('/admin/order/{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
+Route::delete('/admin/order/{id}', [AdminOrderController::class, 'destroy'])->name('admin.order.destroy');
+
+
 
 Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index']);
 
