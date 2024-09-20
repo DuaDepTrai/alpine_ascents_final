@@ -194,7 +194,7 @@
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="admin/UserManagement">
+                  
                   <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
@@ -210,7 +210,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="admin/Order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>

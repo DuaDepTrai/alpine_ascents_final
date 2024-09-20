@@ -182,7 +182,7 @@
               <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
                   <tr>
-                    <th class="text-center text-nowrap align-middle">ID</th>
+                    <th class="text-center text-nowrap align-middle">STT</th>
                     <th class="text-center text-nowrap align-middle">name</th>
                     <th class="text-center text-nowrap align-middle">phone</th>
                     <th class="text-center text-nowrap align-middle">Email</th>
@@ -191,9 +191,9 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($users as $users)
+                  @foreach ($users as $key => $users)
                   <tr>
-                    <td class="text-center text-nowrap align-middle">{{ $users->id }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $key + 1  }}</td>
                     <td class="text-center text-nowrap align-middle">{{ $users->name }}</td>
                     <td class="text-center text-nowrap align-middle">{{  $users->phone }}</td>
                     <td class="text-center text-nowrap align-middle">{{  $users->email }}</td>

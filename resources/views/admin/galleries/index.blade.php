@@ -64,8 +64,16 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+<<<<<<< HEAD
+
+                  {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+
+                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+
+=======
                   {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
                   {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+>>>>>>> dee137316b0e5201c28b89628202466b331e6fc2
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -73,8 +81,16 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
+<<<<<<< HEAD
+
+                       {{-- {{auth()->user()->name }}--}}
+
+                        {{--  {{auth()->user()->name }}--}}
+
+=======
                        {{-- {{auth()->user()->name }}--}}
                         {{--  {{auth()->user()->name }}--}}
+>>>>>>> dee137316b0e5201c28b89628202466b331e6fc2
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -108,8 +124,16 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
+<<<<<<< HEAD
+
+                    {{--<p>{{auth()->user()->name }}</p>--}}
+
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
+
+=======
                     {{--<p>{{auth()->user()->name }}</p>
                     <p>{{auth()->user()->name }}</p> --}}
+>>>>>>> dee137316b0e5201c28b89628202466b331e6fc2
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>

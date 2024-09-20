@@ -14,10 +14,13 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\UserController;
+
 
 Route::prefix('admin')->group(function () {
     Route::resource('tours', AdminToursController::class);
 });
+
 
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
@@ -70,4 +73,7 @@ Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries
 
 Route::get('/order', [OrderController::class, 'create']);
 Route::post('/order', [OrderController::class, 'store']);
+
+
+
 

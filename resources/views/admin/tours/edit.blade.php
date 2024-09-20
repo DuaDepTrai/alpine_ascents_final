@@ -224,12 +224,12 @@ button:hover {
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <h1>Edit Tour</h1>
-        <form action="{{ url('admin/tours/' . $tours->id . '/edit') }}" method="POST">
+        <form action="{{ url('admin/tours/' . $tour->id . '/edit') }}" method="POST">
             @csrf
             @method('PUT')
             <div>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="{{$                                             tour->name}}" required>
+                <input type="text" id="name" name="name" value="{{$tour->name}}" required>
             </div>
             <div>
                 <label for="name">Price:</label>
