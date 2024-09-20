@@ -64,7 +64,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  <span class="hidden-xs">{{auth()->user()->name }}</span>
+                  {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -72,7 +72,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                        {{auth()->user()->name }}
+                       {{-- {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +106,21 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>{{auth()->user()->name }}</p>
+                    {{--<p>{{auth()->user()->name }}</p>--}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="/UserManagement">
+                  <a href="admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="/tours">
+                  <a href="admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,15 +128,15 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/Bill">
-                    <i class="fa fa-table"></i> <span>Bill</span>
+                  <a href="admin/Order">
+                    <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/galleries">
+                  <a href="admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -170,7 +170,7 @@
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>Restaurants</h3>
+              <h3>Tours</h3>
             </div>
 
             <div class="icon">
@@ -178,24 +178,40 @@
               <i class="ion ion-bag"></i>
             </div>
             </div>
-            {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
+            <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
                     <tr>
                         <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
+                        <th class="text-center text-nowrap align-middle">Name</th>
+                        <th class="text-center text-nowrap align-middle">Price</th>
+                        <th class="text-center text-nowrap align-middle">Image</th>
+                        <th class="text-center text-nowrap align-middle">Location</th>
+                        <th class="text-center text-nowrap align-middle">Features</th>
+                        <th class="text-center text-nowrap align-middle">Best Time</th>
+                        <th class="text-center text-nowrap align-middle">Directions</th>
+                        <th class="text-center text-nowrap align-middle">Checking Routes</th>
+                        <th class="text-center text-nowraexitp align-middle">Items</th>
+                        <th class="text-center text-nowrap align-middle">Cautions</th>
+                        <th class="text-center text-nowrap align-middle">Requirements</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
+                    @foreach ($tours as $key => $tours)
                     <tr>
                         <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
+                        <td class="text-center text-nowrap align-middle">{{ $tours->name }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->price }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->image }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->location }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->features }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->besttime }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->directions }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->trekkingroutes }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->items }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->cautions }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $tours->requirements }}</td>
+                        <td class="text-center text-nowrap align-middle"><a href="admin/tours/{{ $tours->id }}/edit"><button type="button">Edit</button></a></td>
+                        <td class="text-center text-nowrap align-middle"><form action="admin/tours/{{ $tours->id }}" method="POST">
                             @csrf
                             @method('DELETE')
                             <button>Delete</button></form></td>
@@ -203,7 +219,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
+            <a href="{{ route('admin.tours.create') }}"><button>Add new</button></a>
     </div>
     </div>
         </div>

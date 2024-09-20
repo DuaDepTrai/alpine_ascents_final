@@ -1713,82 +1713,6 @@
                             <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
                                 href="https://www.alpineascents.com/climbs/" tabindex="0"><span
                                     class="ubermenu-target-title ubermenu-target-text">Tours</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-21 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width">
-                                <!-- begin Segment: Menu ID 132 -->
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-current-menu-ancestor ubermenu-current-menu-parent ubermenu-item-has-children ubermenu-item-6514 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6514">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6514 ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6521"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6521 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href=" "><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Fansipan</span></a>
-                                        </li>
-                                        <li id="menu-item-6526"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6526 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href=""><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Phong Nha Ke
-                                                    Bang</span></a>
-                                        </li>
-                                        <li id="menu-item-6527"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6527 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href=""><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Ta
-                                                    Xua</span></a>
-                                        </li>
-                                        <li id="menu-item-6528"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6528 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href=""><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Thac Ban
-                                                    Gioc</span></a>
-                                        </li>
-                                        <li id="menu-item-6529"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current-menu-item ubermenu-page_item ubermenu-page-item-128 ubermenu-current_page_item ubermenu-item-6529 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href=""><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Cot Co Lung
-                                                    Cu</span></a>
-                                        </li>
-                                        <li id="menu-item-100217"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-100217 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href=""><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Yen
-                                                    Tu</span></a>
-                                        </li>
-                                        <li id="menu-item-6531"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6531 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-vinson/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Lang
-                                                    Biang</span></a>
-                                        </li>
-                                        <li id="menu-item-6531"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6531 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-vinson/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Ba Den
-                                                    Mountain</span></a>
-                                        </li>
-                                        <li id="menu-item-6531"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6531 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-vinson/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Lang
-                                                    Biang</span></a>
-                                        </li>
-                                    </ul>
-                                </li><!-- end Segment: 132 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i>
-                                    Close</li>
-                            </ul>
                         </li>
                         <li id="menu-item-6279"
                             class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6279 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
@@ -1830,8 +1754,7 @@
             style="background-repeat: no-repeat; background-size: cover; background-position: top center; background-image: url('images/nui-ba-den/nui-ba-den (3).png');;">
             <div class="header-text-wrapper">
                 <div class="header-text"> <span>
-                        <h3>Ba Den Mountain</h3>
-                        <h6>123,326 ha (476.16 sq mi) Quang Binh Province</h6>
+                        <h3>Name</h3>
                     </span></div><!-- .header-text -->
             </div><!-- .header-text-wrapper -->
         </div><!-- .header-image -->

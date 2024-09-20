@@ -72,7 +72,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                       {{-- {{auth()->user()->name }}--}}
+                        {{-- {{auth()->user()->name }} --}}
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +106,21 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    {{--<p>{{auth()->user()->name }}</p>--}}
+                    {{-- <p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="/UserManagement">
+                  <a href="admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="/tours">
+                  <a href="admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +128,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/Order">
+                  <a href="admin/Order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -136,7 +136,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/galleries">
+                  <a href="admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -166,44 +166,56 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-xs-12">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>Restaurants</h3>
+        <h1>Create New Tour</h1>
+        <form action="{{ route('admin.tours.store') }}" method="POST">
+            @csrf
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
             </div>
-
-            <div class="icon">
-
-              <i class="ion ion-bag"></i>
+            <div>
+                <label for="address">Price:</label>
+                <input type="text" id="price" name="price" required>
             </div>
+            <div>
+                <label for="address">Image:</label>
+                <input type="text" id="address" name="Image" required>
             </div>
-            {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
-                <thead class="table-light">
-                    <tr>
-                        <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
-                    <tr>
-                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button>Delete</button></form></td>
-                    </tr>
-                    @endforeach
-                </tbody>
+            <div>
+                <label for="address">Location:</label>
+                <input type="text" id="location" name="location" required>
+            </div>
+            <div>
+                <label for="address">Features:</label>
+                <input type="text" id="features" name="features" required>
+            </div>
+            <div>
+                <label for="address">Best Time:</label>
+                <input type="text" id="besttime" name="besttime" required>
+            </div>
+            <div>
+                <label for="address">Directions:</label>
+                <input type="text" id="directions" name="directions" required>
+            </div>
+            <div>
+                <label for="address">Checking Routes:</label>
+                <input type="text" id="trekkingroutes" name="trekkingroutes" required>
+            </div>
+            <div>
+                <label for="address">Items:</label>
+                <input type="text" id="items" name="items" required>
+            </div>
+            <div>
+                <label for="address">Cautions:</label>
+                <input type="text" id="cautions" name="cautions" required>
+            </div>
+            <div>
+                <label for="address">Requirements:</label>
+                <input type="text" id="requirements" name="requirements" required>
+            </div>
+            <button type="submit">Create</button>
+        </form>
             </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
     </div>
     </div>
         </div>
