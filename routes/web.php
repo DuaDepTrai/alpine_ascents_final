@@ -14,15 +14,14 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
-<<<<<<< HEAD
 use App\Http\Controllers\UserController;
-=======
+
 
 Route::prefix('admin')->group(function () {
     Route::resource('tours', AdminToursController::class);
 });
 
->>>>>>> dee137316b0e5201c28b89628202466b331e6fc2
+
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
 
@@ -74,7 +73,7 @@ Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries
 
 Route::get('/order', [OrderController::class, 'create']);
 Route::post('/order', [OrderController::class, 'store']);
-<<<<<<< HEAD
-=======
 
->>>>>>> dee137316b0e5201c28b89628202466b331e6fc2
+
+
+

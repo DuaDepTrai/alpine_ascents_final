@@ -173,7 +173,7 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th>STT</th>
                                 <th>User</th>
                                 <th>Name</th>
                                 <th>Tour</th>
@@ -187,9 +187,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($orders as $order)
+                            @foreach ($orders as $key => $order)
                             <tr>
-                                <td>{{ $order->id }}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>{{ $order->user->id ?? 'N/A' }}</td>
                                 <td>{{ $order->name }}</td>
                                 <td>{{ $order->tour->name ?? 'N/A' }}</td>
