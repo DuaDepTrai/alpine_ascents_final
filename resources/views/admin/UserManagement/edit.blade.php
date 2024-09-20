@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -48,91 +47,61 @@
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
-<<<<<<< HEAD
-        <header class="main-header">
+        <<header class="main-header">
             <!-- Logo -->
             <a href="index2.html" class="logo">
-                <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>A</b>LT</span>
-                <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Admin</b>LTE</span>
+              <!-- mini logo for sidebar mini 50x50 pixels -->
+              <span class="logo-mini"><b>A</b>LT</span>
+              <!-- logo for regular state and mobile devices -->
+              <span class="logo-lg"><b>Admin</b>LTE</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
-                <!-- Sidebar toggle button-->
-                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-=======
-    <header class="main-header">
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>LTE</span>
-        </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
+              <!-- Sidebar toggle button-->
+              <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">Toggle navigation</span>
+              </a>
 
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
+              <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
 
 
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
-                </a>
+                  <!-- User Account: style can be found in dropdown.less -->
+                  <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                      <span class="hidden-xs">{{ optional(auth()->user())->name ?? 'Guest' }}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                      <!-- User image -->
+                      <li class="user-header">
+                        <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-<<<<<<< HEAD
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-
-
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="user-image"
-                                    alt="User Image">
-                                {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg"
-                                        class="img-circle" alt="User Image">
-
-                                    <p>
-                                        {{-- {{auth()->user()->name }} --}}
-                                        <small>Member since Aug. 2024</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
+                        <p>
+                        {{ optional(auth()->user())->name ?? 'Guest' }}
+                          <small>Member since Aug. 2024</small>
+                        </p>
+                      </li>
+                      <!-- Menu Body -->
+                      <!-- Menu Footer-->
+                      <li class="user-footer">
+                        <div class="pull-left">
+                          <a href="#" class="btn btn-default btn-flat">Profile</a>
+                        </div>
+                        <div class="pull-right">
+                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                        </div>
+                      </li>
                     </ul>
-                </div>
+                  </li>
+                  <!-- Control Sidebar Toggle Button -->
+                  <li>
+                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                  </li>
+                </ul>
+              </div>
             </nav>
-        </header>
+          </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -140,61 +109,47 @@
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle"
-                            alt="User Image">
-=======
-                    <p>
-                        {{--  {{auth()->user()->name }}--}}
-                      <small>Member since Aug. 2024</small>
-                    </p>
-                  </li>
-                  <!-- Menu Body -->
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
+                        <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        {{-- <p>{{auth()->user()->name }}</p> --}}
+                        <p>{{ optional(auth()->user())->name ?? 'Guest' }}</p>
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="/UserManagement">
-                            <i class="fa fa-th"></i> <span>User</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
+                      <a href="/admin/UserManagement">
+                        <i class="fa fa-th"></i> <span>User</span>
+                        <span class="pull-right-container">
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
                     <li class="treeview">
-                        <a href="/tours">
-                            <i class="fa fa-edit"></i> <span>Tour</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
+                      <a href="/admin/tours">
+                        <i class="fa fa-edit"></i> <span>Tour</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
                     </li>
                     <li class="treeview">
-                        <a href="/Order">
-                            <i class="fa fa-table"></i> <span>Order</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
+                      <a href="/admin/order">
+                        <i class="fa fa-table"></i> <span>Order</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
                     </li>
                     <li class="treeview">
-                        <a href="/galleries">
-                            <i class="fa fa-share"></i> <span>Galleries</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
+                      <a href="/admin/galleries">
+                        <i class="fa fa-share"></i> <span>Galleries</span>
+                        <span class="pull-right-container">
+                          <i class="fa fa-angle-left pull-right"></i>
+                        </span>
+                      </a>
                     </li>
-                </ul>
-<<<<<<< HEAD
+                  </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -218,181 +173,46 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-xs-12">
-                        <!-- small box -->
-                        <div class="small-box bg-aqua">
-                            <div class="inner">
-                                <h3>Restaurants</h3>
-                            </div>
+                        <div>
+                            <h1>Edit User</h1>
+                            <div>
+                                <form action="{{ route('admin.UserManagement.update', $user->id) }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
 
-                            <div class="icon">
+                                    <div class="form-group">
+                                        <label for="name">Customer Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" 
+                                            value="{{ old('name', $user->name) }}" required>
+                                    </div>
 
-                                <i class="ion ion-bag"></i>
+                                    <div class="form-group">
+                                        <label for="phone">Phone</label>
+                                        <input type="text" class="form-control" id="phone" name="phone" 
+                                            value="{{ old('phone', $user->phone) }}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" 
+                                            value="{{ old('email', $user->email) }}">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="role">Role</label>
+                                        <select class="form-control" id="role" name="role">
+                                            <option value="0" {{ old('role', $user->role) == 0 ? 'selected' : '' }}>User</option>
+                                            <option value="1" {{ old('role', $user->role) == 1 ? 'selected' : '' }}>Admin</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Update User</button>
+                                </form>
                             </div>
                         </div>
-                        {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
-                <thead class="table-light">
-                    <tr>
-                        <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
-                    <tr>
-                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button>Delete</button></form></td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
                     </div>
                 </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
-=======
-              </li>
-              <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    {{--  <p>{{auth()->user()->name }}</p> --}}
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li>
-                  <a href="/admin/UserManagement">
-                    <i class="fa fa-th"></i> <span>User</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                <li class="treeview">
-                  <a href="/admin/tours">
-                    <i class="fa fa-edit"></i> <span>Tour</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li class="treeview">
-                  <a href="/admin/order">
-                    <i class="fa fa-table"></i> <span>Order</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li class="treeview">
-                  <a href="/admin/galleries">
-                    <i class="fa fa-share"></i> <span>Galleries</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                </li>
-              </ul>
-        </section>
-        <!-- /.sidebar -->
-    </aside>
+            </section>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Order</li>
-      </ol>
-    </section>
-
-    <section class="content">
-            <!-- Default box -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Orders List</h3>
-                </div>
-                <div class="box-body">
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>User</th>
-                                <th>Name</th>
-                                <th>Tour</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Note</th>
-                                <th>Created At</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($orders as $order)
-                            <tr>
-                                <td>{{ $order->id }}</td>
-                                <td>{{ $order->user->id ?? 'N/A' }}</td>
-                                <td>{{ $order->name }}</td>
-                                <td>{{ $order->tour->name ?? 'N/A' }}</td>
-                                <td>{{ $order->quantity }}</td>
-                                <td>{{ $order->total }}</td>
-                                <td>{{ $order->email }}</td>
-                                <td>{{ $order->phone }}</td>
-                                <td>{{ $order->note }}</td>
-                                <td>{{ $order->created_at->format('d-m-Y H:i:s') }}</td>
-                                <td>
-                                    <a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form action="{{ route('admin.order.destroy', $order->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
-        </section>
-
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
     <!-- right col -->
     </div>
     <!-- /.row (main row) -->
@@ -639,4 +459,3 @@
 </body>
 
 </html>
-
