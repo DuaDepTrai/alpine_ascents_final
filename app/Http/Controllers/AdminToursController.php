@@ -14,7 +14,7 @@ class AdminToursController extends Controller
      */
     public function index()
     {
-        $tours = tours::with('tours')->get();
+        $tours = tours::all();
         return view('admin.tours.index', compact('tours'));
     }
 

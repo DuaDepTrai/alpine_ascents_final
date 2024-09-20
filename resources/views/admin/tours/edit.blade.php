@@ -38,6 +38,63 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<style>
+  .body1 {
+    max-width: 100%; /* Chiều rộng tối đa là 100% màn hình */
+    margin: 20px auto; /* Căn giữa với khoảng cách xung quanh */
+    padding: 20px; /* Khoảng cách bên trong */
+    background-color: #f8f9fa; /* Màu nền nhẹ cho form */
+    border-radius: 8px; /* Bo tròn các góc của form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho form */
+}
+
+h1 {
+    text-align: left; /* Căn trái tiêu đề */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+
+form {
+    display: flex; /* Sử dụng flexbox cho form */
+    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+}
+
+div {
+    margin-bottom: 15px; /* Khoảng cách giữa các trường nhập */
+}
+
+label {
+    font-weight: bold; /* Làm cho chữ label đậm */
+    margin-bottom: 5px; /* Khoảng cách giữa label và input */
+    display: block; /* Đặt label thành block để nó ở trên input */
+}
+
+input {
+    width: 100%; /* Chiều rộng 100% để ô nhập chiếm toàn bộ chiều rộng */
+    padding: 10px; /* Thêm khoảng cách cho các ô nhập */
+    border: 1px solid #ced4da; /* Viền cho các ô nhập */
+    border-radius: 4px; /* Bo tròn các góc của ô nhập */
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
+    font-size: 14px; /* Kích thước chữ cho ô nhập */
+    height: 40px; /* Chiều cao cố định cho ô nhập */
+}
+
+button {
+    padding: 10px 15px; /* Khoảng cách cho nút */
+    background-color: #007bff; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    border: none; /* Không viền cho nút */
+    border-radius: 4px; /* Bo tròn các góc của nút */
+    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột lên nút */
+    font-size: 16px; /* Kích thước chữ cho nút */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+    width: 100%; /* Chiều rộng nút bằng 100% */
+}
+
+button:hover {
+    background-color: #0056b3; /* Thay đổi màu nền khi hover */
+}
+
+</style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -106,7 +163,7 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>{{auth()->user()->name }}</p>
+                    {{--<p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -161,18 +218,18 @@
         <li class="active">Dashboard</li>
       </ol>
     </section>
-
+    <div class="body1">
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <h1>Edit Tour</h1>
-        <form action="admin/tours/{{$tour->id}}" method="POST">
+        <form action="{{ url('admin/tours/' . $tours->id . '/edit') }}" method="POST">
             @csrf
             @method('PUT')
             <div>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="{{$tour->name}}" required>
+                <input type="text" id="name" name="name" value="{{$                                             tour->name}}" required>
             </div>
             <div>
                 <label for="name">Price:</label>
@@ -218,6 +275,7 @@
         </form>
             </table>
     </div>
+  </div>
     </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Carbon\Carbon;
 
 class UsersController extends Controller
 {
@@ -30,7 +31,7 @@ class UsersController extends Controller
         'phone' => $request->phone,
         'email' => $request->email,
         'password' => Hash::make($request->password),
-        'role' => 1,
+        'role' => 0,
         'verification_code' => $otp,
     ]);
 
@@ -50,24 +51,29 @@ public function showLoginForm()
     {
         return view('auth.login');
     }
-public function login(Request $request)
-{
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required',
-    ]);
+    public function login(Request $request)
+    {
+        $credentials = $request->only('email', 'password');
 
-    $user = users::where('email', $request->email)->first();
+        $credentials = [
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
 
-    if ($user && !$user->verification_code) {
-        // Đăng nhập thành công
-        if (Auth::attempt($request->only('email', 'password'))) {
-            return redirect()->route('home')->with('success', 'Đăng nhập thành công.');
+        if (Auth::attempt($credentials)) {
+            // Kiểm tra role và chuyển hướng dựa trên role
+            if (Auth::users()->is_admin === 1) {
+                return redirect()->route('admin.UserManagement.index');
+            } elseif (Auth::users()->is_admin === 0) {
+                return redirect()->route('home.index');
+            }
+        } else {
+            // Xử lý đăng nhập không thành công
+            return redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
         }
-    }
 
-    return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
-}
+        return redirect()->back()->withErrors(['email' => 'Thông tin tài khoản hoặc mật khẩu không chính xác.']);
+    }
 
 
     public function create()

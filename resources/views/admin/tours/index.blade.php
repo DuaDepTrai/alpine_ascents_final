@@ -38,6 +38,86 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<style>
+  #visitor-lists {
+    width: 100%; /* Đảm bảo bảng chiếm toàn bộ chiều rộng có sẵn */
+    table-layout: fixed; /* Sử dụng table-layout: fixed để kiểm soát chiều rộng các cột */
+}
+
+#visitor-lists th,
+#visitor-lists td {
+    overflow: hidden; /* Ẩn nội dung tràn ra */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." nếu nội dung quá dài */
+    white-space: nowrap; /* Ngăn ngừa xuống dòng */
+    padding: 10px; /* Thêm khoảng cách cho các ô */
+}
+
+#visitor-lists th {
+    background-color: #f8f9fa; /* Màu nền cho header */
+}
+
+/* Định nghĩa chiều rộng cho từng cột */
+#visitor-lists th:nth-child(1),
+#visitor-lists td:nth-child(1) {
+    width: 50px; /* STT */
+}
+
+#visitor-lists th:nth-child(2),
+#visitor-lists td:nth-child(2) {
+    width: 150px; /* Name */
+}
+
+#visitor-lists th:nth-child(3),
+#visitor-lists td:nth-child(3) {
+    width: 100px; /* Price */
+}
+
+#visitor-lists th:nth-child(4),
+#visitor-lists td:nth-child(4) {
+    width: 100px; /* Image */
+}
+
+#visitor-lists th:nth-child(5),
+#visitor-lists td:nth-child(5) {
+    width: 150px; /* Location */
+}
+
+#visitor-lists th:nth-child(6),
+#visitor-lists td:nth-child(6) {
+    width: 150px; /* Features */
+}
+
+#visitor-lists th:nth-child(7),
+#visitor-lists td:nth-child(7) {
+    width: 100px; /* Best Time */
+}
+
+#visitor-lists th:nth-child(8),
+#visitor-lists td:nth-child(8) {
+    width: 150px; /* Directions */
+}
+
+#visitor-lists th:nth-child(9),
+#visitor-lists td:nth-child(9) {
+    width: 150px; /* Checking Routes */
+}
+
+#visitor-lists th:nth-child(10),
+#visitor-lists td:nth-child(10) {
+    width: 100px; /* Items */
+}
+
+#visitor-lists th:nth-child(11),
+#visitor-lists td:nth-child(11) {
+    width: 100px; /* Cautions */
+}
+
+#visitor-lists th:nth-child(12),
+#visitor-lists td:nth-child(12) {
+    width: 150px; /* Requirements */
+}
+
+</style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -64,11 +144,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-<<<<<<< HEAD
                   {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
-=======
-                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -76,11 +152,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-<<<<<<< HEAD
                        {{-- {{auth()->user()->name }}--}}
-=======
-                        {{--  {{auth()->user()->name }}--}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -114,33 +186,23 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-<<<<<<< HEAD
                     {{--<p>{{auth()->user()->name }}</p>--}}
-=======
                     {{--  <p>{{auth()->user()->name }}</p> --}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-<<<<<<< HEAD
                   <a href="admin/UserManagement">
-=======
                   <a href="/admin/UserManagement">
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-<<<<<<< HEAD
-                  <a href="admin/tours">
-=======
                   <a href="/admin/tours">
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -148,15 +210,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-<<<<<<< HEAD
-                  <a href="/admin/order">
-=======
-<<<<<<< HEAD
                   <a href="admin/Order">
-=======
-                  <a href="/admin/Order">
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
->>>>>>> 41f553bb29caac6b0a54b3b8820f55ea0e19605a
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -164,11 +218,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-<<<<<<< HEAD
-                  <a href="admin/galleries">
-=======
                   <a href="/admin/galleries">
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -240,8 +290,8 @@
                         <td class="text-center text-nowrap align-middle">{{ $tours->items }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->cautions }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->requirements }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="admin/tours/{{ $tours->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="admin/tours/{{ $tours->id }}" method="POST">
+                        <td class="text-center text-nowrap align-middle"><a href="{{ url('admin/tours/' . $tours->id . '/edit') }}"><button type="button">Edit</button></a></td>
+                        <td class="text-center text-nowrap align-middle"><form action="{{ url('admin/tours/' . $tours->id) }} " method="POST">
                             @csrf
                             @method('DELETE')
                             <button>Delete</button></form></td>
@@ -249,7 +299,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <a href="{{ route('admin.tours.create') }}"><button>Add new</button></a>
+            <a href="/admin/tours/create"><button>Add new</button></a>
     </div>
     </div>
         </div>
