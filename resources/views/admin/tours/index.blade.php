@@ -64,7 +64,11 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+<<<<<<< HEAD
                   {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+=======
+                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -72,7 +76,11 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
+<<<<<<< HEAD
                        {{-- {{auth()->user()->name }}--}}
+=======
+                        {{--  {{auth()->user()->name }}--}}
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +114,33 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
+<<<<<<< HEAD
                     {{--<p>{{auth()->user()->name }}</p>--}}
+=======
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
+<<<<<<< HEAD
                   <a href="admin/UserManagement">
+=======
+                  <a href="/admin/UserManagement">
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
+<<<<<<< HEAD
                   <a href="admin/tours">
+=======
+                  <a href="/admin/tours">
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +148,11 @@
                   </a>
                 </li>
                 <li class="treeview">
+<<<<<<< HEAD
                   <a href="admin/Order">
+=======
+                  <a href="/admin/Order">
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -136,7 +160,11 @@
                   </a>
                 </li>
                 <li class="treeview">
+<<<<<<< HEAD
                   <a href="admin/galleries">
+=======
+                  <a href="/admin/galleries">
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -174,8 +202,6 @@
             </div>
 
             <div class="icon">
-
-              <i class="ion ion-bag"></i>
             </div>
             </div>
             <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">

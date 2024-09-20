@@ -3,18 +3,18 @@
 @section('content')
     <div class="container">
         @foreach($galleries as $tour)
-            <div class="media-library my-4">
-                <!-- Tour Name -->
-                <h2 class="text-center" style="font-size: 60px;">{{ $tour->name }}</h2>
+            @if($tour->galleries->count())
+                @foreach($tour->galleries as $media)
+                    @php
+                        $images = json_decode($media->images, true);
+                        $videos = json_decode($media->videos, true);
+                    @endphp
+                    @if(!empty($images) || !empty($videos))
+                        <div class="media-library my-4">
+                            <!-- Tour Name (Chỉ hiển thị nếu có ảnh hoặc video) -->
+                            <h2 class="text-center" style="font-size: 60px;">{{ $tour->name }}</h2>
 
-                <!-- Bootstrap Carousel for Images and Videos -->
-                @if($tour->galleries->count())
-                    @foreach($tour->galleries as $media)
-                        @php
-                            $images = json_decode($media->images, true);
-                            $videos = json_decode($media->videos, true);
-                        @endphp
-                        @if(!empty($images) || !empty($videos))
+                            <!-- Bootstrap Carousel for Images and Videos -->
                             <div id="carousel-{{ $loop->parent->index }}-{{ $loop->index }}" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
                                 <div class="carousel-inner">
                                     <!-- Video -->
@@ -70,17 +70,18 @@
                                     @endforeach
                                 @endif
                             </div>
-                        @endif
-                    @endforeach
-                @endif
+                        </div>
+                    @endif
+                @endforeach
+            @endif
 
-                <!-- Separator -->
+            <!-- Separator -->
+            @if($tour->galleries->count())
                 <div class="separator my-4">
                     <hr>
                     <p class="text-center">✦✦✦</p> <!-- You can use other special characters or symbols here -->
                 </div>
-            </div>
+            @endif
         @endforeach
-
     </div>
 @endsection

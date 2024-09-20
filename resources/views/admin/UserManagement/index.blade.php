@@ -64,7 +64,11 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+<<<<<<< HEAD
                   {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+=======
+                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -72,7 +76,11 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
+<<<<<<< HEAD
                        {{-- {{auth()->user()->name }}--}}
+=======
+                        {{--  {{auth()->user()->name }}--}}
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +114,25 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
+<<<<<<< HEAD
                     {{--<p>{{auth()->user()->name }}</p>--}}
+=======
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="/UserManagement">
+                  <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="/tours">
+                  <a href="/admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +140,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/Order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -136,7 +148,11 @@
                   </a>
                 </li>
                 <li class="treeview">
+<<<<<<< HEAD
                   <a href="/galleries">
+=======
+                  <a href="/admin/galleries">
+>>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -152,65 +168,69 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+          <h1>
+            Dashboard
+            <small>Control panel</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-xs-12">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>Restaurants</h3>
-            </div>
+        <!-- Main content -->
+        <section class="content">
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>User Management</h3>
+                </div>
+                <div class="icon"></div>
+              </div>
 
-            <div class="icon">
-
-              <i class="ion ion-bag"></i>
-            </div>
-            </div>
-            {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
+              <!-- Bảng danh sách Restaurants -->
+              <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
-                    <tr>
-                        <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
-                    </tr>
+                  <tr>
+                    <th class="text-center text-nowrap align-middle">ID</th>
+                    <th class="text-center text-nowrap align-middle">name</th>
+                    <th class="text-center text-nowrap align-middle">phone</th>
+                    <th class="text-center text-nowrap align-middle">Email</th>
+                    <th class="text-center text-nowrap align-middle">Avatar</th>
+                    <th class="text-center text-nowrap align-middle">Role</th>
+                  </tr>
                 </thead>
                 <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
-                    <tr>
-                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
+                  @foreach ($users as $users)
+                  <tr>
+                    <td class="text-center text-nowrap align-middle">{{ $users->id }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $users->name }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $users->phone }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $users->email }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $users->avatar }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $users->role == 1 ? 'Admin' : 'User' }}</td>
+                    <td>
+                        <a href="{{ route('admin.UserManagement.edit', $users->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                          <form action="{{ route('admin.UserManagement.destroy', $users->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button>Delete</button></form></td>
-                    </tr>
-                    @endforeach
+                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                          </form>
+                    </td>
+                  </tr>
+                  @endforeach
                 </tbody>
-            </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
-    </div>
-    </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
+              </table>
+              <a href="{{ route('admin.UserManagement.create') }}">
+                <button class="btn btn-success">Add new</button>
+              </a>
+            </div>
+          </div>
+        </section>
+
     <!-- right col -->
       </div>
       <!-- /.row (main row) -->

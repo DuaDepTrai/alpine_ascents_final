@@ -64,11 +64,7 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-<<<<<<< HEAD
-                  {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
-=======
                   {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
@@ -76,11 +72,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-<<<<<<< HEAD
-                       {{-- {{auth()->user()->name }}--}}
-=======
                         {{--  {{auth()->user()->name }}--}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -114,11 +106,7 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-<<<<<<< HEAD
-                    {{--<p>{{auth()->user()->name }}</p>--}}
-=======
                     {{--  <p>{{auth()->user()->name }}</p> --}}
->>>>>>> d739902ce222666f56824aabffba60a613d4cc84
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
@@ -215,70 +203,41 @@
             </table>
             <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
             <div class="container">
-              <!-- Thêm kiểm tra thông báo thành công -->
-                @if(session('success'))
+              <h1>Sửa Gallery: {{ $gallery->tour->name }}</h1>
+      
+              @if(session('success'))
                   <div class="alert alert-success">
                       {{ session('success') }}
                   </div>
-                @endif
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên Gallery</th>
-                            <th>Ảnh</th>
-                            <th>Video</th>
-                            <th>Ngày tạo</th>
-                            <th>Ngày cập nhật</th>
-                            <th>Hành động</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($galleries as $gallery)
-                            <tr>
-                                <td>{{ $gallery->id }}</td>
-                                <td>{{ $gallery->tour->name ?? 'Không có tên tour' }}</td> <!-- Hiển thị tên tour -->
-                                <td>
-                                    @if($gallery->images)
-                                        @php
-                                            $images = json_decode($gallery->images, true);
-                                        @endphp
-                                        @foreach($images as $image)
-                                            <img src="{{ asset($image) }}" alt="{{ $gallery->name }}" style="width: 100px;">
-                                        @endforeach
-                                    @endif
-                                </td>
-                                <td>
-                                    @if($gallery->videos)
-                                        @php
-                                            $videos = json_decode($gallery->videos, true);
-                                        @endphp
-                                        @foreach($videos as $video)
-                                            <a href="{{ $video }}" target="_blank">{{ $video }}</a><br>
-                                        @endforeach
-                                    @endif
-                                </td>
-                                <td>{{ $gallery->created_at }}</td>
-                                <td>{{ $gallery->updated_at }}</td>
-                                <td>
-                                    <!-- Thêm các nút hành động -->
-                                    <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-warning">Sửa</a>
-                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Xóa</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                  </table>
-              </div>
-          
-              <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">Thêm mới</a>
-          
-              <!-- Hiển thị danh sách các tour và các gallery của chúng -->
-          </div>
+              @endif
+      
+              <form>
+                  @csrf
+                  @method('PUT')
+      
+                  <!-- Danh sách ảnh -->
+                  <div class="form-group">
+                      <h3>Danh sách ảnh:</h3>
+                      @if($gallery->images)
+                          @php
+                              $images = json_decode($gallery->images, true);
+                          @endphp
+                          @foreach($images as $image)
+                              <div class="image-item" style="display: inline-block; margin: 10px;">
+                                  <img src="{{ asset($image) }}" alt="Image" style="width: 150px;">
+                                  <form action="{{ route('admin.galleries.deleteImage', $gallery->id) }}" method="POST" style="display:inline;">
+                                      @csrf
+                                      <input type="hidden" name="image" value="{{ $image }}">
+                                      <button type="submit" class="btn btn-danger mt-2">Xóa</button>
+                                  </form>
+                              </div>
+                          @endforeach
+                      @endif
+                  </div>
+                </form>
+        
+                <a href="{{ route('admin.galleries.index') }}" class="btn btn-secondary mt-3">Quay lại</a>
+            </div>
     </div>
     </div>
         </div>
