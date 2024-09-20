@@ -14,7 +14,6 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
-
 use App\Http\Controllers\UserController;
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
@@ -45,8 +44,6 @@ Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
 
 Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
-
-
 
 Route::get('/order', [OrderController::class, 'create']);
 Route::post('/order', [OrderController::class, 'store']);
