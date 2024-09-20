@@ -12,7 +12,7 @@ class CreateToursTable extends Migration
             $table->id();
             $table->string('name');
             $table->integer('price');
-            $table->text('image');
+            $table->text('image')->nullable();
             $table->text('location');
             $table->text('features');
             $table->text('besttime');

@@ -14,7 +14,10 @@ use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
-use Illuminate\Database\QueryException;
+
+Route::prefix('admin')->group(function () {
+    Route::resource('tours', AdminToursController::class);
+});
 
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
@@ -68,34 +71,3 @@ Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries
 Route::get('/order', [OrderController::class, 'create']);
 Route::post('/order', [OrderController::class, 'store']);
 
-
-
-Route::middleware(['auth', 'is_admin:0'])->group(function () {
-    Route::get('/branches', [BranchController::class, 'index']);
-
-    Route::get('/information',[InformationController::class, 'infor']);
-
-    Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
-
-    Route::get('/home',[HomeController::class,'index'])->name('home');
-
-    Route::get('/tours', [AdminToursController::class, 'index']);
-
-    Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
-
-});
-
-Route::middleware(['auth', 'is_admin:1'])->group(function () {
-    Route::get('/admin/tours', [AdminToursController::class, 'index']);
-
-    Route::get('/admin/galleries', [AdminGalleriesController::class, 'index']);
-
-    Route::get('/admin/Order', [AdminOrderController::class, 'index']);
-
-    Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index']);
-
-    Route::get('/order', [OrderController::class, 'create']);
-
-    Route::post('/order', [OrderController::class, 'store']);
-
-});
