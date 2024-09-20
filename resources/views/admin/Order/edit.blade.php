@@ -119,14 +119,14 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                      <a href="/UserManagement">
+                      <a href="/admin/UserManagement">
                         <i class="fa fa-th"></i> <span>User</span>
                         <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                       </a>
                     <li class="treeview">
-                      <a href="/RestaurantManagement">
+                      <a href="/admin/tours">
                         <i class="fa fa-edit"></i> <span>Tour</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -134,7 +134,7 @@
                       </a>
                     </li>
                     <li class="treeview">
-                      <a href="/DishManagement">
+                      <a href="/admin/order">
                         <i class="fa fa-table"></i> <span>Order</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>
@@ -142,7 +142,7 @@
                       </a>
                     </li>
                     <li class="treeview">
-                      <a href="/LunchRequestManagement">
+                      <a href="/admin/galleries">
                         <i class="fa fa-share"></i> <span>Galleries</span>
                         <span class="pull-right-container">
                           <i class="fa fa-angle-left pull-right"></i>

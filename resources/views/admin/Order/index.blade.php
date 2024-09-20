@@ -129,7 +129,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/admin/Order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
