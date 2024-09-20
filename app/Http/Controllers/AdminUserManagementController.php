@@ -18,7 +18,7 @@ class AdminUserManagementController extends Controller
     // Hiển thị form thêm mới người dùng
     public function create()
     {
-        return view('admin.users.create');
+        return view('admin.UserManagement.create');
     }
 
     // Xử lý thêm mới người dùng
