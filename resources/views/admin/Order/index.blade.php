@@ -129,7 +129,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/admin/Order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -175,6 +175,7 @@
                             <tr>
                                 <th>ID</th>
                                 <th>User</th>
+                                <th>Name</th>
                                 <th>Tour</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
@@ -189,17 +190,18 @@
                             @foreach ($orders as $order)
                             <tr>
                                 <td>{{ $order->id }}</td>
-                                <td>{{ $order->user->name ?? 'N/A' }}</td>
+                                <td>{{ $order->user->id ?? 'N/A' }}</td>
+                                <td>{{ $order->name }}</td>
                                 <td>{{ $order->tour->name ?? 'N/A' }}</td>
                                 <td>{{ $order->quantity }}</td>
-                                <td>${{ $order->total }}</td>
+                                <td>{{ $order->total }}</td>
                                 <td>{{ $order->email }}</td>
                                 <td>{{ $order->phone }}</td>
                                 <td>{{ $order->note }}</td>
                                 <td>{{ $order->created_at->format('d-m-Y H:i:s') }}</td>
                                 <td>
-                                    <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display:inline;">
+                                    <a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    <form action="{{ route('admin.order.destroy', $order->id) }}" method="POST" style="display:inline;">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm">Delete</button>

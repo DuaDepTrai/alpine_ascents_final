@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\orders_tours;
@@ -13,7 +13,7 @@ class AdminOrderController extends Controller
     public function index()
     {
         $orders = orders_tours::with('tour', 'user')->get();
-        return view('admin.orders.index', compact('orders'));
+        return view('admin.order.index', compact('orders'));
     }
 
     // Hiển thị form chỉnh sửa đơn hàng
@@ -21,13 +21,14 @@ class AdminOrderController extends Controller
     {
         $order = orders_tours::findOrFail($id);
         $tours = tours::all();
-        return view('admin.orders.edit', compact('order', 'tours'));
+        return view('admin.order.edit', compact('order', 'tours'));
     }
 
     // Cập nhật thông tin đơn hàng
     public function update(Request $request, $id)
     {
         $request->validate([
+            'name' => 'required|string|max:255',
             'quantity' => 'required|integer|min:1',
             'tour_id' => 'required|exists:tours,id',
             'email' => 'nullable|email|max:255',
@@ -38,6 +39,7 @@ class AdminOrderController extends Controller
         $order = orders_tours::findOrFail($id);
         $order->update([
             'tour_id' => $request->tour_id,
+            'name' => $request->name,
             'quantity' => $request->quantity,
             'total' => $this->calculateTotal($request->tour_id, $request->quantity),
             'email' => $request->email,
@@ -49,7 +51,7 @@ class AdminOrderController extends Controller
     }
 
     // Xóa đơn hàng
-    public function destroy($id)
+        public function destroy($id)
     {
         $order = orders_tours::findOrFail($id);
         $order->delete();

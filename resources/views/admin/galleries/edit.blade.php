@@ -152,69 +152,99 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-          <h1>
-            Dashboard
-            <small>Control panel</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>
-        </section>
+      <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
 
-        <!-- Main content -->
-        <section class="content">
-          <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-xs-12">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>User Management</h3>
-                </div>
-                <div class="icon"></div>
-              </div>
+    <!-- Main content -->
+    <section class="content">
+      <!-- Small boxes (Stat box) -->
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- small box -->
+          <div class="small-box bg-aqua">
+            <div class="inner">
+              <h3>Gallery Management</h3>
+            </div>
 
-              <!-- Bảng danh sách Restaurants -->
-              <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
+            <div class="icon">
+            </div>
+            </div>
+            {{--   <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
-                  <tr>
-                    <th class="text-center text-nowrap align-middle">ID</th>
-                    <th class="text-center text-nowrap align-middle">name</th>
-                    <th class="text-center text-nowrap align-middle">phone</th>
-                    <th class="text-center text-nowrap align-middle">Email</th>
-                    <th class="text-center text-nowrap align-middle">Avatar</th>
-                    <th class="text-center text-nowrap align-middle">Role</th>
-                  </tr>
+                    <tr>
+                        <th class="text-center text-nowrap align-middle">STT</th>
+                        <th class="text-center text-nowrap align-middle">Restaurants</th>
+                        <th class="text-center text-nowrap align-middle">Address</th>
+                        <th class="text-center text-nowrap align-middle">Edit</th>
+                        <th class="text-center text-nowrap align-middle">Delete</th>
+                    </tr>
                 </thead>
-                <tbody>
-                  @foreach ($users as $users)
-                  <tr>
-                    <td class="text-center text-nowrap align-middle">{{ $users->id }}</td>
-                    <td class="text-center text-nowrap align-middle">{{ $users->name }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->phone }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->email }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->avatar }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->role }}</td>
-                    <td>
-                        <a href="{{ route('admin.UserManagement.edit', $users->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                          <form action="{{ route('admin.UserManagement.destroy', $users->id) }}" method="POST" style="display:inline;">
+              <tbody>
+                    @foreach ($restaurants as $key => $restaurant)
+                    <tr>
+                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
+                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
+                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
+                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                          </form>
-                    </td>
-                  </tr>
-                  @endforeach
+                            <button>Delete</button></form></td>
+                    </tr>
+                    @endforeach
                 </tbody>
-              </table>
-              <a href="{{ route('admin.UserManagement.create') }}">
-                <button class="btn btn-success">Add new</button>
-              </a>
+            </table>
+            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
+            <div class="container">
+              <h1>Sửa Gallery: {{ $gallery->tour->name }}</h1>
+      
+              @if(session('success'))
+                  <div class="alert alert-success">
+                      {{ session('success') }}
+                  </div>
+              @endif
+      
+              <form>
+                  @csrf
+                  @method('PUT')
+      
+                  <!-- Danh sách ảnh -->
+                  <div class="form-group">
+                      <h3>Danh sách ảnh:</h3>
+                      @if($gallery->images)
+                          @php
+                              $images = json_decode($gallery->images, true);
+                          @endphp
+                          @foreach($images as $image)
+                              <div class="image-item" style="display: inline-block; margin: 10px;">
+                                  <img src="{{ asset($image) }}" alt="Image" style="width: 150px;">
+                                  <form action="{{ route('admin.galleries.deleteImage', $gallery->id) }}" method="POST" style="display:inline;">
+                                      @csrf
+                                      <input type="hidden" name="image" value="{{ $image }}">
+                                      <button type="submit" class="btn btn-danger mt-2">Xóa</button>
+                                  </form>
+                              </div>
+                          @endforeach
+                      @endif
+                  </div>
+                </form>
+        
+                <a href="{{ route('admin.galleries.index') }}" class="btn btn-secondary mt-3">Quay lại</a>
             </div>
-          </div>
-        </section>
-
+    </div>
+    </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </section>
     <!-- right col -->
       </div>
       <!-- /.row (main row) -->
