@@ -24,7 +24,7 @@ Route::get('/information',[InformationController::class, 'infor']);
 
 Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
 
-Route::get('/admin/tours', [ToursController::class, 'index']);
+Route::get('/tours', [ToursController::class, 'index']);
 
 Route::get('/admin/tours', [AdminToursController::class, 'index']);
 
