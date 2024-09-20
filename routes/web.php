@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminGalleriesController;
 use App\Http\Controllers\AdminOrderController;
 use App\Http\Controllers\AdminToursController;
 use App\Http\Controllers\AdminUserManagementController;
+use App\Http\Controllers\AdminBranchesController;
 use App\Http\Controllers\ToursController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BranchController;
@@ -59,6 +60,17 @@ Route::post('/admin/UserManagement', [AdminUserManagementController::class, 'sto
 Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::class, 'edit'])->name('admin.UserManagement.edit');  // Hiển thị form chỉnh sửa người dùng
 Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Xử lý cập nhật thông tin người dùng
 Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Xử lý xóa người dùng
+
+
+
+Route::get('/admin/branches', [AdminBranchesController::class, 'index']);
+Route::get('/admin/branches', [AdminBranchesController::class, 'index'])->name('admin.branches.index');  // Show list branches
+Route::get('/admin/branches/create', [AdminBranchesController::class, 'create'])->name('admin.branches.create');  // Form add new branch
+Route::post('/admin/branches', [AdminBranchesController::class, 'store'])->name('admin.branches.store');  // Process new branch
+Route::get('/admin/branches/{id}/edit', [AdminBranchesController::class, 'edit'])->name('admin.branches.edit');  // Form edit branch
+Route::put('/admin/branches/{id}', [AdminBranchesController::class, 'update'])->name('admin.branches.update');  // Process edit branch
+Route::delete('/admin/branches/{id}', [AdminBranchesController::class, 'destroy'])->name('admin.branches.destroy');  // Process delete branch
+
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');

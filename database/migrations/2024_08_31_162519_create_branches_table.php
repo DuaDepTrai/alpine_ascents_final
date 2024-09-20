@@ -14,6 +14,7 @@ class CreateBranchesTable extends Migration
             $table->text('address');
             $table->string('phone');
             $table->text('positioning');
+            $table->timestamps();
         });
     }
 
