@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -14,7 +13,7 @@ class AdminUserManagementController extends Controller
         $users = users::all();  // Lấy toàn bộ người dùng
         return view('admin.UserManagement.index', compact('users'));  // Trả về view hiển thị danh sách
     }
-
+    
     // Hiển thị form thêm mới người dùng
     public function create()
     {
