@@ -36,7 +36,7 @@
   <div class="register-box-body">
     <p class="login-box-msg">Verify code</p>
 
-    <form action="{{route('sendVerificationCode')}}" method="post">
+    <form action="{{route('verify')}}" method="post">
         @csrf
       <div class="form-group has-feedback">
         <h1>Nhập mã xác nhận</h1>
