@@ -1,11 +1,11 @@
-@extends('layouts.app')  <!-- Kế thừa layout chung có tên là 'app' -->
+@extends('layouts.app')  <!-- Inherit the common layout named 'app' -->
 
-@section('content')  <!-- Bắt đầu phần nội dung chính của trang -->
+@section('content')  <!-- Start of the main content section of the page -->
 
-<div class="container mt-5">  <!-- Container để tạo khoảng cách xung quanh nội dung -->
+<div class="container mt-5">  <!-- Container to create spacing around the content -->
     <div class="row">
         <div class="col-12">
-            <!-- Nút Chuyển Tab -->
+            <!-- Tab Switch Button -->
             <div class="tabs">
                 <button class="tab-button active" onclick="openTab(event, 'overview_history')">Overview and History</button>
                 <button class="tab-button" onclick="openTab(event, 'types_forms')">Types and Forms</button>
@@ -15,9 +15,9 @@
                 <button class="tab-button" onclick="openTab(event, 'record')">Records</button>
             </div>
 
-            <!-- Nội dung của các tab -->
+            <!-- Content of the tabs -->
             <div class="tab-content">
-                <div id="overview_history" class="tab-pane" style="display: block;"> <!-- Phần nội dung tab "Giới thiệu" -->
+                <div id="overview_history" class="tab-pane" style="display: block;"> <!-- Content section of the "Overview" tab -->
                     <h2 style="font-style:italic">Overview and History</h2>
                     <p>Welcome to the website of Alpine Ascents Vietnam – the ideal destination for those who are passionate about exploring and conquering the majestic mountain peaks of Vietnam. We are an organization specializing in providing high-quality mountain climbing and trekking tours, offering you the opportunity to experience exciting challenges and breathtaking scenery. Founded with the mission to connect mountain and nature lovers, Alpine Ascents Vietnam is committed to providing professional, safe, and dedicated services.</p>
                     <img src="images/tf_walking.png">
@@ -33,7 +33,7 @@
 
                 </div>
 
-                <div id="types_forms" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Các Loại Hình Thức" -->
+                <div id="types_forms" class="tab-pane" style="display:none;"> <!-- Content section of the "Types and Forms" tab -->
                     <h2 style="font-style:italic">Types and Forms</h2>
                     <h3 style="font-style:italic">Walking</h3>
                     <p>Walking is the act of moving by walking on the ground, usually done on flat or slightly sloped terrain. It is the most basic form of movement and can be done anywhere, from parks and sidewalks to trails in urban areas. In mountain climbing, walking often serves as the initial phase or a part of a longer journey, helping participants get used to the environment and maintain fitness. Although walking doesn't require much technical skill or special equipment, choosing the right shoes and protecting your body from the weather is essential to ensure comfort and safety.</p>
@@ -64,7 +64,7 @@
                     <img src="images/information/tf_ice_climbing.png">
                 </div>
 
-                <div id="technique" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Kỹ Thuật" -->
+                <div id="technique" class="tab-pane" style="display:none;"> <!-- Content section of the "Technique" tab -->
                     <h2 style="font-style:italic">Technique</h2>
                     <p>This is the basic technique to ensure the climber's safety. When climbing, one person is responsible for securing the safety rope for the lead climber, ensuring that in the event of a slip or fall, the climber is held in place. A belay device is used to adjust the rope tension and absorb shock in case of an incident.</p>
 
@@ -99,7 +99,7 @@
 
                 </div>
 
-                <div id="shelter" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Nơi Trú Ẩn" -->
+                <div id="shelter" class="tab-pane" style="display:none;"> <!-- Content section of the "Shelter" tab -->
                     <h2 style="font-style:italic">Shelter</h2>
 
                         <p>This is a shelter set up at the base of the mountain or the starting point of a long climbing expedition. The camp usually consists of large tents where climbers can rest, prepare food, and gear up before advancing to more dangerous altitudes. These camps are often located near a water source, in safe camping areas, and in regions with less harsh climates compared to higher elevations.</p>
@@ -123,7 +123,7 @@
 
                 </div>
 
-                <div id="danger" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Các Mối Nguy Hiểm" -->
+                <div id="danger" class="tab-pane" style="display:none;"> <!-- Content section of the "Danger" tab -->
                     <h2 style="font-style:italic">Danger</h2>
                         <p>Another danger is <strong>landslides and rockfalls</strong>. Mountainous terrain is often unstable, especially after heavy rains or bad weather. Rocks and soil can unexpectedly tumble down from higher elevations, posing a serious risk to climbers below. This is why monitoring weather conditions and terrain stability is extremely important before starting a climb.</p>
 
@@ -141,7 +141,7 @@
 
                 </div>
 
-                <div id="record" class="tab-pane" style="display:none;"> <!-- Phần nội dung tab "Kỷ Lục" -->
+                <div id="record" class="tab-pane" style="display:none;"> <!-- Content section of the "Records" tab -->
                     <h2 style="font-style:italic">Record</h2>
                         <p>Alpine Ascent Vietnam is a specialized website for mountaineering and nature exploration, achieving remarkable success in the field of adventure tourism. Founded with a mission to promote a love for nature and respect for the environment, Alpine Ascent Vietnam quickly established its reputation within the international mountaineering community. One of its most significant achievements is organizing professional mountain expeditions, offering challenging experiences for thousands of participants from around the world. These journeys not only allow climbers to discover Vietnam's majestic peaks but also help them build physical endurance and mental resilience.</p>
 
@@ -158,53 +158,54 @@
         </div>
     </div>
 </div>
-@endsection  <!-- Kết thúc phần nội dung -->
+@endsection  <!-- End of the content section -->
 
-@push('scripts') <!-- Đẩy mã JavaScript vào stack "scripts" -->
+@push('scripts') <!-- Push JavaScript code into the "scripts" stack -->
 <script>
-        // Đảm bảo tab 'Overview' được mở mặc định khi trang tải
+        // Ensure the 'Overview' tab is open by default when the page loads
      document.addEventListener("DOMContentLoaded", function(event) {
         // Simulate click on the default active tab button
         document.querySelector('.tab-button.active').click();
     });
-    // Hàm để mở tab và hiển thị nội dung tương ứng
+    // Function to open a tab and display the corresponding content
     function openTab(evt, tabName) {
         var i, tabContent, tabButtons;
 
-        // Ẩn tất cả nội dung của các tab
+        // Hide all tab content
         tabContent = document.getElementsByClassName("tab-pane");
         for (i = 0; i < tabContent.length; i++) {
             tabContent[i].style.display = "none";
         }
 
-        // Xóa class "active" khỏi tất cả các nút
+        // Remove "active" class from all buttons
         tabButtons = document.getElementsByClassName("tab-button");
         for (i = 0; i < tabButtons.length; i++) {
             tabButtons[i].classList.remove("active");
         }
 
-        // Hiển thị nội dung của tab được chọn và thêm class "active" vào nút đó
+        // Show the selected tab content and add "active" class to the button
         document.getElementById(tabName).style.display = "block";
         evt.currentTarget.classList.add("active");
     }
 </script>
-@endpush  <!-- Kết thúc phần mã JavaScript -->
+@endpush  <!-- End of the JavaScript code -->
 
-@push('styles')  <!-- Đẩy mã CSS vào stack "styles" -->
+@push('styles')  <!-- Push CSS code into the "styles" stack -->
 <style>
-    .tab-content {  /* Cách trình bày nội dung của tab */
+    .tab-content {  /* Presentation of tab content */
         margin-top: 20px;
     }
-    .tab-button {  /* Định dạng nút tab */
+    .tab-button {  /* Formatting for the tab button */
         border: none;
         background-color: transparent;
         font-weight: bold;
         cursor: pointer;
         padding: 10px 20px;
     }
-    .tab-button.active {  /* Định dạng nút khi được chọn */
+    .tab-button.active {  /* Formatting for the selected button */
         border-bottom: 2px solid orange;
         color: orange;
     }
 </style>
-@endpush  <!-- Kết thúc phần mã CSS -->
+@endpush  <!-- End of the CSS code -->
+

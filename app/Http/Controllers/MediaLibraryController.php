@@ -9,17 +9,16 @@ class MediaLibraryController extends Controller
 {
     public function index()
     {
-        $directories = File::directories(public_path('images')); // Lấy danh sách các thư mục con trong 'public/media'
+        $directories = File::directories(public_path('images')); // Get the list of subdirectories in 'public/images'
 
         $mediaLibraries = [];
 
         foreach ($directories as $dir) {
-            $libraryName = basename($dir); // Lấy tên thư mục
-            $images = File::files($dir); // Lấy danh sách các file trong thư mục
-
+            $libraryName = basename($dir); //  Get the directory name
+            $images = File::files($dir); // Get the list of files in the directory
             $imageUrls = [];
             foreach ($images as $image) {
-                $imageUrls[] = asset('images/' . $libraryName . '/' . basename($image)); // Tạo URL cho hình ảnh
+                $imageUrls[] = asset('images/' . $libraryName . '/' . basename($image)); // TCreate URL for images
             }
 
             $mediaLibraries[] = [

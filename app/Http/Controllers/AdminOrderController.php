@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 
 class AdminOrderController extends Controller
 {
-    // Hiển thị danh sách đơn hàng
+    // Display the list of orders
     public function index()
     {
         $orders = orders_tours::with('tour', 'user')->paginate(15);
         return view('admin.order.index', compact('orders'));
     }
 
-    // Hiển thị form chỉnh sửa đơn hàng
+    // Display the order edit form
     public function edit($id)
     {
         $order = orders_tours::findOrFail($id);
@@ -24,7 +24,7 @@ class AdminOrderController extends Controller
         return view('admin.order.edit', compact('order', 'tours'));
     }
 
-    // Cập nhật thông tin đơn hàng
+    // Update order information
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -50,7 +50,7 @@ class AdminOrderController extends Controller
         return redirect()->route('admin.order.index')->with('success', 'Order updated successfully.');
     }
 
-    // Xóa đơn hàng
+    // Delete order
         public function destroy($id)
     {
         $order = orders_tours::findOrFail($id);
@@ -58,7 +58,7 @@ class AdminOrderController extends Controller
         return redirect()->route('admin.order.index')->with('success', 'Order deleted successfully.');
     }
 
-    // Hàm tính tổng tiền
+    // Function to calculate total amount
     protected function calculateTotal($tourId, $quantity)
     {
         $tour = tours::find($tourId);

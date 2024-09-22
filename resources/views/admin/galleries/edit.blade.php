@@ -203,7 +203,7 @@
             </table>
             <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
             <div class="container">
-              <h1>Sửa Gallery: {{ $gallery->tour->name }}</h1>
+              <h1>Edit Gallery: {{ $gallery->tour->name }}</h1>
       
               @if(session('success'))
                   <div class="alert alert-success">
@@ -215,9 +215,9 @@
                   @csrf
                   @method('PUT')
       
-                  <!-- Danh sách ảnh -->
+                  <!-- Image List -->
                   <div class="form-group">
-                      <h3>Danh sách ảnh:</h3>
+                      <h3>Image List:</h3>
                       @if($gallery->images)
                           @php
                               $images = json_decode($gallery->images, true);
@@ -236,7 +236,7 @@
                   </div>
                 </form>
         
-                <a href="{{ route('admin.galleries.index') }}" class="btn btn-secondary mt-3">Quay lại</a>
+                <a href="{{ route('admin.galleries.index') }}" class="btn btn-secondary mt-3">Back</a>
             </div>
     </div>
     </div>

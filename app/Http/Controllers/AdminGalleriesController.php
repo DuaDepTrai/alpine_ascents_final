@@ -12,38 +12,38 @@ class AdminGalleriesController extends Controller
 {
     public function index()
     {
-        // Lấy danh sách tất cả các tour
+        // Retrieve the list of all tours
         $tours = tours::all();
         $galleries = galleries::with('tour')->get();
         return view('admin.galleries.index', compact('tours', 'galleries'));
     }
 
-    // Hiển thị form để upload ảnh
+    // Display form to upload image
     public function create()
     {
         $tours = tours::all();
         return view('admin.galleries.create', compact('tours'));
     }
 
-    // Xử lý việc lưu ảnh vào database
+    //Handle saving image to the database
     public function store(Request $request)
     {
         $request->validate([
             'tours_id' => 'required|exists:tours,id',
             'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'videos.*' => 'nullable|url', // Thay đổi validation
+            'videos.*' => 'nullable|url', // Change validation
         ]);
 
-        // Kiểm tra bản ghi galleries đã tồn tại chưa
+        // Check if the gallery record already exists
         $gallery = galleries::where('tours_id', $request->tours_id)->first();
 
-        // Nếu chưa tồn tại, tạo bản ghi mới
+        // If it doesn't exist, create a new record
         if (!$gallery) {
             $gallery = new galleries();
             $gallery->tours_id = $request->tours_id;
         }
 
-        // Xử lý hình ảnh
+        // Process image
         $currentImages = $gallery->images ? json_decode($gallery->images, true) : [];
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
@@ -52,7 +52,7 @@ class AdminGalleriesController extends Controller
             }
         }
 
-        // Xử lý video
+        // Video processing
         $currentVideos = $gallery->videos ? json_decode($gallery->videos, true) : [];
         if ($request->input('videos')) {
             foreach ($request->input('videos') as $video) {
@@ -67,7 +67,7 @@ class AdminGalleriesController extends Controller
 
         $gallery->save();
 
-        return redirect()->back()->with('success', 'Ảnh và video đã được cập nhật thành công!');
+        return redirect()->back()->with('success', 'Images and videos have been successfully updated!');
     }
 
     public function edit($id)
@@ -76,22 +76,22 @@ class AdminGalleriesController extends Controller
         return view('admin.galleries.edit', compact('gallery'));
     }
 
-    // Xóa ảnh khỏi gallery
+    // Remove image from gallery
     public function deleteImage(Request $request, $id)
     {
         $gallery = galleries::findOrFail($id);
         $images = json_decode($gallery->images, true);
 
-        // Xóa ảnh từ danh sách ảnh
+        // Remove image from the image list
         if (($key = array_search($request->image, $images)) !== false) {
             unset($images[$key]);
-            // Xóa ảnh từ thư mục public/images nếu cần
+            // Delete image from the public/images folder if needed
             if (Storage::exists('public/images/' . $request->image)) {
                 Storage::delete('public/images/' . $request->image);
             }
         }
 
-        // Cập nhật lại trường images trong database
+        // Update the images field in the database
         $gallery->images = json_encode(array_values($images));
         $gallery->save();
 
@@ -100,24 +100,24 @@ class AdminGalleriesController extends Controller
 
     public function destroy($id)
     {
-        // Tìm gallery theo id
+        // Find gallery by ID
         $gallery = galleries::findOrFail($id);
 
         // Lấy đường dẫn đến các ảnh
         $images = json_decode($gallery->images);
 
-        // Xóa ảnh từ thư mục public/images
+        // Delete image from the public/images folder
         foreach ($images as $image) {
             $imagePath = public_path('images/' . $image);
             if (file_exists($imagePath)) {
-                unlink($imagePath); // Xóa file ảnh
+                unlink($imagePath); // Delete image file
             }
         }
 
-        // Xóa gallery khỏi database
+        // Delete gallery from the database
         $gallery->delete();
 
-        // Trả về trang danh sách gallery với thông báo thành công
-        return redirect()->route('admin.galleries.index')->with('success', 'Đã xóa toàn bộ ảnh của tour thành công.');
+        // Return to the gallery list page with a success message
+        return redirect()->route('admin.galleries.index')->with('success', 'All images of the tour have been successfully deleted.');
     }
 }

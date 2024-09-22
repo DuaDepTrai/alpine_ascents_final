@@ -178,13 +178,13 @@
                 <div class="icon"></div>
               </div>
 
-              <!-- Bảng danh sách Restaurants -->
+              <!-- User List Table -->
               <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
                   <tr>
                     <th class="text-center text-nowrap align-middle">STT</th>
-                    <th class="text-center text-nowrap align-middle">name</th>
-                    <th class="text-center text-nowrap align-middle">phone</th>
+                    <th class="text-center text-nowrap align-middle">Name</th>
+                    <th class="text-center text-nowrap align-middle">Phone</th>
                     <th class="text-center text-nowrap align-middle">Email</th>
                     <th class="text-center text-nowrap align-middle">Avatar</th>
                     <th class="text-center text-nowrap align-middle">Role</th>

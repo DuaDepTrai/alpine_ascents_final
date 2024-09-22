@@ -33,5 +33,5 @@ class tours extends Model
         return $this->hasMany(galleries::class, 'tours_id');
     }
 
-    protected $table = 'tours'; // Tên bảng trong database
+    protected $table = 'tours'; // Table name in the database
 }

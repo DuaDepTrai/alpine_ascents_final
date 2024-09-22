@@ -10,45 +10,45 @@ class OrderController extends Controller
 {
     
 
-    // Hiển thị form đặt hàng với danh sách tours
+    // Display the order form with a list of tours
     public function create()
     {
         $tours = Tours::all();
         return view('order.create', compact('tours'));
     }
 
-    // Lưu thông tin đặt hàng
+    // Save order information
     public function store(Request $request)
     {
-        // Kiểm tra nếu người dùng chưa đăng nhập
+        // Check if the user is not logged in
 
 
         $request->validate([
             'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:15', // phone bắt buộc
-            'email' => 'nullable|email|max:255', // email không bắt buộc
+            'phone' => 'required|string|max:15', // phone is required
+            'email' => 'nullable|email|max:255', // email is optional
             'quantity' => 'required|integer|min:1',
             'tour_id' => 'required|exists:tours,id',
         ]);
 
-        // Lấy user_id nếu người dùng đã đăng nhập, nếu không để null
+        // Get user_id if the user is logged in, otherwise set to null
             $userId = Auth::check() ? Auth::user()->id : null;
         
-        // Tạo đơn hàng
+        // Create the order
         $order = orders_tours::create([
             'user_id' =>  $userId,
             'tour_id' => $request->tour_id,
             'name' => $request->name,
             'quantity' => $request->quantity,
             'total' => $this->calculateTotal($request->tour_id, $request->quantity),
-            'email' => $request->email, // email không bắt buộc
-            'phone' => $request->phone, // phone bắt buộc
+            'email' => $request->email, // email is optional
+            'phone' => $request->phone, // phone is required
             'note' => $request->note,
         ]);
 
         return redirect()->back()->with('success', 'Order successfully placed by: '.$request->name);
     }
-    // Hàm tính tổng tiền
+    // Function to calculate total amount
     protected function calculateTotal($tourId, $quantity)
     {
         $tour = tours::find($tourId);

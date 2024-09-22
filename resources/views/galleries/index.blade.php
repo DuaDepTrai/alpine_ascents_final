@@ -11,7 +11,7 @@
                     @endphp
                     @if(!empty($images) || !empty($videos))
                         <div class="media-library my-4">
-                            <!-- Tour Name (Chỉ hiển thị nếu có ảnh hoặc video) -->
+                            <!-- Tour Name (Only displayed if there are images or videos) -->
                             <h2 class="text-center" style="font-size: 60px;">{{ $tour->name }}</h2>
 
                             <!-- Bootstrap Carousel for Images and Videos -->

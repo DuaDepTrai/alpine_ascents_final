@@ -21,23 +21,23 @@
         }
         
         .carousel-control-prev {
-            left: -5%; /* Điều chỉnh nút trái ra ngoài khung */
+            left: -5%; /* Adjust the left button outside the frame */
         }
 
         .carousel-control-next {
-            right: -5%; /* Điều chỉnh nút phải ra ngoài khung */
+            right: -5%; /* Adjust the right button outside the frame */
         }
 
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            background-color: black; /* Đổi màu nền của icon nút điều hướng thành màu đen */
+            background-color: black; /* Change the background color of the navigation button icons to black */
         }
 
-        /* Đặt kích thước ảnh */
+        /* Set image size */
         .carousel-item img {
             width: 100%;
-            height: 750px; /* Đặt chiều cao cụ thể */
-            object-fit: cover; /* Đảm bảo ảnh vừa vặn trong khung mà không bị méo */
+            height: 750px; /* Set a specific height */
+            object-fit: cover; /* Ensure the image fits in the frame without distortion */
         }
 
         .carousel {
@@ -50,12 +50,12 @@
 
         .media-library img.img-thumbnail {
             cursor: pointer;
-            width: 100px; /* Đặt chiều rộng cố định */
-            height: auto; /* Chiều cao tự động để giữ tỷ lệ */
-            max-height: 100px; /* Đặt chiều cao tối đa */
-            object-fit: cover; /* Đảm bảo ảnh không bị méo */
-            opacity: 0.5; /* Đặt độ trong suốt mặc định */
-            transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
+            width: 100px; /* Set fixed width */
+            height: auto; /* Auto height to maintain aspect ratio */
+            max-height: 100px; /* Set maximum height */
+            object-fit: cover; /* Ensure the image is not distorted */
+            opacity: 0.5; /* Set default opacity */
+            transition: opacity 0.3s; /* Add a transition effect when changing opacity */
         }
 
         .media-library img.img-thumbnail.active {
@@ -65,16 +65,16 @@
         .thumbnail-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px; /* Khoảng cách giữa các ảnh thumbnail */
+            gap: 10px; /* Spacing between thumbnail images */
         }
 
         .thumbnail-container img.img-thumbnail {
-            width: 100px; /* Đặt chiều rộng cố định */
-            height: auto; /* Chiều cao tự động để giữ tỷ lệ */
-            max-height: 100px; /* Đặt chiều cao tối đa */
-            object-fit: cover; /* Đảm bảo ảnh không bị méo */
-            opacity: 0.5; /* Đặt độ trong suốt mặc định */
-            transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
+            width: 100px; /* Set fixed width */
+            height: auto; /* Auto height to maintain aspect ratio */
+            max-height: 100px; /* Set maximum height */
+            object-fit: cover; /* Ensure the image is not distorted */
+            opacity: 0.5; /* Set default opacity */
+            transition: opacity 0.3s; /* Add a transition effect when changing opacity */
         }
     </style>
 </head>
@@ -94,7 +94,7 @@
             carousel.addEventListener('slid.bs.carousel', function () {
                 const activeIndex = Array.from(carouselInner.children).findIndex(item => item.classList.contains('active'));
                 
-                // Dừng video trên slide hiện tại
+                // Stop video on the current slide
                 const iframes = carouselInner.querySelectorAll('iframe');
                 iframes.forEach(iframe => {
                     const src = iframe.getAttribute('src');
@@ -102,7 +102,7 @@
                     iframe.setAttribute('src', src);
                 });
 
-                // Cập nhật độ trong suốt của thumbnail
+                // Update the opacity of the thumbnail
                 thumbnails.forEach((thumbnail, index) => {
                     thumbnail.style.opacity = (index === activeIndex) ? '1' : '0.5';
                 });
@@ -121,4 +121,4 @@
 </script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    @stack('scripts')  <!-- Đẩy các script từ các file con vào đây -->
+    @stack('scripts')  <!-- Push scripts from child files here -->

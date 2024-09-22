@@ -190,7 +190,7 @@
                             <div class="box-header">
                             </div>
                             <div class="box-body">
-                                <!-- Form bắt đầu -->
+                                <!-- Start of the form -->
                                 <form method="POST" action="{{ route('admin.branches.store') }}">
                                     @csrf
 
@@ -231,7 +231,7 @@
                                         <a href="{{ route('admin.branches.index') }}" class="btn btn-default">Cancel</a>
                                     </div>
                                 </form>
-                                <!-- Form kết thúc -->
+                                <!-- End of the form -->
                             </div>
                         </div>
                     </div>

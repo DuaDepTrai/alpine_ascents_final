@@ -7,20 +7,20 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminUserManagementController extends Controller
 {
-    // Hiển thị danh sách người dùng
+    // Display the list of users
     public function index()
     {
-        $users = users::paginate(15);  // Lấy toàn bộ người dùng
-        return view('admin.UserManagement.index', compact('users'));  // Trả về view hiển thị danh sách
+        $users = users::all();  // Retrieve all users
+        return view('admin.UserManagement.index', compact('users'));  // Return view to display the list
     }
     
-    // Hiển thị form thêm mới người dùng
+    // Display the form to add a new user
     public function create()
     {
         return view('admin.UserManagement.create');
     }
 
-    // Xử lý thêm mới người dùng
+    // Handle adding a new user
     public function store(Request $request)
     {
         $request->validate([
@@ -32,7 +32,7 @@ class AdminUserManagementController extends Controller
             'role' => 'required|integer',
         ]);
 
-        // Tạo người dùng mới
+        // Create a new user
         users::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -45,14 +45,14 @@ class AdminUserManagementController extends Controller
         return redirect()->route('admin.UserManagement.index')->with('success', 'Người dùng đã được thêm thành công!');
     }
 
-    // Hiển thị form chỉnh sửa người dùng
+    // Display the form to edit a user
     public function edit($id)
     {
         $user = users::findOrFail($id);
         return view('admin.UserManagement.edit', compact('user'));
     }
 
-    // Xử lý cập nhật người dùng
+    // Handle updating a user
     public function update(Request $request, $id)
     {
         $user = users::findOrFail($id);
@@ -65,7 +65,7 @@ class AdminUserManagementController extends Controller
             'role' => 'required|integer',
         ]);
 
-        // Cập nhật thông tin người dùng
+        // Update user information
         $user->update([
             'name' => $request->name,
             'email' => $request->email,
@@ -74,15 +74,15 @@ class AdminUserManagementController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect()->route('admin.UserManagement.index')->with('success', 'Thông tin người dùng đã được cập nhật!');
+        return redirect()->route('admin.UserManagement.index')->with('success', 'User information has been updated!!');
     }
 
-    // Xử lý xóa người dùng
+    // Handle deleting a user
     public function destroy($id)
     {
         $user = users::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('admin.UserManagement.index')->with('success', 'Người dùng đã được xóa thành công!');
+        return redirect()->route('admin.UserManagement.index')->with('success', 'User has been successfully deleted!');
     }
 }

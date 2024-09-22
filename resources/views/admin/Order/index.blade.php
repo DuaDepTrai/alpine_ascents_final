@@ -215,7 +215,7 @@
                         </tbody>
                     </table>
 
-                     <!-- Liên kết phân trang -->
+                     <!-- Pagination links -->
                      <div class="pagination-wrapper">
                         {{ $orders->links() }}
                     </div>

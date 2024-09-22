@@ -17,25 +17,25 @@ class DevMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // Kiểm tra xem người dùng đã đăng nhập chưa
+        // Check if the user is logged in
         if (!Auth::check()) {
             return redirect('/login');
         }
 
-        // Kiểm tra xem người dùng có phải là thành viên của team dev không
+        // Check if the user is a member of the dev team
         if (!Auth::user()->is_dev_team) {
             return redirect('/dashboard');
         }
 
-        // Nếu là thành viên team dev, người dùng có thể truy cập các trang liên quan
+        // If a member of the dev team, allow access to relevant pages
         if ($request->is('dev/*')) {
-            // Thành viên team dev có thể xem danh sách các yêu cầu ăn trưa và chọn các món ăn
+            // Dev team members can view lunch requests and select meals
             if ($request->is('dev/lunch-requests*')) {
                 return $next($request);
             }
         }
 
-        // Nếu không phải là trang của team dev, chuyển hướng về trang dashboard
+        // If not a dev team page, redirect to the dashboard
         return redirect('/dashboard');
     }
 }

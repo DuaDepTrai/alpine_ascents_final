@@ -15,19 +15,19 @@ class UsersTableSeeder extends Seeder
                 'name' => 'Admin',
                 'phone' => '0987654321',
                 'email' => 'admin@gmail.com',
-                'password' => Hash::make('123456'), // Mã hóa mật khẩu
-                'role' => true, // true cho admin, false cho user thông thường
+                'password' => Hash::make('123456'), // Hash the password
+                'role' => true, // true for admin, false for regular user
                 'created_at' => now()
             ],
             [
                 'name' => 'Nguyễn Văn Hiếu',
                 'phone' => '0123456789',
                 'email' => 'hieu1@gmail.com',
-                'password' => Hash::make('123456'), // Mã hóa mật khẩu
-                'role' => false, // true cho admin, false cho user thông thường
+                'password' => Hash::make('123456'), // Hash the password
+                'role' => false, // true for admin, false for regular user
                 'created_at' => now()
             ],
-            // Thêm các người dùng khác nếu cần
+            // Add more users if needed
         ]);
     }
 }

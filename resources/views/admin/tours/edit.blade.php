@@ -40,58 +40,58 @@
 </head>
 <style>
   .body1 {
-    max-width: 100%; /* Chiều rộng tối đa là 100% màn hình */
-    margin: 20px auto; /* Căn giữa với khoảng cách xung quanh */
-    padding: 20px; /* Khoảng cách bên trong */
-    background-color: #f8f9fa; /* Màu nền nhẹ cho form */
-    border-radius: 8px; /* Bo tròn các góc của form */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho form */
+    max-width: 100%; /* Maximum width is 100% of the screen */
+    margin: 20px auto;  /* Center with surrounding space */
+    padding: 20px;  /* Internal spacing */
+    background-color: #f8f9fa; /* Light background color for the form */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added shadow for the form */
 }
 
 h1 {
-    text-align: left; /* Căn trái tiêu đề */
-    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    text-align: left; /* Align the title to the left */
+    margin-bottom: 20px; /* Space below the title */
 }
 
 form {
-    display: flex; /* Sử dụng flexbox cho form */
-    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+    display: flex; /* Use flexbox for the form */
+    flex-direction: column; /* Stack elements vertically */
 }
 
 div {
-    margin-bottom: 15px; /* Khoảng cách giữa các trường nhập */
+    margin-bottom: 15px; /* Space between input fields */
 }
 
 label {
-    font-weight: bold; /* Làm cho chữ label đậm */
-    margin-bottom: 5px; /* Khoảng cách giữa label và input */
-    display: block; /* Đặt label thành block để nó ở trên input */
+    font-weight: bold; /* Make the label text bold */
+    margin-bottom: 5px; /* Space between label and input */
+    display: block; /* Set label as block to position above input */
 }
 
 input {
-    width: 100%; /* Chiều rộng 100% để ô nhập chiếm toàn bộ chiều rộng */
-    padding: 10px; /* Thêm khoảng cách cho các ô nhập */
-    border: 1px solid #ced4da; /* Viền cho các ô nhập */
-    border-radius: 4px; /* Bo tròn các góc của ô nhập */
-    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
-    font-size: 14px; /* Kích thước chữ cho ô nhập */
-    height: 40px; /* Chiều cao cố định cho ô nhập */
+    width: 100%; /* Width 100% so input fields take the full width */
+    padding: 10px; /* Add spacing for input fields */
+    border: 1px solid #ced4da; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners for input fields */
+    box-sizing: border-box; /* Ensure padding doesn't increase total size */
+    font-size: 14px; /* Font size for input fields */
+    height: 40px; /* Fixed height for input fields */
 }
 
 button {
-    padding: 10px 15px; /* Khoảng cách cho nút */
-    background-color: #007bff; /* Màu nền cho nút */
-    color: white; /* Màu chữ cho nút */
-    border: none; /* Không viền cho nút */
-    border-radius: 4px; /* Bo tròn các góc của nút */
-    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột lên nút */
-    font-size: 16px; /* Kích thước chữ cho nút */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
-    width: 100%; /* Chiều rộng nút bằng 100% */
+    padding: 10px 15px; /* Spacing for the button */
+    background-color: #007bff; /* Background color for the button */
+    color: white; /* Text color for the button */
+    border: none; /* No border for the button */
+    border-radius: 4px; /* Rounded corners for the button */
+    cursor: pointer; /* Show hand cursor when hovering over button */
+    font-size: 16px; /* Font size for the button */
+    transition: background-color 0.3s; /* Background color transition effect */
+    width: 100%;  /* Button width 100% */
 }
 
 button:hover {
-    background-color: #0056b3; /* Thay đổi màu nền khi hover */
+    background-color: #0056b3; /* Change background color on hover */
 }
 
 </style>

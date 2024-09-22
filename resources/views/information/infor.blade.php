@@ -89,8 +89,8 @@
         </div>
     `;
 
-    // Thêm 1 file ảnh cho phần type - forms
-    // Download ảnh về, chỉnh kích thước, và up vào folder thay vì dùng img src
+    // Add an image file for the type - forms
+    // Download the image, resize it, and upload it to the folder instead of using img src
     let types_forms = `
         <div>
             <h3 style="font-style:italic">Walking</h3>

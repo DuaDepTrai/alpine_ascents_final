@@ -203,7 +203,7 @@
             </table>
             <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
             <div class="container">
-              <h1>Thêm ảnh và video mới</h1>
+              <h1>Add New Images and Videos</h1>
               @if ($message = Session::get('success'))
                   <div class="alert alert-success">
                       <p>{{ $message }}</p>
@@ -213,7 +213,7 @@
               <form action="{{ route('admin.galleries.store') }}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <div class="form-group">
-                      <label for="tours_id">Chọn tour</label>
+                      <label for="tours_id">Select Tour</label>
                       <select name="tours_id" id="tours_id" class="form-control">
                           @foreach ($tours as $tour)
                               <option value="{{ $tour->id }}">{{ $tour->name }}</option>
@@ -222,16 +222,16 @@
                   </div>
               
                   <div class="form-group">
-                      <label for="images">Chọn ảnh</label>
+                      <label for="images">Select Images</label>
                       <input type="file" name="images[]" multiple class="form-control">
                   </div>
               
                   <div class="form-group">
-                      <label for="videos">Chọn video (YouTube link)</label>
+                      <label for="videos">Select Video (YouTube link)</label>
                       <input type="text" name="videos[]" multiple class="form-control">
                   </div>
               
-                  <button type="submit" class="btn btn-primary">Thêm ảnh và video</button>
+                  <button type="submit" class="btn btn-primary">Add Images and Videos</button>
               </form>
               @if ($errors->any())
                 <div class="alert alert-danger">
