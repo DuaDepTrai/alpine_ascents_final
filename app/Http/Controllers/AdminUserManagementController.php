@@ -10,7 +10,7 @@ class AdminUserManagementController extends Controller
     // Hiển thị danh sách người dùng
     public function index()
     {
-        $users = users::all();  // Lấy toàn bộ người dùng
+        $users = users::paginate(15);  // Lấy toàn bộ người dùng
         return view('admin.UserManagement.index', compact('users'));  // Trả về view hiển thị danh sách
     }
     

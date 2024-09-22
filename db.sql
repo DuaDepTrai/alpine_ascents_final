@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Sep 16, 2024 at 02:15 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th9 21, 2024 lúc 05:37 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `laravel`
+-- Cơ sở dữ liệu: `laravel`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `branches`
+-- Cấu trúc bảng cho bảng `branches`
 --
 
 CREATE TABLE `branches` (
@@ -32,29 +32,31 @@ CREATE TABLE `branches` (
   `name` varchar(255) NOT NULL,
   `address` text NOT NULL,
   `phone` varchar(255) NOT NULL,
-  `positioning` text NOT NULL
+  `positioning` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `branches`
+-- Đang đổ dữ liệu cho bảng `branches`
 --
 
-INSERT INTO `branches` (`id`, `name`, `address`, `phone`, `positioning`) VALUES
-(1, 'Alpine Ascents USA', '109 W. Mercer St., Seattle, WA 98119, USA', '+1 206-378-1927', '47.6241,-122.3568'),
-(2, 'Alpine Ascents Canada', '123 Mountain Road, Banff, Alberta T1L 1A9, Canada', '+1 403-762-1234', '51.1784,-115.5708'),
-(3, 'Alpine Ascents Switzerland', '12 Bahnhofstrasse, Zermatt, 3920, Switzerland', '+41 27 966 81 00', '46.0207,7.7491'),
-(4, 'Alpine Ascents New Zealand', '45 Alpine Avenue, Queenstown, 9300, New Zealand', '+64 3-441 1234', '-45.0312,168.6626'),
-(5, 'Alpine Ascents Japan', '5-2-1, Minami-Aoyama, Minato-ku, Tokyo 107-0062, Japan', '+81 3-5774-1234', '35.6655,139.7128'),
-(6, 'Alpine Ascents Argentina', '89 Av. San Martín, El Chaltén, Santa Cruz, 9301, Argentina', '+54 2902 49-1234', '-49.3289,-72.8868'),
-(7, 'Alpine Ascents Nepal', 'Thamel Marg, Kathmandu 44600, Nepal', '+977 1-4421234', '27.7172,85.3240'),
-(8, 'Alpine Ascents Italy', '50 Via Roma, Courmayeur, 11013, Italy', '+39 0165 1234', '45.7915,6.9706'),
-(9, 'Alpine Ascents South Africa', '78 Main Road, Cape Town, 8001, South Africa', '+27 21 123 4567', '-33.9249,18.4241'),
-(10, 'Alpine Ascents Australia', '32 Alpine Way, Thredbo, NSW 2625, Australia', '+61 2 6457 1234', '-36.5051,148.3028');
+INSERT INTO `branches` (`id`, `name`, `address`, `phone`, `positioning`, `created_at`, `updated_at`) VALUES
+(1, 'Alpine Ascents USA', '109 W. Mercer St., Seattle, WA 98119, USA', '+1 206-378-1927', '47.6241,-122.3568', NULL, NULL),
+(2, 'Alpine Ascents Canada', '123 Mountain Road, Banff, Alberta T1L 1A9, Canada', '+1 403-762-1234', '51.1784,-115.5708', NULL, NULL),
+(3, 'Alpine Ascents Switzerland', '12 Bahnhofstrasse, Zermatt, 3920, Switzerland', '+41 27 966 81 00', '46.0207,7.7491', NULL, NULL),
+(4, 'Alpine Ascents New Zealand', '45 Alpine Avenue, Queenstown, 9300, New Zealand', '+64 3-441 1234', '-45.0312,168.6626', NULL, NULL),
+(5, 'Alpine Ascents Japan', '5-2-1, Minami-Aoyama, Minato-ku, Tokyo 107-0062, Japan', '+81 3-5774-1234', '35.6655,139.7128', NULL, NULL),
+(6, 'Alpine Ascents Argentina', '89 Av. San Martín, El Chaltén, Santa Cruz, 9301, Argentina', '+54 2902 49-1234', '-49.3289,-72.8868', NULL, NULL),
+(7, 'Alpine Ascents Nepal', 'Thamel Marg, Kathmandu 44600, Nepal', '+977 1-4421234', '27.7172,85.3240', NULL, NULL),
+(8, 'Alpine Ascents Italy', '50 Via Roma, Courmayeur, 11013, Italy', '+39 0165 1234', '45.7915,6.9706', NULL, NULL),
+(9, 'Alpine Ascents South Africa', '78 Main Road, Cape Town, 8001, South Africa', '+27 21 123 4567', '-33.9249,18.4241', NULL, NULL),
+(11, 'Alpine Ascents Australia', '32 Alpine Way, Thredbo, NSW 2625, Australia', '+61 2 6457 5678', '-36.5051,148.3028', '2024-09-20 17:53:35', '2024-09-20 17:53:35');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `galleries`
+-- Cấu trúc bảng cho bảng `galleries`
 --
 
 CREATE TABLE `galleries` (
@@ -67,18 +69,18 @@ CREATE TABLE `galleries` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `galleries`
+-- Đang đổ dữ liệu cho bảng `galleries`
 --
 
 INSERT INTO `galleries` (`id`, `tours_id`, `images`, `videos`, `created_at`, `updated_at`) VALUES
-(1, 1, '[\"\\/images\\/fansipan\\/fansipan (1).jpg\",\"\\/images\\/fansipan\\/fansipan (2).jpg\",\"\\/images\\/fansipan\\/fansipan (3).jpg\",\"\\/images\\/fansipan\\/fansipan (4).jpg\",\"\\/images\\/fansipan\\/fansipan (5).jpg\",\"\\/images\\/fansipan\\/fansipan (6).jpg\",\"\\/images\\/fansipan\\/fansipan (7).jpg\",\"\\/images\\/fansipan\\/fansipan (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=-AREhw2Ot3o\"]', NULL, NULL),
-(2, 2, '[\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (1).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (2).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (3).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (4).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (5).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (6).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (7).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=yOtqF9DRI-s\"]', NULL, NULL),
-(3, 3, '[\"\\/images\\/ta-xua\\/ta-xua (1).jpg\",\"\\/images\\/ta-xua\\/ta-xua (2).jpg\",\"\\/images\\/ta-xua\\/ta-xua (3).jpg\",\"\\/images\\/ta-xua\\/ta-xua (4).jpg\",\"\\/images\\/ta-xua\\/ta-xua (5).jpg\",\"\\/images\\/ta-xua\\/ta-xua (6).jpg\",\"\\/images\\/ta-xua\\/ta-xua (7).jpg\",\"\\/images\\/ta-xua\\/ta-xua (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=hO_VjQXSjAQ\"]', NULL, NULL);
+(1, 1, '[\"\\/images\\/fansipan\\/fansipan (1).jpg\",\"\\/images\\/fansipan\\/fansipan (2).jpg\",\"\\/images\\/fansipan\\/fansipan (3).jpg\",\"\\/images\\/fansipan\\/fansipan (4).jpg\",\"\\/images\\/fansipan\\/fansipan (5).jpg\",\"\\/images\\/fansipan\\/fansipan (6).jpg\",\"\\/images\\/fansipan\\/fansipan (7).jpg\",\"\\/images\\/fansipan\\/fansipan (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=-AREhw2Ot3o\"]', NULL, '2024-09-18 17:09:59'),
+(2, 2, '[\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (1).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (2).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (3).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (4).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (5).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (6).jpg\",\"\\/images\\/phong-nha-ke-bang\\/phong-nha-ke-bang (8).jpg\",\"images\\/phong-nha-ke-bang (11).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=yOtqF9DRI-s\"]', NULL, '2024-09-18 17:47:51'),
+(4, 3, '[\"images\\/ta-xua (1).jpg\",\"images\\/ta-xua (2).jpg\",\"images\\/ta-xua (3).jpg\",\"images\\/ta-xua (4).jpg\",\"images\\/ta-xua (5).jpg\",\"images\\/ta-xua (6).jpg\",\"images\\/ta-xua (7).jpg\",\"images\\/ta-xua (8).jpg\"]', '[\"https:\\/\\/www.youtube.com\\/watch?v=hO_VjQXSjAQ\"]', '2024-09-18 17:47:15', '2024-09-18 17:47:15');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `migrations`
+-- Cấu trúc bảng cho bảng `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -88,7 +90,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `migrations`
+-- Đang đổ dữ liệu cho bảng `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -109,14 +111,13 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders_tours`
+-- Cấu trúc bảng cho bảng `orders_tours`
 --
 
 CREATE TABLE `orders_tours` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `user_id` bigint(20) UNSIGNED NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
   `tour_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) DEFAULT NULL,
   `quantity` int(11) NOT NULL,
@@ -129,7 +130,7 @@ CREATE TABLE `orders_tours` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sessions`
+-- Cấu trúc bảng cho bảng `sessions`
 --
 
 CREATE TABLE `sessions` (
@@ -142,17 +143,17 @@ CREATE TABLE `sessions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `sessions`
+-- Đang đổ dữ liệu cho bảng `sessions`
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('71Nc4hwKfQBGqn7Sm8UdNbpjoNrZwpUWgxpDasCj', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiaFNFdk50UWw5TW5welczdFV6TTlIVVdKcm4zYXlqbnozT0YxVnF0UiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC91c2VyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1726152666),
-('t6Lchhg6VWgicgx2pil64eXAGb9CTEhqGAQc4bTX', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTk9FVVJDV0lFQzFDUXk5a0RzM3NRaGFwTFhlTUpJaHNIWWRBYTIwaSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzM6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9pbmZvcm1hdGlvbiI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1726243610);
+('95MGz7GTuH0JrlCEi0LSYqNSwhfFh71Zsu15geGR', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YToyOntzOjY6Il90b2tlbiI7czo0MDoiTmtYMTgxMUtPYlRNaFVzaVNzRU81QWF6d0ZuR3BOc0dNWUZmWmVoRCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1726854127),
+('ThbrviBHYdLOYx6NaGWouBhw8swBvhNqWp1ocq2x', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoic0R6ZE11QzVtdTJVb0FsU0N2TzZYMDJhY2JwTTNsRFB0S1Z2aTRQSSI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9icmFuY2hlcyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1726854841);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tours`
+-- Cấu trúc bảng cho bảng `tours`
 --
 
 CREATE TABLE `tours` (
@@ -173,7 +174,7 @@ CREATE TABLE `tours` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `tours`
+-- Đang đổ dữ liệu cho bảng `tours`
 --
 
 INSERT INTO `tours` (`id`, `name`, `price`, `image`, `location`, `features`, `besttime`, `directions`, `trekkingroutes`, `items`, `cautions`, `requirements`, `created_at`, `updated_at`) VALUES
@@ -184,7 +185,7 @@ INSERT INTO `tours` (`id`, `name`, `price`, `image`, `location`, `features`, `be
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Cấu trúc bảng cho bảng `users`
 --
 
 CREATE TABLE `users` (
@@ -195,43 +196,44 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `role` tinyint(1) NOT NULL DEFAULT 0,
+  `verification_code` int(6) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `users`
+-- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `avatar`, `role`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', '0987654321', 'admin@gmail.com', '$2y$12$6D.7kCxp/JtamOG.SXXMQ.SBap5GguqKm7862HoG6hHNMxKJ/sVAW', NULL, 1, '2024-09-13 09:27:49', NULL),
-(2, 'Nguyễn Văn Hiếu', '0123456789', 'hieu1@gmail.com', '$2y$12$gbwNuR03ky2yJKgHSV8/hOezHptIWToaTmn9/LoDvRQ7xHwIiBx3K', NULL, 0, '2024-09-13 09:27:49', NULL);
+INSERT INTO `users` (`id`, `name`, `phone`, `email`, `password`, `avatar`, `role`, `verification_code`, `created_at`, `updated_at`) VALUES
+(1, 'Admin', '0987654321', 'admin@gmail.com', '$2y$12$6D.7kCxp/JtamOG.SXXMQ.SBap5GguqKm7862HoG6hHNMxKJ/sVAW', NULL, 1, NULL, '2024-09-13 09:27:49', NULL),
+(2, 'Nguyễn Văn Hiếu', '0123456789', 'hieu1@gmail.com', '$2y$12$gbwNuR03ky2yJKgHSV8/hOezHptIWToaTmn9/LoDvRQ7xHwIiBx3K', NULL, 0, NULL, '2024-09-13 09:27:49', NULL);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `branches`
+-- Chỉ mục cho bảng `branches`
 --
 ALTER TABLE `branches`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `galleries`
+-- Chỉ mục cho bảng `galleries`
 --
 ALTER TABLE `galleries`
   ADD PRIMARY KEY (`id`),
   ADD KEY `galleries_tour_id_foreign` (`tours_id`);
 
 --
--- Indexes for table `migrations`
+-- Chỉ mục cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders_tours`
+-- Chỉ mục cho bảng `orders_tours`
 --
 ALTER TABLE `orders_tours`
   ADD PRIMARY KEY (`id`),
@@ -239,7 +241,7 @@ ALTER TABLE `orders_tours`
   ADD KEY `orders_tours_tour_id_foreign` (`tour_id`);
 
 --
--- Indexes for table `sessions`
+-- Chỉ mục cho bảng `sessions`
 --
 ALTER TABLE `sessions`
   ADD PRIMARY KEY (`id`),
@@ -247,13 +249,13 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
--- Indexes for table `tours`
+-- Chỉ mục cho bảng `tours`
 --
 ALTER TABLE `tours`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `users`
+-- Chỉ mục cho bảng `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -261,57 +263,57 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `branches`
+-- AUTO_INCREMENT cho bảng `branches`
 --
 ALTER TABLE `branches`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT for table `galleries`
+-- AUTO_INCREMENT cho bảng `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `migrations`
+-- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `orders_tours`
+-- AUTO_INCREMENT cho bảng `orders_tours`
 --
 ALTER TABLE `orders_tours`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tours`
+-- AUTO_INCREMENT cho bảng `tours`
 --
 ALTER TABLE `tours`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `galleries`
+-- Các ràng buộc cho bảng `galleries`
 --
 ALTER TABLE `galleries`
   ADD CONSTRAINT `galleries_tour_id_foreign` FOREIGN KEY (`tours_id`) REFERENCES `tours` (`id`) ON DELETE CASCADE;
 
 --
--- Constraints for table `orders_tours`
+-- Các ràng buộc cho bảng `orders_tours`
 --
 ALTER TABLE `orders_tours`
   ADD CONSTRAINT `orders_tours_tour_id_foreign` FOREIGN KEY (`tour_id`) REFERENCES `tours` (`id`),

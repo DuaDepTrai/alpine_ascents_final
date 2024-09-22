@@ -12,7 +12,7 @@ class AdminOrderController extends Controller
     // Hiển thị danh sách đơn hàng
     public function index()
     {
-        $orders = orders_tours::with('tour', 'user')->get();
+        $orders = orders_tours::with('tour', 'user')->paginate(15);
         return view('admin.order.index', compact('orders'));
     }
 

@@ -211,6 +211,10 @@
                   @endforeach
                 </tbody>
               </table>
+
+              
+              
+
               <a href="{{ route('admin.UserManagement.create') }}">
                 <button class="btn btn-success">Add new</button>
               </a>
