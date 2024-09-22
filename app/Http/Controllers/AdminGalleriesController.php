@@ -12,13 +12,13 @@ class AdminGalleriesController extends Controller
 {
     public function index()
     {
-        // Lấy danh sách tất cả các tour
+        // Get list of tours
         $tours = tours::all();
         $galleries = galleries::with('tour')->get();
         return view('admin.galleries.index', compact('tours', 'galleries'));
     }
 
-    // Hiển thị form để upload ảnh
+    // Display the form to upload an image
     public function create()
     {
         $tours = tours::all();
