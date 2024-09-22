@@ -61,18 +61,18 @@ public function showLoginForm()
         ];
 
         if (Auth::attempt($credentials)) {
-            // Kiểm tra role và chuyển hướng dựa trên role
+            //  Check role and redirect based on role
             if (Auth::users()->is_admin === 1) {
                 return redirect()->route('admin.UserManagement.index');
             } elseif (Auth::users()->is_admin === 0) {
                 return redirect()->route('home.index');
             }
         } else {
-            // Xử lý đăng nhập không thành công
+            // Handle unsuccessful login
             return redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
         }
 
-        return redirect()->back()->withErrors(['email' => 'Thông tin tài khoản hoặc mật khẩu không chính xác.']);
+        return redirect()->back()->withErrors(['email' => 'Incorrect account information or password.']);
     }
 
 

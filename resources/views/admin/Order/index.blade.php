@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,58 +56,24 @@
             <span class="sr-only">Toggle navigation</span>
           </a>
 
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
 
 
-                        <!-- User Account: style can be found in dropdown.less -->
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="user-image"
-                                    alt="User Image">
-                                {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
-                            </a>
-                            <ul class="dropdown-menu">
-                                <!-- User image -->
-                                <li class="user-header">
-                                    <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg"
-                                        class="img-circle" alt="User Image">
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                  {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                                    <p>
-                                        {{-- {{auth()->user()->name }} --}}
-                                        <small>Member since Aug. 2024</small>
-                                    </p>
-                                </li>
-                                <!-- Menu Body -->
-                                <!-- Menu Footer-->
-                                <li class="user-footer">
-                                    <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
-                                    </div>
-                                    <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <!-- Control Sidebar Toggle Button -->
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-        <!-- Left side column. contains the logo and sidebar -->
-        <aside class="main-sidebar">
-            <!-- sidebar: style can be found in sidebar.less -->
-            <section class="sidebar">
-                <!-- Sidebar user panel -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle"
-                            alt="User Image">
                     <p>
+                       {{-- {{auth()->user()->name }}--}}
                         {{--  {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
                     </p>
@@ -124,73 +89,6 @@
                     </div>
                   </li>
                 </ul>
-            </section>
-            <!-- /.sidebar -->
-        </aside>
-
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <h1>
-                    Dashboard
-                    <small>Control panel</small>
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                    <li class="active">Dashboard</li>
-                </ol>
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-                <!-- Small boxes (Stat box) -->
-                <div class="row">
-                    <div class="col-xs-12">
-                        <!-- small box -->
-                        <div class="small-box bg-aqua">
-                            <div class="inner">
-                                <h3>Restaurants</h3>
-                            </div>
-
-                            <div class="icon">
-
-                                <i class="ion ion-bag"></i>
-                            </div>
-                        </div>
-                        {{-- <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
-                <thead class="table-light">
-                    <tr>
-                        <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
-                    <tr>
-                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button>Delete</button></form></td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a> --}}
-                    </div>
-                </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
@@ -210,6 +108,7 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
+                    {{--<p>{{auth()->user()->name }}</p>--}}
                     {{--  <p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
@@ -232,7 +131,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="/admin/rder">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -256,17 +155,18 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+          <h1>
+            Dashboard
+            <small>Control panel</small>
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Dashboard</li>
+          </ol>
+        </section>
 
-    <section class="content">
+        <!-- Main content -->
+        <section class="content">
             <!-- Default box -->
             <div class="box">
                 <div class="box-header with-border">
@@ -292,12 +192,12 @@
                         <tbody>
                             @foreach ($orders as $key => $order)
                             <tr>
-                                <td>{{ $key + 1 }}</td>
+                                <td>{{ $loop->iteration + ($orders->currentPage() - 1) * $orders->perPage() }}</td>
                                 <td>{{ $order->user->id ?? 'N/A' }}</td>
                                 <td>{{ $order->name }}</td>
                                 <td>{{ $order->tour->name ?? 'N/A' }}</td>
                                 <td>{{ $order->quantity }}</td>
-                                <td>{{ $order->total }}</td>
+                                <td>{{ number_format($order->total, 0, ',', '.') }} VND</td>
                                 <td>{{ $order->email }}</td>
                                 <td>{{ $order->phone }}</td>
                                 <td>{{ $order->note }}</td>
@@ -314,11 +214,19 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                     <!-- Pagination links -->
+                     <div class="pagination-wrapper">
+                        {{ $orders->links() }}
+                    </div>
+                    
                 </div>
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->
-        </section>
+        </section>  
+        
+
     <!-- right col -->
       </div>
       <!-- /.row (main row) -->
@@ -563,4 +471,3 @@
 <script src="dist/js/demo.js"></script>
 </body>
 </html>
-

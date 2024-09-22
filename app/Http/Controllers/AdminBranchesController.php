@@ -7,20 +7,20 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminBranchesController extends Controller
 {
-    // Hiển thị danh sách người dùng
+    //Display the list of users
     public function index()
     {
-        $branches = branches::all();  // Lấy toàn bộ người dùng
-        return view('admin.branches.index', compact('branches'));  // Trả về view hiển thị danh sách
+        $branches = branches::all();  // "Retrieve all users
+        return view('admin.branches.index', compact('branches'));  // Return view displaying the list
     }
     
-    // Hiển thị form thêm mới người dùng
+    // Display the form to add a new user
     public function create()
     {
         return view('admin.branches.create');
     }
 
-    // Xử lý thêm mới người dùng
+    // Handle adding a new user
     public function store(Request $request)
     {
         $request->validate([
@@ -30,7 +30,7 @@ class AdminBranchesController extends Controller
             'positioning' => 'required|string|max:255',
         ]);
 
-        // Tạo người dùng mới
+        // Create new user
         branches::create([
             'name' => $request->name,
             'address' => $request->address,
@@ -41,7 +41,7 @@ class AdminBranchesController extends Controller
         return redirect()->route('admin.branches.index')->with('success', 'New branch was added successfully!');
     }
 
-    // Hiển thị form chỉnh sửa người dùng
+    //Display user edit form
     public function edit($id)
     {
         $branch = branches::findOrFail($id);
@@ -60,7 +60,7 @@ class AdminBranchesController extends Controller
             'positioning' => 'required|string|max:255',
         ]);
 
-        // Cập nhật thông tin người dùng
+        // Update user information
         $branch->update([
             'name' => $request->name,
             'address' => $request->address,
@@ -71,7 +71,7 @@ class AdminBranchesController extends Controller
         return redirect()->route('admin.branches.index')->with('success', 'Branch was updated successfully!');
     }
 
-    // Xử lý xóa người dùng
+    // Handle user deletion
     public function destroy($id)
     {
         $branch = branches::findOrFail($id);

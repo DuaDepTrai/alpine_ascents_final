@@ -219,7 +219,7 @@
             </table>
             <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
             <div class="container">
-              <!-- Thêm kiểm tra thông báo thành công -->
+              <!-- Add success message check -->
                 @if(session('success'))
                   <div class="alert alert-success">
                       {{ session('success') }}
@@ -229,19 +229,19 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Tên Gallery</th>
-                            <th>Ảnh</th>
-                            <th>Video</th>
-                            <th>Ngày tạo</th>
-                            <th>Ngày cập nhật</th>
-                            <th>Hành động</th>
+                            <th>Gallery Name</th>
+                            <th>Images</th>
+                            <th>Videos</th>
+                            <th>Created At</th>
+                            <th>Updated At</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach($galleries as $gallery)
                             <tr>
                                 <td>{{ $gallery->id }}</td>
-                                <td>{{ $gallery->tour->name ?? 'Không có tên tour' }}</td> <!-- Hiển thị tên tour -->
+                                <td>{{ $gallery->tour->name ?? 'Không có tên tour' }}</td> <!-- Display tour name -->
                                 <td>
                                     @if($gallery->images)
                                         @php
@@ -265,7 +265,7 @@
                                 <td>{{ $gallery->created_at }}</td>
                                 <td>{{ $gallery->updated_at }}</td>
                                 <td>
-                                    <!-- Thêm các nút hành động -->
+                                     <!-- Action buttons -->
                                     <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-warning">Sửa</a>
                                     <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">
                                         @csrf
@@ -281,7 +281,7 @@
           
               <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">Thêm mới</a>
           
-              <!-- Hiển thị danh sách các tour và các gallery của chúng -->
+             <!-- Display the list of tours and their galleries -->
           </div>
     </div>
     </div>

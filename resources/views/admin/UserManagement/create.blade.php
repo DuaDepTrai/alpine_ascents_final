@@ -173,13 +173,13 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="content-wrapper">
             <section class="content-header">
-                <h1>
-                    Thêm mới người dùng
-                    <small>Thêm thông tin người dùng mới vào hệ thống</small>
-                </h1>
+            <h1>
+                Add New User
+                <small>Add new user information to the system</small>
+            </h1>
                 <ol class="breadcrumb">
-                    <li><a href="{{ route('admin.UserManagement.index') }}">Quản lý người dùng</a></li>
-                    <li class="active">Thêm mới</li>
+                    <li><a href="{{ route('admin.UserManagement.index') }}">User Management</a></li>
+                    <li class="active">Add New</li>
                 </ol>
             </section>
 
@@ -188,15 +188,15 @@
                     <div class="col-xs-12">
                         <div class="box">
                             <div class="box-header">
-                                <h3 class="box-title">Thêm mới người dùng</h3>
+                                <h3 class="box-title">Add New User</h3>
                             </div>
                             <div class="box-body">
-                                <!-- Form bắt đầu -->
+                                <!-- Form Start -->
                                 <form method="POST" action="{{ route('admin.UserManagement.store') }}">
                                     @csrf
 
                                     <div class="form-group">
-                                        <label for="name">Tên người dùng</label>
+                                        <label for="name">User Name</label>
                                         <input type="text" name="name" id="name" class="form-control" value="{{ old('name') }}" required>
                                         @error('name')
                                             <span class="text-danger">{{ $message }}</span>
@@ -212,7 +212,7 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password">Mật khẩu</label>
+                                        <label for="password">Password</label>
                                         <input type="password" name="password" id="password" class="form-control" required>
                                         @error('password')
                                             <span class="text-danger">{{ $message }}</span>
@@ -220,12 +220,12 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="password_confirmation">Xác nhận mật khẩu</label>
+                                        <label for="password_confirmation">Confirm Password</label>
                                         <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="phone">Số điện thoại</label>
+                                        <label for="phone">Phone Number</label>
                                         <input type="text" name="phone" id="phone" class="form-control" value="{{ old('phone') }}">
                                         @error('phone')
                                             <span class="text-danger">{{ $message }}</span>
@@ -241,7 +241,7 @@
                                     </div>-->
 
                                     <div class="form-group">
-                                        <label for="role">Quyền</label>
+                                        <label for="role">Role</label>
                                         <select name="role" id="role" class="form-control" required>
                                             <option value="">Chọn quyền</option>
                                             <option value="1" {{ old('role') == 1 ? 'selected' : '' }}>Admin</option>
@@ -253,11 +253,11 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <button type="submit" class="btn btn-primary">Thêm mới</button>
-                                        <a href="{{ route('admin.UserManagement.index') }}" class="btn btn-default">Hủy bỏ</a>
+                                        <button type="submit" class="btn btn-primary">Add New</button>
+                                        <a href="{{ route('admin.UserManagement.index') }}" class="btn btn-default">Cancel</a>
                                     </div>
                                 </form>
-                                <!-- Form kết thúc -->
+                                <!-- End of Form -->
                             </div>
                         </div>
                     </div>

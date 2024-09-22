@@ -40,26 +40,26 @@
 </head>
 <style>
   #visitor-lists {
-    width: 100%; /* Đảm bảo bảng chiếm toàn bộ chiều rộng có sẵn */
-    table-layout: fixed; /* Sử dụng table-layout: fixed để kiểm soát chiều rộng các cột */
+    width: 100%; /* Ensure the table takes the full available width */
+    table-layout: fixed; /* Use table-layout: fixed to control column widths */
 }
 
 #visitor-lists th,
 #visitor-lists td {
-    overflow: hidden; /* Ẩn nội dung tràn ra */
-    text-overflow: ellipsis; /* Hiển thị dấu "..." nếu nội dung quá dài */
-    white-space: nowrap; /* Ngăn ngừa xuống dòng */
-    padding: 10px; /* Thêm khoảng cách cho các ô */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Show "..." if content is too long */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 10px; /* Add spacing for cells */
 }
 
 #visitor-lists th {
-    background-color: #f8f9fa; /* Màu nền cho header */
+    background-color: #f8f9fa; /* Background color for header */
 }
 
-/* Định nghĩa chiều rộng cho từng cột */
+/* Define width for each column */
 #visitor-lists th:nth-child(1),
 #visitor-lists td:nth-child(1) {
-    width: 50px; /* STT */
+    width: 50px; /* Serial Number */
 }
 
 #visitor-lists th:nth-child(2),
@@ -99,7 +99,7 @@
 
 #visitor-lists th:nth-child(9),
 #visitor-lists td:nth-child(9) {
-    width: 150px; /* Checking Routes */
+    width: 150px; /* Trekking Routes */
 }
 
 #visitor-lists th:nth-child(10),
@@ -118,6 +118,7 @@
 }
 
 </style>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 

@@ -17,30 +17,30 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        // Kiểm tra xem người dùng đã đăng nhập chưa
+        // Check if the user is logged in
         if (!Auth::check()) {
             return redirect('/login');
         }
 
-        // Kiểm tra xem người dùng có phải là admin không
+        // Check if the user is an admin
         if (!Auth::user()->is_admin) {
             return redirect('/dashboard');
         }
 
-        // Nếu là admin, người dùng có thể truy cập các trang quản trị
+        // If admin, allow access to admin pages
         if ($request->is('admin/*')) {
-            // Quản trị viên có thể tạo, sửa, xóa các nhà hàng và món ăn
+            // Admin can create, edit, delete restaurants and dishes
             if ($request->is('admin/restaurants*') || $request->is('admin/dishes*')) {
                 return $next($request);
             }
 
-            // Quản trị viên có thể tạo yêu cầu ăn trưa và xem danh sách các yêu cầu
+            // Admin can create lunch requests and view the list of requests
             if ($request->is('admin/lunch-requests*')) {
                 return $next($request);
             }
         }
 
-        // Nếu không phải là trang quản trị, chuyển hướng về trang dashboard
+        // If not an admin page, redirect to the dashboard
         return redirect('/dashboard');
     }
 }

@@ -19,19 +19,19 @@ class VerificationController extends Controller
     {
         $request->validate(['code' => 'required|string']);
 
-        // Kiểm tra mã xác nhận
+        // Check verification code
         $user = users::where('verification_code', $request->code)->first();
 
         if ($user) {
-            // Xác minh thành công
-            $user->verification_code = null; // Xóa mã xác nhận
+            // Verification successful
+            $user->verification_code = null; // Clear verification code
             $user->save();
 
-            // Đăng nhập người dùng
+            // Log in the user
 
-            return redirect()->route('login')->with('success', 'Tài khoản của bạn đã được xác nhận.');
+            return redirect()->route('login')->with('success', 'Your account has been verified.');
         }
 
-        return back()->withErrors(['code' => 'Mã xác nhận không chính xác.']);
+        return back()->withErrors(['code' => 'The verification code is incorrect.']);
     }
 }

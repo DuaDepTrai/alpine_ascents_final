@@ -4,14 +4,14 @@
 <div class="container">
     <h2>Booking Page</h2>
 
-    <!-- Hiển thị thông báo thành công -->
+    <!-- Display success message -->
     @if(session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
         </div>
     @endif
 
-    <!-- Hiển thị lỗi xác thực -->
+    <!-- Display validation errors -->
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
