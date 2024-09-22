@@ -77,7 +77,7 @@
             transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
         }
     </style>
-<style>
+    <style>
         body, html {
             margin: 0;
             padding: 0;
@@ -255,7 +255,7 @@
     </style>
 </head>
 <body>
-<div class="pre-header">
+    <div class="pre-header">
         <div class="container">
             <span>
                 <ul class="social-icon">
