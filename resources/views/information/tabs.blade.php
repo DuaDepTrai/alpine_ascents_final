@@ -20,7 +20,7 @@
                 <div id="overview_history" class="tab-pane" style="display: block;"> <!-- Content section of the "Overview" tab -->
                     <h2 style="font-style:italic">Overview and History</h2>
                     <p>Welcome to the website of Alpine Ascents Vietnam – the ideal destination for those who are passionate about exploring and conquering the majestic mountain peaks of Vietnam. We are an organization specializing in providing high-quality mountain climbing and trekking tours, offering you the opportunity to experience exciting challenges and breathtaking scenery. Founded with the mission to connect mountain and nature lovers, Alpine Ascents Vietnam is committed to providing professional, safe, and dedicated services.</p>
-                    <img src="images/tf_walking.png">
+                    <img src="images/information/tf_walking.png">
                     <p>Our website offers detailed information about climbing trips and exploration journeys, from the highest peaks like Fansipan, Ba Na, to the scenic trekking routes in national parks and nature reserves. We are proud to be partners with many experienced guides and mountain climbing experts, ready to accompany you every step of the way, from equipment preparation to technical and safety support.</p>
                     <p>At Alpine Ascents Vietnam, we understand that each journey is a personal adventure, so we offer flexible tour packages tailored to various skill levels and preferences. You can easily find detailed information on schedules, prices, and support services on our website. Additionally, we provide helpful articles and guides to help you prepare your best for the trip.</p>
                     <p>Join us in discovering the pristine beauty and grandeur of Vietnam's nature through our mountain climbing and trekking tours. Don’t hesitate to contact us for dedicated advice and detailed information about the trips. Alpine Ascents Vietnam looks forward to accompanying you on every step of your journey, so that each trip is not just a conquest, but also a memorable experience.</p>
@@ -69,12 +69,15 @@
                     <p>This is the basic technique to ensure the climber's safety. When climbing, one person is responsible for securing the safety rope for the lead climber, ensuring that in the event of a slip or fall, the climber is held in place. A belay device is used to adjust the rope tension and absorb shock in case of an incident.</p>
 
                     <h5 style="font-style:italic; font-weight:bold;">Free Climbing Technique</h5>
+                    <img src="images/information/free_limbing_technique.png" style="width: 100%; height: auto;">
                     <p>This is a climbing technique that only uses hands and feet to climb, while ropes and other equipment are used solely for protection in case of a fall. Climbers need flexibility, endurance, and good balancing skills to move smoothly across rocks or difficult surfaces.</p>
 
                     <h5 style="font-style:italic; font-weight:bold;">Aid Climbing Technique</h5>
+                    <img src="images/information/aid_climbing_technique.png" style="width: 100%; height: auto;" >
                     <p>In contrast to free climbing, this technique uses equipment like hooks, clamps, or ropes to assist the climber, especially when the surface is too difficult or lacks proper handholds and footholds.</p>
 
                     <h5 style="font-style:italic; font-weight:bold;">Knots Technique</h5>
+                    <img src="images/information/knots_technique.png" style="width: 100%; height: auto;">
                     <p>Knot-tying skills are essential. Common knots like the figure-eight knot, double knot, or bowline knot help create secure and safe connections between ropes, climbers, and other supporting equipment.</p>
 
                     <h5 style="font-style:italic; font-weight:bold;">Pacing and Breathing Technique</h5>
@@ -82,7 +85,8 @@
 
                     <h5 style="font-style:italic; font-weight:bold;">Footwork and Grip Technique</h5>
                     <p>Proper foot placement and grip are key to ensuring safety and efficiency. Climbers need to learn how to position their body weight and use leg strength rather than just relying on their hands for climbing. This helps conserve energy and improve balance.</p>
-
+                    <img src="images/information/footwork _and_grip_technique.jpg" style="width: 100%; height: auto;">
+                    
                     <h5 style="font-style:italic; font-weight:bold;">Route Finding Technique</h5>
                     <p>The ability to navigate and choose a safe path is an essential part of climbing. Before starting a climb, participants must carefully observe the terrain, anticipate challenges and risks, and choose the best route accordingly.</p>
 
@@ -93,6 +97,8 @@
                     <p>Clear communication between the climber and the belayer is vital in climbing. Verbal cues and hand signals are often used to convey important information such as requests for more rope, stopping, or emergencies.</p>
 
                     <h5 style="font-style:italic; font-weight:bold;">Ice Climbing Technique</h5>
+                    <img src="images/information/tf_ice_climbing.png" style="width: 100%; height: auto;">
+                    tf_ice_climbing
                     <p>When climbing during winter or on icy surfaces, climbers need to use additional equipment such as crampons, ice axes, and ice screws to grip and ascend slippery surfaces. This technique requires high concentration and skills, as the harsh weather conditions and the risk of avalanches pose significant dangers.</p>
 
                     <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>
@@ -101,22 +107,29 @@
 
                 <div id="shelter" class="tab-pane" style="display:none;"> <!-- Content section of the "Shelter" tab -->
                     <h2 style="font-style:italic">Shelter</h2>
-
+                        
+                        <img src="images/information/if_shelter.jpg" style="width: 100%; height: auto;">
+                        
                         <p>This is a shelter set up at the base of the mountain or the starting point of a long climbing expedition. The camp usually consists of large tents where climbers can rest, prepare food, and gear up before advancing to more dangerous altitudes. These camps are often located near a water source, in safe camping areas, and in regions with less harsh climates compared to higher elevations.</p>
 
                         <h5 style="font-style:italic; font-weight:bold;">Tent</h5>
+                        <img src="images/information/if_tent.jpg" style="width: 100%; height: auto;">
                         <p>The tent is the most common form of portable shelter in climbing. Modern tents are designed to be compact, lightweight, waterproof, and wind-resistant, suitable for the harsh weather conditions of the mountains. Tents can be set up at temporary stops when climbers need to rest during long journeys. Some tents also come with thermal insulation features for areas with snow.</p>
 
                         <h5 style="font-style:italic; font-weight:bold;">Cave</h5>
                         <p>In high mountain regions with complex terrain, natural caves can become ideal shelters. Caves protect climbers from strong winds and rain; however, it’s essential to thoroughly check the cave to ensure it is safe before use. Deep caves may provide more space than tents, but they are usually colder and more humid, so sleeping bags or insulation mats are necessary to keep warm.</p>
 
                         <h5 style="font-style:italic; font-weight:bold;">Mountain Huts</h5>
+                        <img src="images/information/if_mountain_huts.jpg" style="width: 100%; height: auto;">
                         <p>In high mountain areas, especially at popular climbing spots, local authorities or climbing organizations may construct small wooden huts or shelters for climbers. These provide enclosed shelter, protection from wind and rain, and may offer basic amenities like cooking facilities or beds. Mountain huts are usually located at fixed resting points, allowing climbers to recharge and refuel.</p>
 
                         <h5 style="font-style:italic; font-weight:bold;">Shelter</h5>
                         <p>On popular climbing routes, many countries have built small emergency shelters to provide refuge in case of sudden bad weather. These shelters are not large and lack many amenities, but they are sufficient to protect climbers from the elements. They are often scattered along long climbing routes, allowing climbers to rest without needing to set up tents.</p>
 
                         <h5 style="font-style:italic; font-weight:bold;">Igloo and Snow Shelter</h5>
+
+                        <img src="images/information/if_Iglooand_snow_shelter.png" style="width: 100%; height: auto;">
+                        
                         <p>In snowy mountain regions, snow shelters or igloos are viable options in emergency situations. Climbers can build these shelters by using snow-cutting tools to create thick walls that insulate and protect from cold winds. However, constructing an igloo requires experience and skill, as the structure must be solid and safe.</p>
 
                         <p>Climbing is a challenging sport that offers many physical and mental rewards. These techniques help climbers overcome obstacles and conquer mountain peaks while ensuring the safety of themselves and their teammates throughout the journey.</p>
@@ -125,6 +138,9 @@
 
                 <div id="danger" class="tab-pane" style="display:none;"> <!-- Content section of the "Danger" tab -->
                     <h2 style="font-style:italic">Danger</h2>
+
+
+                        <img src="images/information/if_danger.png" style="width: 100%; height: auto;">
                         <p>Another danger is <strong>landslides and rockfalls</strong>. Mountainous terrain is often unstable, especially after heavy rains or bad weather. Rocks and soil can unexpectedly tumble down from higher elevations, posing a serious risk to climbers below. This is why monitoring weather conditions and terrain stability is extremely important before starting a climb.</p>
 
                         <p><strong>Extreme weather</strong> is also a significant danger in mountaineering. At high altitudes, the weather can change rapidly from clear skies to storms, strong winds, or snow. Sudden weather shifts not only reduce visibility but also make the terrain more treacherous. Climbers must be equipped with waterproof clothing, insulation, and essential gear to handle adverse weather conditions.</p>
@@ -143,6 +159,9 @@
 
                 <div id="record" class="tab-pane" style="display:none;"> <!-- Content section of the "Records" tab -->
                     <h2 style="font-style:italic">Record</h2>
+
+                        <img src="images/information/if_record.png" style="width: 100%; height: auto;">
+
                         <p>Alpine Ascent Vietnam is a specialized website for mountaineering and nature exploration, achieving remarkable success in the field of adventure tourism. Founded with a mission to promote a love for nature and respect for the environment, Alpine Ascent Vietnam quickly established its reputation within the international mountaineering community. One of its most significant achievements is organizing professional mountain expeditions, offering challenging experiences for thousands of participants from around the world. These journeys not only allow climbers to discover Vietnam's majestic peaks but also help them build physical endurance and mental resilience.</p>
 
                         <p>Another notable aspect of Alpine Ascent Vietnam is its collaboration with international mountaineering experts to ensure that all climbing programs adhere to the highest safety standards. Thanks to this, the website has won numerous prestigious awards for safety and mountaineering organization, especially from tourism and environmental organizations. This recognition solidifies Alpine Ascent Vietnam's reputation for organizing not only challenging but also safe and reliable mountain expeditions.</p>
