@@ -13,9 +13,9 @@ class ToursTableSeeder extends Seeder
     {
         DB::table('tours')->insert([
             [
-                'name' => 'Fansipan Expedition',
+                'name' => 'Fansipan Adventure Expedition',
                 'price' => 3500000,
-                'image' => 'images/fansipan/fansipan (2).png',
+                'image' => 'images/fansipan/fansipan (1).jpg',
                 'location' => '<p>Fansipan, located in Sa Pa district, Lào Cai province, is known as the "Roof of Indochina" and is the highest peak in the Hoang Lien Son range, standing at 3,143 meters above sea level.</p> <p>This location not only attracts adventure enthusiasts due to its grandeur but also because of its majestic natural beauty. Fansipan is a dream destination for many trekkers and travelers, offering a sense of triumph when standing on the highest peak of Indochina, immersing in the sea of white clouds, and admiring the vast surrounding landscapes.</p>',
                 'features' => '<p>Fansipan features rugged limestone terrain with steep and uneven paths.</p> <p>Along the route to the summit, you will pass through dense forests, clear streams, and lush green meadows. The path to the top is often shrouded in mist, creating a mysterious and magnificent scene. Small caves and beautiful waterfalls along the route are also interesting highlights.</p> <p>The rainy season can make the road slippery and more challenging, but it is compensated by the beautiful natural scenery and fresh air.</p>',
                 'besttime' => ' <p>The ideal time to conquer Fansipan is from October to April.</p> <p>During this period, the weather is dry and cool, with temperatures ranging from 10 to 20 degrees Celsius, making it ideal for trekking.</p> <p>Spring and autumn are the best times to enjoy the scenery, with fields of vibrant yellow wild sunflowers or the green hues of vegetation. Summer may bring heavy rains, affecting travel and sightseeing. Winter can be very cold, with possible ice and snow, making the conquest more difficult and requiring careful preparation.</p>',
@@ -28,7 +28,7 @@ class ToursTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'name' => 'Phong Nha - Ke Bang Trekking',
+                'name' => 'Phong Nha - Ke Bang Discovery',
                 'price' => 3000000,
                 'image' => 'images/phong-nha-ke-bang/phong-nha-ke-bang (1).jpg',
                 'location' => '<p>Phong Nha - Ke Bang, located in Quang Binh province, is a UNESCO World Heritage site known for its magnificent cave systems.</p> <p>This area is famous for large caves such as Son Doong, Phong Nha, and Tien Son, offering a unique and rich natural exploration experience.</p> <p>With rivers, waterfalls, and majestic landscapes, it is an ideal destination for those passionate about caves and exploring pristine nature.</p>',
@@ -43,7 +43,7 @@ class ToursTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
             [
-                'name' => 'Ta Xua Trekking',
+                'name' => 'Ta Xua Cloud Hunting Trek',
                 'price' => 2500000,
                 'image' => 'images/ta-xua/ta-xua (1).jpg',
                 'location' => '<p>Ta Xua, located in Bac Yen district, Son La province, is famous for its majestic mountain ranges and sea of white clouds.</p> <p>This location is a paradise for those who love trekking and want to experience the natural beauty of Vietnam Northwest region.</p> <p>Ta Xua is also an ideal place to enjoy the pristine scenery and misty clouds, creating a mesmerizing natural landscape.</p>',
@@ -58,9 +58,5 @@ class ToursTableSeeder extends Seeder
                 'updated_at' => Carbon::now(),
             ],
         ]);
-        {
-        Tour::create(['name' => 'Tour 1', 'price' => 100.00]);
-        Tour::create(['name' => 'Tour 2', 'price' => 150.00]);
-        }
     }
 }

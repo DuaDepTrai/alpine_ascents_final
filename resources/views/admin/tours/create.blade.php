@@ -38,6 +38,106 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+<style>
+  #visitor-lists {
+    width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
+    max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
+    border-collapse: collapse; /* Gộp các đường viền lại với nhau */
+    margin-left: auto; /* Căn giữa bảng nếu cần */
+    margin-right: auto; /* Căn giữa bảng nếu cần */
+}
+
+#visitor-lists th,
+#visitor-lists td {
+    padding: 8px; /* Giảm khoảng cách giữa nội dung và đường viền */
+    border: 1px solid #dee2e6; /* Đường viền cho ô */
+    text-align: center; /* Canh giữa nội dung */
+    vertical-align: middle; /* Canh giữa theo chiều dọc */
+    overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." khi nội dung quá dài */
+    white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
+}
+
+#visitor-lists th:nth-child(1),
+#visitor-lists td:nth-child(1) {
+    max-width: 60px; /* Giới hạn chiều rộng cho cột STT */
+}
+
+#visitor-lists th:nth-child(2),
+#visitor-lists td:nth-child(2) {
+    max-width: 120px; /* Giới hạn chiều rộng cho cột Name */
+}
+
+#visitor-lists th:nth-child(3),
+#visitor-lists td:nth-child(3) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Price */
+}
+
+#visitor-lists th:nth-child(4),
+#visitor-lists td:nth-child(4) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Image */
+}
+
+#visitor-lists th:nth-child(5),
+#visitor-lists td:nth-child(5) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Location */
+}
+
+#visitor-lists th:nth-child(6),
+#visitor-lists td:nth-child(6) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Features */
+}
+
+#visitor-lists th:nth-child(7),
+#visitor-lists td:nth-child(7) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Best Time */
+}
+
+#visitor-lists th:nth-child(8),
+#visitor-lists td:nth-child(8) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Directions */
+}
+
+#visitor-lists th:nth-child(9),
+#visitor-lists td:nth-child(9) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Checking Routes */
+}
+
+#visitor-lists th:nth-child(10),
+#visitor-lists td:nth-child(10) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Items */
+}
+
+#visitor-lists th:nth-child(11),
+#visitor-lists td:nth-child(11) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Cautions */
+}
+
+#visitor-lists th:nth-child(12),
+#visitor-lists td:nth-child(12) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Requirements */
+}
+
+#visitor-lists th:nth-child(13),
+#visitor-lists td:nth-child(13) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
+}
+
+#visitor-lists th:nth-child(14),
+#visitor-lists td:nth-child(14) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
+}
+
+/* Responsive Style */
+@media (max-width: 768px) {
+    #visitor-lists th,
+    #visitor-lists td {
+        font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
+    }
+}
+}
+
+</style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -72,7 +172,7 @@
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                        {{-- {{auth()->user()->name }} --}}
+                       {{-- {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -106,21 +206,23 @@
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    {{-- <p>{{auth()->user()->name }}</p> --}}
+                    {{--<p>{{auth()->user()->name }}</p>--}}
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="admin/UserManagement">
+                  
+                  <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="admin/tours">
+                  <a href="/admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +230,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="admin/order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -136,7 +238,7 @@
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="admin/galleries">
+                  <a href="/admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -165,62 +267,67 @@
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <h1>Create New Tour</h1>
-        <form action="{{ route('admin.tours.store') }}" method="POST">
+      <div class="container">
+        <h1>Add New Tour</h1>
+    
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+    
+        <form action="{{ route('admin.tours.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
             </div>
-            <div>
-                <label for="address">Price:</label>
-                <input type="text" id="price" name="price" required>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required>
             </div>
-            <div>
-                <label for="address">Image:</label>
-                <input type="file" name="images[]" multiple class="form-control">
+            <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" class="form-control" id="image" name="image">
             </div>
-            <div>
-                <label for="address">Location:</label>
-                <input type="text" id="location" name="location" required>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <textarea class="form-control" id="location" name="location" required></textarea>
             </div>
-            <div>
-                <label for="address">Features:</label>
-                <input type="text" id="features" name="features" required>
+            <div class="form-group">
+                <label for="features">Features</label>
+                <textarea class="form-control" id="features" name="features" required></textarea>
             </div>
-            <div>
-                <label for="address">Best Time:</label>
-                <input type="text" id="besttime" name="besttime" required>
+            <div class="form-group">
+                <label for="besttime">Best Time</label>
+                <textarea class="form-control" id="besttime" name="besttime" required></textarea>
             </div>
-            <div>
-                <label for="address">Directions:</label>
-                <input type="text" id="directions" name="directions" required>
+            <div class="form-group">
+                <label for="directions">Directions</label>
+                <textarea class="form-control" id="directions" name="directions" required></textarea>
             </div>
-            <div>
-                <label for="address">Checking Routes:</label>
-                <input type="text" id="trekkingroutes" name="trekkingroutes" required>
+            <div class="form-group">
+                <label for="trekkingroutes">Trekking Routes</label>
+                <textarea class="form-control" id="trekkingroutes" name="trekkingroutes" required></textarea>
             </div>
-            <div>
-                <label for="address">Items:</label>
-                <input type="text" id="items" name="items" required>
+            <div class="form-group">
+                <label for="items">Items (Optional)</label>
+                <textarea class="form-control" id="items" name="items"></textarea>
             </div>
-            <div>
-                <label for="address">Cautions:</label>
-                <input type="text" id="cautions" name="cautions" required>
+            <div class="form-group">
+                <label for="cautions">Cautions (Optional)</label>
+                <textarea class="form-control" id="cautions" name="cautions"></textarea>
             </div>
-            <div>
-                <label for="address">Requirements:</label>
-                <input type="text" id="requirements" name="requirements" required>
+            <div class="form-group">
+                <label for="requirements">Requirements</label>
+                <textarea class="form-control" id="requirements" name="requirements" required></textarea>
             </div>
-            <button type="submit">Create</button>
+            <button type="submit" class="btn btn-primary">Add Tour</button>
         </form>
-            </table>
-    </div>
-    </div>
-        </div>
-    </div>
-    </div>
     </div>
     </section>
     <!-- right col -->

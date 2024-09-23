@@ -2,158 +2,153 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tours;
 use Illuminate\Http\Request;
+use App\Models\tours;
+use Illuminate\Support\Facades\Storage;
 
 class AdminToursController extends Controller
 {
-    /**
-     * Display a listing of the restaurants.
-     *
-     * @return \Illuminate\View\View
-     */
+    // Hiển thị form để thêm tour mới
+    public function create()
+    {
+        return view('admin.tours.create');
+    }
+
+    // Lưu thông tin tour mới vào database
+    public function store(Request $request)
+    {
+        // Validate dữ liệu đầu vào
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'price' => 'required|integer',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
+            'location' => 'required|string',
+            'features' => 'required|string',
+            'besttime' => 'required|string',
+            'directions' => 'required|string',
+            'trekkingroutes' => 'required|string',
+            'items' => 'nullable|string',
+            'cautions' => 'nullable|string',
+            'requirements' => 'required|string',
+        ]);
+
+        // Xử lý upload ảnh
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            // Lưu ảnh vào thư mục public/images
+            $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
+            $request->file('image')->move(public_path('images'), $imageName);
+
+            // Lưu đường dẫn tương đối của ảnh
+            $imagePath = 'images/' . $imageName;
+        }
+
+        // Tạo tour mới với đường dẫn ảnh
+        tours::create([
+            'name' => $request->name,
+            'price' => $request->price,
+            'image' => $imagePath, // Lưu đường dẫn ảnh
+            'location' => $request->location,
+            'features' => $request->features,
+            'besttime' => $request->besttime,
+            'directions' => $request->directions,
+            'trekkingroutes' => $request->trekkingroutes,
+            'items' => $request->items,
+            'cautions' => $request->cautions,
+            'requirements' => $request->requirements,
+        ]);
+
+        // Chuyển hướng sau khi thêm thành công
+        return redirect()->route('admin.tours.index')->with('success', 'Tour added successfully');
+    }
+
+    // Hiển thị danh sách các tours
     public function index()
     {
         $tours = tours::all();
         return view('admin.tours.index', compact('tours'));
     }
 
-    /**
-     * Show the form for creating a new restaurant.
-     *
-     * @return \Illuminate\View\View
-     */
-    public function create()
-    {
-        return view('admin.tours.create');
-    }
 
-    public function show($id)
-    {
-
-    }
-
-    /**
-     * Store a newly created restaurant in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'name' => 'required|max:255',
-        'price' => 'required|max:255',
-        'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'location' => 'required|max:255',
-        'features' => 'required|max:255',
-        'besttime' => 'required|max:255',
-        'directions' => 'required|max:255',
-        'trekkingroutes' => 'required|max:255',
-        'items' => 'required|max:255',
-        'cautions' => 'required|max:255',
-        'requirements' => 'required|max:255',
-    ]);
-
-    // Tìm tour theo ID
-    $tour = tours::find($request->id);
-
-    // Nếu không tìm thấy tour, có thể xử lý thông báo lỗi
-    if (!$tour) {
-        return redirect()->route('admin.tours.index')
-                         ->with('error', 'Tour not found.');
-    }
-
-    // Xử lý hình ảnh
-    $currentImages = $tour->images ? json_decode($tour->images, true) : [];
-    if ($request->hasFile('images')) {
-        foreach ($request->file('images') as $image) {
-            $path = $image->move(public_path('images'), $image->getClientOriginalName());
-            $currentImages[] = 'images/' . $image->getClientOriginalName();  // Lưu đường dẫn ảnh
-        }
-    }
-
-    // Cập nhật lại hình ảnh
-    $tour->images = json_encode($currentImages);
-    
-    // Cập nhật các thuộc tính khác
-    $tour->fill($validatedData);
-    $tour->save(); // Cập nhật bản ghi
-
-    return redirect()->route('admin.tours.index')
-                     ->with('success', 'Tour updated successfully.');
-}
-
-    /**
-     * Show the form for editing the specified restaurant.
-     *
-     * @param  \App\Models\tours  $tours
-     * @return \Illuminate\View\View
-     */
+    //CẬP NHẬT TOURS
     public function edit($id)
 {
-    $tour = tours::findOrFail($id); // Sử dụng findOrFail để tự động xử lý lỗi 404
-    return view('admin.tours.edit')->with('tour', $tour);
+    // Tìm tour theo id
+    $tour = tours::findOrFail($id);
+
+    // Trả về view edit với dữ liệu tour
+    return view('admin.tours.edit', compact('tour'));
 }
 
-    /**
-     * Update the specified restaurant in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tours  $tours
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(Request $request, $id)
+public function update(Request $request, $id)
 {
-    $validatedData = $request->validate([
-        'name' => 'required|max:255',
-        'price' => 'required|max:255',
-        'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        'location' => 'required|max:255',
-        'features' => 'required|max:255',
-        'besttime' => 'required|max:255',
-        'directions' => 'required|max:255',
-        'trekkingroutes' => 'required|max:255',
-        'items' => 'required|max:255',
-        'cautions' => 'required|max:255',
-        'requirements' => 'required|max:255',
+    // Validate dữ liệu đầu vào
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'price' => 'required|integer',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
+        'location' => 'required|string',
+        'features' => 'required|string',
+        'besttime' => 'required|string',
+        'directions' => 'required|string',
+        'trekkingroutes' => 'required|string',
+        'items' => 'nullable|string',
+        'cautions' => 'nullable|string',
+        'requirements' => 'required|string',
     ]);
 
-    // Tìm tour theo ID
-    $tour = tours::findOrFail($id); // Sử dụng findOrFail để tự động xử lý lỗi 404
+    // Tìm tour theo id
+    $tour = tours::findOrFail($id);
 
-    // Xử lý hình ảnh
-    $currentImages = $tour->images ? json_decode($tour->images, true) : [];
-    if ($request->hasFile('images')) {
-        foreach ($request->file('images') as $image) {
-            $path = $image->move(public_path('images'), $image->getClientOriginalName());
-            $currentImages[] = 'images/' . $image->getClientOriginalName(); // Lưu đường dẫn ảnh
+    // Xử lý upload ảnh (nếu có)
+    if ($request->hasFile('image')) {
+        // Xóa ảnh cũ (nếu có)
+        if ($tour->image && file_exists(public_path($tour->image))) {
+            unlink(public_path($tour->image));
         }
+
+        // Lưu ảnh mới vào thư mục public/images
+        $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
+        $request->file('image')->move(public_path('images'), $imageName);
+
+        // Lưu đường dẫn tương đối của ảnh
+        $tour->image = 'images/' . $imageName;
     }
 
-    // Cập nhật lại hình ảnh
-    $tour->images = json_encode($currentImages);
+    // Cập nhật các thông tin khác
+    $tour->name = $request->name;
+    $tour->price = $request->price;
+    $tour->location = $request->location;
+    $tour->features = $request->features;
+    $tour->besttime = $request->besttime;
+    $tour->directions = $request->directions;
+    $tour->trekkingroutes = $request->trekkingroutes;
+    $tour->items = $request->items;
+    $tour->cautions = $request->cautions;
+    $tour->requirements = $request->requirements;
 
-    // Cập nhật các thuộc tính khác
-    $tour->fill($validatedData);
-    $tour->save(); // Lưu bản ghi
+    // Lưu thay đổi vào database
+    $tour->save();
 
-    return redirect()->route('admin.tours.index')
-                     ->with('success', 'Tour updated successfully.');
+    // Chuyển hướng sau khi cập nhật thành công
+    return redirect()->route('admin.tours.index')->with('success', 'Tour updated successfully');
 }
 
-    /**
-     * Remove the specified restaurant from storage.
-     *
-     * @param  \App\Models\tours  $restaurant
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function destroy($id)
-    {
-        $tour = tours::find($id);
-        $tour->delete();
+//XOÁ TOUR
+public function destroy($id)
+{
+    // Tìm tour theo id
+    $tour = tours::findOrFail($id);
 
-        return redirect()->route('admin.tours.index')
-                         ->with('success', 'Tours deleted successfully.');
+    // Xóa ảnh trong thư mục public/images (nếu có)
+    if ($tour->image && file_exists(public_path($tour->image))) {
+        unlink(public_path($tour->image));
     }
+
+    // Xóa tour khỏi database
+    $tour->delete();
+
+    // Chuyển hướng sau khi xóa thành công
+    return redirect()->route('admin.tours.index')->with('success', 'Tour deleted successfully');
+}
 }

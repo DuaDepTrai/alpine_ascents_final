@@ -39,59 +39,102 @@
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <style>
-  .body1 {
-    max-width: 100%; /* Chiều rộng tối đa là 100% màn hình */
-    margin: 20px auto; /* Căn giữa với khoảng cách xung quanh */
-    padding: 20px; /* Khoảng cách bên trong */
-    background-color: #f8f9fa; /* Màu nền nhẹ cho form */
-    border-radius: 8px; /* Bo tròn các góc của form */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Thêm bóng cho form */
+  #visitor-lists {
+    width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
+    max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
+    border-collapse: collapse; /* Gộp các đường viền lại với nhau */
+    margin-left: auto; /* Căn giữa bảng nếu cần */
+    margin-right: auto; /* Căn giữa bảng nếu cần */
 }
 
-h1 {
-    text-align: left; /* Căn trái tiêu đề */
-    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+#visitor-lists th,
+#visitor-lists td {
+    padding: 8px; /* Giảm khoảng cách giữa nội dung và đường viền */
+    border: 1px solid #dee2e6; /* Đường viền cho ô */
+    text-align: center; /* Canh giữa nội dung */
+    vertical-align: middle; /* Canh giữa theo chiều dọc */
+    overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." khi nội dung quá dài */
+    white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
 }
 
-form {
-    display: flex; /* Sử dụng flexbox cho form */
-    flex-direction: column; /* Xếp các phần tử theo chiều dọc */
+#visitor-lists th:nth-child(1),
+#visitor-lists td:nth-child(1) {
+    max-width: 60px; /* Giới hạn chiều rộng cho cột STT */
 }
 
-div {
-    margin-bottom: 15px; /* Khoảng cách giữa các trường nhập */
+#visitor-lists th:nth-child(2),
+#visitor-lists td:nth-child(2) {
+    max-width: 120px; /* Giới hạn chiều rộng cho cột Name */
 }
 
-label {
-    font-weight: bold; /* Làm cho chữ label đậm */
-    margin-bottom: 5px; /* Khoảng cách giữa label và input */
-    display: block; /* Đặt label thành block để nó ở trên input */
+#visitor-lists th:nth-child(3),
+#visitor-lists td:nth-child(3) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Price */
 }
 
-input {
-    width: 100%; /* Chiều rộng 100% để ô nhập chiếm toàn bộ chiều rộng */
-    padding: 10px; /* Thêm khoảng cách cho các ô nhập */
-    border: 1px solid #ced4da; /* Viền cho các ô nhập */
-    border-radius: 4px; /* Bo tròn các góc của ô nhập */
-    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
-    font-size: 14px; /* Kích thước chữ cho ô nhập */
-    height: 40px; /* Chiều cao cố định cho ô nhập */
+#visitor-lists th:nth-child(4),
+#visitor-lists td:nth-child(4) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Image */
 }
 
-button {
-    padding: 10px 15px; /* Khoảng cách cho nút */
-    background-color: #007bff; /* Màu nền cho nút */
-    color: white; /* Màu chữ cho nút */
-    border: none; /* Không viền cho nút */
-    border-radius: 4px; /* Bo tròn các góc của nút */
-    cursor: pointer; /* Hiển thị con trỏ tay khi di chuột lên nút */
-    font-size: 16px; /* Kích thước chữ cho nút */
-    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
-    width: 100%; /* Chiều rộng nút bằng 100% */
+#visitor-lists th:nth-child(5),
+#visitor-lists td:nth-child(5) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Location */
 }
 
-button:hover {
-    background-color: #0056b3; /* Thay đổi màu nền khi hover */
+#visitor-lists th:nth-child(6),
+#visitor-lists td:nth-child(6) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Features */
+}
+
+#visitor-lists th:nth-child(7),
+#visitor-lists td:nth-child(7) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Best Time */
+}
+
+#visitor-lists th:nth-child(8),
+#visitor-lists td:nth-child(8) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Directions */
+}
+
+#visitor-lists th:nth-child(9),
+#visitor-lists td:nth-child(9) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Checking Routes */
+}
+
+#visitor-lists th:nth-child(10),
+#visitor-lists td:nth-child(10) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Items */
+}
+
+#visitor-lists th:nth-child(11),
+#visitor-lists td:nth-child(11) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Cautions */
+}
+
+#visitor-lists th:nth-child(12),
+#visitor-lists td:nth-child(12) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Requirements */
+}
+
+#visitor-lists th:nth-child(13),
+#visitor-lists td:nth-child(13) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
+}
+
+#visitor-lists th:nth-child(14),
+#visitor-lists td:nth-child(14) {
+    max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
+}
+
+/* Responsive Style */
+@media (max-width: 768px) {
+    #visitor-lists th,
+    #visitor-lists td {
+        font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
+    }
+}
 }
 
 </style>
@@ -129,7 +172,7 @@ button:hover {
                     <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                     <p>
-                        {{-- {{auth()->user()->name }} --}}
+                       {{-- {{auth()->user()->name }}--}}
                       <small>Member since Aug. 2024</small>
                     </p>
                   </li>
@@ -163,21 +206,23 @@ button:hover {
                     <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    {{--<p>{{auth()->user()->name }}</p> --}}
+                    {{--<p>{{auth()->user()->name }}</p>--}}
+                    {{--  <p>{{auth()->user()->name }}</p> --}}
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">MAIN NAVIGATION</li>
                 <li>
-                  <a href="admin/UserManagement">
+                  
+                  <a href="/admin/UserManagement">
                     <i class="fa fa-th"></i> <span>User</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                   </a>
                 <li class="treeview">
-                  <a href="admin/tours">
+                  <a href="/admin/tours">
                     <i class="fa fa-edit"></i> <span>Tour</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -185,7 +230,7 @@ button:hover {
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="admin/Order">
+                  <a href="/admin/order">
                     <i class="fa fa-table"></i> <span>Order</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -193,7 +238,7 @@ button:hover {
                   </a>
                 </li>
                 <li class="treeview">
-                  <a href="admin/galleries">
+                  <a href="/admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
@@ -218,74 +263,88 @@ button:hover {
         <li class="active">Dashboard</li>
       </ol>
     </section>
-    <div class="body1">
+
     <!-- Main content -->
     <section class="content">
       <!-- Small boxes (Stat box) -->
-      <div class="row">
+      <div class="container">
         <h1>Edit Tour</h1>
         <form action="{{ route('admin.tours.update', $tour->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" value="{{$tour->name}}" required>
+    
+            <!-- Tên tour -->
+            <div class="form-group">
+                <label for="name">Tour Name</label>
+                <input type="text" name="name" class="form-control" value="{{ $tour->name }}" required>
             </div>
-            <div>
-                <label for="name">Price:</label>
-                <input type="text" id="price" name="price" value="{{$tour->price}}" required>
+    
+            <!-- Giá tour -->
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" name="price" class="form-control" value="{{ $tour->price }}" required>
             </div>
-            <div>
-                <label for="name">Image:</label>
-                <input type="file" id="image[]" name="image" value="{{$tour->image}}" required>
+    
+            <!-- Địa điểm -->
+            <div class="form-group">
+                <label for="location">Location</label>
+                <textarea name="location" class="form-control" required>{{ $tour->location }}</textarea>
             </div>
-            <div>
-                <label for="name">Location:</label>
-                <input type="text" id="location" name="location" value="{{$tour->location}}" required>
+    
+            <!-- Tính năng -->
+            <div class="form-group">
+                <label for="features">Features</label>
+                <textarea name="features" class="form-control" required>{{ $tour->features }}</textarea>
             </div>
-            <div>
-                <label for="name">Feature:</label>
-                <input type="text" id="features" name="features" value="{{$tour->features}}" required>
+    
+            <!-- Thời điểm tốt nhất -->
+            <div class="form-group">
+                <label for="besttime">Best Time</label>
+                <textarea name="besttime" class="form-control" required>{{ $tour->besttime }}</textarea>
             </div>
-            <div>
-                <label for="name">Best Time:</label>
-                <input type="text" id="besttime" name="besttime" value="{{$tour->besttime}}" required>
+    
+            <!-- Hướng dẫn đường đi -->
+            <div class="form-group">
+                <label for="directions">Directions</label>
+                <textarea name="directions" class="form-control" required>{{ $tour->directions }}</textarea>
             </div>
-            <div>
-                <label for="name">Directions:</label>
-                <input type="text" id="directions" name="directions" value="{{$tour->directions}}" required>
+    
+            <!-- Tuyến đường trekking -->
+            <div class="form-group">
+                <label for="trekkingroutes">Trekking Routes</label>
+                <textarea name="trekkingroutes" class="form-control" required>{{ $tour->trekkingroutes }}</textarea>
             </div>
-            <div>
-                <label for="name">Checking Routes:</label>
-                <input type="text" id="trekkingroutes" name="trekkingroutes" value="{{$tour->trekkingroutes}}" required>
+    
+            <!-- Vật dụng cần mang -->
+            <div class="form-group">
+                <label for="items">Items</label>
+                <textarea name="items" class="form-control">{{ $tour->items }}</textarea>
             </div>
-            <div>
-                <label for="name">Item:</label>
-                <input type="text" id="items" name="items" value="{{$tour->items}}" required>
+    
+            <!-- Lưu ý -->
+            <div class="form-group">
+                <label for="cautions">Cautions</label>
+                <textarea name="cautions" class="form-control">{{ $tour->cautions }}</textarea>
             </div>
-            <div>
-                <label for="name">cautions:</label>
-                <input type="text" id="cautions" name="cautions" value="{{$tour->cautions}}" required>
+    
+            <!-- Yêu cầu -->
+            <div class="form-group">
+                <label for="requirements">Requirements</label>
+                <textarea name="requirements" class="form-control" required>{{ $tour->requirements }}</textarea>
             </div>
-            <div>
-                <label for="name">Requirements:</label>
-                <input type="text" id="requirements" name="requirements" value="{{$tour->requirements}}" required>
+    
+            <!-- Hình ảnh -->
+            <div class="form-group">
+                <label for="image">Image</label>
+                @if($tour->image)
+                    <img src="{{ asset($tour->image) }}" alt="{{ $tour->name }}" style="width: 100px; height: 100px;">
+                @endif
+                <input type="file" name="image" class="form-control">
             </div>
-            <button type="submit">Update</button>
+    
+            <button type="submit" class="btn btn-primary">Update Tour</button>
         </form>
-            </table>
     </div>
-  </div>
-    </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    </section>
-    <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
-
     </section>
     <!-- /.content -->
   </div>
