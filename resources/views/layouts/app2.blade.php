@@ -21,8 +21,9 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
-    height: 600px; /* Đặt chiều cao nếu cần */
-    max-width: 70%;
+    height: 400px; /* Đặt chiều cao nếu cần */
+    max-width: 90%;
+    height: 500;
     margin: 0 auto;
 }
     </style>
@@ -143,60 +144,6 @@
         }
     }
     </style>
-    <style>
-        #colophon {
-            background-color: #4b764d; /* Mã màu xanh lá cây */
-            color: white; /* Đổi màu chữ nếu cần */
-            padding: 20px 0; /* Thêm khoảng cách trên và dưới */
-        }
-
-        .site-footer {
-            background-color: #1ab641;
-            padding: 20px 0;
-        }
-
-        .container_footer {
-            display: flex;
-            justify-content: flex-start; /* Căn trái các phần tử */
-            flex-wrap: wrap;
-        }
-
-        .footer-left {
-            flex: 1;
-            margin-left: 20%;
-            padding: 10px;
-            max-width: 50%;
-            text-align: left;
-        }
-
-        .footer-right {
-            flex: 1;
-            padding: 10px;
-            max-width: 50%;
-            text-align: center;
-            margin-right: 15%;
-        }
-
-        .footer-right img {
-            max-width: 100%;
-            height: auto;
-            width: 350px; /* Đặt chiều rộng cố định */
-            height: 150px; /* Đặt chiều cao cố định */
-        }
-
-        h3 {
-            margin-top: 0;
-        }
-
-        .footer-left a {
-            color: white; /* Đổi màu chữ của số điện thoại và email sang trắng */
-            text-decoration: none; /* Loại bỏ gạch chân nếu cần */
-        }
-
-        .footer-left a:hover {
-            color: #ffe100; /* Màu sắc khi hover (tùy chỉnh theo ý muốn) */
-        }
-    </style>
 </head>
 
 <body>    
@@ -234,21 +181,6 @@
     <div class="container">
         @yield('content')
     </div>
-
-    <footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container_footer">
-            <div class="footer-left">
-                <h3>Alpine Ascents Vietnam</h3>
-                <p>10th Floor, Green Peak Building,<br> 123 Tran Duy Hung Street,<br> Cau Giay District, Hanoi, Vietnam.</p>
-                <p>Contact: <a href="tel://+842412345678">+84 24 1234 5678</a></p>
-                <p>Email: <a href="mailto:contact@alpineascentsvn.com">contact@alpineascentsvn.com</a></p>
-            </div>
-            <div class="footer-right">
-                <h3>Find Us Here</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6646413870612!2d105.79135817535462!3d21.00607598063757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca5f64f829f%3A0xcb4a80cd1b0490dc!2zMTIzIMSQLiBUcuG6p24gRHV5IEjGsG5nLCBUcnVuZyBIb8OgLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1727066046050!5m2!1sen!2s" width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div><!-- .container -->
-    </footer><!-- #colophon -->
 </body>
 </html>
 

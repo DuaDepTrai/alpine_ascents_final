@@ -1,14 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpine Ascents Branches</title>
-    <style>
-        body {
+@extends('layouts.app')
+
+@section('content')
+    <div class="body">
+        <h1>Alpine Ascents Branches Worldwide</h1>
+        <div>
+            Branches of the Alpine Ascents system are service and customer support centers located in various regions around the world. Each branch serves as a coordination hub for exploration tours, providing detailed information about the journeys, and assisting customers throughout the process, from registration to participation in the tour. With branches strategically located, customers can easily reach out for support, learn about prominent travel destinations, and ensure they have the best experience when joining Alpine Ascents’ tour programs.
+        </div>
+        <div class="container">
+            @foreach($branches as $branch)
+                <div class="branch">
+                    <h2>{{ $branch->name }}</h2>
+                    <p>{{ $branch->address }}</p>
+                    <p>Phone: {{ $branch->phone }}</p>
+                    <div id="map-{{ $branch->id }}" class="map"></div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+@endsection
+
+@push('styles')
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style> 
+        .body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0 auto;
             background-color: #f4f4f4;
+            width: 80%;
         }
         .container {
             display: flex;
@@ -35,7 +53,9 @@
             margin-bottom: 10px;
         }
     </style>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+@endpush
+
+@push('scripts')
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
         function initMap(lat, lng, elementId) {
@@ -58,18 +78,4 @@
             });
         });
     </script>
-</head>
-<body>
-    <h1>Alpine Ascents Branches Worldwide</h1>
-    <div class="container">
-        @foreach($branches as $branch)
-            <div class="branch">
-                <h2>{{ $branch->name }}</h2>
-                <p>{{ $branch->address }}</p>
-                <p>Phone: {{ $branch->phone }}</p>
-                <div id="map-{{ $branch->id }}" class="map"></div>
-            </div>
-        @endforeach
-    </div>
-</body>
-</html>
+@endpush

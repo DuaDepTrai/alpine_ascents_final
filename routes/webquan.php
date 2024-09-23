@@ -16,9 +16,6 @@ use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MailController;
-use Illuminate\Auth\Events\Verified;
-use Illuminate\Database\QueryException;
 
 
 Route::prefix('admin')->group(function () {
@@ -27,15 +24,15 @@ Route::prefix('admin')->group(function () {
 
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home',[HomeController::class,'index'])->name('home');
 
-Route::get('/branches', [BranchController::class, 'index'])->name('branches');
+Route::get('/branches', [BranchController::class, 'index']);
 
-Route::get('/information',[InformationController::class, 'infor'])->name('information');
+Route::get('/information',[InformationController::class, 'infor']);
 
-Route::get('/about-us', [AboutUsController::class, 'aboutUs'])->name('aboutus');
+Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
 
-Route::get('/tours', [ToursController::class, 'index'])->name('tours');
+Route::get('/tours', [ToursController::class, 'index']);
 
 Route::get('/tours/{id}', [ToursController::class, 'show'])->name('tours.detail');
 
@@ -63,12 +60,12 @@ Route::delete('/admin/order/{id}', [AdminOrderController::class, 'destroy'])->na
 
 
 Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index']);
-Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index'])->name('admin.UserManagement.index');  // Display user list
-Route::get('/admin/UserManagement/create', [AdminUserManagementController::class, 'create'])->name('admin.UserManagement.create');  // Show user addition form
-Route::post('/admin/UserManagement', [AdminUserManagementController::class, 'store'])->name('admin.UserManagement.store');  // Handle new user addition
-Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::class, 'edit'])->name('admin.UserManagement.edit');  // Show user edit form
-Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Handle user information update
-Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Handle user deletion
+Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index'])->name('admin.UserManagement.index');  // Hiển thị danh sách người dùng
+Route::get('/admin/UserManagement/create', [AdminUserManagementController::class, 'create'])->name('admin.UserManagement.create');  // Hiển thị form thêm người dùng
+Route::post('/admin/UserManagement', [AdminUserManagementController::class, 'store'])->name('admin.UserManagement.store');  // Xử lý thêm người dùng mới
+Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::class, 'edit'])->name('admin.UserManagement.edit');  // Hiển thị form chỉnh sửa người dùng
+Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Xử lý cập nhật thông tin người dùng
+Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Xử lý xóa người dùng
 
 
 
@@ -83,38 +80,18 @@ Route::delete('/admin/branches/{id}', [AdminBranchesController::class, 'destroy'
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');
-Route::get('/register.verify',[VerificationController::class,'showRegisterVerifyForm'])->name('register.verify.form');
-Route::post('/register.verify',[VerificationController::class,'registerVerify'])->name('register.verify');
 
-Route::get('/forgetpass',[UsersController::class,'showForgetPassForm'])->name('forgetpass.form');
-Route::get('/verification.form', [VerificationController::class, 'showForm'])->name('verification.form');
-Route::get('/verificationchange.form', [VerificationController::class, 'showChangeForm'])->name('verificationchange.form');
+Route::get('verification.form', [VerificationController::class, 'showForm'])->name('verification.form');
+Route::post('verify', [VerificationController::class, 'verify'])->name('verify');
 
-Route::post('/send.mail',[MailController::class,'sendMail'])->name('send.mail');
-Route::post('/verify', [VerificationController::class, 've  rify'])->name('verify');
-Route::post('/changeverify',[VerificationController::class,'changeVerify'])->name('change.verify');
-Route::put('/updatepass',[VerificationController::class,'updatePassword'])->name('update.password');
-Route::put('/updateforgetpass',[VerificationController::class,'updateForgetPassword'])->name('update.forget.password');
-
-Route::get('/login', [UsersController::class, 'showLoginForm'])->name('login.form');
+Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
-Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
-
-Route::get('/users/changepass',[UsersController::class,'showChangePassForm'])->name('changepass.form');
-Route::get('/users/forgetpass',[UsersController::class,'showForgetPassForm'])->name('forgetpass.form');
-Route::get('/users/newpassword',[UsersController::class,'showNewPassForm'])->name('newpass.form');
-Route::get('/users/{user}',[UsersController::class,'index'])->name('users.index');
-Route::get('/users/{user}/edit',[UsersController::class,'edit'])->name('users.edit');
-Route::put('/users/{user}',[UsersController::class,'update'])->name('users.update');
-
-Route::get('/personalinfo', [UsersController::class, 'personalInfo'])->name('users.personalinfo');
-Route::get('/settings', [UsersController::class, 'settings'])->name('users.settings');
 
 Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
 
-Route::get('/order', [OrderController::class, 'create'])->name('order.create');
-Route::post('/order/confirm', [OrderController::class, 'confirm'])->name('order.confirm');
-Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
-Route::get('/order/success', [OrderController::class, 'success'])->name('order.success');
+Route::get('/order', [OrderController::class, 'create']);
+Route::post('/order', [OrderController::class, 'store']);
+
+
 
 

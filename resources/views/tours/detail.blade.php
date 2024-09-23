@@ -67,6 +67,49 @@
             src: url(https://fonts.gstatic.com/s/oswald/v53/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUZiYA.ttf) format('truetype');
         }
     </style>
+    <style>
+        .site-footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Căn trái các phần tử */
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%;
+    margin-left: 0; /* Đẩy sát lề trái */
+}
+
+.footer-right {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%;
+    text-align: center;
+}
+
+.footer-right img {
+    max-width: 100%;
+    height: auto;
+    width: 350px; /* Đặt chiều rộng cố định */
+    height: 150px; /* Đặt chiều cao cố định */
+}
+
+h3 {
+    margin-top: 0;
+}
+</style>
+<style>
+    .header-image {
+        background-image: url('/{{ $tour->image }}');
+    }
+</style>
+    </style>
     <meta name="description"
         content="With 25+ years of experience on Everest, Alpine Ascents is recognized as the premier guide service to provide you a rewarding experience on Mount Everest." />
     <link rel="canonical" href="https://www.alpineascents.com/climbs/mount-everest/" />
@@ -1486,6 +1529,22 @@
             src: url('https://www.alpineascents.com/wp-content/plugins/woocommerce/assets/fonts/cardo_normal_400.woff2') format('woff2');
         }
     </style>
+    <style>
+
+.sb-content-wrapper {
+    flex: 1; /* Phần này sẽ chiếm toàn bộ không gian còn lại */
+    overflow-y: auto; /* Cho phép cuộn nếu nội dung dài */
+    max-height: 500px; /* Chiều cao tối đa mà bạn muốn */
+    padding: 10px; /* Thêm padding nếu cần */
+}
+
+.sidebar {
+    width: 300px; /* Chiều rộng cố định cho sidebar */
+    padding: 10px; /* Thêm padding nếu cần */
+    background-color: #f8f8f8; /* Thay đổi màu nền nếu cần */
+    height: auto; /* Tự động chiều cao */
+}
+    </style>
     <style id="wpsp-style-frontend"></style>
     <link rel="icon"
         href="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2019/06/cropped-alpine-ascents-favicon.jpg?fit=32%2C32&ssl=1"
@@ -1750,18 +1809,20 @@
         </div><!-- .container -->
     </header><!-- #site-header -->
     <div class="banner-image">
-        <div class="header-image"
-            style="background-repeat: no-repeat; background-size: cover; background-position: top center; background-image: url('images/nui-ba-den/nui-ba-den (3).png');;">
+        <div class="header-image">
             <div class="header-text-wrapper">
-                <div class="header-text"> <span>
-                        <h3>Name</h3>
-                    </span></div><!-- .header-text -->
+                <div class="header-text">
+                    <span>
+                        <h3>{{ $tour->name }} With Alpine Ascents</h3>
+                    </span>
+                </div><!-- .header-text -->
             </div><!-- .header-text-wrapper -->
+        </div><!-- .header-image -->
         </div><!-- .header-image -->
     </div><!-- .banner-image -->
     <div class="page-titles">
         <div class="container">
-            <h1>Fansipan</h1>
+            <h1></h1>
         </div><!-- .container -->
     </div><!-- .page-titles -->
     <div id="secondary-navigation">
@@ -1864,149 +1925,54 @@
                             <div id="about" class="tab-content">
                                 <div class="sb-content-wrapper">
                                     <div class="sb-content">
-                                        <h2 class="section-title">Climb Mount Ba Den With Alpine Ascents in
-                                            2025
-                                            Season</h2>
-                                        <blockquote>
-                                            <p>Awesome trip! I cannot recommend Alpine Ascents enough! Thank you so much
-                                                to the whole staff! - 2024 Ba Den Mountain</p>
-                                            <p>Ba Den Mountain was completely amazing. Ben is an outstanding guide and
-                                                the
-                                                whole
-                                                expedition was perfect. I am grateful to the Alpine Ascents team that
-                                                helped making this experience such a successful one. Thank you all so
-                                                much! - 2023 Ba Den Mountain</p>
-                                        </blockquote>
-                                        <p>With guide Ben Jones leading the way and selecting a summit day, our 2022,
-                                            2023, and 2024 teams had an incredible summit day! Ben’s 2024 team had 100%
-                                            success
-                                        </p>
-                                        <p>We encourage you to chat with former Lang Biang team members!
-                                        </p>
-                                        <h2>Location</h2>
-                                        <p>Ba Den Mountain is located in Duong Minh Chau district, Tay Ninh province,
-                                            about 100 km northwest of Ho Chi Minh City.</p>
-                                        <p>This is the highest mountain in Southern Vietnam, with an elevation of 986
-                                            meters above sea level.</p>
-                                        <p>Ba Den Mountain is not only famous for its stunning natural scenery but also
-                                            a sacred site with many legends and worship relics.</p>
-                                        <p>With a cool climate and magnificent landscape, Ba Den Mountain is an ideal
-                                            destination for those who love trekking and exploring.</p>
+                                        <h2 class="section-title">Where is it?</h2>
+                                        <div>
+                                            {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->location) !!}
+                                    </div>
                                     </div><!-- .sb-content -->
                                 </div><!-- .sb-content-wrapper -->
                                 <div class="sidebar">
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Prices</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> $76,000 (<em>based on 5
-                                                climber
-                                                team</em>)</p>
-                                        <p><strong>Ba Den Mountain + Lhotse</strong><br /> $89,500</p>
-                                        <p><strong>Ba Den Mountain Camp II</strong><br /> $13,000</p>
+                                        <h2 class='actnew'>{{ $tour->name }} Prices</h2>
+                                        <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
+                                                climber team</em>)</p>
                                     </div><!-- .widget -->
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Schedules</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> <strong><em>2025
-                                                    Schedule</em></strong><br /> April 3 – June 3, 2025<br /> Lead
-                                            Guide: <a href="https://www.alpineascents.com/guides/ben-jones/">Ben
-                                                Jones</a></p>
-                                        <p><strong>Ba Den Mountain + Lhotse<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            – June 3, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <p><strong>Ba Den Mountain Camp II<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            –
-                                            May 9, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <div class="orange-btn"><a
-                                                href="/registration-2/?trip_uuid=9e56d9e0-3a8d-416a-ace6-a8c141ff6a1b">REGISTER
-                                                FOR CLIMB</a></div>
-                                        <p><a href="price-schedule/#cancellation-refund-policy">CANCELLATION/REFUND
-                                                POLICY</a></p>
+                                        <div class="orange-btn"><a href="/order">Order</a>
+                                        <a href="/galleries">Gallery</a></div>
                                     </div><!-- .widget -->
                                     <div class="widget">
                                         <h2 class='actnew'>Other notes</h2>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Ensure that you are in good health and physical condition to complete
-                                                the journey and fully enjoy the beauty of Lang Biang.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
                                         <h2 class='actnew'>Participation Requirements</h2>
-                                        <p><strong>Requires average physical fitness due to the long and steep mountain
-                                                climb.</strong><br /></p>
-                                        <p><strong>No prior experience needed, but participants should be well-prepared
-                                                physically.</strong><br /></p>
-                                        <p><strong>Suitable for individuals aged 16 and above with good
-                                                fitness.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
                                     </div><!-- .widget -->
                                 </div><!-- .sidebar -->
                             </div><!-- #about -->
                             <div id="Feature" class="tab-content">
                                 <div class="sb-content-wrapper">
                                     <div class="sb-content">
-                                        <h2 class="section-title">Climb ta-xua With Alpine Ascents in 2025
-                                            Season</h2>
-                                        <p>Ba Den Mountain features primarily limestone terrain with green forests and
-                                            large boulders.</p>
-                                        <p>The summit is covered by tropical forests, with steep trails, but there are
-                                            also easier routes suitable for various trekking levels.</p>
-                                        <p>The summit offers a panoramic view of the surrounding area, including lush
-                                            green fields and lower mountains, creating a beautiful natural landscape.
-                                        </p>
-                                        <p>Around the mountain, there are many temples and historical relics, adding to
-                                            the richness of the landscape.</p>
+                                        <h2 class="section-title">Wonderful Experience with {{ $tour->name }}</h2>
+                                        <div>
+                                            {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->features) !!}
+                                        </div>
                                     </div><!-- .sb-content -->
                                 </div><!-- .sb-content-wrapper -->
                                 <div class="sidebar">
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Prices</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> $76,000 (<em>based on 5
-                                                climber
-                                                team</em>)</p>
-                                        <p><strong>Ba Den Mountain + Lhotse</strong><br /> $89,500</p>
-                                        <p><strong>Ba Den Mountain Camp II</strong><br /> $13,000</p>
+                                        <h2 class='actnew'>{{ $tour->name }} Prices</h2>
+                                        <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
+                                                climber team</em>)</p>
                                     </div><!-- .widget -->
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Schedules</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> <strong><em>2025
-                                                    Schedule</em></strong><br /> April 3 – June 3, 2025<br /> Lead
-                                            Guide: <a href="https://www.alpineascents.com/guides/ben-jones/">Ben
-                                                Jones</a></p>
-                                        <p><strong>Ba Den Mountain + Lhotse<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            – June 3, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <p><strong>Ba Den Mountain Camp II<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            –
-                                            May 9, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <div class="orange-btn"><a
-                                                href="/registration-2/?trip_uuid=9e56d9e0-3a8d-416a-ace6-a8c141ff6a1b">REGISTER
-                                                FOR CLIMB</a></div>
-                                        <p><a href="price-schedule/#cancellation-refund-policy">CANCELLATION/REFUND
-                                                POLICY</a></p>
+                                        <div class="orange-btn"><a href="/order">Order</a>
+                                        <a href="/galleries">Gallery</a></div>
                                     </div><!-- .widget -->
                                     <div class="widget">
                                         <h2 class='actnew'>Other notes</h2>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Ensure that you are in good health and physical condition to complete
-                                                the journey and fully enjoy the beauty of Lang Biang.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
                                         <h2 class='actnew'>Participation Requirements</h2>
-                                        <p><strong>Requires average physical fitness due to the long and steep mountain
-                                                climb.</strong><br /></p>
-                                        <p><strong>No prior experience needed, but participants should be well-prepared
-                                                physically.</strong><br /></p>
-                                        <p><strong>Suitable for individuals aged 16 and above with good
-                                                fitness.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
                                     </div><!-- .widget -->
                                 </div><!-- .sidebar -->
                             </div><!-- #Feature -->
@@ -2014,62 +1980,26 @@
                                 <div class="sb-content-wrapper">
                                     <div class="sb-content">
                                         <h2 class="section-title">The ideal time of year to explore</h2>
-                                        <p>The ideal time to explore Ba Den Mountain is from November to April.</p>
-                                        <p>During this time, the weather is dry and cool, making it easier for trekking
-                                            and moving around.</p>
-                                        <p>The rainy season from May to October can make travel difficult due to
-                                            slippery roads and the possibility of heavy rains. The dry season not only
-                                            provides convenient conditions for mountain climbing but also offers clearer
-                                            and more beautiful landscapes.</p>
+                                        <div>
+                                            {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->besttime) !!}
+                                    </div>
                                     </div><!-- .sb-content -->
                                 </div><!-- .sb-content-wrapper -->
                                 <div class="sidebar">
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Prices</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> $76,000 (<em>based on 5
-                                                climber
-                                                team</em>)</p>
-                                        <p><strong>Ba Den Mountain + Lhotse</strong><br /> $89,500</p>
-                                        <p><strong>Ba Den Mountain Camp II</strong><br /> $13,000</p>
+                                        <h2 class='actnew'>{{ $tour->name }} Prices</h2>
+                                        <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
+                                                climber team</em>)</p>
                                     </div><!-- .widget -->
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Schedules</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> <strong><em>2025
-                                                    Schedule</em></strong><br /> April 3 – June 3, 2025<br /> Lead
-                                            Guide: <a href="https://www.alpineascents.com/guides/ben-jones/">Ben
-                                                Jones</a></p>
-                                        <p><strong>Ba Den Mountain + Lhotse<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            – June 3, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <p><strong>Ba Den Mountain Camp II<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            –
-                                            May 9, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <div class="orange-btn"><a
-                                                href="/registration-2/?trip_uuid=9e56d9e0-3a8d-416a-ace6-a8c141ff6a1b">REGISTER
-                                                FOR CLIMB</a></div>
-                                        <p><a href="price-schedule/#cancellation-refund-policy">CANCELLATION/REFUND
-                                                POLICY</a></p>
+                                        <div class="orange-btn"><a href="/order">Order</a>
+                                        <a href="/galleries">Gallery</a></div>
                                     </div><!-- .widget -->
                                     <div class="widget">
                                         <h2 class='actnew'>Other notes</h2>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Ensure that you are in good health and physical condition to complete
-                                                the journey and fully enjoy the beauty of Lang Biang.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
                                         <h2 class='actnew'>Participation Requirements</h2>
-                                        <p><strong>Requires average physical fitness due to the long and steep mountain
-                                                climb.</strong><br /></p>
-                                        <p><strong>No prior experience needed, but participants should be well-prepared
-                                                physically.</strong><br /></p>
-                                        <p><strong>Suitable for individuals aged 16 and above with good
-                                                fitness.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
                                     </div><!-- .widget -->
                                 </div><!-- .sidebar -->
                             </div><!-- #Best_Time -->
@@ -2077,61 +2007,26 @@
                                 <div class="sb-content-wrapper">
                                     <div class="sb-content">
                                         <h2 class="section-title">The route to conquer</h2>
-                                        <p>The journey begins at the foot of Ba Den Mountain, where you will pass
-                                            through trails and steps to reach the summit.</p>
-                                        <p>For adventure enthusiasts, we offer 1-2 day tours with rest stops along the
-                                            way for you to regain your strength.</p>
-                                        <p>From the summit, you will have a spectacular panoramic view of the
-                                            surrounding area.</p>
+                                        <div>
+                                            {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->trekkingroutes) !!}
+                                    </div>
                                     </div><!-- .sb-content -->
                                 </div><!-- .sb-content-wrapper -->
                                 <div class="sidebar">
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Prices</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> $76,000 (<em>based on 5
-                                                climber
-                                                team</em>)</p>
-                                        <p><strong>Ba Den Mountain + Lhotse</strong><br /> $89,500</p>
-                                        <p><strong>Ba Den Mountain Camp II</strong><br /> $13,000</p>
+                                        <h2 class='actnew'>{{ $tour->name }} Prices</h2>
+                                        <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
+                                                climber team</em>)</p>
                                     </div><!-- .widget -->
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Schedules</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> <strong><em>2025
-                                                    Schedule</em></strong><br /> April 3 – June 3, 2025<br /> Lead
-                                            Guide: <a href="https://www.alpineascents.com/guides/ben-jones/">Ben
-                                                Jones</a></p>
-                                        <p><strong>Ba Den Mountain + Lhotse<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            – June 3, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <p><strong>Ba Den Mountain Camp II<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            –
-                                            May 9, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <div class="orange-btn"><a
-                                                href="/registration-2/?trip_uuid=9e56d9e0-3a8d-416a-ace6-a8c141ff6a1b">REGISTER
-                                                FOR CLIMB</a></div>
-                                        <p><a href="price-schedule/#cancellation-refund-policy">CANCELLATION/REFUND
-                                                POLICY</a></p>
+                                        <div class="orange-btn"><a href="/order">Order</a>
+                                        <a href="/galleries">Gallery</a></div>
                                     </div><!-- .widget -->
                                     <div class="widget">
                                         <h2 class='actnew'>Other notes</h2>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Ensure that you are in good health and physical condition to complete
-                                                the journey and fully enjoy the beauty of Lang Biang.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
                                         <h2 class='actnew'>Participation Requirements</h2>
-                                        <p><strong>Requires average physical fitness due to the long and steep mountain
-                                                climb.</strong><br /></p>
-                                        <p><strong>No prior experience needed, but participants should be well-prepared
-                                                physically.</strong><br /></p>
-                                        <p><strong>Suitable for individuals aged 16 and above with good
-                                                fitness.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
                                     </div><!-- .widget -->
                                 </div><!-- .sidebar -->
                             </div><!-- #Checking_Routes -->
@@ -2139,60 +2034,27 @@
                                 <div class="sb-content-wrapper">
                                     <div class="sb-content">
                                         <h2 class="section-title">How to get there</h2>
-                                        <p>From Ho Chi Minh City, you can travel by bus or hire a private car to Tay
-                                            Ninh, taking about 2-3 hours.</p>
-                                        <p>From Tay Ninh, continue by taxi or motorbike to the foot of Ba Den Mountain,
-                                            which takes about 30-60 minutes.</p>
+                                        <div>
+                                            {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->directions) !!}
+                                    </div>
 
                                     </div><!-- .sb-content -->
                                 </div><!-- .sb-content-wrapper -->
                                 <div class="sidebar">
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Prices</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> $76,000 (<em>based on 5
-                                                climber
-                                                team</em>)</p>
-                                        <p><strong>Ba Den Mountain + Lhotse</strong><br /> $89,500</p>
-                                        <p><strong>Ba Den Mountain Camp II</strong><br /> $13,000</p>
+                                        <h2 class='actnew'>{{ $tour->name }} Prices</h2>
+                                        <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
+                                                climber team</em>)</p>
                                     </div><!-- .widget -->
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Schedules</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> <strong><em>2025
-                                                    Schedule</em></strong><br /> April 3 – June 3, 2025<br /> Lead
-                                            Guide: <a href="https://www.alpineascents.com/guides/ben-jones/">Ben
-                                                Jones</a></p>
-                                        <p><strong>Ba Den Mountain + Lhotse<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            – June 3, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <p><strong>Ba Den Mountain Camp II<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            –
-                                            May 9, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <div class="orange-btn"><a
-                                                href="/registration-2/?trip_uuid=9e56d9e0-3a8d-416a-ace6-a8c141ff6a1b">REGISTER
-                                                FOR CLIMB</a></div>
-                                        <p><a href="price-schedule/#cancellation-refund-policy">CANCELLATION/REFUND
-                                                POLICY</a></p>
+                                        <div class="orange-btn"><a href="/order">Order</a>
+                                        <a href="/galleries">Gallery</a></div>
                                     </div><!-- .widget -->
                                     <div class="widget">
                                         <h2 class='actnew'>Other notes</h2>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Ensure that you are in good health and physical condition to complete
-                                                the journey and fully enjoy the beauty of Lang Biang.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
                                         <h2 class='actnew'>Participation Requirements</h2>
-                                        <p><strong>Requires average physical fitness due to the long and steep mountain
-                                                climb.</strong><br /></p>
-                                        <p><strong>No prior experience needed, but participants should be well-prepared
-                                                physically.</strong><br /></p>
-                                        <p><strong>Suitable for individuals aged 16 and above with good
-                                                fitness.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
                                     </div><!-- .widget -->
                                 </div><!-- .sidebar -->
                             </div><!-- #Direction -->
@@ -2200,61 +2062,26 @@
                                 <div class="sb-content-wrapper">
                                     <div class="sb-content">
                                         <h2 class="section-title">Essential items</h2>
-                                        <p>Non-slip trekking shoes</p>
-                                        <p>Windproof and rainproof jacket</p>
-                                        <p>Snacks and water</p>
-                                        <p>Sunscreen and mosquito repellent</p>
-                                        <p>Flashlight and spare batteries</p>
-                                        <p>Trekking poles (if walking)</p>
+                                        <div>
+                                            {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->items) !!}
+                                    </div>
                                     </div><!-- .sb-content -->
                                 </div><!-- .sb-content-wrapper -->
                                 <div class="sidebar">
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Prices</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> $76,000 (<em>based on 5
-                                                climber
-                                                team</em>)</p>
-                                        <p><strong>Ba Den Mountain + Lhotse</strong><br /> $89,500</p>
-                                        <p><strong>Ba Den Mountain Camp II</strong><br /> $13,000</p>
+                                        <h2 class='actnew'>{{ $tour->name }} Prices</h2>
+                                        <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
+                                                climber team</em>)</p>
                                     </div><!-- .widget -->
                                     <div class="widget">
-                                        <h2 class='actnew'>Climb Ba Den Mountain Schedules</h2>
-                                        <p><strong>Ba Den Mountain South Col</strong><br /> <strong><em>2025
-                                                    Schedule</em></strong><br /> April 3 – June 3, 2025<br /> Lead
-                                            Guide: <a href="https://www.alpineascents.com/guides/ben-jones/">Ben
-                                                Jones</a></p>
-                                        <p><strong>Ba Den Mountain + Lhotse<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            – June 3, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <p><strong>Ba Den Mountain Camp II<br /> <em>2025
-                                                    Schedule</em></strong><br /> April 3
-                                            –
-                                            May 9, 2025<br /> Lead Guide: <a
-                                                href="https://www.alpineascents.com/guides/ben-jones/">Ben Jones</a>
-                                        </p>
-                                        <div class="orange-btn"><a
-                                                href="/registration-2/?trip_uuid=9e56d9e0-3a8d-416a-ace6-a8c141ff6a1b">REGISTER
-                                                FOR CLIMB</a></div>
-                                        <p><a href="price-schedule/#cancellation-refund-policy">CANCELLATION/REFUND
-                                                POLICY</a></p>
+                                        <div class="orange-btn"><a href="/order">Order</a>
+                                        <a href="/galleries">Gallery</a></div>
                                     </div><!-- .widget -->
                                     <div class="widget">
                                         <h2 class='actnew'>Other notes</h2>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Prepare yourself mentally and physically before starting the journey,
-                                                especially if you choose to walk.</strong><br /></p>
-                                        <p><strong>Ensure that you are in good health and physical condition to complete
-                                                the journey and fully enjoy the beauty of Lang Biang.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
                                         <h2 class='actnew'>Participation Requirements</h2>
-                                        <p><strong>Requires average physical fitness due to the long and steep mountain
-                                                climb.</strong><br /></p>
-                                        <p><strong>No prior experience needed, but participants should be well-prepared
-                                                physically.</strong><br /></p>
-                                        <p><strong>Suitable for individuals aged 16 and above with good
-                                                fitness.</strong><br /></p>
+                                        <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
                                     </div><!-- .widget -->
                                 </div><!-- .sidebar -->
                             </div><!-- #Essential_Items -->
@@ -2262,229 +2089,20 @@
                     </div><!-- .container -->
                 </div><!-- #tab-block -->
             </div><!--#tabs-->
-            <div class="container">
-                <div class="page-margin">
-                    <div class="foot-testimonial-wrap">
-                        <div class="foot-testimonial">
-                            <p>Thanks so much to all of you at AAI for making my dream of making the Seven Summits come
-                                true, I could not have accomplished this feat without the support of the entire team
-                                especially the guides and Sherpas.</p>
-                            <div class="read-more testimonials"> <a href="/testimonial/?connection=climb-everest">More
-                                    Testimonials</a></div>
-                            <!-- .read-more  -->
-                        </div><!-- .foot-testimonial  -->
-                    </div><!-- .foot-testimonial-wrap -->
-                </div><!-- .page-margin -->
-            </div><!-- .container -->
-            <div class="container">
-                <div class="page-margin">
-                    <div class="image-widget">
-                        <div class="image-widget-block"><a
-                                href="https://www.alpineascents.com/climbs/mount-everest/cybercasts/"><img
-                                    src="https://www.alpineascents.com/wp-content/uploads/2016/03/everest-cyber.jpg"></a>
-                        </div><!--.image-widget-block -->
-                        <div class="image-widget-button"><a
-                                href="https://www.alpineascents.com/climbs/mount-everest/cybercasts/">Cybercast</a>
-                        </div><!--.image-widget-button -->
-                    </div>
-                    <div class="image-widget">
-                        <div class="image-widget-block"><a href=""><img
-                                    src="https://www.alpineascents.com/wp-content/uploads/2020/06/google-map.jpg"></a>
-                        </div><!--.image-widget-block -->
-                        <div class="image-widget-button"><a
-                                href="https://www.google.com/maps/place/Mt+Everest/@27.9836676,86.8960211,15794m/data=!3m1!1e3!4m5!3m4!1s0x39e854a215bd9ebd:0x576dcf806abbab2!8m2!3d27.9881206!4d86.9249751!5m1!1e4"
-                                target="_blank">Map of Everest</a></div><!--.image-widget-button -->
-                    </div>
-                    <div class="image-widget">
-                        <div class="image-widget-block"><a href=""><img
-                                    src="https://www.alpineascents.com/wp-content/uploads/2016/03/everest-private.jpg"></a>
-                        </div><!--.image-widget-block -->
-                        <div class="image-widget-button"><a
-                                href="https://www.alpineascents.com/climbs/mount-everest/gallery/"
-                                target="_blank">Photo Gallery</a></div><!--.image-widget-button -->
-                    </div>
-                </div><!-- .page-margin -->
-            </div><!-- .container -->
         </div><!-- #content -->
-        <div id="latest-news-wrapper">
-            <div class="container">
-                <div id="news-block">
-                    <h2>ALPINE ASCENTS BLOG</h2>
-                    <ul>
-                        <li>
-                            <div class="news-block">
-                                <div class="news-block-pic-wrap"><a
-                                        href="https://www.alpineascents.com/blog/cascades-conditions-report-9-4-2025/">
-                                        <img width="267" height="200"
-                                            src="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?fit=267%2C200&ssl=1"
-                                            class="attachment-blogthumb size-blogthumb wp-post-image" alt="auto draft"
-                                            decoding="async" loading="lazy"
-                                            srcset="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?w=1115&ssl=1 1115w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?resize=300%2C224&ssl=1 300w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?resize=267%2C200&ssl=1 267w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?resize=600%2C449&ssl=1 600w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?resize=100%2C75&ssl=1 100w"
-                                            sizes="(max-width: 267px) 100vw, 267px" data-attachment-id="153996"
-                                            data-permalink="https://www.alpineascents.com/blog/cascades-conditions-report-9-4-2025/attachment/screenshot-2024-09-04-104232/"
-                                            data-orig-file="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?fit=1115%2C834&ssl=1"
-                                            data-orig-size="1115,834" data-comments-opened="0"
-                                            data-image-meta="{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}"
-                                            data-image-title="auto draft"
-                                            data-image-description="<p>auto draft</p>
-   "
-                                            data-image-caption="<p>auto draft</p>
-   "
-                                            data-medium-file="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?fit=300%2C224&ssl=1"
-                                            data-large-file="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/09/Screenshot-2024-09-04-104232.png?fit=640%2C479&ssl=1"
-                                            tabindex="0" role="button" /> </a></div>
-                                <div class="news-block-copy">
-                                    <h3><a href="https://www.alpineascents.com/blog/cascades-conditions-report-9-4-2025/"
-                                            rel="bookmark">Cascades Conditions Report 9/4/2024</a></h3>
-                                    <p>Greetings climbers, Schools are starting up again and the mountains are quieting
-                                        down as we approach the end of the busy season of Cascades climbing. We kicked
-                                        off our final 6 Day course on Baker earlier this week, and we have teams of
-                                        climbers spread across the state from Rainier, to Vesper Peak, to Shuksan, […]
-                                    </p>
-                                </div><!-- .news-block-copy -->
-                            </div><!-- .news-block -->
-                        </li>
-                        <li>
-                            <div class="news-block">
-                                <div class="news-block-pic-wrap"><a
-                                        href="https://www.alpineascents.com/cybercasts/cascades-conditions-report-8-29-2024/">
-                                        <img width="267" height="200"
-                                            src="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?fit=267%2C200&ssl=1"
-                                            class="attachment-blogthumb size-blogthumb wp-post-image" alt="auto draft"
-                                            decoding="async" loading="lazy"
-                                            srcset="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?w=2560&ssl=1 2560w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=300%2C225&ssl=1 300w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=1200%2C900&ssl=1 1200w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=1536%2C1152&ssl=1 1536w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=2048%2C1536&ssl=1 2048w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=267%2C200&ssl=1 267w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=600%2C450&ssl=1 600w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?resize=100%2C75&ssl=1 100w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?w=1280&ssl=1 1280w, https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?w=1920&ssl=1 1920w"
-                                            sizes="(max-width: 267px) 100vw, 267px" data-attachment-id="153898"
-                                            data-permalink="https://www.alpineascents.com/cybercasts/cascades-conditions-report-8-29-2024/attachment/img-7098/"
-                                            data-orig-file="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?fit=2560%2C1920&ssl=1"
-                                            data-orig-size="2560,1920" data-comments-opened="0"
-                                            data-image-meta="{"aperture":"0","credit":"","camera":"","caption":"","created_timestamp":"0","copyright":"","focal_length":"0","iso":"0","shutter_speed":"0","title":"","orientation":"0"}"
-                                            data-image-title="auto draft"
-                                            data-image-description="<p>auto draft</p>
-   "
-                                            data-image-caption="<p>auto draft</p>
-   "
-                                            data-medium-file="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?fit=300%2C225&ssl=1"
-                                            data-large-file="https://i0.wp.com/www.alpineascents.com/wp-content/uploads/2024/08/IMG-7098-scaled.jpg?fit=640%2C480&ssl=1"
-                                            tabindex="0" role="button" /> </a></div>
-                                <div class="news-block-copy">
-                                    <h3><a href="https://www.alpineascents.com/cybercasts/cascades-conditions-report-8-29-2024/"
-                                            rel="bookmark">Cascades Conditions Report 8/29/2024</a></h3>
-                                    <p>Greeting fellow climbers! Summer has come back just in time for schools to start
-                                        back up in the PNW. Today is a gorgeous day with temperatures in the mid 70âs
-                                        and sunny! The cooler temps and precipitation over the past weekÂ  packed the
-                                        mountains, with mountains in the North Cascades receiving snow above 7K and […]
-                                    </p>
-                                </div><!-- .news-block-copy -->
-                            </div><!-- .news-block -->
-                        </li>
-                        <li>
-                            <div class="news-block">
-                                <div class="news-block-pic-wrap"><a
-                                        href="https://www.alpineascents.com/cybercasts/153713/"> </a></div>
-                                <div class="news-block-copy">
-                                    <h3><a href="https://www.alpineascents.com/cybercasts/153713/"
-                                            rel="bookmark">Cascades Conditions 8/26/24</a></h3>
-                                    <p>Greetings follow climbers! We are entering the final week of August and it sure
-                                        feels like the seasons have shifted.Â  We’ve seen all types of weather over the
-                                        past week, from thunderstorms to sunny skies, to hail, to stellar conditions.
-                                        Our teams have been climbing as the weather allows and others have had to pause
-                                        […]</p>
-                                </div><!-- .news-block-copy -->
-                            </div><!-- .news-block -->
-                        </li>
-                    </ul>
-                    <div style="clear:both"></div>
-                    <div class="read-more blog-button"> <a href="/blog">ALL POSTS</a></div>
-                </div><!-- #news-block  -->
-            </div><!-- .container  -->
-        </div><!-- #latest-news-wrapper  -->
-        <div class="call-foot-wrap">
-            <div class="call-foot-wrap-right">
-                <div class="container">
-                    <div class="home-widget">
-                        <h2>WHY BOOK WITH ALPINE ASCENTS</h2>
-                        <ul>
-                            <li> <a href="/about-us/">
-                                    <h3 class="widget-title">Knowledge & Expertise</h3>
-                                    <p>Alpine Ascents International leads expeditions that have become benchmarks of
-                                        quality in the climbing community. We operate what we believe is the finest
-                                        mountaineering school in the country. This expertise is based upon years of
-                                        accumulated experience-not just from individual mountain guides, but through
-                                        experience on particular mountains where details are fine-tuned over time.</p>
-                                </a></li>
-                            <li> <a href="/guides/">
-                                    <h3 class="widget-title">Guides</h3>
-                                    <p>Our guides are an integral part of Alpine Ascents because they understand and
-                                        share our climbing principles. These individuals are dedicated to sharing their
-                                        excellence with others. Many of our guides have been with Alpine Ascents for
-                                        over five years, with a handful of veterans working with us for most of their
-                                        careers. The quality of our Guide Staff is the primary difference between us and
-                                        our competitors.</p>
-                                </a></li>
-                            <li> <a href="/about-us/leave-no-trace-alpine-mountaineering-principles/">
-                                    <h3 class="widget-title">Environmental Reponsibility</h3>
-                                    <p>Leave No Trace principles are fundamental to our program, and we encourage all
-                                        who climb and trek with us to understand proper wilderness practices. We help
-                                        facilitate this effort by passing on Leave No Trace training and literature to
-                                        every Alpine Ascents climber.</p>
-                                </a></li>
-                        </ul>
-                    </div><!-- .home-widget -->
-                </div><!-- .container -->
-            </div><!-- .call-foot-wrap-right -->
-        </div><!-- .call-foot-wrap -->
-        <div class="email-wrap">
-            <div class="container">
-                <div class="email-wrap-left"> SIGN UP FOR OUR NEWSLETTER</div><!-- .email-wrap-left -->
-                <div class="email-wrap-right">
-                    <form id="subForm" method="post" action="https://alpineascents.createsend.com/t/y/s/xdyjhl/">
-                        <label for="fieldEmail">EMAIL</label> <input id="fieldEmail" type="email" required=""
-                            name="cm-xdyjhl-xdyjhl"> <button type="submit">SUBMIT</button>
-                    </form>
-                </div><!-- .email-wrap-right -->
-            </div><!-- .container -->
-        </div><!-- .email-wrap -->
-        <div class="partners-wrap">
-            <div class="container">
-                <h3>Partners & Accreditations</h3>
-                <div class="partner"><a href="https://lnt.org/" target="_blank"><img
-                            src="https://www.alpineascents.com/wp-content/uploads/2019/04/lnt-1.png"></a></div>
-                <!--.partner -->
-                <div class="partner"><a href="https://www.thenorthface.com/" target="_blank"><img
-                            src="https://www.alpineascents.com/wp-content/uploads/2019/04/short-TNF-logo.jpg"></a>
-                </div><!--.partner -->
-                <div class="partner"><a href="https://amga.com/" target="_blank"><img
-                            src="https://www.alpineascents.com/wp-content/uploads/2019/07/AMGA.png"></a></div>
-                <!--.partner -->
-                <div class="partner"><a href="https://www.tomorrowsair.com/" target="_blank"><img
-                            src="https://www.alpineascents.com/wp-content/uploads/2021/01/ta-logo-small-e1611183048240.png"></a>
-                </div><!--.partner -->
-                <div class="partner-copy"> Alpine Ascents International is an authorized mountain guide service of <a
-                        href="https://www.nps.gov/dena/index.htm">Denali National Park and Preserve</a> and <a
-                        href="https://www.nps.gov/mora/index.htm">Mount Rainier National Park.</a><br /> © Copyright
-                    2024 All Rights Reserved. Alpine Ascents International</div><!--.partner-copy-->
-            </div><!--.container-->
-        </div><!--.partners-wrap-->
         <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="container"> Alpine Ascents International <span class="sep"> | </span><a
-                    href="https://www.google.com/maps/place/Alpine+Ascents+International/@47.6244785,-122.3607724,17z/data=!3m1!4b1!4m2!3m1!1s0x54901543abfcc7b3:0x65973c68485a02b7"
-                    target="_blank">109 W. Mercer St. - Seattle, WA 98119</a><span class="sep"> | </span>phone:
-                <a href="tel://1-206-378-1927">206.378.1927</a><span class="sep"> | </span><a
-                    href="/cdn-cgi/l/email-protection#efac8386828dafae839f86818aae9c8c8a819b9cc18c8082"><span
-                        class="__cf_email__"
-                        data-cfemail="56153a3f3b3416173a263f3833172535333822257835393b">[email protected]</span> </a>
-                <div class="social-footer">
-                    <ul class="social-footer-icon">
-                        <li><a href="https://www.facebook.com/AlpineAscentsInternational" target="_blank"
-                                title="Like Us on Facebook"><i class="fab fa-facebook-f fa-fw fa-btn"></i></a></li>
-                        <li><a href="https://www.instagram.com/alpineascents" target="_blank"
-                                title="Follow Us on Instagram"><i class="fab fa-instagram fa-fw fa-btn"></i></a>
-                        </li>
-                        <li><a href="https://www.youtube.com/channel/UC8QN14o4g6bOGZQbHAoF9og" target="_blank"
-                                title=âSubscribe on YouTubeâ><i class="fa fa-youtube-play"></i></a></li>
-                    </ul>
-                </div><!--.social-footer-->
-            </div><!--.container-->
+            <div class="container">
+                <div class="footer-left">
+                    <h3>Alpine Ascents Vietnam</h3>
+                    <p>10th Floor, Green Peak Building,<br> 123 Tran Duy Hung Street,<br> Cau Giay District, Hanoi, Vietnam.</p>
+                    <p>Contact: <a href="tel://+842412345678">+84 24 1234 5678</a></p>
+                    <p>Email: <a href="mailto:contact@alpineascentsvn.com">contact@alpineascentsvn.com</a></p>
+                </div>
+                <div class="footer-right">
+                    <h3>Find Us Here</h3>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6646413870612!2d105.79135817535462!3d21.00607598063757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca5f64f829f%3A0xcb4a80cd1b0490dc!2zMTIzIMSQLiBUcuG6p24gRHV5IEjGsG5nLCBUcnVuZyBIb8OgLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1727066046050!5m2!1sen!2s" width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div><!-- .container -->
         </footer><!-- #colophon -->
     </div><!-- #page -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>

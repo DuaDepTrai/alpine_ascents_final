@@ -173,6 +173,14 @@
                     <h3 class="box-title">Orders List</h3>
                 </div>
                 <div class="box-body">
+                <form action="{{ route('admin.order.index') }}" method="GET" class="mb-4">
+                    <div class="input-group">
+                        <input type="text" name="search" class="form-control" placeholder="Tìm kiếm theo số điện thoại..." aria-label="Search">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="submit">Tìm kiếm</button>
+                        </span>
+                    </div>
+                </form>
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>

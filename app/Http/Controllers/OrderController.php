@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Http\Controllers;
+
 use App\Http\Controllers\Controller;
 use App\Models\orders_tours;
 use App\Models\tours;
@@ -8,54 +10,77 @@ use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    
-
-    // Display the order form with a list of tours
+    // Display order form with list of tours
     public function create()
     {
         $tours = Tours::all();
         return view('order.create', compact('tours'));
     }
 
-    // Save order information
-    public function store(Request $request)
+    // Display the confirmation page
+    public function confirm(Request $request)
     {
-        // Check if the user is not logged in
-
-
-        $request->validate([
+        // Validate data before displaying the confirmation page
+        $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:15', // phone is required
-            'email' => 'nullable|email|max:255', // email is optional
+            'phone' => 'required|string|max:15',
+            'email' => 'nullable|email|max:255',
             'quantity' => 'required|integer|min:1',
             'tour_id' => 'required|exists:tours,id',
         ]);
 
-        // Get user_id if the user is logged in, otherwise set to null
-            $userId = Auth::check() ? Auth::user()->id : null;
+        // Get tour information
+        $tour = Tours::find($request->tour_id);
+
+        // Calculate total price
+        $total = $this->calculateTotal($tour->id, $request->quantity);
+
+        // Display the confirmation page with the entered information
+        return view('order.confirm', [
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'quantity' => $request->quantity,
+            'tour' => $tour,
+            'total' => $total,
+            'note' => $request->note,
+        ]);
+    }
+
+    // Save order information after the user confirms
+    public function store(Request $request)
+    {
+        // Check if the user is logged in
+        $userId = Auth::check() ? Auth::user()->id : null;
         
-        // Create the order
+        // Calculate total amount
+        $total = $this->calculateTotal($request->tour_id, $request->quantity);
+
+        // Create a new order in the database
         $order = orders_tours::create([
-            'user_id' =>  $userId,
+            'user_id' => $userId,
             'tour_id' => $request->tour_id,
             'name' => $request->name,
             'quantity' => $request->quantity,
-            'total' => $this->calculateTotal($request->tour_id, $request->quantity),
-            'email' => $request->email, // email is optional
-            'phone' => $request->phone, // phone is required
+            'total' => $total,
+            'email' => $request->email,
+            'phone' => $request->phone,
             'note' => $request->note,
         ]);
 
-        return redirect()->back()->with('success', 'Order successfully placed by: '.$request->name);
+        // Redirect to success page after saving the order
+        return redirect()->route('order.success')->with('success', 'Order successfully placed by: '.$request->name);
+        
     }
-    // Function to calculate total amount
+
+    // Function to calculate total price
     protected function calculateTotal($tourId, $quantity)
     {
-        $tour = tours::find($tourId);
+        $tour = Tours::find($tourId);
         return $tour->price * $quantity;
     }
-    
-
+    public function success()
+    {
+        return view('order.success'); // Ensure you have success.blade.php view
+    }
 }
-
-

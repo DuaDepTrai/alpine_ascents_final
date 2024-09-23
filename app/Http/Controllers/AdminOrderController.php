@@ -10,9 +10,17 @@ use Illuminate\Http\Request;
 class AdminOrderController extends Controller
 {
     // Display the list of orders
-    public function index()
+    public function index(Request $request)
     {
-        $orders = orders_tours::with('tour', 'user')->paginate(15);
+        $query = orders_tours::with('tour', 'user');
+
+       // Check if there is a search keyword
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where('phone', 'LIKE', "%{$search}%");
+        }
+    
+        $orders = $query->paginate(15);
         return view('admin.order.index', compact('orders'));
     }
 

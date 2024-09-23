@@ -16,9 +16,6 @@ use App\Http\Controllers\GalleriesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\MailController;
-use Illuminate\Auth\Events\Verified;
-use Illuminate\Database\QueryException;
 
 
 Route::prefix('admin')->group(function () {
@@ -27,17 +24,17 @@ Route::prefix('admin')->group(function () {
 
 
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home',[HomeController::class,'index'])->name('home');
 
-Route::get('/branches', [BranchController::class, 'index'])->name('branches');
+Route::get('/branches', [BranchController::class, 'index']);
 
-Route::get('/information',[InformationController::class, 'infor'])->name('information');
+Route::get('/information',[InformationController::class, 'infor']);
 
-Route::get('/about-us', [AboutUsController::class, 'aboutUs'])->name('aboutus');
+Route::get('/about-us', [AboutUsController::class, 'aboutUs']);
 
-Route::get('/tours', [ToursController::class, 'index'])->name('tours');
+Route::get('/tours', [ToursController::class, 'index']);
 
-Route::get('/tours/{id}', [ToursController::class, 'show'])->name('tours.detail');
+Route::get('/admin/tours', [AdminToursController::class, 'index']);
 
 Route::get('/admin/galleries', [AdminGalleriesController::class, 'index'])->name('admin.galleries.index');
 Route::get('/admin/galleries/create', [AdminGalleriesController::class, 'create'])->name('admin.galleries.create');
@@ -47,12 +44,6 @@ Route::post('admin/galleries/{id}/delete-image', [AdminGalleriesController::clas
 Route::put('admin/galleries/{id}', [AdminGalleriesController::class, 'update'])->name('admin.galleries.update');
 Route::delete('admin/galleries/{id}', [AdminGalleriesController::class, 'destroy'])->name('admin.galleries.destroy');
 
-Route::get('/admin/tours', [AdminToursController::class, 'index'])->name('admin.tours.index');
-Route::get('/admin/tours/create', [AdminToursController::class, 'create'])->name('admin.tours.create');
-Route::post('/admin/tours', [AdminToursController::class, 'store'])->name('admin.tours.store');
-Route::get('admin/tours/{id}/edit', [AdminToursController::class, 'edit'])->name('admin.tours.edit');
-Route::put('admin/tours/{id}', [AdminToursController::class, 'update'])->name('admin.tours.update');
-Route::delete('admin/tours/{id}', [AdminToursController::class, 'destroy'])->name('admin.tours.destroy');
 
 
 Route::get('/admin/order', [AdminOrderController::class, 'index'])->name('admin.order.index');
@@ -83,32 +74,12 @@ Route::delete('/admin/branches/{id}', [AdminBranchesController::class, 'destroy'
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
 Route::post('/register', [UsersController::class, 'register'])->name('register');
-Route::get('/register.verify',[VerificationController::class,'showRegisterVerifyForm'])->name('register.verify.form');
-Route::post('/register.verify',[VerificationController::class,'registerVerify'])->name('register.verify');
 
-Route::get('/forgetpass',[UsersController::class,'showForgetPassForm'])->name('forgetpass.form');
-Route::get('/verification.form', [VerificationController::class, 'showForm'])->name('verification.form');
-Route::get('/verificationchange.form', [VerificationController::class, 'showChangeForm'])->name('verificationchange.form');
+Route::get('verification.form', [VerificationController::class, 'showForm'])->name('verification.form');
+Route::post('verify', [VerificationController::class, 'verify'])->name('verify');
 
-Route::post('/send.mail',[MailController::class,'sendMail'])->name('send.mail');
-Route::post('/verify', [VerificationController::class, 've  rify'])->name('verify');
-Route::post('/changeverify',[VerificationController::class,'changeVerify'])->name('change.verify');
-Route::put('/updatepass',[VerificationController::class,'updatePassword'])->name('update.password');
-Route::put('/updateforgetpass',[VerificationController::class,'updateForgetPassword'])->name('update.forget.password');
-
-Route::get('/login', [UsersController::class, 'showLoginForm'])->name('login.form');
+Route::get('/login', [UsersController::class, 'showLoginForm']);
 Route::post('/login', [UsersController::class, 'login'])->name('login');
-Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
-
-Route::get('/users/changepass',[UsersController::class,'showChangePassForm'])->name('changepass.form');
-Route::get('/users/forgetpass',[UsersController::class,'showForgetPassForm'])->name('forgetpass.form');
-Route::get('/users/newpassword',[UsersController::class,'showNewPassForm'])->name('newpass.form');
-Route::get('/users/{user}',[UsersController::class,'index'])->name('users.index');
-Route::get('/users/{user}/edit',[UsersController::class,'edit'])->name('users.edit');
-Route::put('/users/{user}',[UsersController::class,'update'])->name('users.update');
-
-Route::get('/personalinfo', [UsersController::class, 'personalInfo'])->name('users.personalinfo');
-Route::get('/settings', [UsersController::class, 'settings'])->name('users.settings');
 
 Route::get('/galleries', [GalleriesController::class, 'index'])->name('galleries.index');
 
@@ -116,5 +87,7 @@ Route::get('/order', [OrderController::class, 'create'])->name('order.create');
 Route::post('/order/confirm', [OrderController::class, 'confirm'])->name('order.confirm');
 Route::post('/order/store', [OrderController::class, 'store'])->name('order.store');
 Route::get('/order/success', [OrderController::class, 'success'])->name('order.success');
+
+
 
 

@@ -54,10 +54,7 @@
                 <div id="contact" class="tab-pane" style="display:none;"> <!-- Contact tab content -->
                     <h2 style="font-style:italic">Contact</h2>
                     <p>We look forward to receiving your feedback and questions! If you have any inquiries or need assistance, please feel free to contact us via the form below. Our customer support team will get back to you as soon as possible. Alternatively, you can call or email us directly using the provided contact information. We are always ready to serve you!</p>
-                    <p>Alpine Ascents Vietnam</p>
-                    <p>10th Floor, Green Peak Building, 123 Tran Duy Hung Street, Cau Giay District, Hanoi, Vietnam.</p>
-                    <p>Contact: +84 24 1234 5678</p>
-                    <p>Email: contact@alpineascentsvn.com</p>
+                    
                   
                 </div>
 

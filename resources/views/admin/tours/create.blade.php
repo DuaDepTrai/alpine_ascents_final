@@ -179,7 +179,7 @@
             </div>
             <div>
                 <label for="address">Image:</label>
-                <input type="text" id="address" name="Image" required>
+                <input type="file" name="images[]" multiple class="form-control">
             </div>
             <div>
                 <label for="address">Location:</label>

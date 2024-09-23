@@ -95,6 +95,8 @@
     <link rel='dns-prefetch' href='//v0.wordpress.com' />
     <link rel='dns-prefetch' href='//i0.wp.com' />
     <link rel='dns-prefetch' href='//c0.wp.com' />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="alternate" type="application/rss+xml" title="Alpine Ascents International » Feed"
         href="https://www.alpineascents.com/feed/" />
     <link rel="alternate" type="application/rss+xml" title="Alpine Ascents International » Comments Feed"
@@ -224,6 +226,43 @@
         });
         /* ]]> */
     </script>
+    <style>
+        .site-footer {
+    background-color: #f8f8f8;
+    padding: 20px 0;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-start; /* Căn trái các phần tử */
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%;
+    margin-left: 0; /* Đẩy sát lề trái */
+}
+
+.footer-right {
+    flex: 1;
+    padding: 10px;
+    max-width: 50%;
+    text-align: center;
+}
+
+.footer-right img {
+    max-width: 100%;
+    height: auto;
+    width: 350px; /* Đặt chiều rộng cố định */
+    height: 150px; /* Đặt chiều cao cố định */
+}
+
+h3 {
+    margin-top: 0;
+}
+</style>
     <script type="text/javascript" id="client_portal-js-extra">
         /* <![CDATA[ */
         var cartCount = {
@@ -1702,1204 +1741,153 @@
                     class="ubermenu-responsive-toggle ubermenu-responsive-toggle-main ubermenu-skin-none ubermenu-loc-primary ubermenu-responsive-toggle-content-align-right ubermenu-responsive-toggle-align-full ubermenu-responsive-toggle-icon-only "
                     tabindex="0" data-ubermenu-target="ubermenu-main-2-primary" aria-label="Toggle Main Menu"><i
                         class="fas fa-bars"></i></a>
-                <nav id="ubermenu-main-2-primary"
-                    class="ubermenu ubermenu-nojs ubermenu-main ubermenu-menu-2 ubermenu-loc-primary ubermenu-responsive ubermenu-responsive-1010 ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-fade ubermenu-trigger-hover_intent ubermenu-skin-none  ubermenu-bar-align-right ubermenu-items-align-right ubermenu-bound ubermenu-disable-submenu-scroll ubermenu-retractors-responsive ubermenu-submenu-indicator-closes">
-                    <ul id="ubermenu-nav-main-2-primary" class="ubermenu-nav" data-title="Main Menu">
-                        <li id="menu-item-21"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-21 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/climbs/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Climbs</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-21 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width">
-                                <!-- begin Segment: Menu ID 132 -->
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6514 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6514">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6514 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-6512"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6512 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Seven Summits</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6521"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6521 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/aconcagua/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Aconcagua</span></a>
-                                        </li>
-                                        <li id="menu-item-6526"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6526 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/carstensz-pyramid/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Carstensz
-                                                    Pyramid</span></a></li>
-                                        <li id="menu-item-6527"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6527 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/denali/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Denali</span></a>
-                                        </li>
-                                        <li id="menu-item-6528"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6528 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-elbrus/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount
-                                                    Elbrus</span></a></li>
-                                        <li id="menu-item-6529"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6529 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-everest/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount
-                                                    Everest</span></a></li>
-                                        <li id="menu-item-100217"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-100217 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climb-kilimanjaro/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount
-                                                    Kilimanjaro</span></a></li>
-                                        <li id="menu-item-6531"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6531 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-vinson/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount
-                                                    Vinson</span></a></li>
-                                        <li id="menu-item-6554"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6554 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Additional Information</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-90979"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-90979 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/private-wa/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Private Climbs
-                                                    in Washington</span></a></li>
-                                        <li id="menu-item-31909"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-31909 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/womens-climbs/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Womenâs
-                                                    Courses and Climbs</span></a></li>
-                                        <li id="menu-item-6556"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6556 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/seven-summits/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">About The Seven
-                                                    Summits</span></a></li>
-                                        <li id="menu-item-6557"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6557 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/choose-guide-service/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">How to Choose A
-                                                    Guide Service</span></a></li>
-                                        <li id="menu-item-6558"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6558 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/climbing-for-a-cause/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Outreach
-                                                    Programs</span></a></li>
-                                    </ul>
-                                </li>
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6515 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6515">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6515 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-6517"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6517 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Worldwide Climbs</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-112238"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-112238 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/manaslu/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Manaslu</span></a>
-                                        </li>
-                                        <li id="menu-item-6523"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6523 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/cho-oyu/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Cho
-                                                    Oyu</span></a></li>
-                                        <li id="menu-item-6534"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6534 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/great-peaks-bolivia/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Great Peaks of
-                                                    Bolivia</span></a></li>
-                                        <li id="menu-item-6533"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6533 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/great-peaks-peru/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Great Peaks of
-                                                    Peru</span></a></li>
-                                        <li id="menu-item-6535"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6535 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/island-peak/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Island Peak,
-                                                    Nepal</span></a></li>
-                                        <li id="menu-item-6972"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6972 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mera-peak/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mera Peak,
-                                                    Nepal</span></a></li>
-                                        <li id="menu-item-6536"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6536 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mongolia-trek-climb/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mongolia – Mt.
-                                                    Khuiten Climb</span></a></li>
-                                        <li id="menu-item-6539"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6539 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/chimborazo/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Volcanoes of
-                                                    Ecuador</span></a></li>
-                                        <li id="menu-item-6538"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6538 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/volcanoes-of-iceland/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Volcanoes of
-                                                    Iceland</span></a></li>
-                                        <li id="menu-item-6537"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6537 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/volcanoes-of-mexico/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Volcanoes of
-                                                    Mexico</span></a></li>
-                                        <li id="menu-item-6548"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6548 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                The Alps</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6550"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6550 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mont-blanc/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mont
-                                                    Blanc</span></a></li>
-                                        <li id="menu-item-6549"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6549 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/matterhorn/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">The
-                                                    Matterhorn</span></a></li>
-                                        <li id="menu-item-6551"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6551 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/eiger/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Eiger</span></a>
-                                        </li>
-                                        <li id="menu-item-115777"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-115777 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/private-alps-climbs/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Private Alps
-                                                    Climbs</span></a></li>
-                                    </ul>
-                                </li>
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6518 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6518">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6518 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-6541"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6541 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Domestic Climbs</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6542"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6542 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-baker/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Baker 3
-                                                    Day</span></a></li>
-                                        <li id="menu-item-6524"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6524 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-rainier-climb-muir/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Rainier 3
-                                                    Day Muir</span></a></li>
-                                        <li id="menu-item-6796"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6796 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-rainier-climb-kautz/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Rainier 4
-                                                    Day Kautz</span></a></li>
-                                        <li id="menu-item-6797"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6797 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-rainier-climb-emmons/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Rainier 4
-                                                    Day Emmons</span></a></li>
-                                        <li id="menu-item-94923"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-94923 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/glacier-peak/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Glacier
-                                                    Peak</span></a></li>
-                                        <li id="menu-item-8719"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-8719 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-baker-north-ridge/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Baker
-                                                    North Ridge</span></a></li>
-                                        <li id="menu-item-9034"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-9034 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/forbidden-peak/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Forbidden Peak
-                                                    West Ridge</span></a></li>
-                                        <li id="menu-item-6544"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6544 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-shuksan-sulphide-glacier/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Shuksan
-                                                    Sulphide Glacier</span></a></li>
-                                        <li id="menu-item-8674"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-8674 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-shuksan-fisher-chimneys/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Shuksan
-                                                    Fisher Chimneys</span></a></li>
-                                        <li id="menu-item-84174"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-84174 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-olympus/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount
-                                                    Olympus</span></a></li>
-                                        <li id="menu-item-6543"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6543 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-adams/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Adams
-                                                    South Side</span></a></li>
-                                        <li
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-81255 ubermenu-item-level-3 ubermenu-column ubermenu-column-1-3 ubermenu-item-type-column ubermenu-column-id-81255">
-                                        </li>
-                                        <li id="menu-item-81258"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-81258 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Climb + Ski Descent</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-81257"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-81257 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/baker-ski-descent/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Baker Ski
-                                                    Descent</span></a></li>
-                                        <li id="menu-item-98215"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-98215 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-adams-ski-descent/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Adams Ski
-                                                    Descent</span></a></li>
-                                    </ul>
-                                </li><!-- end Segment: 132 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i>
-                                    Close</li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-292"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-292 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/school/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">School</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-292 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width">
-                                <!-- begin Segment: Menu ID 133 -->
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6567 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6567">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6567 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-6561"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6561 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Beginner Mountaineering Courses</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6582"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6582 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/cascades13/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">13 Day
-                                                    Cascades</span></a></li>
-                                        <li id="menu-item-6580"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6580 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/rainier-10day/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">10 Day Rainier
-                                                    Baker</span></a></li>
-                                        <li id="menu-item-7054"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-7054 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/rainier-9day/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">9 Day Rainier
-                                                    Baker</span></a></li>
-                                        <li id="menu-item-6588"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6588 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/rainier-school/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">8 Day
-                                                    Rainier</span></a></li>
-                                        <li id="menu-item-6581"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6581 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/cascades6/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">6 Day
-                                                    Baker</span></a></li>
-                                        <li id="menu-item-6586"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6586 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/rainier-prep/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Denali Prep on
-                                                    Rainier</span></a></li>
-                                        <li id="menu-item-6585"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6585 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/alaska8/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">8 Day
-                                                    Alaska</span></a></li>
-                                        <li id="menu-item-9518"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-9518 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/mount-rainier-glacier-training/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">1 Day
-                                                    Mountaineering Fundamentals</span></a></li>
-                                        <li id="menu-item-94540"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-94540 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/1-day-crevasse-clinic/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">1 Day Crevasse
-                                                    Rescue Clinic – NEW!</span></a></li>
-                                        <li id="menu-item-98214"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-98214 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/ice-climbing-course/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">3 Day Alpine Ice
-                                                    Climbing</span></a></li>
-                                        <li id="menu-item-81958"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-81958 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/backpacking-navigation-course/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Backpacking &
-                                                    Wilderness Navigation Course</span></a></li>
-                                    </ul>
-                                </li>
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6568 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-3 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6568">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6568 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-6562"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-6562 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Intermediate Mountaineering Courses</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6591"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6591 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/cascades-inter/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">8 Day Cascades
-                                                    Intermediate</span></a></li>
-                                        <li id="menu-item-6589"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6589 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/alaska-inter/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">8 Day Alaska
-                                                    Intermediate</span></a></li>
-                                        <li id="menu-item-94868"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-94868 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Rock Climbing Courses</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-94870"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-94870 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/weekend-rock-clinics/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Weekend Rock
-                                                    Clinics</span></a></li>
-                                        <li id="menu-item-6583"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6583 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/rock-climbing/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">5 Day Rock
-                                                    Climbing</span></a></li>
-                                        <li id="menu-item-8985"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-8985 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/alpine-rock/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">4 Day Alpine
-                                                    Rock Climbing</span></a></li>
-                                        <li id="menu-item-131502"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-131502 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/spi-course/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">AMGA SPI
-                                                    Course</span></a></li>
-                                        <li id="menu-item-6570"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6570 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Additional Information</div>
-                                            <ul
-                                                class="ubermenu-submenu ubermenu-submenu-id-6570 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                                <li class="ubermenu-divider">
-                                                    <hr />
-                                                </li>
-                                                <li id="menu-item-6593"
-                                                    class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6593 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-5 ubermenu-column ubermenu-column-auto">
-                                                    <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                        href="https://www.alpineascents.com/school/choosing-alpine-ascents-course/"><span
-                                                            class="ubermenu-target-title ubermenu-target-text">Choosing
-                                                            a Course</span></a></li>
-                                                <li id="menu-item-31910"
-                                                    class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-31910 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-5 ubermenu-column ubermenu-column-auto">
-                                                    <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                        href="https://www.alpineascents.com/womens-climbs/"><span
-                                                            class="ubermenu-target-title ubermenu-target-text">Womenâs
-                                                            Courses and Climbs</span></a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li><!-- end Segment: 133 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i>
-                                    Close</li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-293"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-293 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/treks/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Treks</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-293 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width">
-                                <!-- begin Segment: Menu ID 134 -->
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6595 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-2 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6595">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6595 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-116987"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-116987 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Europe - Africa</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-100222"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-100222 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climb-kilimanjaro/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount
-                                                    Kilimanjaro Trek</span></a></li>
-                                        <li id="menu-item-35677"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-35677 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/haute-route-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Alps: Summer
-                                                    Haute Route Trek</span></a></li>
-                                        <li id="menu-item-116990"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-116990 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                South America</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-6607"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6607 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/peru-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Peru: Salkantay
-                                                    Mountain Trek to Machu Picchu</span></a></li>
-                                        <li id="menu-item-80638"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-80638 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/cordillera-real-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Bolivia:
-                                                    Cordillera Real Trek</span></a></li>
-                                        <li id="menu-item-28910"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-28910 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/patagonia-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Trekking in
-                                                    Patagonia</span></a></li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-35440"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-35440 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Treks
-                                                    Overview</span></a></li>
-                                    </ul>
-                                </li>
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-116972 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-2 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-116972">
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-116972 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-116980"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-116980 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Nepal - Bhutan</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-97020"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-97020 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/everest-base-camp-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Everest Base
-                                                    Camp Trek</span></a></li>
-                                        <li id="menu-item-6608"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6608 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/bhutan/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Bhutan: Laya –
-                                                    Ghasa Trek</span></a></li>
-                                        <li id="menu-item-116975"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-116975 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                India - Pakistan</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-119899"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-119899 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/k2-basecamp-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">K2 Basecamp
-                                                    Trek</span></a></li>
-                                        <li id="menu-item-102043"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-102043 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/trekking-in-pakistan/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Walking in
-                                                    Northern Pakistan</span></a></li>
-                                        <li id="menu-item-6756"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6756 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/ladakh-nubra-trek/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">India: Ladakh
-                                                    Region – Nubra Valley</span></a></li>
-                                        <li id="menu-item-111865"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-111865 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/treks/india-cultural-tour/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Cultural Tour of
-                                                    India</span></a></li>
-                                    </ul>
-                                </li><!-- end Segment: 134 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i>
-                                    Close</li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-107467"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-107467 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/ski-avalanche/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Ski</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-107467 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width">
-                                <!-- begin Segment: Menu ID 11077 -->
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-107390 ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-107390">
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-107390 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-129733"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-129733 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Avalanche Safety Courses</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-107391"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-107391 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/avalanche-rescue-course/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">AIARE Avalanche
-                                                    Rescue Course</span></a></li>
-                                        <li id="menu-item-107393"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-107393 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/avalanche-safety-course/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">AIARE Level 1
-                                                    Avalanche Safety Course</span></a></li>
-                                        <li id="menu-item-107392"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-107392 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/avalanche-safety-course-level2/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">AIARE Level 2
-                                                    Avalanche Safety Course</span></a></li>
-                                    </ul>
-                                </li>
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-129731 ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-129731">
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-129731 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-129734"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-129734 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <div
-                                                class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                                Backcountry Skiing</div>
-                                        </li>
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-107398"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-107398 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/school/backcountry-ski/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Intro to
-                                                    Backcountry Touring</span></a></li>
-                                        <li id="menu-item-107395"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-107395 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/baker-ski-descent/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Baker Ski
-                                                    Descent</span></a></li>
-                                        <li id="menu-item-107394"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-107394 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/mount-adams-ski-descent/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Mount Adams Ski
-                                                    Descent</span></a></li>
-                                        <li id="menu-item-129732"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-129732 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/backcountry-cascades-ski/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Backcountry
-                                                    Cascades Ski Trips</span></a></li>
-                                    </ul>
-                                </li><!-- end Segment: 11077 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i>
-                                    Close</li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-6296"
-                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-has-children ubermenu-item-6296 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="/gear-shop" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Gear Shop</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-6296 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width">
-                                <!-- begin Segment: Menu ID 407 -->
-                                <li id="menu-item-55780"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55780 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a href="https://www.alpineascents.com/shop/?product-category=men">Men</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55780 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55782"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55782 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=mens-baselayers"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Men’s
-                                                    Baselayers</span></a></li>
-                                        <li id="menu-item-55786"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55786 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=mens-midlayers"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Men’s
-                                                    Midlayers</span></a></li>
-                                        <li id="menu-item-55812"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55812 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=mens-softshells"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Men’s
-                                                    Softshells</span></a></li>
-                                        <li id="menu-item-55785"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55785 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=mens-insulation"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Men’s
-                                                    Insulation</span></a></li>
-                                        <li id="menu-item-55784"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55784 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=mens-hardshells"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Men’s
-                                                    Hardshells</span></a></li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-55816"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55816 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a href="https://www.alpineascents.com/shop/?product-category=women">Women</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55816 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55818"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55818 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=womens-baselayer"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Women’s
-                                                    Baselayers</span></a></li>
-                                        <li id="menu-item-55822"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55822 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=womens-midlayer"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Women’s
-                                                    Midlayers</span></a></li>
-                                        <li id="menu-item-55823"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55823 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=womens-softshells"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Women’s
-                                                    Softshells</span></a></li>
-                                        <li id="menu-item-55821"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55821 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=womens-insulation"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Women’s
-                                                    Insulation</span></a></li>
-                                        <li id="menu-item-55820"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55820 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=womens-hardshells"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Women’s
-                                                    Hardshells</span></a></li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-55757"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55757 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a
-                                            href="https://www.alpineascents.com/shop/?product-category=footwear">Footwear</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55757 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55764"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55764 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=boots"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Boots</span></a>
-                                        </li>
-                                        <li id="menu-item-55765"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55765 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=insoles"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Insoles and
-                                                    Liners</span></a></li>
-                                        <li id="menu-item-55763"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55763 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=overboots"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Overboots</span></a>
-                                        </li>
-                                        <li id="menu-item-55762"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55762 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=booties"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Booties</span></a>
-                                        </li>
-                                        <li id="menu-item-55760"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55760 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=socks"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Socks</span></a>
-                                        </li>
-                                        <li id="menu-item-55761"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55761 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=gaiters"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Gaiters</span></a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-55766"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55766 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a
-                                            href="https://www.alpineascents.com/shop/?product-category=accessories">Accessories</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55766 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55768"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55768 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=headwear"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Headwear</span></a>
-                                        </li>
-                                        <li id="menu-item-55769"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55769 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=handwear"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Handwear</span></a>
-                                        </li>
-                                        <li id="menu-item-55770"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55770 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=eyewear"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Eyewear</span></a>
-                                        </li>
-                                        <li id="menu-item-55771"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55771 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=personal-care"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Personal
-                                                    Care</span></a></li>
-                                        <li id="menu-item-55772"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55772 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=electronics"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Electronics</span></a>
-                                        </li>
-                                        <li id="menu-item-55773"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55773 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=maintenance-repair"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Maintenance &
-                                                    Repair</span></a></li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-55774"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55774 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a
-                                            href="https://www.alpineascents.com/shop/?product-category=equipment">Equipment</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55774 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55776"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55776 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=packs-bags"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Packs &
-                                                    Bags</span></a></li>
-                                        <li id="menu-item-55778"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55778 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=climbing"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Climbing</span></a>
-                                        </li>
-                                        <li id="menu-item-55779"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55779 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=camping"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Sleeping</span></a>
-                                        </li>
-                                        <li id="menu-item-55777"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55777 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=camp-kitchen"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Camp
-                                                    Kitchen</span></a></li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-55829"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55829 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a href="https://www.alpineascents.com/shop/?product-category=gifts">Gifts</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55829 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55831"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55831 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=logo-items"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Logo
-                                                    Items</span></a></li>
-                                        <li id="menu-item-55832"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55832 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=other-gift"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Other
-                                                    Gifts</span></a></li>
-                                    </ul>
-                                </li>
-                                <li id="menu-item-55824"
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-55824 ubermenu-item-auto ubermenu-item-header ubermenu-item-level-1 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-stack">
-                                    <div
-                                        class="ubermenu-content-block ubermenu-custom-content ubermenu-custom-content-padded">
-                                        <a
-                                            href="https://www.alpineascents.com/shop/?product-category=clearance">Clearance</a>
-                                    </div>
-                                    <ul
-                                        class="ubermenu-submenu ubermenu-submenu-id-55824 ubermenu-submenu-type-auto ubermenu-submenu-type-stack">
-                                        <li class="ubermenu-divider">
-                                            <hr />
-                                        </li>
-                                        <li id="menu-item-55826"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55826 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=clearance-menswear"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Menswear</span></a>
-                                        </li>
-                                        <li id="menu-item-55827"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55827 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/shop/?product-category=clearance-womensware"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Womenswear</span></a>
-                                        </li>
-                                        <li id="menu-item-55828"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-55828 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="/product-category/clearance/misc-clearance/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Miscellaneous</span></a>
-                                        </li>
-                                    </ul>
-                                </li><!-- end Segment: 407 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i class="fas fa-times"></i>
-                                    Close</li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-6279"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6279 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/cybercast/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Cybercast</span></a></li>
-                        <li id="menu-item-22409"
-                            class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-22409 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/blog/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Blog</span></a></li>
-                        <li id="menu-item-6281"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-has-children ubermenu-item-6281 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/about-us/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">About Us</span></a>
-                            <ul
-                                class="ubermenu-submenu ubermenu-submenu-id-6281 ubermenu-submenu-type-auto ubermenu-submenu-type-mega ubermenu-submenu-drop ubermenu-submenu-align-full_width ubermenu-autoclear">
-                                <!-- begin Segment: Menu ID 135 -->
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6611 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-2 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6611">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6611 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-6617"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6617 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/general-statement/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">General
-                                                    Statement</span></a></li>
-                                        <li id="menu-item-6614"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-6614 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="/guides/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Guide
-                                                    Staff</span></a></li>
-                                        <li id="menu-item-6615"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6615 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/office-staff/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Office
-                                                    Staff</span></a></li>
-                                        <li id="menu-item-6616"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6616 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/employment-alpine-ascents-international/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Employment</span></a>
-                                        </li>
-                                        <li id="menu-item-6613"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-6613 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="/testimonial/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Testimonials</span></a>
-                                        </li>
-                                        <li id="menu-item-143119"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-143119 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/safety-and-risk-management/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Safety & Risk
-                                                    Management</span></a></li>
-                                    </ul>
-                                </li>
-                                <li
-                                    class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-ubermenu-custom ubermenu-item-has-children ubermenu-item-6612 ubermenu-item-level-1 ubermenu-column ubermenu-column-1-2 ubermenu-has-submenu-stack ubermenu-item-type-column ubermenu-column-id-6612">
-                                    <ul class="ubermenu-submenu ubermenu-submenu-id-6612 ubermenu-submenu-type-stack">
-                                        <li id="menu-item-143108"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-143108 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/environmental-stewardship/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Environmental
-                                                    Stewardship</span></a></li>
-                                        <li id="menu-item-6618"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6618 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/climbs/climbing-for-a-cause/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Outreach
-                                                    Programs</span></a></li>
-                                        <li id="menu-item-111728"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-111728 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/diversity-equity-inclusion/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Diversity,
-                                                    Equity and Inclusion</span></a></li>
-                                        <li id="menu-item-6620"
-                                            class="ubermenu-item ubermenu-item-type-custom ubermenu-item-object-custom ubermenu-item-6620 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                target="_blank" href="http://www.alpineascentsfoundation.org/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Alpine Ascents
-                                                    Foundation</span></a></li>
-                                        <li id="menu-item-6619"
-                                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6619 ubermenu-item-auto ubermenu-item-normal ubermenu-item-level-3 ubermenu-column ubermenu-column-auto">
-                                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                                href="https://www.alpineascents.com/about-us/contact-us/"><span
-                                                    class="ubermenu-target-title ubermenu-target-text">Contact
-                                                    Us</span></a></li>
-                                    </ul>
-                                </li><!-- end Segment: 135 -->
-                                <li class="ubermenu-retractor ubermenu-retractor-mobile"><i
-                                        class="fas fa-times"></i> Close</li>
-                            </ul>
-                        </li>
-                        <li id="menu-item-51892"
-                            class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-51892 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
-                            <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
-                                href="https://www.alpineascents.com/registration-select/" tabindex="0"><span
-                                    class="ubermenu-target-title ubermenu-target-text">Book a Trip</span></a></li>
-                    </ul>
-                </nav> <!-- End UberMenu -->
+                        <nav id="ubermenu-main-2-primary"
+                        class="ubermenu ubermenu-nojs ubermenu-main ubermenu-menu-2 ubermenu-loc-primary ubermenu-responsive ubermenu-responsive-1010 ubermenu-responsive-collapse ubermenu-horizontal ubermenu-transition-fade ubermenu-trigger-hover_intent ubermenu-skin-none  ubermenu-bar-align-right ubermenu-items-align-right ubermenu-bound ubermenu-disable-submenu-scroll ubermenu-retractors-responsive ubermenu-submenu-indicator-closes">
+                        <ul id="ubermenu-nav-main-2-primary" class="ubermenu-nav" data-title="Main Menu">
+                            <li id="menu-item-21"
+                                class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-current-page-ancestor ubermenu-item-has-children ubermenu-item-21 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto ubermenu-has-submenu-drop ubermenu-has-submenu-mega">
+                                <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
+                                    href="https://www.alpineascents.com/climbs/" tabindex="0"><span
+                                        class="ubermenu-target-title ubermenu-target-text">Tours</span></a>
+                            </li>
+                            <li id="menu-item-6279"
+                                class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6279 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
+                                <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
+                                    href="https://www.alpineascents.com/cybercast/" tabindex="0"><span
+                                        class="ubermenu-target-title ubermenu-target-text">Gallery</span></a>
+                            </li>
+                            <li id="menu-item-6279"
+                                class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-6279 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
+                                <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
+                                    href="https://www.alpineascents.com/cybercast/" tabindex="0"><span
+                                        class="ubermenu-target-title ubermenu-target-text">Branches</span></a>
+                            </li>
+                            <li id="menu-item-22409"
+                                class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-22409 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
+                                <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
+                                    href="https://www.alpineascents.com/blog/" tabindex="0"><span
+                                        class="ubermenu-target-title ubermenu-target-text">Information</span></a>
+                            </li>
+                            <li id="menu-item-22409"
+                                class="ubermenu-item ubermenu-item-type-taxonomy ubermenu-item-object-category ubermenu-item-22409 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
+                                <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
+                                    href="https://www.alpineascents.com/blog/" tabindex="0"><span
+                                        class="ubermenu-target-title ubermenu-target-text">About Us</span></a>
+                            </li>
+                            <li id="menu-item-51892"
+                                class="ubermenu-item ubermenu-item-type-post_type ubermenu-item-object-page ubermenu-item-51892 ubermenu-item-level-0 ubermenu-column ubermenu-column-auto">
+                                <a class="ubermenu-target ubermenu-item-layout-default ubermenu-item-layout-text_only"
+                                    href="https://www.alpineascents.com/registration-select/" tabindex="0"><span
+                                        class="ubermenu-target-title ubermenu-target-text">Book a Trip</span></a>
+                            </li>
+                        </ul>
+                    </nav> <!-- End UberMenu -->
             </div><!-- .nav-bg -->
         </div><!-- .container -->
     </header><!-- #site-header -->
-    <div id="page" class="site"> <a class="skip-link screen-reader-text" href="#content">Skip to
-            content</a>
+    <div class="banner-image">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                @foreach ($tours as $tour)
+                    <div class="swiper-slide">
+                        <div class="header-image" style="background-image: url('{{ asset($tour->image) }}');">
+                            <div class="header-text-wrapper">
+                                <div class="header-text">
+                                    <span>
+                                        <h3>{{ $tour->name }}</h3>
+                                    </span>
+                                </div><!-- .header-text -->
+                            </div><!-- .header-text-wrapper -->
+                        </div><!-- .header-image -->
+                    </div><!-- .swiper-slide -->
+                @endforeach
+            </div><!-- .swiper-wrapper -->
+            
+            <!-- Nút điều khiển -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+            <!-- Phân trang -->
+        </div><!-- .swiper-container -->
+    </div><!-- .banner-image -->
+    <div id="secondary-navigation">
+        <nav id="site-navigation" class="main-navigation" role="navigation"> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">DETAILS <i class="fas fa-angle-down" aria-hidden="true"></i></button>
+            <div class="menu-primary-links-container">
+                <div class="menu-mount-kilimanjaro-container">
+                    <ul id="menu-primary-links" class="menu">
+
+                    </ul>
+                </div>
+            </div><!-- .menu-primary-links-container -->
+        </nav>
+    </div>
+    <div id="page" class="site">
         <div id="content" class="site-content">
-            <div id="tabs">
-                <div id="tab-block">
-                    <div class="container">
-                        <div class="page-margin">
-                            <div class="two-column-content">
-                            </div><!-- .two-column-content -->
-                        </div><!-- .page-margin -->
-                    </div><!-- .container -->
-                </div><!-- #tab-block -->
-            </div><!-- #tabs -->
             <div class="container px-0" style="max-width: 1180px !important;">
                 <div class="page-margin">
                     <div class="home-widget-wrap-right">
+                        @foreach ($tours as $tour)
                         <div class="home-widget-copy-right">
-                            <h2 class="section-title-white">Supporting Sherpa Youth Education</h2>
-                            <p>The Sherpa Education Fund was created to provide funds to educate children in Nepal. Our
-                                motivation originated from the families who came to us seeking an education for their
-                                children.</p>
-                            <div class="home-widget-button"><a href="http://www.alpineascentsfoundation.org/">Help
-                                    Support Local Sherpas</a></div>
+                            <h2 class="section-title-white">{{ $tour->name }}</h2>
+                            <p>
+                                @php
+                                // Lấy nội dung từ cơ sở dữ liệu
+                                $location = strip_tags($tour->location); // Loại bỏ thẻ HTML
+                                // Cắt nội dung thành mảng từ
+                                $words = explode(' ', $location);
+                                // Giới hạn số từ
+                                $limitedWords = array_slice($words, 0, 50);
+                                // Kết hợp lại thành chuỗi
+                                $finalOutput = implode(' ', $limitedWords);
+                            @endphp
+                            
+                            <p>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $finalOutput) !!} ...</p></p>
+                            <div class="home-widget-button">
+                                <a href="{{ route('tours.detail', $tour->id) }}">See More</a>
+                            </div>
                         </div>
-                        <div class="home-widget-image-right"><a href="http://www.alpineascentsfoundation.org/"><img
-                                    src="https://www.alpineascents.com/wp-content/uploads/2020/04/sherpa-students.jpg"></a>
+                        <div class="home-widget-image-right">
+                            <a href="{{ route('tours.detail', $tour->id) }}">
+                                <img src="{{ $tour->image }}" alt="{{ $tour->name }}">
+                            </a>
                         </div>
-                    </div>
-                    <div class="home-widget-wrap-right">
-                        <div class="home-widget-copy-right">
-                            <h2 class="section-title-white">Current Cybercasts</h2>
-                            <p>One of the originators of the âCall From the Fieldâ cybercast â please see our
-                                latest updates on our Cybercast page. Unique to Alpine Ascents, guides post audio
-                                updates directly to our website. Thanks for Tuning In! Please click the link for the
-                                latest posts and archive.</p>
-                            <div class="home-widget-button"><a href="/cybercast/">All Cybercasts</a></div>
-                        </div>
-                        <div class="home-widget-image-right"><a href="/cybercast/"><img
-                                    src="https://www.alpineascents.com/wp-content/uploads/2016/08/cyber2.jpg"></a>
-                        </div>
-                    </div>
-                    <div class="home-widget-wrap-right">
-                        <div class="home-widget-copy-right">
-                            <h2 class="section-title-white">Mountaineering Store</h2>
-                            <p>Our Gear Shop offers an expertly curated selection of climbing & trekking equipment. The
-                                <a href="https://www.alpineascents.com/gear-shop/" target="_blank"
-                                    rel="noopener noreferrer">online store</a> is available 24/7 for your convenience,
-                                and our <a
-                                    href="https://www.google.com/maps/place/Alpine+Ascents+International/@47.6244749,-122.3607671,17z/data=!3m1!4b1!4m5!3m4!1s0x54901543abfcc7b3:0x65973c68485a02b7!8m2!3d47.6244749!4d-122.3585784">Seattle
-                                    shop</a> is open during weekday business hours. Our highly trained staff are also
-                                able to accept orders or answer questions via phone.</p>
-                            <div class="home-widget-button"><a href="https://www.alpineascents.com/gear-shop/">Shop
-                                    for Gear</a></div>
-                        </div>
-                        <div class="home-widget-image-right"><a href="https://www.alpineascents.com/gear-shop/"><img
-                                    src="https://www.alpineascents.com/wp-content/uploads/2016/04/new-gear-widget.jpg"></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div><!-- .page-margin -->
             </div><!-- .container -->
         </div><!-- #content -->
-        <footer id="colophon" class="site-footer" role="contentinfo">
-            <div class="container"> Alpine Ascents International <span class="sep"> | </span><a
-                    href="https://www.google.com/maps/place/Alpine+Ascents+International/@47.6244785,-122.3607724,17z/data=!3m1!4b1!4m2!3m1!1s0x54901543abfcc7b3:0x65973c68485a02b7"
-                    target="_blank">109 W. Mercer St. - Seattle, WA 98119</a><span class="sep"> | </span>phone:
-                <a href="tel://1-206-378-1927">206.378.1927</a><span class="sep"> | </span><a
-                    href="/cdn-cgi/l/email-protection#53103f3a3e3113123f233a3d36122030363d27207d303c3e"><span
-                        class="__cf_email__"
-                        data-cfemail="7d3e1114101f3d3c110d1413183c0e1e1813090e531e1210">[email protected]</span> </a>
-                <div class="social-footer">
-                    <ul class="social-footer-icon">
-                        <li><a href="https://www.facebook.com/AlpineAscentsInternational" target="_blank"
-                                title="Like Us on Facebook"><i class="fab fa-facebook-f fa-fw fa-btn"></i></a></li>
-                        <li><a href="https://www.instagram.com/alpineascents" target="_blank"
-                                title="Follow Us on Instagram"><i class="fab fa-instagram fa-fw fa-btn"></i></a>
-                        </li>
-                        <li><a href="https://www.youtube.com/channel/UC8QN14o4g6bOGZQbHAoF9og" target="_blank"
-                                title=âSubscribe on YouTubeâ><i class="fa fa-youtube-play"></i></a></li>
-                    </ul>
-                </div><!--.social-footer-->
-            </div><!--.container-->
-        </footer><!-- #colophon -->
     </div><!-- #page -->
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-left">
+                <h3>Alpine Ascents Vietnam</h3>
+                <p>10th Floor, Green Peak Building,<br> 123 Tran Duy Hung Street,<br> Cau Giay District, Hanoi, Vietnam.</p>
+                <p>Contact: <a href="tel://+842412345678">+84 24 1234 5678</a></p>
+                <p>Email: <a href="mailto:contact@alpineascentsvn.com">contact@alpineascentsvn.com</a></p>
+            </div>
+            <div class="footer-right">
+                <h3>Find Us Here</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.6646413870612!2d105.79135817535462!3d21.00607598063757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aca5f64f829f%3A0xcb4a80cd1b0490dc!2zMTIzIMSQLiBUcuG6p24gRHV5IEjGsG5nLCBUcnVuZyBIb8OgLCBUaGFuaCBYdcOibiwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2s!4v1727066046050!5m2!1sen!2s" width="350" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div><!-- .container -->
+    </footer><!-- #colophon -->
+    <script>
+        const swiper = new Swiper('.swiper-container', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
         window.RS_MODULES = window.RS_MODULES || {};
@@ -3065,21 +2053,3 @@
                                 </svg> <span class="jp-carousel-has-comments-indicator"
                                     aria-label="This image has comments."></span> </span> </a></div>
                 </div>
-                <div class="jp-carousel-info-extra">
-                    <div class="jp-carousel-info-content-wrapper">
-                        <div class="jp-carousel-photo-title-container">
-                            <h2 class="jp-carousel-photo-title"></h2>
-                        </div>
-                        <div class="jp-carousel-comments-wrapper">
-                            <div id="jp-carousel-comments-loading"> <span>Loading Comments...</span></div>
-                            <div class="jp-carousel-comments"></div>
-                            <div id="jp-carousel-comment-form-container"> <span
-                                    id="jp-carousel-comment-form-spinner"> </span>
-                                <div id="jp-carousel-comment-post-results"></div>
-                                <form id="jp-carousel-comment-form"> <label
-                                        for="jp-carousel-comment-form-comment-field"
-                                        class="screen-reader-text">Write a Comment...</label><textarea
-                                        name="comment"
-                                        class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea"
-                                        id="jp-carousel-comment-form-comment-field"
-                                        placeholder="Write a Comment...">

@@ -12,21 +12,13 @@ class AdminGalleriesController extends Controller
 {
     public function index()
     {
-<<<<<<< HEAD
-        // Get list of tours
-=======
         // Retrieve the list of all tours
->>>>>>> adb12678cc15af1e06480a0517be571e5e059f25
         $tours = tours::all();
         $galleries = galleries::with('tour')->get();
         return view('admin.galleries.index', compact('tours', 'galleries'));
     }
 
-<<<<<<< HEAD
-    // Display the form to upload an image
-=======
     // Display form to upload image
->>>>>>> adb12678cc15af1e06480a0517be571e5e059f25
     public function create()
     {
         $tours = tours::all();

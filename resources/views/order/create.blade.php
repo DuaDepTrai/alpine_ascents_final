@@ -22,7 +22,7 @@
         </div>
     @endif
 
-    <form action="/order" method="POST">
+    <form action="{{ route('order.confirm') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="name">Name</label>
@@ -62,25 +62,30 @@
         </div>
         <button type="submit" class="btn btn-primary">Book Now</button>
     </form>
+     
 </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const tourSelect = document.getElementById('tour');
-            const quantityInput = document.getElementById('quantity');
-            const totalInput = document.getElementById('total');
+        const tourSelect = document.getElementById('tour');
+        const quantityInput = document.getElementById('quantity');
+        const totalInput = document.getElementById('total');
 
-            function updateTotal() {
-                const selectedOption = tourSelect.options[tourSelect.selectedIndex];
-                const price = selectedOption.dataset.price ? parseInt(selectedOption.dataset.price) : 0;
-                const quantity = parseInt(quantityInput.value) || 0;
-                const total = price * quantity;
+        function updateTotal() {
+            const selectedOption = tourSelect.options[tourSelect.selectedIndex];
+            const price = selectedOption.dataset.price ? parseInt(selectedOption.dataset.price) : 0;
+            const quantity = parseInt(quantityInput.value) || 0;
+            const total = price * quantity;
 
-                totalInput.value = total.toLocaleString() + ' VND';
-            }
+            totalInput.value = total.toLocaleString() + ' VND';
+        }
 
-            tourSelect.addEventListener('change', updateTotal);
-            quantityInput.addEventListener('input', updateTotal);
-        });
+        tourSelect.addEventListener('change', updateTotal);
+        quantityInput.addEventListener('input', updateTotal);
+
+        
+    });
+
+    
     </script>
 @endsection
     

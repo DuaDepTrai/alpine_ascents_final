@@ -42,7 +42,7 @@ class AdminUserManagementController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect()->route('admin.UserManagement.index')->with('success', 'Người dùng đã được thêm thành công!');
+        return redirect()->route('admin.UserManagement.index')->with('success', 'User added successfully!');
     }
 
     // Display the form to edit a user

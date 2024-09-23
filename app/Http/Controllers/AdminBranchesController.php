@@ -56,9 +56,9 @@ class AdminBranchesController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
-            'positioning' => 'required|string|max:255',
-        ]);
+            'phone' => ['required', 'string', 'regex:/^\+\d{1,3}\d{7,14}$/'],
+            'positioning' => ['required', 'string', 'regex:/^[-+]?([1-8]?\d(\.\d+)?|90(\.0+)?),\s*[-+]?(180(\.0+)?|((1[0-7]\d)|([1-9]?\d))(\.\d+)?)$/'],
+]);
 
         // Update user information
         $branch->update([
