@@ -40,7 +40,7 @@ class AdminToursController extends Controller
             $request->file('image')->move(public_path('images'), $imageName);
 
             // Lưu đường dẫn tương đối của ảnh
-            $imagePath = 'images/' . $imageName;
+            $imagePath = 'images/upload' . $imageName;
         }
 
         // Tạo tour mới với đường dẫn ảnh
@@ -112,7 +112,7 @@ public function update(Request $request, $id)
         $request->file('image')->move(public_path('images'), $imageName);
 
         // Lưu đường dẫn tương đối của ảnh
-        $tour->image = 'images/' . $imageName;
+        $tour->image = 'images/upload/' . $imageName;
     }
 
     // Cập nhật các thông tin khác
