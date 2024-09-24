@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->boolean('role')->default(false);
             $table->integer('verification_code');
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

@@ -35,11 +35,12 @@ class AdminUserManagementController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
-            'phone' => 'nullable|string|max:255',
+            'phone' => 'required|string|unique:users,phone|regex:/^(0|\+84)[0-9]{9}$/',
             'avatar' => 'nullable|string',
-            'role' => 'required|integer',
+            'role' => 'required|boolean',
+            'status' => 'required|boolean',
         ]);
 
         // Create a new user
@@ -50,6 +51,7 @@ class AdminUserManagementController extends Controller
             'phone' => $request->phone,
             'avatar' => $request->avatar,
             'role' => $request->role,
+            'status' => $request->status,
         ]);
 
         return redirect()->route('admin.UserManagement.index')->with('success', 'User added successfully!');
@@ -70,9 +72,10 @@ class AdminUserManagementController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
-            'phone' => 'nullable|string|max:255',
+            'phone' => 'required|string|unique:users,phone|regex:/^(0|\+84)[0-9]{9}$/',
             'avatar' => 'nullable|string',
-            'role' => 'required|integer',
+            'role' => 'required|boolean',
+            'status' => 'required|boolean',
         ]);
 
         // Update user information
@@ -82,6 +85,7 @@ class AdminUserManagementController extends Controller
             'phone' => $request->phone,
             'avatar' => $request->avatar,
             'role' => $request->role,
+            'status' => $request->status,
         ]);
 
         return redirect()->route('admin.UserManagement.index')->with('success', 'User information has been updated!!');

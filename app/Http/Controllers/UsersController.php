@@ -52,8 +52,8 @@ class UsersController extends Controller
     public function register(Request $request)
 {
     $request->validate([
-        'name' => 'required',
-        'phone' => 'required',
+        'name' => 'required|max: 255',
+        'phone' => 'required|string|regex:/^(0|\+84)[0-9]{9}$/',
         'email' => 'required|email',
         'password' => 'required|min:6|max:15',
     ]);
@@ -171,7 +171,7 @@ public function login(Request $request)
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'phone' => 'required|numeric|digits:10',
+            'phone' => 'required|string|regex:/^(0|\+84)[0-9]{9}$/',
         ]);
 
         if(($request->email == $user->email || $request->email == '') && ($request->phone == $user->phone || $request->phone == '')){

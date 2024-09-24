@@ -20,15 +20,15 @@ class AdminToursController extends Controller
         // Validate dữ liệu đầu vào
         $request->validate([
             'name' => 'required|string|max:255',
-            'price' => 'required|integer',
+            'price' => 'required|integer|min:1',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
             'location' => 'required|string',
             'features' => 'required|string',
             'besttime' => 'required|string',
             'directions' => 'required|string',
             'trekkingroutes' => 'required|string',
-            'items' => 'nullable|string',
-            'cautions' => 'nullable|string',
+            'items' => 'required|string',
+            'cautions' => 'required|string',
             'requirements' => 'required|string',
         ]);
 
@@ -85,15 +85,15 @@ public function update(Request $request, $id)
     // Validate dữ liệu đầu vào
     $request->validate([
         'name' => 'required|string|max:255',
-        'price' => 'required|integer',
+        'price' => 'required|integer|min:1',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048', // Validate image upload
         'location' => 'required|string',
         'features' => 'required|string',
         'besttime' => 'required|string',
         'directions' => 'required|string',
         'trekkingroutes' => 'required|string',
-        'items' => 'nullable|string',
-        'cautions' => 'nullable|string',
+        'items' => 'required|string',
+        'cautions' => 'required|string',
         'requirements' => 'required|string',
     ]);
 

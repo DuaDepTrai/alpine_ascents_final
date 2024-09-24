@@ -18,8 +18,8 @@ class CreateToursTable extends Migration
             $table->text('besttime');
             $table->text('directions');
             $table->text('trekkingroutes');
-            $table->text('items')->nullable();
-            $table->text('cautions')->nullable();
+            $table->text('items');
+            $table->text('cautions');
             $table->text('requirements');
             $table->timestamps();
         });

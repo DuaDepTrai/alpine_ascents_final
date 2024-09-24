@@ -23,10 +23,11 @@ class OrderController extends Controller
         // Validate data before displaying the confirmation page
         $validated = $request->validate([
             'name' => 'required|string|max:255',
-            'phone' => 'required|string|max:15',
+            'phone' => 'required|string|regex:/^(0|\+84)[0-9]{9}$/',
             'email' => 'nullable|email|max:255',
             'quantity' => 'required|integer|min:1',
             'tour_id' => 'required|exists:tours,id',
+            'note' => 'nullable|string'
         ]);
 
         // Get tour information

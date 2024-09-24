@@ -27,8 +27,19 @@
     <div class="row mb-4">
         <div class="col-8 p-3 contents">
             <h3 class="heading">JOIN US ON THE CLIMBING ADVENTURE</h3>
-            <p>Experience the thrill of adventure with Alpine Ascent Vietnam's mountain tours! Conquer breathtaking peaks, explore stunning landscapes, and immerse yourself in the beauty of Vietnam's highlands. Our expert guides ensure a safe and unforgettable journey, whether you're a seasoned climber or a beginner. Join us for an adventure that will challenge and inspire you!</p>
-            <button class="tour_button" id="tour_button">OUR CLIMBING TOURS</button>
+            <p>
+                Join Alpine Ascent Vietnam for the ultimate climbing adventure and experience the thrill of conquering some of the most breathtaking peaks in the country! Whether you're a seasoned climber or a beginner, our carefully curated mountain tours are designed to challenge and inspire you every step of the way. 
+            </p>
+            <p>
+                As you explore Vietnam's stunning highlands, you'll be immersed in the natural beauty of towering mountains, lush forests, and remote landscapes, creating memories that will last a lifetime.
+            </p>
+            <p>
+                Our expert guides, with their deep knowledge of the terrain and passion for the outdoors, ensure a safe and exhilarating experience for every adventurer. From the adrenaline rush of the climb to the sense of accomplishment at the summit, each moment is crafted to push your limits and fuel your spirit. 
+            </p>
+            <p>
+                Join us on this unforgettable journey and let the mountains of Vietnam awaken your adventurous soul!
+            </p>
+            <a href="/tours"><button class="tour_button" id="tour_button">OUR CLIMBING TOURS</button></a>
         </div>
         <div class="col-4 p-0 imgs">
             <img class="img_tour" src="images/home/img_tour.png" alt="">
@@ -40,15 +51,21 @@
         </div>
         <div class="col-4 p-3 contents">
             <h3 class="heading">GALLERY</h3>
-            <p class="text-start">Welcome to the breathtaking beauty of Vietnam's mountain ranges! Immerse yourself in the stunning landscapes and majestic peaks that await you.</p>
-            <button class="gallery_button" id="gallery_button">GALLERY</button>
+            <p class="text-start">
+                Welcome to the awe-inspiring beauty of Vietnam's mountain ranges! Prepare to immerse yourself in breathtaking landscapes, where towering peaks and lush, verdant valleys await your exploration. Whether you're seeking adventure or serenity, the majestic mountains of Vietnam promise an unforgettable experience for all.
+            </p>
+            <a href="/galleries"><button class="gallery_button" id="gallery_button">GALLERY</button></a>
         </div>
     </div>
     <div class="row mb-4">
         <div class="col-8 p-3 contents">
             <h3 class="heading">INFORMATION AND TECHNIQUE</h3>
-            <p>Our mountain climbing tours offer a range of exciting adventures tailored to various skill levels. From beginner-friendly hikes to challenging ascents, each tour is designed to showcase the stunning beauty of Vietnam's landscapes. Our experienced guides will provide detailed instruction on essential mountaineering techniques, ensuring safety and skill development. You'll learn key climbing skills, such as proper use of gear, navigation, and safety protocols.</p>
-            <button class="information_button" id="information_button">MORE INFORMATION</button>
+            <p>Our mountain climbing tours provide a diverse range of thrilling adventures, carefully tailored to suit different skill levels.</p>
+            <p>Whether you're a novice or an experienced climber, we offer everything from beginner-friendly hikes to more challenging ascents, each designed to highlight the breathtaking beauty of Vietnam's diverse landscapes. </p>
+            <p>Our experienced guides are dedicated to ensuring your safety and skill development, offering detailed instruction on essential mountaineering techniques.</p>
+            <p>You'll gain valuable knowledge, including the proper use of climbing gear, navigation through rugged terrain, and essential safety protocols. </p>
+            <p>Join us for an unforgettable journey where you’ll not only explore the stunning outdoors but also develop your climbing abilities under expert guidance.</p>
+            <a href="/information"><button class="information_button" id="information_button">MORE INFORMATION</button></a>
         </div>
         <div class="col-4 p-0 imgs">
             <img class="img_information" src="images/home/img_information.png" alt="">
@@ -60,8 +77,10 @@
         </div>
         <div class="col-4 p-3 contents">
             <h3 class="heading">OUR BRANCHES</h3>
-            <p class="text-start">Alpine Ascent Vietnam has global branches, providing expert climbing experiences worldwide. Our international network ensures top-notch mountaineering guidance wherever you are.</p>
-            <button class="branches_button" id="branches_button">OUR BRANCHES</button>
+            <p class="text-start">Alpine Ascent Vietnam operates a global network of branches, offering expert climbing experiences across the world. </p>
+            <p>No matter where you are, our international presence guarantees high-quality mountaineering guidance, ensuring that you can embark on your climbing adventure with confidence and professional support. </p>
+            <p>From local peaks to international summits, we bring the same level of expertise and dedication to every expedition.            </p>
+            <a href="/branches"><button class="branches_button" id="branches_button">OUR BRANCHES</button></a>
         </div>
     </div>
 </div>

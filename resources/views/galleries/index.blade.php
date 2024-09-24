@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="gallery_container">
         @foreach($galleries as $tour)
             @if($tour->galleries->count())
                 @foreach($tour->galleries as $media)
@@ -85,3 +85,13 @@
         @endforeach
     </div>
 @endsection
+
+@push('styles')
+    <style>
+        .gallery_container {
+            width: 70%;
+            margin: -25px auto;
+
+        }
+    </style>
+@endpush

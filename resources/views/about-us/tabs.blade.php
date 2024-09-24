@@ -2,7 +2,7 @@
 
 @section('content')  <!-- Start of the main content of the page -->
 
-<div class="container mt-5">  <!-- Container to create spacing around the content -->
+<div class="aboutus_container">  <!-- Container to create spacing around the content -->
     <div class="row">
         <div class="col-12">
             <!-- Tab Switch Button -->
@@ -96,6 +96,10 @@
 
 @push('styles')  <!-- Push CSS code to the "styles" stack -->
 <style>
+    .aboutus_container {
+        width: 70%;
+        margin: 0 auto;
+    }
     .tab-content {  /* Layout for the tab content */
         margin-top: 20px;
     }

@@ -146,6 +146,14 @@
                     </span>
                   </a>
                 </li>
+                <li class="treeview">
+                  <a href="/admin/branches">
+                    <i class="fa fa-share"></i> <span>Branches</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                </li>
               </ul>
         </section>
         <!-- /.sidebar -->

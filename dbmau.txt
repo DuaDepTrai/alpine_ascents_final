@@ -1,0 +1,188 @@
+insert into tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements)
+values
+('1',
+'Fansipan Adventure Expedition',
+'3000000',
+'images/fansipan/fansiapn (1).jpg',
+'<p>Fansipan, located in Sa Pa district, Lào Cai province, is known as the "Roof of Indochina" and is the highest peak in the Hoang Lien Son range, standing at 3,143 meters above sea level.</p> <p>This location not only attracts adventure enthusiasts due to its grandeur but also because of its majestic natural beauty. Fansipan is a dream destination for many trekkers and travelers, offering a sense of triumph when standing on the highest peak of Indochina, immersing in the sea of white clouds, and admiring the vast surrounding landscapes.</p>',
+'<p>Fansipan features rugged limestone terrain with steep and uneven paths.</p> <p>Along the route to the summit, you will pass through dense forests, clear streams, and lush green meadows. The path to the top is often shrouded in mist, creating a mysterious and magnificent scene. Small caves and beautiful waterfalls along the route are also interesting highlights.</p> <p>The rainy season can make the road slippery and more challenging, but it is compensated by the beautiful natural scenery and fresh air.</p>',
+' <p>The ideal time to conquer Fansipan is from October to April.</p> <p>During this period, the weather is dry and cool, with temperatures ranging from 10 to 20 degrees Celsius, making it ideal for trekking.</p> <p>Spring and autumn are the best times to enjoy the scenery, with fields of vibrant yellow wild sunflowers or the green hues of vegetation. Summer may bring heavy rains, affecting travel and sightseeing. Winter can be very cold, with possible ice and snow, making the conquest more difficult and requiring careful preparation.</p>',
+'<p>To begin your journey to Fansipan, start by traveling from Hanoi to Sa Pa, which can be done via train or bus. The most popular option is the overnight sleeper train, which offers a comfortable ride through the picturesque northern landscapes. Trains depart from Hanoi is main station
+and typically take around 8-9 hours. Make sure to book your tickets in advance, especially during peak tourist seasons.</ p> <p>Alternatively, there are numerous bus services that operate between Hanoi and Sa Pa,
+with travel times ranging
+from
+6 to 8 hours depending on
+traffic
+and road conditions. Buses often depart
+from
+various locations in Hanoi, including the My Dinh bus station
+and the old Quarter. Many of these buses are equipped with air conditioning
+and reclining seats for a more comfortable journey.</ p> <p>Upon arriving in Sa Pa, you’ll find a range of transportation options to reach the base of Fansipan. Renting a motorbike is a popular choice for those who enjoy a bit of adventure
+and wish to explore the scenic roads at their own pace. Various rental shops are available in Sa Pa, offering reasonable rates
+and flexible options.</ p> <p>if you prefer a more relaxed approach,
+you can take a taxi
+or a local shuttle service to the base of the mountain. The journey typically takes about 30-45 minutes,
+depending on
+your chosen route
+and traffic conditions. Make sure to negotiate the fare in advance if you are taking a taxi,
+or consider
+	using a ride-hailing app for convenience.</ p> <p>as you make your way to the base,
+take a moment to soak in the stunning views of the terraced rice fields
+and the lush green valleys that Sa Pa is famous for. This initial journey sets the stage for the breathtaking trek ahead,
+leading you to the majestic peak of Fansipan.</ p>',
+'<p>Starting from the base of the mountain, the journey will lead you through winding trails across dense forests and beautiful valleys. Along the way, you will have the opportunity to admire magnificent landscapes and experience the drastic changes in climate and scenery from the base to the summit. On the first night, you will rest at camps or temporary lodges in the mountains to regain your strength.</p> <p>On the second day, you will continue to conquer steep paths and cloud forests to reach the summit of Fansipan, where you will be rewarded with a panoramic view of the majestic Hoang Lien Son range.</p>',
+'<p>When preparing for your trek to Fansipan, packing the right gear is crucial for ensuring safety, comfort, and enjoyment. Here’s a detailed list of essential items you should bring:</p> <p>Waterproof and Non-Slip Trekking Shoes: A sturdy pair of trekking shoes is essential for navigating the rugged terrain. Look for shoes that are both waterproof and provide excellent grip, as trails can be slippery, especially during the rainy season.</p> <p>Windproof and Rainproof Jacket: Weather conditions can change rapidly in the mountains. A high-quality, breathable jacket will protect you from wind and rain, keeping you dry and warm throughout your trek.</p> <p>Snacks and Water: Stay energized with lightweight, high-energy snacks like nuts, energy bars, and dried fruits. It is also vital to carry enough water—consider a hydration system
+or collapsible water bottles to keep you hydrated during the hike.</ p> <p>Trekking Poles: These can significantly enhance your stability
+and reduce the strain on
+your knees,
+especially on
+steep ascents
+and descents. Adjustable poles are ideal as they can be tailored to your height
+and terrain.</ p> <p>Sunscreen
+and Mosquito Repellent: Protect your skin
+from
+sunburn
+and insect bites. Choose a high SPF sunscreen,
+and opt for a DEET-based mosquito repellent to keep the bugs at bay,
+particularly in the warmer months.</ p> <p>Flashlight
+and Spare Batteries: if you plan on
+trekking in the early morning
+or late afternoon,
+a reliable flashlight
+or headlamp is crucial for visibility. always bring extra batteries to avoid being left in the dark.</ p> <p>Warm Clothing
+and Woolen Hat: if you’re trekking during the winter months,
+pack layers of warm clothing. A thermal base layer,
+insulating mid-layer,
+and a waterproof outer layer will keep you warm. A woolen hat
+and gloves are also advisable to protect against cold temperatures.</ p> <p>first Aid Kit: A compact first aid kit is essential for any trek. Include items like adhesive bandages,
+antiseptic wipes,
+pain relievers,
+and any personal medications you may need.</ p> <p>Multi-Tool
+or Swiss Army Knife: A multi-tool can be invaluable for a variety of tasks,
+from
+making repairs to preparing food. Ensure it includes essential tools like a knife,
+scissors,
+and screwdrivers.</ p> <p>map
+and Compass
+or GPS Device: while many trails are well-marked,
+having
+a physical map
+and compass (
+	or a GPS device) is useful for navigation,
+especially in areas
+where
+cell service may be unreliable.</ p> <p>Emergency Blanket: This lightweight,
+compact item can provide warmth
+and protection in case
+	of an emergency. It’s a lifesaver if you need to stay warm while waiting for help.</ p> <p>by equipping yourself with these essential items,
+	you’ll be better prepared for the adventure that awaits at Fansipan. Proper preparation not only enhances your trekking experience but also ensures your safety in this breathtaking natural environment.</ p>', '<p>Check the weather before departing to ensure favorable conditions.</p> <p>Follow the guides of instructions and do not stray from the route.</p> <p>Carry protective gear to avoid injury and maintain the cleanliness of the surrounding environment.</p>', '<p>Good health, with the ability to walk long distances and hike mountains.</p> <p>No extensive trekking experience required, but participants should have basic mountain climbing experience.</p> <p>Suitable for individuals aged 18 and above.</p>'
+)
+;
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) 
+VALUES 
+('2',
+'Phong Nha - Ke Bang Discovery',
+'2500000',
+'images/phongnha/phongnha (1).jpg',
+'<p>Phong Nha - Ke Bang, located in Quang Binh province, is a UNESCO World Heritage site known for its magnificent cave systems.</p> <p>This area is famous for large caves such as Son Doong, Phong Nha, and Tien Son, offering a unique and rich natural exploration experience.</p> <p>With rivers, waterfalls, and majestic landscapes, it is an ideal destination for those passionate about caves and exploring pristine nature.</p>',
+'<p>Phong Nha - Ke Bang features limestone terrain with a vast cave system.</p> <p>Son Doong, the world\'s largest cave, stands out with its unique stalactites and stalagmites. Other caves like Phong Nha and Tien Son are equally impressive, with fascinating geological structures and stunning natural landscapes.</p> <p>The surrounding terrain mainly consists of limestone mountains and tropical forests, creating a majestic and mysterious natural setting.</p> <p>Each cave has its own unique beauty, from clear blue lakes to rich ecosystems.</p>',
+'<p>The ideal time to explore Phong Nha - Ke Bang is from September to December.</p> <p>During this period, the weather is dry with little rain, making it suitable for cave visits and exploring the surrounding areas.</p> <p>Summer may bring heavy rains, affecting travel and sightseeing.</p> <p>Winter can be cold and damp, making cave exploration more challenging.</p>',
+'<p>To start your adventure to Phong Nha - Ke Bang National Park, you can travel from Hanoi by train or take a flight to Dong Hoi. The train journey offers a scenic route, allowing you to enjoy the beautiful landscapes of Vietnam’s countryside. Trains typically take around 10-12 hours, so it’s a good idea to book a sleeper cabin for added comfort. Make sure to check the train schedules in advance, as they can vary.</p> <p>If you prefer a quicker option, flying from Hanoi to Dong Hoi is highly convenient. The flight usually takes about 1.5 hours, and several airlines operate daily flights. Upon arrival at Dong Hoi Airport, you’ll find various transportation options readily available.</p> <p>Once in Dong Hoi, you can continue your journey to Phong Nha - Ke Bang by either taxi or bus. The bus services are affordable and often operate on a regular schedule, taking approximately 1-2 hours to reach the park. Look for buses that specifically head to Phong Nha, as they provide direct routes to the main entrance of the national park.</p> <p>For a more comfortable experience, hiring a taxi or a private car can be a great choice. This allows you to travel at your own pace and stop along the way to take in the stunning scenery. The ride to Phong Nha offers beautiful views of the surrounding mountains and lush greenery, so don’t forget your camera!</p> <p>As you approach Phong Nha - Ke Bang, you’ll be greeted by the impressive karst landscapes and the lush rainforest that make this area a UNESCO World Heritage Site. This journey not only brings you closer to your destination but also immerses you in the natural beauty of Vietnam, setting the stage for your exploration of the magnificent caves and trails that await you.</p>',
+'<p>With a 4-day 3-night tour, the journey begins at the foot of the mountain, where a professional guide will lead you into the heart of Phong Nha Cave.</p> <p>With spacious pathways and fascinating limestone formations, you will have the opportunity to admire beautiful stalactites and the unique ecosystem within the cave. The cave tour typically lasts about 2-3 hours, depending on your pace and interest.</p> <p>After that, you will explore Son Doong Cave, where you will have to navigate narrow tunnels, swim through underground lakes, and conquer uncharted areas to enjoy the pristine beauty of nature.</p>',
+'<p>When preparing for your adventure, having the right gear is vital for comfort and safety. Here’s a detailed list of essential items you should bring:</p> <p>Waterproof Walking Shoes: A sturdy pair of waterproof walking shoes is crucial for navigating wet and uneven terrain. Look for shoes with good grip to prevent slipping, especially in muddy areas. Comfort is key, so ensure they are well-fitted and broken in before your trek.</p> <p>Rainproof and Windproof Jacket: Weather in mountainous regions can be unpredictable. A high-quality, breathable jacket will shield you from rain and wind, keeping you dry and warm. Choose a lightweight option that can be easily packed away when not in use.</p> <p>Flashlight and Spare Batteries: For early morning or late evening hikes, a reliable flashlight or headlamp is essential. Ensure you have extra batteries to avoid being left in the dark, especially if you plan to explore caves or other dimly lit areas.</p> <p>Snacks and Water: Staying energized is key during your trek. Pack lightweight, high-energy snacks like trail mix, energy bars, or dried fruits. Hydration is equally important, so carry enough water; consider a hydration pack or collapsible bottles for convenience.</p> <p>Sunscreen and Mosquito Repellent: Protect your skin from harmful UV rays and insect bites. Use a broad-spectrum sunscreen with a high SPF and a DEET-based mosquito repellent to keep bugs away, especially in warmer months.</p> <p>Protective Gear such as Hats and Gloves: Depending on the season, wearing a hat can shield you from sun exposure, while gloves are essential for colder weather. Choose breathable materials for comfort and protection during your trek.</p> <p>First Aid Kit: A compact first aid kit is essential for treating minor injuries. Include adhesive bandages, antiseptic wipes, pain relievers, and any personal medications. Familiarize yourself with the kit’s contents before heading out.</p> <p>Multi-Tool or Swiss Army Knife: A versatile tool can be invaluable during your trek, useful for everything from food preparation to making small repairs. Make sure it includes essential tools like scissors, a knife, and screwdrivers.</p> <p>Map and Compass or GPS Device: While many trails are marked, having a physical map and compass or a GPS device is beneficial for navigation, particularly in areas with limited cell service. Always know your route and have a backup plan.</p> <p>Emergency Blanket: A lightweight emergency blanket can provide warmth and protection if you find yourself in an unexpected situation. It’s small enough to fit in your pack but can be a lifesaver if needed.</p> <p>By equipping yourself with these essential items, you’ll be well-prepared for your adventure, ensuring a safe and enjoyable experience while exploring the beauty of nature.</p>',
+'<p>Follow the guides\' instructions and avoid harming the environment.</p> <p>Protect sensitive areas and maintain silence to avoid disturbing the wildlife and surrounding ecosystems.</p>',
+'<p>Requires good health due to various activities like cave exploration and swimming.</p><p>No extensive experience required, but good physical preparation is essential.</p><p>Participants must be 15 years or older.</p>'
+);
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) VALUES
+('3',
+'Ta Xua Cloud Hunting Trek',
+'2500000',
+'images/taxua/taxua.jpg',
+'<p>Ta Xua, located in Bac Yen district, Son La province, is famous for its majestic mountain ranges and sea of white clouds.</p> <p>This location is a paradise for those who love trekking and want to experience the natural beauty of Vietnam\'s Northwest region.</p> <p>Ta Xua is also an ideal place to enjoy the pristine scenery and misty clouds, creating a mesmerizing natural landscape.</p>',
+'<p>Ta Xua stands at approximately 2,865 meters high and is characterized by rugged limestone terrain.</p> <p>The path to the summit is often covered in mist and early morning fog, creating a mysterious and majestic landscape. You will pass through forests, lush green fields, and steep trails.</p> <p>Notably, Ta Xua has narrow and challenging trails, requiring good physical fitness and trekking skills to overcome.</p> <p>Other highlights include lush green meadows and deep valleys.</p>',
+'<p>The ideal time to explore Ta Xua is from October to April.</p> <p>During this period, the weather is dry and cool, perfect for trekking and viewing the sea of clouds.</p> <p>Summer can bring heavy rains, making travel difficult.</p> <p>Winter can be cold and damp, so thorough preparation is necessary for the trip.</p>',
+'<p>To begin your trip to the stunning Ta Xua area, start by traveling from Hanoi to Son La. You can choose between a comfortable bus or a scenic train ride. The bus is a popular option, with several companies offering services that take around 6-8 hours. Buses often depart from various locations in Hanoi, such as My Dinh bus station and the Old Quarter, and provide amenities like air conditioning and reclining seats for a pleasant journey.</p> <p>If you prefer a more relaxed travel experience, taking a train is another excellent choice. Trains from Hanoi to Son La offer a picturesque route through the northern mountains, allowing you to enjoy the breathtaking scenery along the way. The journey typically takes about 10-12 hours, so it’s advisable to book a sleeper cabin for overnight travel.</p> <p>Upon arriving in Son La, you’ll have several options to continue your journey to the Ta Xua area. Taxis are readily available outside the bus or train station, and they provide a direct and convenient way to reach your destination. Depending on traffic and your exact location, the taxi ride will take about 1.5 to 2 hours.</p> <p>For those seeking a more adventurous option, consider renting a motorbike in Son La. This allows you to explore the scenic routes at your own pace while enjoying the fresh mountain air.</p>',
+'<p>Starting the journey from the foot of Ta Xua Mountain, you will trek through winding trails and lush green tea hills.</p> <p>We will guide you to ideal stops to admire the stunning scenery of clouds and mist. The first night will be spent at camps or guesthouses in the mountain area.</p> <p>On the second day, you will continue to conquer higher peaks and enjoy the breathtaking panorama of the Ta Xua mountain range.</p>',
+'<p>When preparing for your trek, it\'s crucial to pack the right gear to ensure a safe and enjoyable experience. Here’s a detailed list of essential items you should bring:</p> <p>Waterproof and Non-Slip Trekking Shoes: A sturdy pair of waterproof trekking shoes is vital for navigating wet and rocky terrains.</p> <p>Windproof and Rainproof Jacket: Weather conditions can change unexpectedly in mountainous regions.</p> <p>Snacks and Water: Staying fueled is essential during your trek.</p> <p>Trekking Poles: These can significantly improve your stability and reduce strain on your knees.</p> <p>Sunscreen and Mosquito Repellent: Protect your skin from harmful UV rays and insect bites.</p> <p>Flashlight and Spare Batteries: A reliable flashlight or headlamp is essential for early morning or late evening hikes.</p> <p>Warm Clothing and a Wool Hat: If you’re trekking in colder months, layering is key.</p> <p>First Aid Kit: A compact first aid kit is crucial for treating minor injuries.</p> <p>Multi-Tool or Swiss Army Knife: A versatile tool can be invaluable for various tasks.</p> <p>Map and Compass or GPS Device: Even if trails are well-marked, having a physical map and compass or a GPS device is beneficial for navigation.</p> <p>Emergency Blanket: This lightweight, compact item can provide warmth and protection in case of an emergency.</p>',
+'<p>Prepare mentally and physically before starting the journey.</p> <p>Follow safety instructions and protect the surrounding environment.</p>',
+'<p>Good physical fitness is required due to the long and steep trekking route.</p> <p>Some trekking experience is necessary because of the challenging terrain.</p> <p>Participants should be 18 years or older and in good physical condition.</p>'
+);
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) VALUES
+('4',
+'Ban Gioc Waterfall Exploration',
+'2000000',
+'images/bangioc/bangioc.jpg',
+'<p>Ban Gioc Waterfall, located in Trung Khanh district, Cao Bang province, is one of the most beautiful waterfalls in Vietnam and a perfect destination for nature lovers.</p> <p>Situated on the border between Vietnam and China, Ban Gioc is the largest waterfall in Southeast Asia and the fourth largest in the world.</p> <p>With its majestic landscape and pristine environment, this is a destination not to be missed.</p>',
+'<p>Ban Gioc Waterfall is formed by water flowing over limestone layers, creating a spectacular landscape with multiple cascades.</p> <p>The powerful water plunges from a height of about 30 meters, creating a white mist and a roaring sound that echoes throughout the area.</p> <p>Surrounding the waterfall are dense forests and lush green fields, creating a perfect and peaceful natural picture.</p>',
+'<p>The ideal time to visit Ban Gioc Waterfall is from September to December.</p> <p>During this period, the waterfall\'s flow is at its peak, creating a grand and impressive scene.</p> <p>Summer may bring heavy rains, affecting travel and sightseeing.</p> <p>Winter can be cold and dry, making it easier to explore the waterfall.</p>',
+'<p>To begin your adventure to Cao Bang, start your journey from Hanoi. You have two main options: taking a bus or hiring a private car. The bus is a popular and budget-friendly option, with several reputable companies offering services that take around 6-8 hours. Buses typically depart from various locations in Hanoi, such as My Dinh bus station or the Old Quarter.</p> <p>If you prefer a more convenient and flexible option, hiring a private car is a great choice.</p> <p>Upon arriving in Cao Bang, you will find various transportation options to reach the waterfall area.</p> <p>For a more adventurous experience, consider renting a motorbike in Cao Bang.</p>',
+'<p>The journey begins at the foot of the waterfall, where you will walk along easy trails to get closer to Ban Gioc Waterfall.</p> <p>You will have the opportunity to admire the stunning scenery of the cascading water and experience the waterfall\'s grandeur.</p> <p>We offer one-day tours or combined tours with other attractions in the area, such as Nguom Ngao Cave, for a complete experience.</p>',
+'<p>When preparing for your adventure, packing the right gear is crucial for a safe and enjoyable experience. Here’s a detailed list of essential items you should bring:</p> <p>Waterproof Walking Shoes: A sturdy pair of waterproof walking shoes is essential.</p> <p>Windproof and Rainproof Jacket: Weather in the mountains can be unpredictable.</p> <p>Snacks and Water: Keeping your energy levels up is vital.</p> <p>Sunscreen and Mosquito Repellent: Protect your skin from harmful UV rays and insect bites.</p> <p>Flashlight and Spare Batteries: A reliable flashlight or headlamp is essential.</p> <p>First Aid Kit: A compact first aid kit is crucial for treating minor injuries.</p> <p>Multi-Tool or Swiss Army Knife: A versatile multi-tool can be incredibly useful.</p> <p>Map and Compass or GPS Device: Having a physical map and compass is beneficial.</p> <p>Emergency Blanket: A lightweight emergency blanket can provide warmth.</p>',
+'<p>Follow environmental protection regulations and avoid damaging the waterfall.</p> <p>Be cautious when walking on slippery trails around the waterfall.</p>',
+'<p>Does not require much physical strength, only light walking ability is needed.</p> <p>No trekking experience is required, suitable for all participants.</p> <p>Suitable for all ages.</p>'
+);
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) VALUES
+('5',
+'Lung Cu - Northernmost Vietnam Adventure',
+'1800000',
+'images/lungcu/lungcu.jpg',
+'<p>Lung Cu Flag Tower is located in Lung Cu commune, Dong Van district, Ha Giang province, marking the northernmost point of Vietnam.</p> <p>This site holds not only geographical significance but also symbolizes patriotism and resilience.</p> <p>The flag tower is built on top of a hill, offering a vast and stunning view of the entire border area.</p>',
+'<p>Lung Cu Flag Tower stands on a hilltop at approximately 1,470 meters above sea level. The surrounding terrain consists mainly of limestone mountains and lush green fields.</p> <p>To reach the flag tower, you will need to climb hundreds of stone steps and navigate steep mountain paths.</p> <p>From the summit, you will have a panoramic view of the fields, valleys, and majestic mountains, creating a breathtaking and expansive natural landscape.</p>',
+'<p>The ideal time to visit Lung Cu Flag Tower is from September to December.</p> <p>During this period, the weather is dry and cool, making it easier to climb to the summit and enjoy the scenery.</p> <p>Summer may bring heavy rains, making travel more challenging.</p> <p>Winter can be cold and foggy, but it also offers a beautiful and mystical landscape.</p>',
+'<p>Your journey to Lung Cu commune begins in Hanoi, where you have a couple of travel options. One of the most popular and economical ways to reach Ha Giang is by bus. Numerous bus companies operate daily services from various locations in Hanoi, such as My Dinh bus station or the Old Quarter. The bus ride typically takes around 6-8 hours, depending on traffic and road conditions.</p> <p>If you prefer a more personalized travel experience, hiring a private car can be an excellent option.</p> <p>Upon arriving in Ha Giang, you have several options to continue your trip to Lung Cu commune. The most popular choice is to rent a motorbike, which offers the freedom to explore the beautiful countryside at your own pace.</p>',
+'<p>We offer a one-day trekking tour to Lung Cu Flag Tower, starting from the foot of the hill and following well-equipped trails to make the climb easier.</p> <p>Along the way, you will experience the beauty of the surrounding fields and mountains.</p> <p>From the top of the flag tower, you will have the opportunity to admire the panoramic view of the border area and feel the grandeur of Vietnam\'s northernmost point.</p>',
+'<p>Non-Slip Walking Shoes: A durable pair of non-slip walking shoes is essential for navigating various terrains.</p> <p>Windproof and Rainproof Jacket: Weather conditions in mountainous areas can change quickly.</p> <p>Snacks and Water: Keeping your energy levels up is vital during any trek.</p> <p>Sunscreen and Mosquito Repellent: Protect your skin from sunburn and insect bites.</p> <p>Flashlight and Spare Batteries: A reliable flashlight or headlamp is essential for early morning or late evening adventures.</p> <p>First Aid Kit: A compact first aid kit is crucial for addressing minor injuries.</p> <p>Multi-Tool or Swiss Army Knife: A versatile multi-tool can be invaluable for various tasks.</p> <p>Map and Compass or GPS Device: Having a physical map and compass is vital for navigation.</p> <p>Emergency Blanket: A lightweight emergency blanket is a compact addition to your gear.</p>',
+'<p>Prepare mentally and physically before climbing to the top of the flag tower.</p> <p>Follow environmental protection regulations and keep the surrounding area clean.</p>',
+'<p>Requires moderate physical fitness as you need to climb hundreds of steps to reach the top of the flagpole.</p> <p>No climbing experience is required, but good endurance is recommended.</p> <p>Suitable for those aged 16 and above.</p>'
+);
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) VALUES
+('6',
+'Sacred Yen Tu Mountain Pilgrimage',
+'2000000',
+'images/yentu/yentu.jpg',
+'<p>Yen Tu, located in Quang Ninh province, is one of the most famous pilgrimage sites and a center of Buddhism in Northern Vietnam.</p> <p>The summit of Yen Tu, at an elevation of 1,068 meters, is a sacred place with many temples and historical relics.</p> <p>This destination attracts not only Buddhist devotees but also those who love trekking and wish to experience the serene and peaceful atmosphere.</p>',
+'<p>Yen Tu features predominantly limestone mountains and lush forests, with trails leading up to the summit.</p> <p>The paths to the summit are often steep and rugged but are equipped with stone steps and handrails to assist climbers.</p> <p>From the summit, you can enjoy a panoramic view of the surrounding area, including fields, valleys, and mountains.</p>',
+'<p>The ideal time to explore Yen Tu is from September to December.</p> <p>During this period, the weather is dry and cool, making it easier to climb to the summit and enjoy the scenery.</p> <p>Spring and autumn are the most beautiful times to visit, with fresh air and blooming flowers.</p> <p>Summer can be hot and humid, while winter can be cold and foggy.</p>',
+'<p>Your journey to Yen Tu Mountain begins in Hanoi, where you have a couple of travel options to reach Uong Bi city. Taking a bus is one of the most convenient and economical choices. Numerous bus companies operate daily services from various locations in Hanoi.</p> <p>If you prefer a more personalized experience, hiring a private car is an excellent alternative.</p> <p>Upon arriving in Uong Bi, you will need to continue your journey to the foot of Yen Tu Mountain. Taxis are readily available, and local buses can provide an economical option.</p>',
+'<p>The journey begins at the foot of Yen Tu mountain, where you will walk along trails and stone steps leading to the summit.</p> <p>We offer 1-2 day tours, with rest stops along the way for you to regain your strength and admire the temples along the route.</p> <p>The summit of Yen Tu is a sacred destination with historical relics and stunning scenery.</p>',
+'<p>Non-Slip Walking Shoes: A good pair of non-slip walking shoes is essential for navigating various terrains.</p> <p>Windproof and Rainproof Jacket: Weather in mountainous areas can be unpredictable.</p> <p>Snacks and Water: Keeping your energy levels up is vital during your hike.</p> <p>Sunscreen and Mosquito Repellent: Protect your skin from harmful UV rays and insect bites.</p> <p>Flashlight and Spare Batteries: A reliable flashlight or headlamp is crucial for early morning or late evening hikes.</p> <p>First Aid Kit: A compact first aid kit is vital for addressing minor injuries.</p> <p>Multi-Tool or Swiss Army Knife: A versatile multi-tool can be incredibly useful for various tasks.</p> <p>Map and Compass or GPS Device: Having a physical map and compass is beneficial for navigation.</p> <p>Emergency Blanket: A lightweight emergency blanket can provide warmth and protection in case of unexpected situations.</p>',
+'<p>Follow the pilgrimage area\'s regulations and maintain environmental cleanliness.</p> <p>Be cautious when moving on slippery trails and keep quiet to maintain the serene atmosphere.</p>',
+'<p>Requires good physical fitness for walking and climbing hundreds of steps.</p> <p>No experience needed, but mental preparation and good health are required.</p> <p>Suitable for individuals aged 18 and above; children under 18 must be accompanied by an adult.</p>'
+);
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) VALUES
+('7',
+'Explore Lang Biang Highlands',
+'1800000',
+'images/langbiang/langbiang.jpg',
+'<p>Lang Biang is located in Lac Duong district, Lam Dong province, about 12 km north of Da Lat city.</p> <p>It is the highest mountain in the area, with an elevation of approximately 2,167 meters above sea level.</p> <p>Lang Biang is famous for its stunning natural scenery and rich cultural legends of the indigenous peoples.</p> <p>With its cool climate and spacious atmosphere, Lang Biang is an ideal destination for those who love trekking and exploring nature.</p>',
+'<p>Lang Biang features limestone mountain terrain with lush green forests and vast grasslands. The summit is covered with pine forests, and there are well-marked trails that are easy to navigate.</p> <p>Upon reaching the summit, you will be rewarded with a breathtaking panoramic view of the surrounding area, including Da Lat city and the lush green fields.</p>',
+'<p>The ideal time to explore Lang Biang is from November to April.</p> <p>During this period, the weather is dry and cool, making it perfect for trekking and outdoor exploration.</p> <p>The rainy season can make travel difficult due to slippery roads and the risk of heavy rain.</p>',
+'<p>Your adventure to Lang Biang Mountain begins in Ho Chi Minh City, where you have a couple of travel options to reach Da Lat. The quickest way is to take a flight, which takes about one hour. You can also take a bus, which generally takes 6 to 8 hours.</p> <p>Once in Da Lat, taxis and motorbike rentals are available to get to the foot of Lang Biang Mountain.</p>',
+'<p>We offer a one-day trekking tour to the summit of Lang Biang.</p> <p>The journey begins at the foot of the mountain, following well-marked trails and stairways. The entire journey usually lasts 4-6 hours, depending on your pace.</p>',
+'<p>Non-Slip Trekking Shoes: A sturdy pair of non-slip trekking shoes is crucial for navigating rugged terrain.</p> <p>Windproof and Rainproof Jacket: A lightweight, breathable jacket that is both windproof and rainproof is essential.</p> <p>Snacks and Water: Pack high-energy snacks and sufficient water.</p> <p>Sunscreen and Mosquito Repellent: Protect your skin from sunburn and insect bites.</p> <p>Flashlight and Spare Batteries: A reliable flashlight or headlamp is essential for hikes.</p> <p>Trekking Pole (If Needed): A trekking pole can provide additional support.</p> <p>First Aid Kit: A compact first aid kit is a must-have for any trek.</p> <p>Multi-Tool or Swiss Army Knife: A versatile multi-tool can be incredibly useful.</p> <p>Map and Compass or GPS Device: Having a physical map and compass is beneficial for navigation.</p> <p>Emergency Blanket: A lightweight emergency blanket can provide warmth and protection.</p>',
+'<p>Be well-prepared for varying weather conditions and follow environmental protection regulations.</p> <p>Keep the surrounding area clean and avoid disturbing nature and wildlife.</p> <p>Ensure that you are in good health and physical condition to complete the journey.</p>',
+'<p>Requires good health and physical fitness to climb to the summit.</p> <p>Not mandatory, but individuals with trekking experience will find it easier.</p> <p>Suitable for individuals aged 16 and above with good health.</p>'
+);
+
+INSERT INTO tours (id, name, price, image, location, features, besttime, directions, trekkingroutes, items, cautions, requirements) VALUES
+('8',
+'Ba Den Peak Challenge',
+'1500000',
+'images/baden/baden.jpg',
+'<p>Ba Den Mountain is located in Duong Minh Chau district, Tay Ninh province, about 100 km northwest of Ho Chi Minh City.</p> <p>This is the highest mountain in Southern Vietnam, with an elevation of 986 meters above sea level.</p> <p>Ba Den Mountain is famous for its stunning natural scenery and sacred sites with many legends.</p> <p>With a cool climate and magnificent landscape, Ba Den Mountain is an ideal destination for trekking and exploration.</p>',
+'<p>Ba Den Mountain features primarily limestone terrain with green forests and large boulders.</p> <p>The summit is covered by tropical forests, with steep trails, but there are also easier routes suitable for various trekking levels.</p> <p>The summit offers a panoramic view of the surrounding area, including lush green fields and lower mountains.</p>',
+'<p>The ideal time to explore Ba Den Mountain is from November to April.</p> <p>During this time, the weather is dry and cool, making it easier for trekking.</p> <p>The rainy season can make travel difficult due to slippery roads and heavy rains.</p>',
+'<p>Your journey to Ba Den Mountain starts in Ho Chi Minh City. Buses are a popular choice, with services from various locations taking about 2-3 hours. Alternatively, hiring a private car allows for a flexible journey. Upon arrival in Tay Ninh, taxis are readily available to reach the mountain foot.</p>',
+'<p>The journey begins at the foot of Ba Den Mountain, where you will pass through trails and steps to reach the summit.</p> <p>For adventure enthusiasts, we offer 1-2 day tours with rest stops along the way.</p>',
+'<p>Non-Slip Trekking Shoes: Vital for traversing various terrains.</p> <p>Windproof and Rainproof Jacket: Keeps you dry and comfortable.</p> <p>Snacks and Water: Essential for energy and hydration.</p> <p>Sunscreen and Mosquito Repellent: Protect against UV rays and insect bites.</p> <p>Flashlight and Spare Batteries: For visibility during early or late hikes.</p> <p>Trekking Poles (If Walking): Provide support on steep trails.</p> <p>First Aid Kit: Crucial for addressing minor injuries.</p> <p>Multi-Tool or Swiss Army Knife: Useful for various tasks.</p> <p>Map and Compass or GPS Device: Important for navigation.</p> <p>Emergency Blanket: Provides warmth and protection.</p>',
+'<p>Prepare yourself mentally and physically before starting the journey.</p> <p>Follow environmental protection regulations and do not harm historical relics.</p>',
+'<p>Requires average physical fitness due to the long and steep mountain climb.</p> <p>No prior experience needed, but participants should be well-prepared physically.</p> <p>Suitable for individuals aged 16 and above with good fitness.</p>'
+);
+
+
