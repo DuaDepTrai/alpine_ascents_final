@@ -109,7 +109,6 @@ h3 {
         background-image: url('/{{ $tour->image }}');
     }
 </style>
-    </style>
     <meta name="description"
         content="With 25+ years of experience on Everest, Alpine Ascents is recognized as the premier guide service to provide you a rewarding experience on Mount Everest." />
     <link rel="canonical" href="https://www.alpineascents.com/climbs/mount-everest/" />

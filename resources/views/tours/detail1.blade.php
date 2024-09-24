@@ -6,7 +6,7 @@
         <div class="header-text-wrapper">
             <div class="header-text">
                 <span>
-                    <h3>{{ $tour->name }} With Alpine Ascents</h3>
+                    <h3>{{ $tour->name }} With Alpine Ascents Vietnam</h3>
                 </span>
             </div><!-- .header-text -->
         </div><!-- .header-text-wrapper -->
@@ -2012,23 +2012,6 @@ Click the help icon above to learn more.
 @endpush
 
 @push('scripts')
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-    const swiper = new Swiper('.swiper-container', {
-        loop: true, // Bật vòng lặp
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true, // Cho phép nhấp vào phân trang
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        autoplay: {
-            delay: 3000, // Thời gian giữa các slide
-            disableOnInteraction: false, // Tiếp tục autoplay khi tương tác
-        },
-    });
-</script>
+
 @endpush
 

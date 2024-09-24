@@ -107,6 +107,8 @@
             max-width: 100%;
             height: 125px;
             background-image: url('images/home/header_background2.png');
+            background-repeat: no-repeat;
+            background-size: cover;
         }
         .preheader{
             height: 30px;
@@ -201,8 +203,13 @@
 
 <body>    
     <header>
-        <div class="preheader bg-dark text-white">
-            <p class="ms-5">BOOK YOUR NEXT TRIP | 098 227 1157</p>
+        <div class="preheader bg-dark text-white d-flex justify-content-between align-items-center p-3">
+            <a href="/order" class="ms-5" style="color: #d6d6d6">BOOK YOUR NEXT TRIP</a>
+            <div>
+                <a href="/login" class="text-white me-2">LOGIN</a>
+                <a class="text-white me-2"> | </a>
+                <a href="/register" class="text-white me-5">REGISTER</a>
+            </div>
         </div>
         <div class="header_custom_container">
             <div>
@@ -226,7 +233,10 @@
                 <form action="{{ route('aboutus') }}">
                     <button class="normal_buttons">ABOUT US</button>
                 </form>
-                <button class="normal_buttons">BOOK A TRIP</button>                
+                <form action="/order">
+                    <button class="normal_buttons">BOOK A TRIP</button>                    
+                </form>
+                
             </div>
         </div>
 </header>
@@ -240,8 +250,8 @@
             <div class="footer-left">
                 <h3>Alpine Ascents Vietnam</h3>
                 <p>10th Floor, Green Peak Building,<br> 123 Tran Duy Hung Street,<br> Cau Giay District, Hanoi, Vietnam.</p>
-                <p>Contact: <a href="tel://+842412345678">+84 24 1234 5678</a></p>
-                <p>Email: <a href="mailto:contact@alpineascentsvn.com">contact@alpineascentsvn.com</a></p>
+                <p>Contact: +84 24 1234 5678</p>
+                <p>Email: contact@alpineascentsvn.com</p>
             </div>
             <div class="footer-right">
                 <h3>Find Us Here</h3>
