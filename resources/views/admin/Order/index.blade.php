@@ -167,17 +167,23 @@
 
         <!-- Main content -->
         <section class="content">
-            <!-- Default box -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Orders List</h3>
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-xs-12">
+              <!-- small box -->
+              <div class="small-box bg-aqua">
+                <div class="inner">
+                  <h3>Orders List</h3>
                 </div>
+                <div class="icon"></div>
+              </div>
+        
                 <div class="box-body">
                 <form action="{{ route('admin.order.index') }}" method="GET" class="mb-4">
                     <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Tìm kiếm theo số điện thoại..." aria-label="Search">
+                        <input type="text" name="search" class="form-control" placeholder="Search by phone number..." aria-label="Search">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Tìm kiếm</button>
+                            <button class="btn btn-default" type="submit">Search</button>
                         </span>
                     </div>
                 </form>

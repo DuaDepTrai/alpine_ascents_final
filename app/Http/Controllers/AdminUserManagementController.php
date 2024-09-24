@@ -8,10 +8,20 @@ use Illuminate\Support\Facades\Hash;
 class AdminUserManagementController extends Controller
 {
     // Display the list of users
-    public function index()
-    {
-        $users = users::all();  // Retrieve all users
-        return view('admin.UserManagement.index', compact('users'));  // Return view to display the list
+    public function index(Request $request)
+    {   
+        $query = users::query(); 
+
+        // Check if there is a search keyword
+        if ($request->has('search') && $request->search != '') {
+            $search = $request->search;
+            $query->where('phone', 'LIKE', "%{$search}%");
+        }
+
+        $users = $query->get();  
+
+        return view('admin.UserManagement.index', compact('users'));  
+
     }
     
     // Display the form to add a new user

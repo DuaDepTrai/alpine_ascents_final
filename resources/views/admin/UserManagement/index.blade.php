@@ -177,6 +177,17 @@
                 </div>
                 <div class="icon"></div>
               </div>
+              <div class="box-body">
+              <form action="{{ route('admin.UserManagement.index') }}" method="GET" class="mb-4">
+                  <div class="input-group">
+                      <input type="text" name="search" class="form-control" placeholder="Search by phone number..." aria-label="Search">
+                      <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit">Search</button>
+                      </div>
+                  </div>
+              </form>
+
+
 
               <!-- User List Table -->
               <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
@@ -218,9 +229,16 @@
               <a href="{{ route('admin.UserManagement.create') }}">
                 <button class="btn btn-success">Add new</button>
               </a>
+              </div>
             </div>
           </div>
         </section>
+
+    <!-- right col -->
+      </div>
+      <!-- /.row (main row) -->
+
+    </section>
 
     <!-- right col -->
       </div>
