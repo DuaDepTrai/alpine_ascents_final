@@ -71,7 +71,7 @@
             <img class="img_information" src="images/home/img_information.png" alt="">
         </div>
     </div>
-    <div class="row mb-4">
+    <div class="row">
         <div class="col-8 p-0 imgs">
             <img class="img_branches" src="images/home/img_branches.png" alt="">
         </div>

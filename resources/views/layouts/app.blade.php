@@ -202,15 +202,22 @@
         <div class="preheader bg-dark text-white d-flex justify-content-between align-items-center p-3">
             <a href="/order" class="ms-5" style="color: #d6d6d6">BOOK YOUR NEXT TRIP</a>
             <div>
-                <a href="/login" class="text-white me-2">LOGIN</a>
-                <a class="text-white me-2"> | </a>
-                <a href="/register" class="text-white me-5">REGISTER</a>
+                <?php 
+                    if(Auth::check()){
+                        $id = Auth::user()->id;
+                        echo '<a href="/users/'.$id.'">YOUR ACCOUNT</a>';
+                    }  
+                    else{
+                        echo '<a class="text-white me-5" href="/login">LOGIN</a>';
+                        echo '<a class="text-white me-5" href="/register">REGISTER</a>';
+                    }
+                ?>
             </div>
         </div>
         <div class="header_custom_container">
             <div>
                 <a href="{{ route('home') }}">
-                    <img class="logo" src="images/logovn.png" alt="">
+                    <img class="logo" src="{{ asset('images/logovn.png') }}" alt="">
                 </a>
             </div>
             <div class="buttons">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\users;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -18,6 +19,7 @@ class AdminUserManagementController extends Controller
             $query->where('phone', 'LIKE', "%{$search}%");
         }
 
+        // $users = users::paginate(10);
         $users = $query->get();  
 
         return view('admin.UserManagement.index', compact('users'));  

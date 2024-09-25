@@ -36,11 +36,11 @@
   <div class="register-box-body">
     <p class="login-box-msg">Verify code</p>
 
-    <form action="{{route('verify')}}" method="post">
+    <form action="{{ route('verify') }}" method="post">
         @csrf
       <div class="form-group has-feedback">
         <h1>Nhập mã xác nhận</h1>
-        <input type="text" name="code" placeholder="Mã xác nhận" required>
+        <input type="text" name="icode" placeholder="Mã xác nhận" required>
     @if ($errors->any())
         <div>
             @foreach ($errors->all() as $error)

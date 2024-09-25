@@ -210,33 +210,30 @@
                   </tr>
                 </thead>
                 <tbody>
-                  @foreach ($users as $key => $users)
+                  @foreach ($users as $key => $user)
                   <tr>
                     <td class="text-center text-nowrap align-middle">{{ $key + 1  }}</td>
-                    <td class="text-center text-nowrap align-middle">{{ $users->name }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->phone }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->email }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->avatar }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $users->role == 1 ? 'Admin' : 'User' }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $user->name }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $user->phone }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $user->email }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $user->avatar }}</td>
+                    <td class="text-center text-nowrap align-middle">{{  $user->role == 1 ? 'Admin' : 'User' }}</td>
                     <td>
-                        <a href="{{ route('admin.UserManagement.edit', $users->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                          <form action="{{ route('admin.UserManagement.destroy', $users->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('admin.UserManagement.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                          <form action="{{ route('admin.UserManagement.destroy', $user->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger btn-sm">Delete</button>
                           </form>
                     </td>
                   </tr>
-                  @endforeach
+                  @endforeach  
                 </tbody>
               </table>
-
-              
-              
-
               <a href="{{ route('admin.UserManagement.create') }}">
                 <button class="btn btn-success">Add new</button>
               </a>
+              {{-- {{ $users->links() }} --}}
               </div>
             </div>
           </div>

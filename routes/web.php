@@ -91,13 +91,14 @@ Route::get('/verification.form', [VerificationController::class, 'showForm'])->n
 Route::get('/verificationchange.form', [VerificationController::class, 'showChangeForm'])->name('verificationchange.form');
 
 Route::post('/send.mail',[MailController::class,'sendMail'])->name('send.mail');
-Route::post('/verify', [VerificationController::class, 've  rify'])->name('verify');
+Route::post('/verify', [VerificationController::class, 'verify'])->name('verify');
 Route::post('/changeverify',[VerificationController::class,'changeVerify'])->name('change.verify');
 Route::put('/updatepass',[VerificationController::class,'updatePassword'])->name('update.password');
 Route::put('/updateforgetpass',[VerificationController::class,'updateForgetPassword'])->name('update.forget.password');
 
 Route::get('/login', [UsersController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [UsersController::class, 'login'])->name('login');
+Route::get('/login.forget',[UsersController::class,'showLoginForgetForm'])->name('login.forgetpass.form');
 Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
 
 Route::get('/users/changepass',[UsersController::class,'showChangePassForm'])->name('changepass.form');
@@ -118,3 +119,47 @@ Route::post('/order/store', [OrderController::class, 'store'])->name('order.stor
 Route::get('/order/success', [OrderController::class, 'success'])->name('order.success');
 
 
+
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/admin/galleries', [AdminGalleriesController::class, 'index'])->name('admin.galleries.index');
+// Route::get('/admin/galleries/create', [AdminGalleriesController::class, 'create'])->name('admin.galleries.create');
+// Route::post('/admin/galleries', [AdminGalleriesController::class, 'store'])->name('admin.galleries.store');
+// Route::get('admin/galleries/{id}/edit', [AdminGalleriesController::class, 'edit'])->name('admin.galleries.edit');
+// Route::post('admin/galleries/{id}/delete-image', [AdminGalleriesController::class, 'deleteImage'])->name('admin.galleries.deleteImage');
+// Route::put('admin/galleries/{id}', [AdminGalleriesController::class, 'update'])->name('admin.galleries.update');
+// Route::delete('admin/galleries/{id}', [AdminGalleriesController::class, 'destroy'])->name('admin.galleries.destroy');
+
+// Route::get('/admin/tours', [AdminToursController::class, 'index'])->name('admin.tours.index');
+// Route::get('/admin/tours/create', [AdminToursController::class, 'create'])->name('admin.tours.create');
+// Route::post('/admin/tours', [AdminToursController::class, 'store'])->name('admin.tours.store');
+// Route::get('admin/tours/{id}/edit', [AdminToursController::class, 'edit'])->name('admin.tours.edit');
+// Route::put('admin/tours/{id}', [AdminToursController::class, 'update'])->name('admin.tours.update');
+// Route::delete('admin/tours/{id}', [AdminToursController::class, 'destroy'])->name('admin.tours.destroy');
+
+
+// Route::get('/admin/order', [AdminOrderController::class, 'index'])->name('admin.order.index');
+// Route::get('/admin/order/{id}/edit', [AdminOrderController::class, 'edit'])->name('admin.order.edit');
+// Route::put('/admin/order/{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
+// Route::delete('/admin/order/{id}', [AdminOrderController::class, 'destroy'])->name('admin.order.destroy');
+
+
+
+// Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index']);
+// Route::get('/admin/UserManagement', [AdminUserManagementController::class, 'index'])->name('admin.UserManagement.index');  // Display user list
+// Route::get('/admin/UserManagement/create', [AdminUserManagementController::class, 'create'])->name('admin.UserManagement.create');  // Show user addition form
+// Route::post('/admin/UserManagement', [AdminUserManagementController::class, 'store'])->name('admin.UserManagement.store');  // Handle new user addition
+// Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::class, 'edit'])->name('admin.UserManagement.edit');  // Show user edit form
+// Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Handle user information update
+// Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Handle user deletion
+
+
+
+// Route::get('/admin/branches', [AdminBranchesController::class, 'index']);
+// Route::get('/admin/branches', [AdminBranchesController::class, 'index'])->name('admin.branches.index');  // Show list branches
+// Route::get('/admin/branches/create', [AdminBranchesController::class, 'create'])->name('admin.branches.create');  // Form add new branch
+// Route::post('/admin/branches', [AdminBranchesController::class, 'store'])->name('admin.branches.store');  // Process new branch
+// Route::get('/admin/branches/{id}/edit', [AdminBranchesController::class, 'edit'])->name('admin.branches.edit');  // Form edit branch
+// Route::put('/admin/branches/{id}', [AdminBranchesController::class, 'update'])->name('admin.branches.update');  // Process edit branch
+// Route::delete('/admin/branches/{id}', [AdminBranchesController::class, 'destroy'])->name('admin.branches.destroy');  // Process delete branch
+
+// });

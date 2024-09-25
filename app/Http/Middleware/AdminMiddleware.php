@@ -19,7 +19,7 @@ class AdminMiddleware
     {
         // Check if the user is logged in
         if (!Auth::check()) {
-            return redirect('/login');
+            return redirect('/home');
         }
 
         // Check if the user is an admin

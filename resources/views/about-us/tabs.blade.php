@@ -7,11 +7,11 @@
         <div class="col-12">
             <!-- Tab Switch Button -->
             <div class="tabs">
-                <button class="tab-button active" onclick="openTab(event, 'overview')">Overview</button>
-                <button class="tab-button" onclick="openTab(event, 'now_and_then')">Now and then</button>
-                <button class="tab-button" onclick="openTab(event, 'director_statement')">Director's Statement</button>
-                <button class="tab-button" onclick="openTab(event, 'achievements')">Achievements</button>
-                <button class="tab-button" onclick="openTab(event, 'contact')">Contact</button>
+                <button class="tab-button active d-inline" onclick="openTab(event, 'overview')">Overview</button>
+                <button class="tab-button d-inline" onclick="openTab(event, 'now_and_then')">Now and then</button>
+                <button class="tab-button d-inline" onclick="openTab(event, 'director_statement')">Director's Statement</button>
+                <button class="tab-button d-inline" onclick="openTab(event, 'achievements')">Achievements</button>
+                <button class="tab-button d-inline" onclick="openTab(event, 'contact')">Contact</button>
 
             </div>
 

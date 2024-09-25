@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\users;
 use Illuminate\Http\Request;
 use App\Mail\mymail;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -48,77 +49,114 @@ class UsersController extends Controller
     {
         return view('auth.register');
     }
-
-    public function register(Request $request)
-{
-    $request->validate([
-        'name' => 'required|max: 255',
-        'phone' => 'required|string|max:11',
-        'email' => 'required|email',
-        'password' => 'required|min:6|max:15',
-    ]);
-
-    $email_check = users::where('email',$request->email)->first();
-    $phone_check = users::where('phone',$request->phone)->first();
-
-    $password = $request->password;
-    $password_confirm = $request->password_confirm;
-
-    session(['name'=> $request->name]);
-    session(['phone'=> $request->phone]);
-    session(['email'=> $request->email]);
-    session(['password'=> $request->password]);
-
-    if($email_check || $phone_check || ($password !== $password_confirm)){
-        return back()->withErrors(['message' => 'Email / phone number already exist !']);
-    }
-    else{
-        $email = $request->email;
-        Mail::to($email)->send(new mymail($email));
-
-        return redirect()->route('register.verify.form');
-    }
-}
-
-public function showLoginForm()
-    {
-        return view('auth.login');
-    }
-
-public function login(Request $request)
-{
-    $request->validate([
-        'email' => 'required|email',
-        'password' => 'required|min:6|max:15',
-    ]);
-
-    $user = users::where('email', $request->email)->first();
     
-    session(['true_email' => $user->email]);
+    public function showLoginForgetForm(){
+        return view('users.loginforget');
+    }
+    
+    public function register(Request $request) {
+        $request->validate([
+            'name' => 'required|max: 255',
+            'phone' => 'required|string|max:11',
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:15',
+        ]);
 
-    if($user){
-        if(Hash::check($request->password, $user->password)){
-            Auth::login($user);       
-            session(['id'=> $user->id]);
-            return redirect()->route('home');
+        $email_check = users::where('email',$request->email)->first();
+        $phone_check = users::where('phone',$request->phone)->first();
+
+        $password = $request->password;
+        $password_confirm = $request->password_confirm;
+
+        if($email_check || $phone_check){
+            return back()->withErrors(['error' => 'Email / phone number already exist !']);
+        }
+        else if($password !== $password_confirm) {
+            return back()->withErrors(['error' => 'Password does not match !']);
+        }
+        else{
+            session(['name'=> $request->name]);
+            session(['phone'=> $request->phone]);
+            session(['email'=> $request->email]);
+            session(['password'=> $request->password]);
+        
+            $email = $request->email;
+            Mail::to($email)->send(new mymail($email));
+
+            return redirect()->route('register.verify.form');
+        }
+    }
+
+    public function showLoginForm()
+        {
+            return view('auth.login');
+        }
+
+        
+    //     public function login(Request $request)
+    // {
+    //     // Xác thực đầu vào
+    //     $request->validate([
+    //         'email' => 'required|email',
+    //         'password' => 'required|min:6|max:15',
+    //     ]);
+    
+    //     // Kiểm tra xem người dùng có tồn tại không
+    //     $user = users::where('email', $request->email)->first();
+    
+    //     // Nếu người dùng không tồn tại, trả về lỗi
+    //     if (!$user) {
+    //         return back()->withErrors(['error' => 'The provided credentials do not match our records.']);
+    //     }
+    
+    //     // Kiểm tra đăng nhập
+    //     if (Auth::attempt($request->only('email', 'password'))) {
+    //         // Lưu email vào session
+    //         session(['true_email' => $user->email]);
+    
+    //         // Kiểm tra role và chuyển hướng dựa trên role
+    //         if ($user->role === 1) {
+    //             return redirect()->route('UserManagement.index');
+    //         } elseif ($user->role === 0) {
+    //             return redirect()->route('home.index');
+    //         }
+    //     }
+    
+    //     // Nếu đăng nhập không thành công
+    //     return redirect()->back()->withErrors(['email' => 'The provided credentials do not match our records.']);
+    // }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6|max:15',
+        ]);
+
+        $user = users::where('email', $request->email)->first();
+        
+        
+        if($user){
+            if(Hash::check($request->password, $user->password)){
+                if($user->role == 1){
+                    return redirect()->route('admin.UserManagement.index');
+                }
+                else{
+                    session(['true_email' => $user->email]);
+                    session(['id'=> $user->id]);
+                    
+                    Auth::login($user);        
+                    return redirect()->route('home');
+                }
+            }
+            else{
+                return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
+            }
         }
         else{
             return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
         }
     }
-    else{
-        return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
-    }
-    
-    // if ($user && !$user->verification_code) {
-    //     // Đăng nhập thành công
-    //     if (Auth::attempt($request->only('email', 'password'))) {
-    //         return redirect()->route('home')->with('success', 'Đăng nhập thành công.');
-    //     }
-    // }
-
-    // return back()->withErrors(['email' => 'Email hoặc mật khẩu không chính xác, hoặc tài khoản chưa được xác nhận.']);
-}
 
     public function logout(){
         Auth::logout(); 

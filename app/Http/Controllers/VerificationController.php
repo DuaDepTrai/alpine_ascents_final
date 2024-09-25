@@ -65,11 +65,12 @@ class VerificationController extends Controller
         $user = Auth::user();
 
         if (!empty($user)) {
-            if($user->password == $old_password){
+            if(Hash::check($old_password,$user->password)){
                 $user->update([
                     'password' => Hash::make($new_password),
                     'status' => 0,
                 ]);
+
                 Auth::logout(); 
                 session()->invalidate();
                 session()->regenerateToken();
@@ -97,7 +98,7 @@ class VerificationController extends Controller
             $user->password = Hash::make(session('password'));  // Lưu mật khẩu đã mã hóa
             $user->save();
             
-            Auth::logout(); 
+            // Auth::logout(); 
             session()->invalidate();
             session()->regenerateToken();
 
@@ -119,9 +120,9 @@ class VerificationController extends Controller
                 'phone' => session('phone'),
             ]);
 
-            Auth::logout(); 
-            session()->invalidate();
-            session()->regenerateToken();
+            // Auth::logout(); 
+            // session()->invalidate();
+            // session()->regenerateToken();
             return redirect()->route('users.index',['user'=>$id]);  
         }
 

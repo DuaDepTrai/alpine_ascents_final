@@ -35,7 +35,13 @@
 
   <div class="register-box-body">
     <p class="login-box-msg">Register a new membership</p>
-
+    @if ($errors->any())
+        <div>
+            @foreach ($errors->all() as $error)
+                <p>{{ $error }}</p>
+            @endforeach
+        </div>
+    @endif
     <form action="{{ route('register') }}" method="post">  
         @csrf
       <div class="form-group has-feedback">
@@ -55,7 +61,7 @@
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" name ="password" class="form-control" placeholder="Retype password">
+        <input type="password" name ="password_confirm" class="form-control" placeholder="Retype password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">

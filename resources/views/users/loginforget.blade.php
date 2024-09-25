@@ -12,7 +12,7 @@
         <form action="{{ route('send.mail') }}" method="post" class="form-control p-3">
             @csrf
             <p>Please enter your email.</p>
-            <input type="email" name="email" class="form-control" placeholder="Your current email" required pattern="{{ session('true_email') }}">
+            <input type="email" name="email" class="form-control" placeholder="Your email">
             <button type="submit" class="btn btn-primary mt-3">Send code</button>
         </form>
     </div>
