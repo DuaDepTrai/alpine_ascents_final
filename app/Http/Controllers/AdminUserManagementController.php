@@ -37,7 +37,7 @@ class AdminUserManagementController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email',
             'password' => 'required|string|min:6|confirmed',
-            'phone' => 'required|string|unique:users,phone|regex:/^(0|\+84)[0-9]{9}$/',
+            'phone' => 'required|string|max:11',
             'avatar' => 'nullable|string',
             'role' => 'required|boolean',
             'status' => 'required|boolean',
@@ -72,7 +72,7 @@ class AdminUserManagementController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
-            'phone' => 'required|string|unique:users,phone|regex:/^(0|\+84)[0-9]{9}$/',
+            'phone' => 'required|string|max:11',
             'avatar' => 'nullable|string',
             'role' => 'required|boolean',
             'status' => 'required|boolean',

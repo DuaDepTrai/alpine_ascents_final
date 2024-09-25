@@ -40,7 +40,7 @@ class AdminOrderController extends Controller
             'quantity' => 'required|integer|min:1',
             'tour_id' => 'required|exists:tours,id',
             'email' => 'nullable|email|max:255',
-            'phone' => 'required|string|regex:/^(0|\+84)[0-9]{9}$/',
+            'phone' => 'required|string|max:11',
             'note' => 'nullable|string',
         ]);
 
