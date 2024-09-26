@@ -235,17 +235,17 @@
                                     <!--<div class="form-group">
                                         <label for="avatar">Avatar (URL)</label>
                                         <input type="text" name="avatar" id="avatar" class="form-control" value="{{ old('avatar') }}">
-                                        @error('avatar')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                        {{-- @error('avatar') --}}
+                                            {{-- <span class="text-danger">{{ $message }}</span> --}}
+                                        {{-- @enderror --}}
                                     </div>-->
 
                                     <div class="form-group">
                                         <label for="role">Role</label>
                                         <select name="role" id="role" class="form-control" required>
-                                            <option value="">Chọn quyền</option>
+                                            <option value="">Choose role</option>
                                             <option value="1" {{ old('role') == 1 ? 'selected' : '' }}>Admin</option>
-                                            <option value="2" {{ old('role') == 2 ? 'selected' : '' }}>User</option>
+                                            <option value="0" {{ old('role') == 0 ? 'selected' : '' }}>User</option>
                                         </select>
                                         @error('role')
                                             <span class="text-danger">{{ $message }}</span>

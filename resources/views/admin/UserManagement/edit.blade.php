@@ -188,7 +188,7 @@
 
                                     <div class="form-group">
                                         <label for="phone">Phone</label>
-                                        <input type="text" class="form-control" id="phone" name="phone" 
+                                        <input type="number" class="form-control" id="phone" name="phone" 
                                             value="{{ old('phone', $user->phone) }}" required>
                                     </div>
 

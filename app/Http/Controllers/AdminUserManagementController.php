@@ -11,21 +11,12 @@ class AdminUserManagementController extends Controller
     // Display the list of users
     public function index(Request $request)
     {   
-        $query = users::query(); 
-
-        // Check if there is a search keyword
-        if ($request->has('search') && $request->search != '') {
-            $search = $request->search;
-            $query->where('phone', 'LIKE', "%{$search}%");
-        }
-
+        $users = users::all();
         // $users = users::paginate(10);
-        $users = $query->get();  
-
         return view('admin.UserManagement.index', compact('users'));  
-
     }
-    
+
+
     // Display the form to add a new user
     public function create()
     {
@@ -41,8 +32,7 @@ class AdminUserManagementController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'phone' => 'required|string|max:11',
             'avatar' => 'nullable|string',
-            'role' => 'required|boolean',
-            'status' => 'required|boolean',
+            'role' => 'required',
         ]);
 
         // Create a new user
@@ -53,7 +43,6 @@ class AdminUserManagementController extends Controller
             'phone' => $request->phone,
             'avatar' => $request->avatar,
             'role' => $request->role,
-            'status' => $request->status,
         ]);
 
         return redirect()->route('admin.UserManagement.index')->with('success', 'User added successfully!');
@@ -76,8 +65,7 @@ class AdminUserManagementController extends Controller
             'email' => 'required|string|email|max:255|unique:users,email,' . $id,
             'phone' => 'required|string|max:11',
             'avatar' => 'nullable|string',
-            'role' => 'required|boolean',
-            'status' => 'required|boolean',
+            'role' => 'required',
         ]);
 
         // Update user information
@@ -87,7 +75,6 @@ class AdminUserManagementController extends Controller
             'phone' => $request->phone,
             'avatar' => $request->avatar,
             'role' => $request->role,
-            'status' => $request->status,
         ]);
 
         return redirect()->route('admin.UserManagement.index')->with('success', 'User information has been updated!!');

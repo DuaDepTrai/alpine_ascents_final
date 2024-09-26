@@ -90,19 +90,20 @@
             transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
         }
         .container{
-            width: 100%;
-            max-width: 100%; 
-            background-image: url('images/home_background.jpg');
+            width: 100vw;
+            max-width: 100%;
+            background-image: url('{{ asset('images/home/home_background.jpg') }}');
             background-size: cover;
             background-position: center;
             background-color: rgba(255, 255, 255, 0.7); /* Màu đen mờ */
             background-blend-mode: overlay;
         }
+
         .header_custom_container{
             display: flex;
             max-width: 100%;
             height: 125px;
-            background-image: url('images/home/header_background2.png');
+            background-image: url('{{ asset('images/home/header_background2.png') }}');
             background-repeat: no-repeat;
             background-size: cover;
         }
@@ -201,11 +202,11 @@
     <header>
         <div class="preheader bg-dark text-white d-flex justify-content-between align-items-center p-3">
             <a href="/order" class="ms-5" style="color: #d6d6d6">BOOK YOUR NEXT TRIP</a>
-            <div>
+            <div style="padding-right: 40px;">
                 <?php 
                     if(Auth::check()){
                         $id = Auth::user()->id;
-                        echo '<a href="/users/'.$id.'">YOUR ACCOUNT</a>';
+                        echo '<a class="text-white me-5" href="/users/'.$id.'">YOUR ACCOUNT</a>';
                     }  
                     else{
                         echo '<a class="text-white me-5" href="/login">LOGIN</a>';

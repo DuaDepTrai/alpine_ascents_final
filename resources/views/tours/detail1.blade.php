@@ -223,7 +223,7 @@
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Checking_Routes -->
-                        <div id="Direction" class="tab-content">
+                        <div id="Direction" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
                                     <h2 class="section-title">How to get there</h2>
@@ -233,7 +233,7 @@
 
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
-                            <div class="sidebar">
+                            <div class="sidebar" style="width: 300px; margin-left: 85.5%; position: absolute;">
                                 <div class="widget">
                                     <h2 class='actnew'>{{ $tour->name }} Prices</h2>
                                     <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
@@ -251,7 +251,7 @@
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Direction -->
-                        <div id="Essential_Items" class="tab-content">
+                        <div id="Essential_Items" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
                                     <h2 class="section-title">Essential items</h2>
@@ -260,7 +260,7 @@
                                 </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
-                            <div class="sidebar">
+                            <div class="sidebar" style="width: 300px; margin-left: 85.5%; position: absolute;">
                                 <div class="widget">
                                     <h2 class='actnew'>{{ $tour->name }} Prices</h2>
                                     <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
