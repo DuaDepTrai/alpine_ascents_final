@@ -135,17 +135,16 @@ class UsersController extends Controller
 
         $user = users::where('email', $request->email)->first();
         
-        
         if($user){
             if(Hash::check($request->password, $user->password)){
+                Auth::login($user);     
                 if($user->role == 1){
-                    return redirect()->route('admin.UserManagement.index');
+                    return redirect()->route('admin.galleries.index');
                 }
                 else{
                     session(['true_email' => $user->email]);
                     session(['id'=> $user->id]);
                     
-                    Auth::login($user);        
                     return redirect()->route('home');
                 }
             }
