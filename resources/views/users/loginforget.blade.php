@@ -9,7 +9,7 @@
 <body>
     <div class="container w-50 mx-auto mt-3">
         <h2 class="mt-5 mb-3 text-center">Forget your password ?</h2>
-        <form action="{{ route('send.mail') }}" method="post" class="form-control p-3">
+        <form action="{{ route('send.loginforget.mail') }}" method="post" class="form-control p-3">
             @csrf
             <p>Please enter your email.</p>
             <input type="email" name="email" class="form-control" placeholder="Your email">

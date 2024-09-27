@@ -10,7 +10,7 @@
 <body>
     <div class="container w-50 mx-auto mt-3">
         <h2 class="mt-5 mb-3 text-center">Change your password</h2>
-        <form action="{{ route('update.forget.password') }}" method="post" class="form-control p-3">
+        <form action="{{ route('update.login.forget') }}" method="post" class="form-control p-3">
             @csrf
             @method('put')
             <span>New password :</span>

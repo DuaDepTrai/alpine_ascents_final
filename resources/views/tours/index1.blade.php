@@ -30,7 +30,7 @@
                 <div class="page-margin">
                     <div class="home-widget-wrap-right">
                         @foreach ($tours as $tour)
-                        <div class="home-widget-copy-right">
+                        <div class="home-widget-copy-right" style="width: 30%; height: 416px; margin-bottom: 30px;">
                             <h2 class="section-title-white">{{ $tour->name }}</h2>
                             <p>
                                 @php
@@ -49,7 +49,7 @@
                                 <a href="{{ route('tours.detail', $tour->id) }}">See More</a>
                             </div>
                         </div>
-                        <div class="home-widget-image-right">
+                        <div class="home-widget-image-right" style="margin-bottom: 30px;">
                             <a href="{{ route('tours.detail', $tour->id) }}">
                                 <img src="{{ $tour->image }}" alt="{{ $tour->name }}">
                             </a>
@@ -1725,9 +1725,9 @@ Click the help icon above to learn more.
 </style>
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 <style> 
-.banner-image{
-    margin-top: 0px;
-}
+    .banner-image{
+        margin-top: 0px;
+    }
     .home_custom_container{
         width: 80%;
         padding-top: 40px;

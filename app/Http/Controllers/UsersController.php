@@ -53,6 +53,10 @@ class UsersController extends Controller
     public function showLoginForgetForm(){
         return view('users.loginforget');
     }
+
+    public function showLoginNewpassForm(){
+        return view('users.loginnewpass');
+    }
     
     public function register(Request $request) {
         $request->validate([

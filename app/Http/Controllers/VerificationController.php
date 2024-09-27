@@ -25,19 +25,24 @@ class VerificationController extends Controller
         return view('verification.registerVerify');
     }
 
+    public function showLoginForgetForm(){
+        return view('verification.loginforget');
+    }
+
     public function updateForgetPassword(Request $request){
         $request->validate([
             'password' => 'required|min:6|max:15'
         ]);
 
-        $id = session('id');
-        $user = users::where('id',$id)->first();
+        $user = Auth::user();
+        $user = users::where('id',$user->id)->first();
 
         if($user){
             if($request->password == $request->password_confirm){
                 $user->update([
                     'password' => Hash::make($request->password),
                 ]);
+
                 Auth::logout(); 
                 session()->invalidate();
                 session()->regenerateToken();
@@ -51,6 +56,26 @@ class VerificationController extends Controller
         else{
             return back()->withErrors(['failed','Undefined Error. sorry hehe']);
         }        
+    }
+
+    public function updateLoginForget(Request $request){
+        $request->validate([
+            'password' => 'required|min:6|max:15'
+        ]);
+
+        if($request->password == $request->password_confirm){
+            $user = users::where('email',session('email'))->first();
+            $user->password = Hash::make($request->password);
+            $user->save();
+
+            session()->invalidate();
+            session()->regenerateToken();
+
+            return redirect()->route('login')->with('success','Password changed. Please log in again.');    
+        }
+        else{
+            return back()->withErrors(['failed','Password does not match !']);
+        }     
     }
 
     public function updatePassword(Request $request){
@@ -77,12 +102,25 @@ class VerificationController extends Controller
                 return redirect()->route('login')->with('success','Password changed. Please log in again.');    
             }
             else{
-                return back()->withErrors(['password_match','The new password must not be the same as the old password !']);
+                echo "4";
+                // return back()->withErrors(['password_match','The new password must not be the same as the old password !']);
             }  
         }
         else{
             return redirect()->route('home');
         }       
+    }
+
+    public function verifyLoginForget(Request $request){
+        $request->validate(['icode' => 'required|numeric']);
+        $mcode = session('mcode');
+        $icode = intval($request->input('icode'));
+        if ($icode == $mcode) {
+            return redirect()->route('loginnewpass.form');
+            session()->forget('mcode');
+        }
+
+        return back()->withErrors(['code' => 'The code you entered is incorrect. Please try again.']);
     }
 
     public function registerVerify(Request $request){
