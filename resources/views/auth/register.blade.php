@@ -30,11 +30,11 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="{{asset('AdminLTE-2.4.18')}}/index2.html"><b>NextFi</b>Group</a>
+    <h2>Register a new Membership</h2>
   </div>
 
   <div class="register-box-body">
-    <p class="login-box-msg">Register a new membership</p>
+    <p class="login-box-msg"></p>
     @if ($errors->any())
         <div>
             @foreach ($errors->all() as $error)

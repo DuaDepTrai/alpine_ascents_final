@@ -40,4 +40,16 @@ public			add các giao diện có sẵn trên mạng
 C:\xampp\php\php.exe -S localhost:8000
 C:\xampp\mysql\bin\mysql.exe -u root -p
 
+*****
+Validate--
+'name' => 'regex:/^[\pL0-9 ]+$/u|max: 50',
+'phone' => 'required|regex:/^0[0-9]{9}$/',
+'email' => 'required|email',
+'password' => 'regex:/^[^\s]{6,15}$/', 
+
+
+For Password Only--
+htmlspecialchars($var, ENT_QUOTES, 'UTF-8'); 
+
+
 

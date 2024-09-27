@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="mycontainer d-flex mt-3 rounded">
+<div class="mycontainer w-75 mx-auto d-flex rounded">
     <div class="btn_container w-25">
         <form action="{{ route('users.personalinfo') }}">
             <button class="btn_personal_infor mx-auto mb-3 mt-4" id="btn_personal_infor">Personal Info</button>
@@ -16,7 +16,7 @@
 
     <div class="content_container w-75 d-block">
         <div class="avatar mt-4 bg-white rounded-circle">
-            <img src="" alt="">
+            <img src="{{ $user->avatar }}" alt="">
         </div>
         <div class="seperate2 mx-auto mt-4 mb-4"></div>
         <h3 class="ms-4 mb-3">Personal Information</h3>
@@ -43,25 +43,24 @@
 
 @push('styles')
 <style>
-    h3{
-        font-family: 'Montserrat',sans-serif ; font-size: 25px;
-    }
     .mycontainer{
-        width: 100%;
-        height: 48vw;
-        justify-content: center;
-        align-content: center;
-        /* Windows Border */
+        height: 39vw;
         border: 1px solid #d6d6d6;
         box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
+
+    .name,.phone,.email{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 18px;
     }
     
     /* Seperators */
     .seperate1{
-        width: 0.1px;
+        width: 3px;
         background-color: white;
         border: 1px solid #d6d6d6;
         box-shadow:
@@ -71,7 +70,8 @@
     }
     .seperate2{
         width: 90%;
-        height: 0.1px;
+        height: 3px;
+        background-color: white;
         border: 1px solid #d6d6d6;
         box-shadow:
         0 4px 8px rgba(0, 0, 0, 0.1),
@@ -93,30 +93,10 @@
         border-radius: 5px;
         font-family: 'Montserrat',sans-serif ; font-size: 17px;
     }
-    .changeinfo_confirm,.changeinfo_forgetpass{
-        margin-top: 15px;
-        margin-right: 20px;
-        display: inline-block;
-        width: 100px;
-        height: 30px;
-        background-color: white;
-        border: 1px solid #d6d6d6;
-        box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-        font-family: 'Montserrat',sans-serif ; font-size: 17px;
-    }
-    .changeinfo_forgetpass{
-        width: 200px;
-    }
-    
-    /* Content */
-    .uac_old_container_infor{
-        line-height: 1.6;
-    }
+
     .avatar{
         margin-left: 38px;
+        object-fit: cover;
         width: 130px;
         height: 130px;
         border: 1px solid #d6d6d6;
@@ -126,36 +106,15 @@
         inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     }
     
-    /* Span */
-    span{
-        font-family: 'Montserrat',sans-serif ;
-        font-size: 17px;
+    img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        max-width: 130px;
+        max-height: 130px;
     }
-    
-    .infor_field{
-        margin-right: 15px;
-        font-style: italic;
-        font-weight: bold;
-    }
-    
-    
     /* Form, Input */
-    
-    input{
-        display: block;
-        width: 270px;
-        background-color: white;
-        border: 1px solid #d6d6d6;
-        box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 30px;
-    }
-    .changeinfo_spans{
-        margin-right: 15px;
-        line-height: 2.2;
-    }
     
     .logout_messagebox{
         display: none;

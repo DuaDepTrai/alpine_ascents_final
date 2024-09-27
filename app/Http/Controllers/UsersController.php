@@ -15,12 +15,8 @@ class UsersController extends Controller
 {
     public function index(users $user)
     {
-        if(!Auth::check()){
-            return redirect()->route('home');
-        }
-        else{
-            return view('users.index',['user'=>$user]);
-        }
+        return view('users.index',['user'=>$user]);
+        
     }
 
     public function personalInfo(){
@@ -60,17 +56,17 @@ class UsersController extends Controller
     
     public function register(Request $request) {
         $request->validate([
-            'name' => 'required|max: 255',
-            'phone' => 'required|string|max:11',
+            'name' => 'regex:/^[\pL0-9 ]+$/u|max: 50',
+            'phone' => 'required|regex:/^0[0-9]{9}$/',
             'email' => 'required|email',
-            'password' => 'required|min:6|max:15',
+            'password' => 'regex:/^[^\s]{6,15}$/',
         ]);
 
         $email_check = users::where('email',$request->email)->first();
         $phone_check = users::where('phone',$request->phone)->first();
 
-        $password = $request->password;
-        $password_confirm = $request->password_confirm;
+        $password = htmlspecialchars($request->password, ENT_QUOTES, 'UTF-8');
+        $password_confirm = htmlspecialchars($request->password_confirm, ENT_QUOTES, 'UTF-8');
 
         if($email_check || $phone_check){
             return back()->withErrors(['error' => 'Email / phone number already exist !']);
@@ -82,7 +78,7 @@ class UsersController extends Controller
             session(['name'=> $request->name]);
             session(['phone'=> $request->phone]);
             session(['email'=> $request->email]);
-            session(['password'=> $request->password]);
+            session(['password'=> $password]);
         
             $email = $request->email;
             Mail::to($email)->send(new mymail($email));
@@ -134,14 +130,15 @@ class UsersController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:6|max:15',
+            'password' => 'regex:/^[^\s]{6,15}$/',
         ]);
+
+        $password = htmlspecialchars($request->password, ENT_QUOTES, 'UTF-8');
 
         $user = users::where('email', $request->email)->first();
         
-        
         if($user){
-            if(Hash::check($request->password, $user->password)){
+            if(Hash::check($password, $user->password)){
                 if($user->role == 1){
                     return redirect()->route('admin.UserManagement.index');
                 }
@@ -177,17 +174,19 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
+            'name' => 'regex:/^[\pL0-9 ]+$/u|max: 50',
+            'phone' => 'required|regex:/^0[0-9]{9}$/',
+            'email' => 'required|email',
+            'password' => 'regex:/^[^\s]{6,15}$/',
         ]);
+
+        $password = htmlspecialchars($request->password, ENT_QUOTES, 'UTF-8');
 
         users::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'day_can_rest' => 12,
-            'role' => 'employee', // or set based on your logic
+            'phone' => $request->phone,
+            'password' => Hash::make($password),
         ]);
 
         return redirect()->route('users.index')->with('success', 'User created successfully.');
@@ -200,32 +199,29 @@ class UsersController extends Controller
 
     public function edit(users $user)
     {
-        if(!Auth::check()){
-            return redirect()->route('home');
-        }
-        else{
-            return view('users.edit', compact('user'));
-        }
+        return view('users.edit', compact('user'));
+        
     }
 
     public function update(Request $request, users $user)
     {
         $request->validate([
-            'name' => 'required|string|max:255',
+            'name' => 'regex:/^[\pL0-9 ]+$/u|max: 50',
             'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'phone' => 'required|string|max:11',
+            'phone' => 'required|regex:/^0[0-9]{9}$/',
         ]);
 
-        if(($request->email == $user->email || $request->email == '') && ($request->phone == $user->phone || $request->phone == '')){
+        if(($request->email == $user->email) || ($request->phone == $user->phone)){
             $user->update([
                 'name' => $request->name
             ]);
         }
         else{
-            $email_check = users::find($request->email);
-            $phone_check = users::find($request->phone);
+            $email_check = users::find($request->email)->first();
+            $phone_check = users::find($request->phone)->first();
+
             if($email_check || $phone_check){
-                return back()->withErrors(['message' => 'Email already exist !']);
+                return back()->withErrors(['error' => 'Email already exist !']);
             }
             else{
                 $user->update([
@@ -240,8 +236,6 @@ class UsersController extends Controller
                 return redirect()->route('verificationchange.form');         
             }   
         }
-
-        $user->update($request->only('name', 'email','phone'));
 
         return redirect()->route('users.index',['user'=>$user])->with('success', 'User updated successfully.');
     }

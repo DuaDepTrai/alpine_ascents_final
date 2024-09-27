@@ -30,17 +30,16 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{asset('AdminLTE-2.4.18')}}/index2.html"><b>Admin</b>LTE</a>
+    <h2>Sign in to start your sesison</h2>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign in to start your session</p>
 
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <p>{{ $error }}</p>
             @endforeach
         </ul>
     </div>
@@ -68,9 +67,9 @@
         <!-- /.col -->
       </div>
     </form>
-    <a href="{{ route('login.forgetpass.form') }}" class="text-center">I forgot my password -.-</a>
-    <br>
-    <a href="/register" class="text-center">Register a new membership</a>
+    <a href="{{ route('login.forgetpass.form') }}" class="text-center">I forgot my password -.-</a><br>
+    <a href="/register" class="text-center">You don't have an account yet ?</a>
+    
 
   </div>
   <!-- /.login-box-body -->

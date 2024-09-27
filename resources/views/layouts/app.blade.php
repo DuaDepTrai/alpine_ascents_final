@@ -90,6 +90,7 @@
             transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
         }
         .container{
+            padding: 20px;
             width: 100vw;
             max-width: 100%;
             background-image: url('{{ asset('images/home/home_background.jpg') }}');

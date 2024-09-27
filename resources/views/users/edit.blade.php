@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="mycontainer d-flex mt-3 rounded">
+<div class="mycontainer w-75 mx-auto d-flex rounded">
     <div class="btn_container w-25">
         <form action="{{ route('users.personalinfo') }}">
             <button type="submit" class="btn_personal_infor mx-auto mb-3 mt-4" id="btn_personal_infor">Personal Info</button>
@@ -18,7 +18,7 @@
         <div class="row">
             <div class="col-3">
                 <div class="avatar mt-4 bg-white rounded-circle">
-                    <img src="" alt="">            
+                    <img src="{{ $user->avatar }}" alt="">            
                 </div>
             </div>
             <div class="col mt-4 ms-4 lh-lg fs-5">
@@ -43,15 +43,15 @@
                         </div>
                     @endif
                     
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="name">New Name</label>
                         <input type="text" name="name" class="form-control" id="name" value="{{ $user->name }}">                       
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="email">New Email</label>
                         <input type="email" name="email" class="form-control" id="email" value="{{ $user->email }}">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-3">
                         <label for="phone">New Phone Number</label>
                         <input type="number" name="phone" class="form-control" id="phone" value="{{ $user->phone }}">
                     </div> 
@@ -76,29 +76,26 @@
 </div>
 
 @endsection
-
 @push('styles')
 <style>
-    
-    h3{
-        font-family: 'Montserrat',sans-serif ; font-size: 25px;
-    }
     .mycontainer{
-        width: 100%;
-        height: 48vw;
-        justify-content: center;
-        align-content: center;
-        /* Windows Border */
+        height: 39vw;
         border: 1px solid #d6d6d6;
         box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.3),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     }
     
+    .name,.phone,.email{
+        font-weight: bold;
+        font-style: italic;
+        font-size: 18px;
+    }
+
     /* Seperators */
     .seperate1{
-        width: 0.1px;
+        width: 3px;
         background-color: white;
         border: 1px solid #d6d6d6;
         box-shadow:
@@ -108,7 +105,8 @@
     }
     .seperate2{
         width: 90%;
-        height: 0.1px;
+        height: 3px;
+        background-color: white;
         border: 1px solid #d6d6d6;
         box-shadow:
         0 4px 8px rgba(0, 0, 0, 0.1),
@@ -130,30 +128,10 @@
         border-radius: 5px;
         font-family: 'Montserrat',sans-serif ; font-size: 17px;
     }
-    .changeinfo_confirm,.changeinfo_forgetpass{
-        margin-top: 15px;
-        margin-right: 20px;
-        display: inline-block;
-        width: 100px;
-        height: 30px;
-        background-color: white;
-        border: 1px solid #d6d6d6;
-        box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-        font-family: 'Montserrat',sans-serif ; font-size: 17px;
-    }
-    .changeinfo_forgetpass{
-        width: 200px;
-    }
-    
-    /* Content */
-    .uac_old_container_infor{
-        line-height: 1.6;
-    }
+
     .avatar{
         margin-left: 38px;
+        object-fit: cover;
         width: 130px;
         height: 130px;
         border: 1px solid #d6d6d6;
@@ -163,35 +141,13 @@
         inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     }
     
-    /* Span */
-    span{
-        font-family: 'Montserrat',sans-serif ;
-        font-size: 17px;
-    }
-    
-    .infor_field{
-        margin-right: 15px;
-        font-style: italic;
-        font-weight: bold;
-    }
-    
-    
-    /* Form, Input */
-    
-    input{
-        display: block;
-        width: 270px;
-        background-color: white;
-        border: 1px solid #d6d6d6;
-        box-shadow:
-        0 4px 8px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-        border-radius: 30px;
-    }
-    .changeinfo_spans{
-        margin-right: 15px;
-        line-height: 2.2;
+    img{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        max-width: 130px;
+        max-height: 130px;
     }
     
     .logout_messagebox{
@@ -217,7 +173,6 @@
     
 </style>
 @endpush
-
 
 @push('scripts')
 <script> 

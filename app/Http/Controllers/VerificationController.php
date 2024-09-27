@@ -31,16 +31,19 @@ class VerificationController extends Controller
 
     public function updateForgetPassword(Request $request){
         $request->validate([
-            'password' => 'required|min:6|max:15'
+            'password' => 'regex:/^[^\s]{6,15}$/', 
         ]);
 
         $user = Auth::user();
         $user = users::where('id',$user->id)->first();
+        
+        $password = htmlspecialchars($request->password, ENT_QUOTES, 'UTF-8');
+        $password_confirm = htmlspecialchars($request->password_confirm, ENT_QUOTES, 'UTF-8');
 
         if($user){
-            if($request->password == $request->password_confirm){
+            if($password == $password_confirm){
                 $user->update([
-                    'password' => Hash::make($request->password),
+                    'password' => Hash::make($password),
                 ]);
 
                 Auth::logout(); 
@@ -60,12 +63,15 @@ class VerificationController extends Controller
 
     public function updateLoginForget(Request $request){
         $request->validate([
-            'password' => 'required|min:6|max:15'
+            'password' => 'regex:/^[^\s]{6,15}$/', 
         ]);
 
-        if($request->password == $request->password_confirm){
+        $password = htmlspecialchars($request->password, ENT_QUOTES, 'UTF-8');
+        $password_confirm = htmlspecialchars($request->password_confirm, ENT_QUOTES, 'UTF-8');
+
+        if($password == $password_confirm){
             $user = users::where('email',session('email'))->first();
-            $user->password = Hash::make($request->password);
+            $user->password = Hash::make($password);
             $user->save();
 
             session()->invalidate();
@@ -80,12 +86,12 @@ class VerificationController extends Controller
 
     public function updatePassword(Request $request){
         $request->validate([
-            'old_password' => 'required|min:6|max:15',
-            'new_password' => 'required|min:6',
+            'old_password' => 'regex:/^[^\s]{6,15}$/', 
+            'new_password' => 'regex:/^[^\s]{6,15}$/', 
         ]);
 
-        $new_password = $request->new_password;
-        $old_password = $request->old_password;
+        $new_password = htmlspecialchars($request->new_password, ENT_QUOTES, 'UTF-8');
+        $old_password = htmlspecialchars($request->old_password, ENT_QUOTES, 'UTF-8');
 
         $user = Auth::user();
 
@@ -93,7 +99,7 @@ class VerificationController extends Controller
             if(Hash::check($old_password,$user->password)){
                 $user->update([
                     'password' => Hash::make($new_password),
-                    'status' => 0,
+
                 ]);
 
                 Auth::logout(); 
@@ -102,8 +108,7 @@ class VerificationController extends Controller
                 return redirect()->route('login')->with('success','Password changed. Please log in again.');    
             }
             else{
-                echo "4";
-                // return back()->withErrors(['password_match','The new password must not be the same as the old password !']);
+                return back()->withErrors(['error','The new password must not be the same as the old password !']);
             }  
         }
         else{
@@ -127,8 +132,7 @@ class VerificationController extends Controller
         $request->validate(['icode' => 'required|numeric']);
         $mcode = session('mcode');
         $icode = intval($request->input('icode'));
-        if ($icode == $mcode) {
-            
+        if ($icode == $mcode) {            
             $user = new User();
             $user->name = session('name');
             $user->email = session('email');
@@ -136,7 +140,7 @@ class VerificationController extends Controller
             $user->password = Hash::make(session('password'));  // Lưu mật khẩu đã mã hóa
             $user->save();
             
-            // Auth::logout(); 
+            Auth::logout(); 
             session()->invalidate();
             session()->regenerateToken();
 
@@ -150,21 +154,22 @@ class VerificationController extends Controller
         $request->validate(['icode' => 'required|numeric']);
         $mcode = session('mcode');
         $icode = intval($request->input('icode'));
+        
         if ($icode == $mcode) {
-            $id = session('id');
-            $user = users::where('id',$id)->first();
+            $user = Auth::user();
             $user->update([
                 'email' => session('email'),
                 'phone' => session('phone'),
             ]);
 
-            // Auth::logout(); 
-            // session()->invalidate();
-            // session()->regenerateToken();
-            return redirect()->route('users.index',['user'=>$id]);  
+            Auth::logout(); 
+            session()->invalidate();
+            session()->regenerateToken();
+
+            return redirect()->route('users.index',['user'=>$user]);  
         }
 
-        return back()->withErrors(['code' => 'The code you entered is incorrect. Please try again.']);
+        return back()->withErrors(['error' => 'The code you entered is incorrect. Please try again.']);
     }
 
     public function verify(Request $request)
@@ -179,6 +184,7 @@ class VerificationController extends Controller
 
         return back()->withErrors(['code' => 'The code you entered is incorrect. Please try again.']);
     }
+
 
     // public function sendVerificationCode(Request $request){
     //     $request->validate(['email' => 'required|string']);
@@ -202,4 +208,5 @@ class VerificationController extends Controller
 
     //     return back()->withErrors(['email' => 'Email không tồn tại.']);
     // }
+
 }
