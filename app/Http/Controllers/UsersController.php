@@ -16,7 +16,6 @@ class UsersController extends Controller
     public function index(users $user)
     {
         return view('users.index',['user'=>$user]);
-        
     }
 
     public function personalInfo(){
@@ -138,14 +137,13 @@ class UsersController extends Controller
         $user = users::where('email', $request->email)->first();
         
         if($user){
-            if(Hash::check($request->password, $user->password)){
+            if(Hash::check($password, $user->password)){
+                Auth::login($user);     
                 if($user->role == 1){
-                    return redirect()->route('admin.galleries.index');
+                    return redirect()->route('admin.UserManagement.index');
                 }
                 else{
-                    session(['true_email' => $user->email]);
-                    session(['id'=> $user->id]);
-                    
+                    session(['id'=> $user->id]); 
                     return redirect()->route('home');
                 }
             }

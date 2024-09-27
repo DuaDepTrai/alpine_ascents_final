@@ -233,7 +233,10 @@
               <a href="{{ route('admin.UserManagement.create') }}">
                 <button class="btn btn-success">Add new</button>
               </a>
-              {{-- {{ $users->links() }} --}}
+              {{-- <a href="{{ route('admin.UserManagement.randimg') }}">
+                <button class="btn btn-primary">Wanna set avatar for everyone ?</button>
+              </a>  --}}
+              {{-- {{ $users->links() --}}
               </div>
             </div>
           </div>

@@ -17,8 +17,8 @@
     <div class="content_container w-75 d-block">
         <div class="row">
             <div class="col-3">
-                <div class="avatar mt-4 bg-white rounded-circle">
-                    <img src="{{ $user->avatar }}" alt="">            
+                <div class="mt-4 border-0">
+                    <img class="avatar" src="{{ $user->avatar }}" alt="">            
                 </div>
             </div>
             <div class="col mt-4 ms-4 lh-lg fs-5">
@@ -130,6 +130,10 @@
     }
 
     .avatar{
+        display: flex;
+        border-radius: 50%;
+        max-width: 130px;
+        max-height: 130px;
         margin-left: 38px;
         object-fit: cover;
         width: 130px;
@@ -139,15 +143,6 @@
         0 4px 8px rgba(0, 0, 0, 0.1),
         inset 0 1px 0 rgba(255, 255, 255, 0.3),
         inset 0 -1px 0 rgba(0, 0, 0, 0.2);
-    }
-    
-    img{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        max-width: 130px;
-        max-height: 130px;
     }
     
     .logout_messagebox{

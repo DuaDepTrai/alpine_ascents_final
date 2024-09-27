@@ -68,6 +68,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::class, 'edit'])->name('admin.UserManagement.edit');  // Show user edit form
     Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Handle user information update
     Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Handle user deletion
+    // Route::get('/admin/UserManagement',[AdminUserManagementController::class,'randImg'])->name('admin.UserManagement.randimg'); // Set rand avt for all users, just for fun he he 
 
     Route::get('/admin/branches', [AdminBranchesController::class, 'index']);
     Route::get('/admin/branches', [AdminBranchesController::class, 'index'])->name('admin.branches.index');  // Show list branches
@@ -78,7 +79,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete('/admin/branches/{id}', [AdminBranchesController::class, 'destroy'])->name('admin.branches.destroy');  // Process delete branch
 });
 
-Route::middleware(['auth','role:user'])->group(function () {
+Route::middleware(['auth','user'])->group(function () {
     Route::get('/users/changepass',[UsersController::class,'showChangePassForm'])->name('changepass.form');
     Route::get('/users/forgetpass',[UsersController::class,'showForgetPassForm'])->name('forgetpass.form');
     Route::get('/users/newpassword',[UsersController::class,'showNewPassForm'])->name('newpass.form');
@@ -88,7 +89,7 @@ Route::middleware(['auth','role:user'])->group(function () {
 
     Route::get('/personalinfo', [UsersController::class, 'personalInfo'])->name('users.personalinfo');
     Route::get('/settings', [UsersController::class, 'settings'])->name('users.settings');
-
+    
 });
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
@@ -103,7 +104,7 @@ Route::get('/login.forget.form',[VerificationController::class,'showLoginForgetF
 Route::post('/verify.loginforget',[VerificationController::class,'verifyLoginForget'])->name('verify.login.forget');
 
 Route::post('/send.mail',[MailController::class,'sendMail'])->name('send.mail');
-Route::post('/send.logforget.mail',[MailController::class,'sendLoginForgetMail'])->name('send.loginforget.mail');
+Route::post('/send.loginforget.mail',[MailController::class,'sendLoginForgetMail'])->name('send.loginforget.mail');
 
 Route::post('/verify', [VerificationController::class, 'verify'])->name('verify');
 Route::post('/changeverify',[VerificationController::class,'changeVerify'])->name('change.verify');
@@ -112,11 +113,16 @@ Route::put('/updateforgetpass',[VerificationController::class,'updateForgetPassw
 Route::put('/updateloginforget',[VerificationController::class,'updateLoginForget'])->name('update.login.forget');
 
 Route::get('/login.forget',[UsersController::class,'showLoginForgetForm'])->name('login.forgetpass.form');
+
+Route::get('/login', [UsersController::class, 'showLoginForm'])->name('login.form');
+Route::post('/login', [UsersController::class, 'login'])->name('login');
 Route::get('/logout', [UsersController::class, 'logout'])->name('logout');
 
 Route::get('/users/changepass',[UsersController::class,'showChangePassForm'])->name('changepass.form');
 Route::get('/users/forgetpass',[UsersController::class,'showForgetPassForm'])->name('forgetpass.form');
 Route::get('/users/newpassword',[UsersController::class,'showNewPassForm'])->name('newpass.form');
+Route::get('/users/loginforget',[UsersController::class,'showLoginNewpassForm'])->name('loginnewpass.form');
+
 Route::get('/users/{user}',[UsersController::class,'index'])->name('users.index');
 Route::get('/users/{user}/edit',[UsersController::class,'edit'])->name('users.edit');
 Route::put('/users/{user}',[UsersController::class,'update'])->name('users.update');

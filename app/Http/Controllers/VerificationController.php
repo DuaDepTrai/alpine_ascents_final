@@ -118,11 +118,12 @@ class VerificationController extends Controller
 
     public function verifyLoginForget(Request $request){
         $request->validate(['icode' => 'required|numeric']);
-        $mcode = session('mcode');
+        $mcode = session('mcode'); 
+        
         $icode = intval($request->input('icode'));
         if ($icode == $mcode) {
-            return redirect()->route('loginnewpass.form');
             session()->forget('mcode');
+            return redirect()->route('loginnewpass.form');   
         }
 
         return back()->withErrors(['code' => 'The code you entered is incorrect. Please try again.']);
@@ -132,12 +133,31 @@ class VerificationController extends Controller
         $request->validate(['icode' => 'required|numeric']);
         $mcode = session('mcode');
         $icode = intval($request->input('icode'));
+        
         if ($icode == $mcode) {            
             $user = new User();
             $user->name = session('name');
             $user->email = session('email');
             $user->phone = session('phone');
             $user->password = Hash::make(session('password'));  // Lưu mật khẩu đã mã hóa
+            
+            // Avatar random 1-9
+            $images = [
+                'images/users/users_avatar_1.png',
+                'images/users/users_avatar_2.png',
+                'images/users/users_avatar_3.png',
+                'images/users/users_avatar_4.png',
+                'images/users/users_avatar_5.png',
+                'images/users/users_avatar_6.png',
+                'images/users/users_avatar_7.png',
+                'images/users/users_avatar_8.png',
+                'images/users/users_avatar_9.png',
+            ];
+
+            $rand_img = $images[array_rand($images)];
+            $user->avatar = $rand_img;
+            
+            // Save New User
             $user->save();
             
             Auth::logout(); 

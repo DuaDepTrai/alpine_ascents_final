@@ -226,14 +226,14 @@
                         <div id="Direction" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">How to get there</h2>
+                                    <h2 class="section-title">How to get thereㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
                                         {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->directions) !!}
                                 </div>
 
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
-                            <div class="sidebar" style="width: 300px; margin-left: 85.5%; position: absolute;">
+                            <div class="sidebar">
                                 <div class="widget">
                                     <h2 class='actnew'>{{ $tour->name }} Prices</h2>
                                     <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5
@@ -254,13 +254,13 @@
                         <div id="Essential_Items" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">Essential items</h2>
+                                    <h2 class="section-title">Essential itemsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
                                         {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->items) !!}
                                 </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
-                            <div class="sidebar" style="width: 300px; margin-left: 85.5%; position: absolute;">
+                            <div class="sidebar">
                                 <div class="widget">
                                     <h2 class='actnew'>{{ $tour->name }} Prices</h2>
                                     <p>{{ number_format($tour->price, 0, ',', '.') }} VNĐ (<em>based on 5

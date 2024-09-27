@@ -89,6 +89,7 @@
             opacity: 0.5; /* Đặt độ trong suốt mặc định */
             transition: opacity 0.3s; /* Thêm hiệu ứng chuyển tiếp khi thay đổi độ trong suốt */
         }
+        
         .container{
             padding: 20px;
             width: 100vw;
@@ -206,8 +207,7 @@
             <div style="padding-right: 40px;">
                 <?php 
                     if(Auth::check()){
-                        $id = Auth::user()->id;
-                        echo '<a class="text-white me-5" href="/users/'.$id.'">YOUR ACCOUNT</a>';
+                        echo '<a class="text-white me-5" href="/personalinfo">YOUR ACCOUNT</a>';
                     }  
                     else{
                         echo '<a class="text-white me-5" href="/login">LOGIN</a>';

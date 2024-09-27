@@ -15,8 +15,8 @@
     <div class="seperate1 h-100"></div>
 
     <div class="content_container w-75 d-block">
-        <div class="avatar mt-4 bg-white rounded-circle">
-            <img src="{{ $user->avatar }}" alt="">
+        <div class="mt-4 border-0">
+            <img class="avatar" src="{{ $user->avatar }}" alt="">
         </div>
         <div class="seperate2 mx-auto mt-4 mb-4"></div>
         <h3 class="ms-4 mb-3">Personal Information</h3>
@@ -95,6 +95,10 @@
     }
 
     .avatar{
+        display: flex;
+        border-radius: 50%;
+        max-width: 130px;
+        max-height: 130px;
         margin-left: 38px;
         object-fit: cover;
         width: 130px;
@@ -106,14 +110,6 @@
         inset 0 -1px 0 rgba(0, 0, 0, 0.2);
     }
     
-    img{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        max-width: 130px;
-        max-height: 130px;
-    }
     /* Form, Input */
     
     .logout_messagebox{
