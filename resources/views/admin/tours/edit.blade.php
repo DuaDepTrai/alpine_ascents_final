@@ -190,7 +190,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>

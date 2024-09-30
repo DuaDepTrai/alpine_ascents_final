@@ -207,7 +207,10 @@
             <div style="padding-right: 40px;">
                 <?php 
                     if(Auth::check()){
-                        echo '<a class="text-white me-5" href="/personalinfo">YOUR ACCOUNT</a>';
+                        $user = Auth::user(); // Lấy thông tin người dùng
+                        $id = $user->id;
+                        $name = $user->name; // Lấy tên người dùng
+                        echo '<a class="text-white me-5" href="/users/'.$id.'">'.$name.'</a>'; // Hiển thị tên người dùng
                     }  
                     else{
                         echo '<a class="text-white me-5" href="/login">LOGIN</a>';

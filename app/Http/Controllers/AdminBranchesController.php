@@ -26,7 +26,7 @@ class AdminBranchesController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
-            'phone' => 'required|string|max:11',
+            'phone' => 'required|string|max:20',
             'positioning' => 'required|string|max:255',
         ]);
 
@@ -56,7 +56,7 @@ class AdminBranchesController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'address' => 'required|string|max:255',
-            'phone' => 'required|string|max:11',
+            'phone' => 'required|string|max:20',
             'positioning' => 'required|string|max:255',
 ]);
 

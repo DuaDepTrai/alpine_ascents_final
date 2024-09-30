@@ -14,7 +14,7 @@ class AdminOrderController extends Controller
     {
         $query = orders_tours::with('tour', 'user');
 
-       // Check if there is a search keyword
+       // Check if there is a search keyword=
         if ($request->has('search') && $request->search != '') {
             $search = $request->search;
             $query->where('phone', 'LIKE', "%{$search}%");

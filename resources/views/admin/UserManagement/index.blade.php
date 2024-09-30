@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,161 +39,162 @@
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+  <div class="wrapper">
 
     <header class="main-header">
-        <!-- Logo -->
-        <a href="index2.html" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>LTE</span>
+      <!-- Logo -->
+      <a href="index2.html" class="logo">
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>A</b>LT</span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Admin</b>LTE</span>
+      </a>
+      <!-- Header Navbar: style can be found in header.less -->
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
         </a>
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="navbar navbar-static-top">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-            <span class="sr-only">Toggle navigation</span>
-          </a>
 
-          <div class="navbar-custom-menu">
-            <ul class="nav navbar-nav">
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
 
 
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                  {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
-                  {{--   <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li class="dropdown user user-menu">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+                {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+              </a>
+              <ul class="dropdown-menu">
+                <!-- User image -->
+                <li class="user-header">
+                  <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                    <p>
-                       {{-- {{auth()->user()->name }}--}}
-                        {{--  {{auth()->user()->name }}--}}
-                      <small>Member since Aug. 2024</small>
-                    </p>
-                  </li>
-                  <!-- Menu Body -->
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
-                    </div>
-                    <div class="pull-right">
-                      <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              <!-- Control Sidebar Toggle Button -->
-              <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-    <!-- Left side column. contains the logo and sidebar -->
-    <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-            <!-- Sidebar user panel -->
-            <div class="user-panel">
-                <div class="pull-left image">
-                    <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                </div>
-                <div class="pull-left info">
-                    {{--<p>{{auth()->user()->name }}</p>--}}
-                    {{--  <p>{{auth()->user()->name }}</p> --}}
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
-                </div>
-            </div>
-            <ul class="sidebar-menu" data-widget="tree">
-                <li class="header">MAIN NAVIGATION</li>
-                <li>
-                  <a href="/admin/UserManagement">
-                    <i class="fa fa-th"></i> <span>User</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                <li class="treeview">
-                  <a href="/admin/tours">
-                    <i class="fa fa-edit"></i> <span>Tour</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
+                  <p>
+                    {{-- {{auth()->user()->name }}--}}
+                    {{-- {{auth()->user()->name }}--}}
+                    <small>Member since Aug. 2024</small>
+                  </p>
                 </li>
-                <li class="treeview">
-                  <a href="/admin/order">
-                    <i class="fa fa-table"></i> <span>Order</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li class="treeview">
-                  <a href="/admin/galleries">
-                    <i class="fa fa-share"></i> <span>Galleries</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                </li>
-                <li class="treeview">
-                  <a href="/admin/branches">
-                    <i class="fa fa-share"></i> <span>Branches</span>
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
+                <!-- Menu Body -->
+                <!-- Menu Footer-->
+                <li class="user-footer">
+                  <div class="pull-left">
+                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                  </div>
+                  <div class="pull-right">
+                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  </div>
                 </li>
               </ul>
-        </section>
-        <!-- /.sidebar -->
+            </li>
+            <!-- Control Sidebar Toggle Button -->
+            <li>
+              <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- Sidebar user panel -->
+        <div class="user-panel">
+          <div class="pull-left image">
+            <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          </div>
+          <div class="pull-left info">
+            {{--<p>{{auth()->user()->name }}</p>--}}
+            {{-- <p>{{auth()->user()->name }}</p> --}}
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+          </div>
+        </div>
+        <ul class="sidebar-menu" data-widget="tree">
+          <li class="header">MAIN NAVIGATION</li>
+          <li>
+            <a href="/admin/UserManagement">
+              <i class="fa fa-th"></i> <span>User</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          <li class="treeview">
+            <a href="/admin/tours">
+              <i class="fa fa-edit"></i> <span>Tour</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/admin/order">
+              <i class="fa fa-table"></i> <span>Order</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/admin/galleries">
+              <i class="fa fa-share"></i> <span>Galleries</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+          <li class="treeview">
+            <a href="/admin/branches">
+              <i class="fa fa-share"></i> <span>Branches</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
     </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-          <h1>
-            Dashboard
-            <small>Control panel</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>
-        </section>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>
+          Dashboard
+          <small>Control panel</small>
+        </h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+          <li class="active">Dashboard</li>
+        </ol>
+      </section>
 
-        <!-- Main content -->
-        <section class="content">
-          <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-xs-12">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>User Management</h3>
-                </div>
-                <div class="icon"></div>
+      <!-- Main content -->
+      <section class="content">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-xs-12">
+            <!-- small box -->
+            <div class="small-box bg-aqua">
+              <div class="inner">
+                <h3>User Management</h3>
               </div>
-              <div class="box-body">
+              <div class="icon"></div>
+            </div>
+            <div class="box-body">
               <form action="{{ route('admin.UserManagement.index') }}" method="GET" class="mb-4">
-                  <div class="input-group">
-                      <input type="text" name="search" class="form-control" placeholder="Search by phone number..." aria-label="Search">
-                      <div class="input-group-btn">
-                          <button class="btn btn-default" type="submit">Search</button>
-                      </div>
+                <div class="input-group">
+                  <input type="text" name="search" class="form-control" placeholder="Search by phone number..." aria-label="Search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Search</button>
                   </div>
+                </div>
               </form>
 
 
@@ -212,48 +214,49 @@
                 <tbody>
                   @foreach ($users as $key => $user)
                   <tr>
-                    <td class="text-center text-nowrap align-middle">{{ $key + 1  }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $loop->iteration + ($users->currentPage() - 1) * $users->perPage()  }}</td>
                     <td class="text-center text-nowrap align-middle">{{ $user->name }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $user->phone }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $user->email }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $user->avatar }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $user->role == 1 ? 'Admin' : 'User' }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $user->phone }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $user->email }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $user->avatar }}</td>
+                    <td class="text-center text-nowrap align-middle">{{ $user->role == 1 ? 'Admin' : 'User' }}</td>
                     <td>
-                        <a href="{{ route('admin.UserManagement.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                          <form action="{{ route('admin.UserManagement.destroy', $user->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                          </form>
+                      <a href="{{ route('admin.UserManagement.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                      <form action="{{ route('admin.UserManagement.destroy', $user->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                      </form>
                     </td>
                   </tr>
-                  @endforeach  
+                  @endforeach
                 </tbody>
               </table>
+              <!-- Pagination links -->
+              <div class="pagination-wrapper">
+                {{ $users->links() }}
+              </div>
               <a href="{{ route('admin.UserManagement.create') }}">
                 <button class="btn btn-success">Add new</button>
               </a>
-              {{-- <a href="{{ route('admin.UserManagement.randimg') }}">
-                <button class="btn btn-primary">Wanna set avatar for everyone ?</button>
-              </a>  --}}
-              {{-- {{ $users->links() --}}
-              </div>
+              {{-- {{ $users->links() }} --}}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-    <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
-
-    </section>
-
-    <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
+      <!-- right col -->
+    </div>
+    <!-- /.row (main row) -->
 
     </section>
-    <!-- /.content -->
+
+    <!-- right col -->
+  </div>
+  <!-- /.row (main row) -->
+
+  </section>
+  <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
 
@@ -450,45 +453,46 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-</div>
-<!-- ./wrapper -->
+  </div>
+  <!-- ./wrapper -->
 
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="bower_components/raphael/raphael.min.js"></script>
-<script src="bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+  <!-- jQuery 3 -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+  <!-- Bootstrap 3.3.7 -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- Morris.js charts -->
+  <script src="bower_components/raphael/raphael.min.js"></script>
+  <script src="bower_components/morris.js/morris.min.js"></script>
+  <!-- Sparkline -->
+  <script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
+  <!-- jvectormap -->
+  <script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+  <script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <!-- jQuery Knob Chart -->
+  <script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
+  <!-- daterangepicker -->
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
+  <!-- datepicker -->
+  <script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+  <!-- Bootstrap WYSIHTML5 -->
+  <script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+  <!-- Slimscroll -->
+  <script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <!-- FastClick -->
+  <script src="bower_components/fastclick/lib/fastclick.js"></script>
+  <!-- AdminLTE App -->
+  <script src="dist/js/adminlte.min.js"></script>
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <script src="dist/js/pages/dashboard.js"></script>
+  <!-- AdminLTE for demo purposes -->
+  <script src="dist/js/demo.js"></script>
 </body>
+
 </html>

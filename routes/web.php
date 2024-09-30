@@ -68,8 +68,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/UserManagement/{id}/edit', [AdminUserManagementController::class, 'edit'])->name('admin.UserManagement.edit');  // Show user edit form
     Route::put('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'update'])->name('admin.UserManagement.update');  // Handle user information update
     Route::delete('/admin/UserManagement/{id}', [AdminUserManagementController::class, 'destroy'])->name('admin.UserManagement.destroy');  // Handle user deletion
-    // Route::get('/admin/UserManagement',[AdminUserManagementController::class,'randImg'])->name('admin.UserManagement.randimg'); // Set rand avt for all users, just for fun he he 
-
+    
     Route::get('/admin/branches', [AdminBranchesController::class, 'index']);
     Route::get('/admin/branches', [AdminBranchesController::class, 'index'])->name('admin.branches.index');  // Show list branches
     Route::get('/admin/branches/create', [AdminBranchesController::class, 'create'])->name('admin.branches.create');  // Form add new branch
@@ -89,7 +88,6 @@ Route::middleware(['auth','user'])->group(function () {
 
     Route::get('/personalinfo', [UsersController::class, 'personalInfo'])->name('users.personalinfo');
     Route::get('/settings', [UsersController::class, 'settings'])->name('users.settings');
-    
 });
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);
@@ -125,7 +123,6 @@ Route::get('/users/loginforget',[UsersController::class,'showLoginNewpassForm'])
 
 Route::get('/users/{user}',[UsersController::class,'index'])->name('users.index');
 Route::get('/users/{user}/edit',[UsersController::class,'edit'])->name('users.edit');
-Route::put('/users/{user}',[UsersController::class,'update'])->name('users.update');
 
 Route::get('/personalinfo', [UsersController::class, 'personalInfo'])->name('users.personalinfo');
 Route::get('/settings', [UsersController::class, 'settings'])->name('users.settings');

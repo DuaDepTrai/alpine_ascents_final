@@ -8,29 +8,26 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/dist/css/skins/_all-skins.min.css">
     <!-- Morris chart -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/bower_components/morris.js/morris.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/morris.js/morris.css">
     <!-- jvectormap -->
-    <link rel="stylesheet" href="{{ asset('AdminLTE-2.4.18') }}/bower_components/jvectormap/jquery-jvectormap.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/jvectormap/jquery-jvectormap.css">
     <!-- Date Picker -->
-    <link rel="stylesheet"
-        href="{{ asset('AdminLTE-2.4.18') }}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <!-- Daterange picker -->
-    <link rel="stylesheet"
-        href="{{ asset('AdminLTE-2.4.18') }}/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet"
-        href="{{ asset('AdminLTE-2.4.18') }}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,68 +37,69 @@
   <![endif]-->
 
     <!-- Google Font -->
-    <link rel="stylesheet"
-        href="{{ asset('AdminLTE-2.4.18') }}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
-        <<header class="main-header">
+        <header class="main-header">
             <!-- Logo -->
             <a href="index2.html" class="logo">
-              <!-- mini logo for sidebar mini 50x50 pixels -->
-              <span class="logo-mini"><b>A</b>LT</span>
-              <!-- logo for regular state and mobile devices -->
-              <span class="logo-lg"><b>Admin</b>LTE</span>
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>A</b>LT</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>Admin</b>LTE</span>
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top">
-              <!-- Sidebar toggle button-->
-              <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-                <span class="sr-only">Toggle navigation</span>
-              </a>
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
 
-              <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
 
 
-                  <!-- User Account: style can be found in dropdown.less -->
-                  <li class="dropdown user user-menu">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                      <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                      <span class="hidden-xs">{{ optional(auth()->user())->name ?? 'Guest' }}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                      <!-- User image -->
-                      <li class="user-header">
-                        <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+                                {{-- <span class="hidden-xs">{{auth()->user()->name }}</span> --}}
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="{{asset('AdminLTE-2.4.18')}}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
-                        <p>
-                        {{ optional(auth()->user())->name ?? 'Guest' }}
-                          <small>Member since Aug. 2024</small>
-                        </p>
-                      </li>
-                      <!-- Menu Body -->
-                      <!-- Menu Footer-->
-                      <li class="user-footer">
-                        <div class="pull-left">
-                          <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        </div>
-                        <div class="pull-right">
-                          <a href="#" class="btn btn-default btn-flat">Sign out</a>
-                        </div>
-                      </li>
+                                    <p>
+                                        {{-- {{auth()->user()->name }}--}}
+                                        {{-- {{auth()->user()->name }}--}}
+                                        <small>Member since Aug. 2024</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- Control Sidebar Toggle Button -->
+                        <li>
+                            <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
+                        </li>
                     </ul>
-                  </li>
-                  <!-- Control Sidebar Toggle Button -->
-                  <li>
-                    <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                  </li>
-                </ul>
-              </div>
+                </div>
             </nav>
-          </header>
+        </header>
         <!-- Left side column. contains the logo and sidebar -->
         <aside class="main-sidebar">
             <!-- sidebar: style can be found in sidebar.less -->
@@ -112,52 +110,53 @@
                         <img src="{{ asset('AdminLTE-2.4.18') }}/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>{{ optional(auth()->user())->name ?? 'Guest' }}</p>
+                        {{--<p>{{auth()->user()->name }}</p>--}}
+                        {{-- <p>{{auth()->user()->name }}</p> --}}
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
                 </div>
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
-                      <a href="/admin/UserManagement">
-                        <i class="fa fa-th"></i> <span>User</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
+                        <a href="/admin/UserManagement">
+                            <i class="fa fa-th"></i> <span>User</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
                     <li class="treeview">
-                      <a href="/admin/tours">
-                        <i class="fa fa-edit"></i> <span>Tour</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
+                        <a href="/admin/tours">
+                            <i class="fa fa-edit"></i> <span>Tour</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
                     </li>
                     <li class="treeview">
-                      <a href="/admin/order">
-                        <i class="fa fa-table"></i> <span>Order</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
+                        <a href="/admin/order">
+                            <i class="fa fa-table"></i> <span>Order</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
                     </li>
                     <li class="treeview">
-                      <a href="/admin/galleries">
-                        <i class="fa fa-share"></i> <span>Galleries</span>
-                        <span class="pull-right-container">
-                          <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                      </a>
+                        <a href="/admin/galleries">
+                            <i class="fa fa-share"></i> <span>Galleries</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
+                        </a>
                     </li>
                     <li class="treeview">
                         <a href="/admin/branches">
-                          <i class="fa fa-share"></i> <span>Branches</span>
-                          <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                          </span>
+                            <i class="fa fa-share"></i> <span>Branches</span>
+                            <span class="pull-right-container">
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </span>
                         </a>
                     </li>
-                  </ul>
+                </ul>
             </section>
             <!-- /.sidebar -->
         </aside>
@@ -181,45 +180,70 @@
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
                     <div class="col-xs-12">
-                        <div>
-                            <h1>Edit User</h1>
-                            <div>
-                                <form action="{{ route('admin.UserManagement.update', $user->id) }}" method="POST">
-                                    @csrf
-                                    @method('PUT')
-
-                                    <div class="form-group">
-                                        <label for="name">Customer Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" 
-                                            value="{{ old('name', $user->name) }}" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="phone">Phone</label>
-                                        <input type="number" class="form-control" id="phone" name="phone" 
-                                            value="{{ old('phone', $user->phone) }}" required>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" 
-                                            value="{{ old('email', $user->email) }}">
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="role">Role</label>
-                                        <select class="form-control" id="role" name="role">
-                                            <option value="0" {{ old('role', $user->role) == 0 ? 'selected' : '' }}>User</option>
-                                            <option value="1" {{ old('role', $user->role) == 1 ? 'selected' : '' }}>Admin</option>
-                                        </select>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Update User</button>
-                                </form>
+                        <!-- small box -->
+                        <div class="small-box bg-aqua">
+                            <div class="inner">
+                                <h3>Edit User</h3>
                             </div>
+                            <div class="icon"></div>
                         </div>
+                        <form action="{{ route('admin.UserManagement.update', $user->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+
+                            <div class="form-group">
+                                <label for="name">Customer Name</label>
+                                <input type="text" class="form-control" id="name" name="name"
+                                    value="{{ old('name', $user->name) }}" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="text" class="form-control" id="phone" name="phone"
+                                    value="{{ old('phone', $user->phone) }}" required>
+                                @error('phone')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email"
+                                    value="{{ old('email', $user->email) }}">
+                                @error('email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <select class="form-control" id="role" name="role" required>
+                                    <option value="0" {{ old('role', $user->role) == 0 ? 'selected' : '' }}>User</option>
+                                    <option value="1" {{ old('role', $user->role) == 1 ? 'selected' : '' }}>Admin</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="status">Status</label>
+                                <select name="status" id="status" class="form-control" required>
+                                    <option value="">Chọn quyền</option>
+                                    <option value="0" {{ old('role', $user->role) == 0 ? 'selected' : '' }}>Not Activated</option>
+                                    <option value="1" {{ old('role', $user->role) == 1 ? 'selected' : '' }}>Activated</option>
+                                </select>
+                                @error('status')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <button type="submit" class="btn btn-primary">Update User</button>
+                            <a href="{{ route('admin.UserManagement.index') }}" class="btn btn-default">Cancel</a>
+                        </form>
+                        
                     </div>
                 </div>
-            </section>
+        </div>
+    </div>
+    </section>
+
 
     <!-- right col -->
     </div>
@@ -410,8 +434,7 @@
                     <div class="form-group">
                         <label class="control-sidebar-subheading">
                             Delete chat history
-                            <a href="javascript:void(0)" class="text-red pull-right"><i
-                                    class="fa fa-trash-o"></i></a>
+                            <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
                         </label>
                     </div>
                     <!-- /.form-group -->

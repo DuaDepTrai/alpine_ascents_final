@@ -177,14 +177,9 @@ class VerificationController extends Controller
         
         if ($icode == $mcode) {
             $user = Auth::user();
-            $user->update([
-                'email' => session('email'),
-                'phone' => session('phone'),
-            ]);
-
-            Auth::logout(); 
-            session()->invalidate();
-            session()->regenerateToken();
+            $user->email = session('email');
+            $user->phone = session('phone');
+            $user->save();
 
             return redirect()->route('users.index',['user'=>$user]);  
         }

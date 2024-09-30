@@ -44,7 +44,7 @@
                                 $finalOutput = implode(' ', $limitedWords);
                             @endphp
                             
-                            <p>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $finalOutput) !!} ...</p></p>
+                            <p>{!! str_replace('.', '.<br>', $finalOutput) !!} ...</p></p>
                             <div class="home-widget-button">
                                 <a href="{{ route('tours.detail', $tour->id) }}">See More</a>
                             </div>

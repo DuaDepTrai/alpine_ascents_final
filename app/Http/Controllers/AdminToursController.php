@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\orders_tours;
 use Illuminate\Http\Request;
 use App\Models\tours;
 use Illuminate\Support\Facades\Storage;
@@ -37,10 +38,10 @@ class AdminToursController extends Controller
         if ($request->hasFile('image')) {
             // Lưu ảnh vào thư mục public/images
             $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
-            $request->file('image')->move(public_path('images'), $imageName);
+            $request->file('image')->move(public_path('images/upload/'), $imageName);
 
             // Lưu đường dẫn tương đối của ảnh
-            $imagePath = 'images/upload' . $imageName;
+            $imagePath = 'images/upload/' . $imageName;
         }
 
         // Tạo tour mới với đường dẫn ảnh
@@ -109,7 +110,7 @@ public function update(Request $request, $id)
 
         // Lưu ảnh mới vào thư mục public/images
         $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
-        $request->file('image')->move(public_path('images'), $imageName);
+        $request->file('image')->move(public_path('images/upload/'), $imageName);
 
         // Lưu đường dẫn tương đối của ảnh
         $tour->image = 'images/upload/' . $imageName;
@@ -140,6 +141,11 @@ public function destroy($id)
     // Tìm tour theo id
     $tour = tours::findOrFail($id);
 
+    if (orders_tours::where('tour_id', $tour->id)->exists()) {
+        // Chuyển hướng với thông báo lỗi
+        return redirect()->route('admin.tours.index')->with('error', 'This tour cannot be deleted because it has been booked.');
+    }
+    
     // Xóa ảnh trong thư mục public/images (nếu có)
     if ($tour->image && file_exists(public_path($tour->image))) {
         unlink(public_path($tour->image));

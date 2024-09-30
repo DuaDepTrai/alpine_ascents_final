@@ -39,6 +39,22 @@
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 <style>
+  #messageBox {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: block; /* Hiển thị mặc định để kiểm tra */
+}
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
   #visitor-lists {
     width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
     max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
@@ -190,7 +206,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>
@@ -577,5 +593,44 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script>
+  function deleteTour(id) {
+      if (confirm("Are you sure you want to delete this tour?")) {
+          fetch(`/tours/${id}`, {
+              method: 'DELETE',
+              headers: {
+                  'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                  'Accept': 'application/json',
+              }
+          })
+          .then(response => {
+              console.log(response); // Kiểm tra phản hồi từ server
+              return response.json();
+          })
+          .then(data => {
+              console.log(data); // Kiểm tra nội dung phản hồi
+              if (data.error) {
+                  showMessage(data.error, 'error'); // Hiển thị thông báo lỗi
+              } else {
+                  showMessage(data.success, 'success'); // Hiển thị thông báo thành công
+                  // Có thể thêm code để xóa phần tử tour khỏi giao diện
+              }
+          })
+          .catch(error => console.error('Error:', error));
+      }
+  }
+
+  function showMessage(message, type) {
+      const messageBox = document.getElementById('messageBox');
+      messageBox.innerText = message;
+      messageBox.className = type; // Thêm class để tùy chỉnh kiểu hiển thị
+      messageBox.style.display = 'block'; // Hiển thị thông báo
+
+      // Ẩn thông báo sau 3 giây
+      setTimeout(() => {
+          messageBox.style.display = 'none';
+      }, 3000);
+  }
+</script>
 </body>
 </html>
