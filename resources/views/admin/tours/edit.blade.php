@@ -37,107 +37,106 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  
+  <style>
+    #visitor-lists {
+      width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
+      max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
+      border-collapse: collapse; /* Gộp các đường viền lại với nhau */
+      margin-left: auto; /* Căn giữa bảng nếu cần */
+      margin-right: auto; /* Căn giữa bảng nếu cần */
+  }
+
+  #visitor-lists th,
+  #visitor-lists td {
+      padding: 8px; /* Giảm khoảng cách giữa nội dung và đường viền */
+      border: 1px solid #dee2e6; /* Đường viền cho ô */
+      text-align: center; /* Canh giữa nội dung */
+      vertical-align: middle; /* Canh giữa theo chiều dọc */
+      overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
+      text-overflow: ellipsis; /* Hiển thị dấu "..." khi nội dung quá dài */
+      white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
+  }
+
+  #visitor-lists th:nth-child(1),
+  #visitor-lists td:nth-child(1) {
+      max-width: 60px; /* Giới hạn chiều rộng cho cột STT */
+  }
+
+  #visitor-lists th:nth-child(2),
+  #visitor-lists td:nth-child(2) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Name */
+  }
+
+  #visitor-lists th:nth-child(3),
+  #visitor-lists td:nth-child(3) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Price */
+  }
+
+  #visitor-lists th:nth-child(4),
+  #visitor-lists td:nth-child(4) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Image */
+  }
+
+  #visitor-lists th:nth-child(5),
+  #visitor-lists td:nth-child(5) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Location */
+  }
+
+  #visitor-lists th:nth-child(6),
+  #visitor-lists td:nth-child(6) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Features */
+  }
+
+  #visitor-lists th:nth-child(7),
+  #visitor-lists td:nth-child(7) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Best Time */
+  }
+
+  #visitor-lists th:nth-child(8),
+  #visitor-lists td:nth-child(8) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Directions */
+  }
+
+  #visitor-lists th:nth-child(9),
+  #visitor-lists td:nth-child(9) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Checking Routes */
+  }
+
+  #visitor-lists th:nth-child(10),
+  #visitor-lists td:nth-child(10) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Items */
+  }
+
+  #visitor-lists th:nth-child(11),
+  #visitor-lists td:nth-child(11) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Cautions */
+  }
+
+  #visitor-lists th:nth-child(12),
+  #visitor-lists td:nth-child(12) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Requirements */
+  }
+
+  #visitor-lists th:nth-child(13),
+  #visitor-lists td:nth-child(13) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
+  }
+
+  #visitor-lists th:nth-child(14),
+  #visitor-lists td:nth-child(14) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
+  }
+
+  /* Responsive Style */
+  @media (max-width: 768px) {
+      #visitor-lists th,
+      #visitor-lists td {
+          font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
+      }
+  }
+  </style>  
 </head>
-<style>
-  #visitor-lists {
-    width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
-    max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
-    border-collapse: collapse; /* Gộp các đường viền lại với nhau */
-    margin-left: auto; /* Căn giữa bảng nếu cần */
-    margin-right: auto; /* Căn giữa bảng nếu cần */
-}
-
-#visitor-lists th,
-#visitor-lists td {
-    padding: 8px; /* Giảm khoảng cách giữa nội dung và đường viền */
-    border: 1px solid #dee2e6; /* Đường viền cho ô */
-    text-align: center; /* Canh giữa nội dung */
-    vertical-align: middle; /* Canh giữa theo chiều dọc */
-    overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
-    text-overflow: ellipsis; /* Hiển thị dấu "..." khi nội dung quá dài */
-    white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
-}
-
-#visitor-lists th:nth-child(1),
-#visitor-lists td:nth-child(1) {
-    max-width: 60px; /* Giới hạn chiều rộng cho cột STT */
-}
-
-#visitor-lists th:nth-child(2),
-#visitor-lists td:nth-child(2) {
-    max-width: 120px; /* Giới hạn chiều rộng cho cột Name */
-}
-
-#visitor-lists th:nth-child(3),
-#visitor-lists td:nth-child(3) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Price */
-}
-
-#visitor-lists th:nth-child(4),
-#visitor-lists td:nth-child(4) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Image */
-}
-
-#visitor-lists th:nth-child(5),
-#visitor-lists td:nth-child(5) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Location */
-}
-
-#visitor-lists th:nth-child(6),
-#visitor-lists td:nth-child(6) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Features */
-}
-
-#visitor-lists th:nth-child(7),
-#visitor-lists td:nth-child(7) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Best Time */
-}
-
-#visitor-lists th:nth-child(8),
-#visitor-lists td:nth-child(8) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Directions */
-}
-
-#visitor-lists th:nth-child(9),
-#visitor-lists td:nth-child(9) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Checking Routes */
-}
-
-#visitor-lists th:nth-child(10),
-#visitor-lists td:nth-child(10) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Items */
-}
-
-#visitor-lists th:nth-child(11),
-#visitor-lists td:nth-child(11) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Cautions */
-}
-
-#visitor-lists th:nth-child(12),
-#visitor-lists td:nth-child(12) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Requirements */
-}
-
-#visitor-lists th:nth-child(13),
-#visitor-lists td:nth-child(13) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
-}
-
-#visitor-lists th:nth-child(14),
-#visitor-lists td:nth-child(14) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
-}
-
-/* Responsive Style */
-@media (max-width: 768px) {
-    #visitor-lists th,
-    #visitor-lists td {
-        font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
-    }
-}
-}
-
-</style>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -190,7 +189,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>

@@ -37,6 +37,33 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    .search_bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+    }
+
+    .search_bar input {
+        flex: 1; /* Để các input có kích thước linh hoạt */
+        min-width: 150px; /* Đặt độ rộng tối thiểu để tránh bị quá nhỏ */
+    }
+
+    .search_bar button {
+        flex-shrink: 0; /* Để nút không co lại */
+        padding: 8px 16px; /* Khoảng cách bên trong nút */
+        background-color: #007bff; /* Màu nền cho nút */
+        color: white; /* Màu chữ cho nút */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .search_bar button:hover {
+        background-color: #dd4b39; /* Màu nền khi hover */
+    }
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -92,7 +119,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>
@@ -188,12 +215,16 @@
         
                 <div class="box-body">
                 <form action="{{ route('admin.order.index') }}" method="GET" class="mb-4">
-                    <div class="input-group">
-                        <input type="text" name="search" class="form-control" placeholder="Search by phone number..." aria-label="Search">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="submit">Search</button>
-                        </span>
+                  <div class="search_bar">
+                    <input type="text" name="name" class="form-control" placeholder="Search by name..." aria-label="Search">
+                    <input type="text" name="phone" class="form-control" placeholder="Search by phone..." aria-label="Search">
+                    <input type="text" name="email" class="form-control" placeholder="Search by email..." aria-label="Search">
+                    <input type="text" name="tour_name" class="form-control" placeholder="Search by tour name..." aria-label="Search">
+                    <button class="btn btn-default" type="submit">Search</button>
+                    <div class="input-group-btn">
+                    
                     </div>
+                  </div>
                 </form>
                     <table class="table table-bordered table-hover">
                         <thead>

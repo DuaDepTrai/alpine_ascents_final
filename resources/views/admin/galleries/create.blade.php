@@ -90,7 +90,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>
@@ -138,6 +138,14 @@
                 <li class="treeview">
                   <a href="/admin/galleries">
                     <i class="fa fa-share"></i> <span>Galleries</span>
+                    <span class="pull-right-container">
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                  </a>
+                </li>
+                <li class="treeview">
+                  <a href="/admin/branches">
+                    <i class="fa fa-share"></i> <span>Branches</span>
                     <span class="pull-right-container">
                       <i class="fa fa-angle-left pull-right"></i>
                     </span>

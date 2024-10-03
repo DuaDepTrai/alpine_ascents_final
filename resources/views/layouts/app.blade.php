@@ -129,6 +129,7 @@
             height: 40px;
             white-space: nowrap;
             margin-left: 15px;
+            text-decoration: none; /* Không có gạch chân */ 
             background-color: #ddeedf;
             border: 1px solid #d6d6d6;
             box-shadow:
@@ -207,7 +208,10 @@
             <div style="padding-right: 40px;">
                 <?php 
                     if(Auth::check()){
-                        echo '<a class="text-white me-5" href="/personalinfo">YOUR ACCOUNT</a>';
+                        $user = Auth::user(); // Lấy thông tin người dùng
+                        $id = $user->id;
+                        $name = $user->name; // Lấy tên người dùng
+                        echo '<a class="text-white me-5" href="/users/'.$id.'">'.$name.'</a>'; // Hiển thị tên người dùng
                     }  
                     else{
                         echo '<a class="text-white me-5" href="/login">LOGIN</a>';
@@ -223,25 +227,12 @@
                 </a>
             </div>
             <div class="buttons">
-                <form action="{{ route('tours') }}">
-                    <button class="normal_buttons">TOURS</button>
-                </form>
-                <form action="{{ route('galleries.index') }}">
-                    <button class="normal_buttons">GALLERY</button>
-                </form>
-                <form action="{{ route('branches') }}">
-                    <button class="normal_buttons">BRANCHES</button>
-                </form>
-                <form action="{{ route('information') }}">
-                    <button class="normal_buttons">INFORMATION</button>
-                </form>
-                <form action="{{ route('aboutus') }}">
-                    <button class="normal_buttons">ABOUT US</button>
-                </form>
-                <form action="/order">
-                    <button class="normal_buttons">BOOK A TRIP</button>                    
-                </form>
-                
+                <a href="{{ route('tours') }}" class="normal_buttons">TOURS</a>
+                <a href="{{ route('galleries.index') }}" class="normal_buttons">GALLERY</a>
+                <a href="{{ route('branches') }}" class="normal_buttons">BRANCHES</a>
+                <a href="{{ route('information') }}" class="normal_buttons">INFORMATION</a>
+                <a href="{{ route('aboutus') }}" class="normal_buttons">ABOUT US</a>
+                <a href="/order" class="normal_buttons">BOOK A TRIP</a>                
             </div>
         </div>
 </header>

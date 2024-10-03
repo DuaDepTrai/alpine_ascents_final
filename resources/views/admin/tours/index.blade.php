@@ -37,107 +37,148 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-</head>
-<style>
-  #visitor-lists {
-    width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
-    max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
-    border-collapse: collapse; /* Gộp các đường viền lại với nhau */
-    margin-left: auto; /* Căn giữa bảng nếu cần */
-    margin-right: auto; /* Căn giữa bảng nếu cần */
-}
+  <style>
+  #messageBox {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      display: block; /* Hiển thị mặc định để kiểm tra */
+  }
+  .success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+  }
+  .error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+  }
+    #visitor-lists {
+      width: calc(100% - 250px); /* Giảm chiều rộng của bảng để phù hợp với sidebar */
+      max-width: 700px; /* Đặt chiều rộng tối đa cho bảng */
+      border-collapse: collapse; /* Gộp các đường viền lại với nhau */
+      /*margin-left: auto; /* Căn giữa bảng nếu cần */
+      /*margin-right: auto; /* Căn giữa bảng nếu cần */
+  }
 
-#visitor-lists th,
-#visitor-lists td {
-    padding: 8px; /* Giảm khoảng cách giữa nội dung và đường viền */
-    border: 1px solid #dee2e6; /* Đường viền cho ô */
-    text-align: center; /* Canh giữa nội dung */
-    vertical-align: middle; /* Canh giữa theo chiều dọc */
-    overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
-    text-overflow: ellipsis; /* Hiển thị dấu "..." khi nội dung quá dài */
-    white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
-}
+  #visitor-lists th,
+  #visitor-lists td {
+      padding: 8px; /* Giảm khoảng cách giữa nội dung và đường viền */
+      border: 1px solid #dee2e6; /* Đường viền cho ô */
+      text-align: left; /* Canh giữa nội dung */
+      vertical-align: middle; /* Canh giữa theo chiều dọc */
+      overflow: hidden; /* Ẩn phần nội dung tràn ra ngoài */
+      text-overflow: ellipsis; /* Hiển thị dấu "..." khi nội dung quá dài */
+      white-space: nowrap; /* Ngăn không cho văn bản xuống dòng */
+  }
 
-#visitor-lists th:nth-child(1),
-#visitor-lists td:nth-child(1) {
-    max-width: 60px; /* Giới hạn chiều rộng cho cột STT */
-}
+  #visitor-lists th:nth-child(1),
+  #visitor-lists td:nth-child(1) {
+      max-width: 60px; /* Giới hạn chiều rộng cho cột STT */
+  }
 
-#visitor-lists th:nth-child(2),
-#visitor-lists td:nth-child(2) {
-    max-width: 120px; /* Giới hạn chiều rộng cho cột Name */
-}
+  #visitor-lists th:nth-child(2),
+  #visitor-lists td:nth-child(2) {
+      max-width: 250px; /* Giới hạn chiều rộng cho cột Name */
+  }
 
-#visitor-lists th:nth-child(3),
-#visitor-lists td:nth-child(3) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Price */
-}
+  #visitor-lists th:nth-child(3),
+  #visitor-lists td:nth-child(3) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Price */
+  }
 
-#visitor-lists th:nth-child(4),
-#visitor-lists td:nth-child(4) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Image */
-}
+  #visitor-lists th:nth-child(4),
+  #visitor-lists td:nth-child(4) {
+      max-width: 150px; /* Giới hạn chiều rộng cho cột Image */
+  }
 
-#visitor-lists th:nth-child(5),
-#visitor-lists td:nth-child(5) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Location */
-}
+  #visitor-lists th:nth-child(5),
+  #visitor-lists td:nth-child(5) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Location */
+  }
 
-#visitor-lists th:nth-child(6),
-#visitor-lists td:nth-child(6) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Features */
-}
+  #visitor-lists th:nth-child(6),
+  #visitor-lists td:nth-child(6) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Features */
+  }
 
-#visitor-lists th:nth-child(7),
-#visitor-lists td:nth-child(7) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Best Time */
-}
+  #visitor-lists th:nth-child(7),
+  #visitor-lists td:nth-child(7) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Best Time */
+  }
 
-#visitor-lists th:nth-child(8),
-#visitor-lists td:nth-child(8) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Directions */
-}
+  #visitor-lists th:nth-child(8),
+  #visitor-lists td:nth-child(8) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Directions */
+  }
 
-#visitor-lists th:nth-child(9),
-#visitor-lists td:nth-child(9) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Checking Routes */
-}
+  #visitor-lists th:nth-child(9),
+  #visitor-lists td:nth-child(9) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Checking Routes */
+  }
 
-#visitor-lists th:nth-child(10),
-#visitor-lists td:nth-child(10) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Items */
-}
+  #visitor-lists th:nth-child(10),
+  #visitor-lists td:nth-child(10) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Items */
+  }
 
-#visitor-lists th:nth-child(11),
-#visitor-lists td:nth-child(11) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Cautions */
-}
+  #visitor-lists th:nth-child(11),
+  #visitor-lists td:nth-child(11) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Cautions */
+  }
 
-#visitor-lists th:nth-child(12),
-#visitor-lists td:nth-child(12) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Requirements */
-}
+  #visitor-lists th:nth-child(12),
+  #visitor-lists td:nth-child(12) {
+      max-width: 120px; /* Giới hạn chiều rộng cho cột Requirements */
+  }
 
-#visitor-lists th:nth-child(13),
-#visitor-lists td:nth-child(13) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
-}
+  #visitor-lists th:nth-child(13),
+  #visitor-lists td:nth-child(13) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
+  }
 
-#visitor-lists th:nth-child(14),
-#visitor-lists td:nth-child(14) {
-    max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
-}
+  #visitor-lists th:nth-child(14),
+  #visitor-lists td:nth-child(14) {
+      max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
+  }
 
-/* Responsive Style */
-@media (max-width: 768px) {
-    #visitor-lists th,
-    #visitor-lists td {
-        font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
+  /* Responsive Style */
+  @media (max-width: 768px) {
+      #visitor-lists th,
+      #visitor-lists td {
+          font-size: 12px; /* Giảm kích thước chữ trên màn hình nhỏ */
+      }
+  }
+  </style>
+  <style>
+    .search_bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px; /* Khoảng cách giữa các phần tử */
     }
-}
-}
 
-</style>
+    .search_bar input {
+        flex: 1; /* Để các input có kích thước linh hoạt */
+        min-width: 150px; /* Đặt độ rộng tối thiểu để tránh bị quá nhỏ */
+    }
+
+    .search_bar button {
+        flex-shrink: 0; /* Để nút không co lại */
+        padding: 8px 16px; /* Khoảng cách bên trong nút */
+        background-color: #007bff; /* Màu nền cho nút */
+        color: white; /* Màu chữ cho nút */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .search_bar button:hover {
+        background-color: #dd4b39; /* Màu nền khi hover */
+    }
+  </style>
+</head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -190,7 +231,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>
@@ -283,10 +324,21 @@
               <h3>Tours</h3>
             </div>
 
-            <div class="icon">
+            <div class="icon"></div>
             </div>
-            </div>
-            <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
+            <div class="box-body">
+              <form action="{{ route('admin.tours.index') }}" method="GET" class="mb-4">
+                <div class="search_bar">
+                  <input type="text" name="name" class="form-control" placeholder="Search by name..." aria-label="Search">
+                  <button class="btn btn-default" type="submit">Search</button>
+                  <div class="input-group-btn">
+                  
+                  </div>
+                </div>
+              </form>
+
+              <!-- Tours List Table -->
+              <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
                 <thead class="table-light">
                     <tr>
                         <th class="text-center text-nowrap align-middle">STT</th>
@@ -577,5 +629,44 @@
 <script src="dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script>
+  function deleteTour(id) {
+      if (confirm("Are you sure you want to delete this tour?")) {
+          fetch(`/tours/${id}`, {
+              method: 'DELETE',
+              headers: {
+                  'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                  'Accept': 'application/json',
+              }
+          })
+          .then(response => {
+              console.log(response); // Kiểm tra phản hồi từ server
+              return response.json();
+          })
+          .then(data => {
+              console.log(data); // Kiểm tra nội dung phản hồi
+              if (data.error) {
+                  showMessage(data.error, 'error'); // Hiển thị thông báo lỗi
+              } else {
+                  showMessage(data.success, 'success'); // Hiển thị thông báo thành công
+                  // Có thể thêm code để xóa phần tử tour khỏi giao diện
+              }
+          })
+          .catch(error => console.error('Error:', error));
+      }
+  }
+
+  function showMessage(message, type) {
+      const messageBox = document.getElementById('messageBox');
+      messageBox.innerText = message;
+      messageBox.className = type; // Thêm class để tùy chỉnh kiểu hiển thị
+      messageBox.style.display = 'block'; // Hiển thị thông báo
+
+      // Ẩn thông báo sau 3 giây
+      setTimeout(() => {
+          messageBox.style.display = 'none';
+      }, 3000);
+  }
+</script>
 </body>
 </html>

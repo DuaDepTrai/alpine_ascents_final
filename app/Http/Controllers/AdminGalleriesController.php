@@ -10,11 +10,25 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminGalleriesController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // Retrieve the list of all tours
-        $tours = tours::all();
-        $galleries = galleries::with('tour')->get();
+        // Khởi tạo query cho galleries
+        $query = galleries::with('tour');
+
+        // Kiểm tra và áp dụng tìm kiếm theo tên tour
+        if ($request->has('tour_name') && $request->tour_name != '') {
+            $query->whereHas('tour', function($q) use ($request) {
+                $q->where('name', 'LIKE', '%' . $request->tour_name . '%');
+            });
+        }
+
+        // Lấy danh sách gallery với điều kiện tìm kiếm nếu có
+        $galleries = $query->get();
+
+        // Lấy danh sách tất cả tours để hiển thị
+        $tours = Tours::all();
+        
         return view('admin.galleries.index', compact('tours', 'galleries'));
     }
 

@@ -44,4 +44,5 @@ class users extends Authenticatable
 {
     return $this->roles()->where('name', $role)->exists();
 }
+
 }

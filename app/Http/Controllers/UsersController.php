@@ -204,25 +204,26 @@ class UsersController extends Controller
     {
         $request->validate([
             'name' => 'regex:/^[\pL0-9 ]+$/u|max: 50',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'email' => 'required|email',
             'phone' => 'required|regex:/^0[0-9]{9}$/',
         ]);
 
-        if(($request->email == $user->email) || ($request->phone == $user->phone)){
+        if(($request->email == $user->email) && ($request->phone == $user->phone)){
             $user->update([
-                'name' => $request->name
+                'name' => $request->name,
             ]);
+            return redirect()->route('users.index',['user'=>$user]);
         }
         else{
-            $email_check = users::find($request->email)->first();
-            $phone_check = users::find($request->phone)->first();
+            $email_check = users::find($request->email);
+            $phone_check = users::find($request->phone);
 
             if($email_check || $phone_check){
                 return back()->withErrors(['error' => 'Email already exist !']);
             }
             else{
                 $user->update([
-                    'name' => $request->name
+                    'name' => $request->name,
                 ]);
     
                 session(['phone'=> $request->phone]);
@@ -233,8 +234,6 @@ class UsersController extends Controller
                 return redirect()->route('verificationchange.form');         
             }   
         }
-
-        return redirect()->route('users.index',['user'=>$user])->with('success', 'User updated successfully.');
     }
 
     public function destroy(users $user)

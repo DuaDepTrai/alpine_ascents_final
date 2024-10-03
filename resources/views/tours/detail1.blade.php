@@ -93,7 +93,7 @@
                 });
             });
         </script>
-        <div id="tabs">
+        <div id="tabs" style="width: 70%; margin: 0 auto;">
             <div class="tab-wrapper container">
                 <ul class="tabs group nav nav-tabs">
                     <li class="nav-item"><a class="nav-link" name="about" href="#about">Location</a></li>
@@ -118,9 +118,9 @@
                         <div id="about" class="tab-content">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">Where is it?</h2>
+                                    <h2 class="section-title">Where is it?ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
-                                        {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->location) !!}
+                                        {!! str_replace('.', '.<br>', $tour->location) !!}
                                 </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
@@ -136,18 +136,18 @@
                                 </div><!-- .widget -->
                                 <div class="widget">
                                     <h2 class='actnew'>Other notes</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->caution) !!}</strong><br /></p>
                                     <h2 class='actnew'>Participation Requirements</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->requirements) !!}</strong><br /></p>
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #about -->
                         <div id="Feature" class="tab-content">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">Wonderful Experience with {{ $tour->name }}</h2>
+                                    <h2 class="section-title">Wonderful Experience with {{ $tour->name }}ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
-                                        {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->features) !!}
+                                        {!! str_replace('.', '.<br>', $tour->features) !!}
                                     </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
@@ -163,18 +163,18 @@
                                 </div><!-- .widget -->
                                 <div class="widget">
                                     <h2 class='actnew'>Other notes</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->caution) !!}</strong><br /></p>
                                     <h2 class='actnew'>Participation Requirements</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->requirements) !!}</strong><br /></p>
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Feature -->
                         <div id="Best_Time" class="tab-content">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">The ideal time of year to explore</h2>
+                                    <h2 class="section-title">The ideal time of year to exploreㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
-                                        {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->besttime) !!}
+                                        {!! str_replace('.', '.<br>', $tour->besttime) !!}
                                 </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
@@ -190,18 +190,18 @@
                                 </div><!-- .widget -->
                                 <div class="widget">
                                     <h2 class='actnew'>Other notes</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->caution) !!}</strong><br /></p>
                                     <h2 class='actnew'>Participation Requirements</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->requirements) !!}</strong><br /></p>
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Best_Time -->
                         <div id="Checking_Routes" class="tab-content">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">The route to conquer</h2>
+                                    <h2 class="section-title">The route to conquerㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
-                                        {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->trekkingroutes) !!}
+                                        {!! str_replace('.', '.<br>', $tour->trekkingroutes) !!}
                                 </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
@@ -217,18 +217,18 @@
                                 </div><!-- .widget -->
                                 <div class="widget">
                                     <h2 class='actnew'>Other notes</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->caution) !!}</strong><br /></p>
                                     <h2 class='actnew'>Participation Requirements</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->requirements) !!}</strong><br /></p>
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Checking_Routes -->
                         <div id="Direction" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">How to get thereㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
+                                    <h2 class="section-title">How to get thereㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
-                                        {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->directions) !!}
+                                        {!! str_replace('.', '.<br>', $tour->directions) !!}
                                 </div>
 
                                 </div><!-- .sb-content -->
@@ -245,18 +245,18 @@
                                 </div><!-- .widget -->
                                 <div class="widget">
                                     <h2 class='actnew'>Other notes</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->caution) !!}</strong><br /></p>
                                     <h2 class='actnew'>Participation Requirements</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->requirements) !!}</strong><br /></p>
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Direction -->
                         <div id="Essential_Items" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">Essential itemsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
+                                    <h2 class="section-title">Essential itemsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
-                                        {!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->items) !!}
+                                        {!! str_replace('.', '.<br>', $tour->items) !!}
                                 </div>
                                 </div><!-- .sb-content -->
                             </div><!-- .sb-content-wrapper -->
@@ -272,9 +272,9 @@
                                 </div><!-- .widget -->
                                 <div class="widget">
                                     <h2 class='actnew'>Other notes</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->cautions) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->caution) !!}</strong><br /></p>
                                     <h2 class='actnew'>Participation Requirements</h2>
-                                    <p><strong>{!! str_replace(['<p>', '</p>'], ['<br>', ''], $tour->requirements) !!}</strong><br /></p>
+                                    <p><strong>{!! str_replace('.', '.<br>', $tour->requirements) !!}</strong><br /></p>
                                 </div><!-- .widget -->
                             </div><!-- .sidebar -->
                         </div><!-- #Essential_Items -->

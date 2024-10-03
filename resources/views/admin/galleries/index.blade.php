@@ -37,6 +37,33 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    .search_bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px; /* Khoảng cách giữa các phần tử */
+    }
+
+    .search_bar input {
+        flex: 1; /* Để các input có kích thước linh hoạt */
+        min-width: 150px; /* Đặt độ rộng tối thiểu để tránh bị quá nhỏ */
+    }
+
+    .search_bar button {
+        flex-shrink: 0; /* Để nút không co lại */
+        padding: 8px 16px; /* Khoảng cách bên trong nút */
+        background-color: #007bff; /* Màu nền cho nút */
+        color: white; /* Màu chữ cho nút */
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .search_bar button:hover {
+        background-color: #dd4b39; /* Màu nền khi hover */
+    }
+  </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -101,7 +128,7 @@
               </li>
               <!-- Control Sidebar Toggle Button -->
               <li>
-                <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                <a href="/logout" data-toggle="control-sidebar"><button class="btn btn-danger">Log Out</button></a>
               </li>
             </ul>
           </div>
@@ -200,32 +227,21 @@
             <div class="icon">
             </div>
             </div>
-            {{--   <table id="visitor-lists" class="table table-sm dataTable table-bordered dataTable">
-                <thead class="table-light">
-                    <tr>
-                        <th class="text-center text-nowrap align-middle">STT</th>
-                        <th class="text-center text-nowrap align-middle">Restaurants</th>
-                        <th class="text-center text-nowrap align-middle">Address</th>
-                        <th class="text-center text-nowrap align-middle">Edit</th>
-                        <th class="text-center text-nowrap align-middle">Delete</th>
-                    </tr>
-                </thead>
-              <tbody>
-                    @foreach ($restaurants as $key => $restaurant)
-                    <tr>
-                        <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->name }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $restaurant->address }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="RestaurantManagement/{{ $restaurant->id }}/edit"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="RestaurantManagement/{{ $restaurant->id }}" method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button>Delete</button></form></td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
-            <a href="{{ route('RestaurantManagement.create') }}"><button>Add new</button></a>   --}}
+            
+            <div class="box-body">
+              <form action="{{ route('admin.galleries.index') }}" method="GET" class="mb-4">
+                <div class="search_bar">
+                  <input type="text" name="tour_name" class="form-control" placeholder="Search by tour name..." aria-label="Search">
+                  <button class="btn btn-default" type="submit">Search</button>
+                  <div class="input-group-btn">
+                  
+                  </div>
+                </div>
+              </form>
+
+
+
+            <!-- Galleries of tours list -->
             <div class="container">
               <!-- Add success message check -->
                 @if(session('success'))
@@ -274,11 +290,11 @@
                                 <td>{{ $gallery->updated_at }}</td>
                                 <td>
                                      <!-- Action buttons -->
-                                    <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-warning">Sửa</a>
-                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">
+                                    <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-warning" style="margin: 3px">Sửa</a>
+                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger">Xóa</button>
+                                        <button type="submit" class="btn btn-danger" style="margin: 3px">Xóa</button>
                                     </form>
                                 </td>
                             </tr>

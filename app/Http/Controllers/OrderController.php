@@ -25,7 +25,7 @@ class OrderController extends Controller
             'name' => 'required|string|max:255',
             'phone' => 'required|string|max:11',
             'email' => 'nullable|email|max:255',
-            'quantity' => 'required|integer|min:1',
+            'quantity' => 'required|integer|min:1|max:100',
             'tour_id' => 'required|exists:tours,id',
             'note' => 'nullable|string'
         ]);

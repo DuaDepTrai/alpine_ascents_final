@@ -12,15 +12,32 @@ class AdminOrderController extends Controller
     // Display the list of orders
     public function index(Request $request)
     {
-        $query = orders_tours::with('tour', 'user');
+        // Tạo query để có thể áp dụng các điều kiện tìm kiếm và sắp xếp
+        $query = orders_tours::join('tours', 'orders_tours.tour_id', '=', 'tours.id')
+            ->select('orders_tours.*', 'tours.name as tour_name');
 
-       // Check if there is a search keyword
-        if ($request->has('search') && $request->search != '') {
-            $search = $request->search;
-            $query->where('phone', 'LIKE', "%{$search}%");
+        // Kiểm tra và áp dụng tìm kiếm theo tên
+        if ($request->has('name') && $request->name != '') {
+            $query->where('orders_tours.name', 'LIKE', '%' . $request->name . '%');
         }
-    
-        $orders = $query->paginate(15);
+        // Kiểm tra và áp dụng tìm kiếm theo số điện thoại
+        if ($request->has('phone') && $request->phone != '') {
+            $query->where('orders_tours.phone', 'LIKE', '%' . $request->phone . '%');
+        }
+        // Kiểm tra và áp dụng tìm kiếm theo email
+        if ($request->has('email') && $request->email != '') {
+            $query->where('orders_tours.email', 'LIKE', '%' . $request->email . '%');
+        }
+        // Kiểm tra và áp dụng tìm kiếm theo tên tour
+        if ($request->has('tour_name') && $request->tour_name != '') {
+            $query->where('tours.name', 'LIKE', '%' . $request->tour_name . '%');
+        }
+
+        // Sắp xếp theo cột 'created_at' từ mới đến cũ
+        $query->orderBy('orders_tours.created_at', 'desc');
+
+        // Phân trang 15 user mỗi trang
+        $orders = $query->paginate(15);  
         return view('admin.order.index', compact('orders'));
     }
 
