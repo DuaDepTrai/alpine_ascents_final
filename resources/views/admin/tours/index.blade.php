@@ -135,13 +135,13 @@
 
   #visitor-lists th:nth-child(13),
   #visitor-lists td:nth-child(13) {
-      max-width: 80px; /* Giới hạn chiều rộng cho cột Edit */
+      max-width: 160px; /* Giới hạn chiều rộng cho cột Edit */
   }
 
-  #visitor-lists th:nth-child(14),
+  /* #visitor-lists th:nth-child(14),
   #visitor-lists td:nth-child(14) {
       max-width: 80px; /* Giới hạn chiều rộng cho cột Delete */
-  }
+  } */
 
   /* Responsive Style */
   @media (max-width: 768px) {
@@ -370,11 +370,14 @@
                         <td class="text-center text-nowrap align-middle">{{ $tours->items }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->cautions }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->requirements }}</td>
-                        <td class="text-center text-nowrap align-middle"><a href="{{ url('admin/tours/' . $tours->id . '/edit') }}"><button type="button">Edit</button></a></td>
-                        <td class="text-center text-nowrap align-middle"><form action="{{ url('admin/tours/' . $tours->id) }} " method="POST">
-                            @csrf
-                            @method('DELETE')
-                            <button>Delete</button></form></td>
+                        <td>
+                          <a href="{{ route('admin.tours.edit', $tours->id) }}" class="btn btn-primary btn-sm" >Edit</a>
+                            <form action="{{ route('admin.tours.destroy', $tours->id) }}" method="POST" style="display:inline;">
+                              @csrf
+                              @method('DELETE')
+                              <button type="submit" class="btn btn-danger btn-sm" >Delete</button>
+                            </form>
+                      </td>
                     </tr>
                     @endforeach
                 </tbody>

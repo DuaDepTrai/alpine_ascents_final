@@ -289,21 +289,20 @@
                                 <td>{{ $gallery->created_at }}</td>
                                 <td>{{ $gallery->updated_at }}</td>
                                 <td>
-                                     <!-- Action buttons -->
-                                    <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-warning" style="margin: 3px">Sửa</a>
-                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger" style="margin: 3px">Xóa</button>
+                                  <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-primary btn-sm" style="margin: 3px">Edit</a>
+                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">
+                                      @csrf
+                                      @method('DELETE')
+                                      <button type="submit" class="btn btn-danger btn-sm" style="margin: 3px">Delete</button>
                                     </form>
-                                </td>
+                              </td>
                             </tr>
                         @endforeach
                     </tbody>
                   </table>
               </div>
           
-              <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">Thêm mới</a>
+              <a href="{{ route('admin.galleries.create') }}" class="btn btn-primary">Add New</a>
           
              <!-- Display the list of tours and their galleries -->
           </div>
