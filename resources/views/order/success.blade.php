@@ -4,7 +4,7 @@
 <div class="container">
     <h2>Order placed successfully!</h2>
     <p>{{ session('success') }}</p>
-    <a href="{{ route('order.create') }}" class="btn custom-btn">Go back</a>
+    <a href="{{ route('home') }}" class="btn custom-btn">Go back</a>
 </div>
 
 <style>

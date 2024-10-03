@@ -226,7 +226,7 @@
                         <div id="Direction" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">How to get thereㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
+                                    <h2 class="section-title">How to get thereㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
                                         {!! str_replace('.', '.<br>', $tour->directions) !!}
                                 </div>
@@ -254,7 +254,7 @@
                         <div id="Essential_Items" class="tab-content" style="height: 510px;">
                             <div class="sb-content-wrapper">
                                 <div class="sb-content">
-                                    <h2 class="section-title">Essential itemsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
+                                    <h2 class="section-title">Essential itemsㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ</h2>
                                     <div>
                                         {!! str_replace('.', '.<br>', $tour->items) !!}
                                 </div>
