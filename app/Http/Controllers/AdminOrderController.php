@@ -29,8 +29,31 @@ class AdminOrderController extends Controller
             $query->where('orders_tours.email', 'LIKE', '%' . $request->email . '%');
         }
         // Kiểm tra và áp dụng tìm kiếm theo tên tour
+        // if ($request->has('tour_name') && $request->tour_name != '') {
+        //     $query->where('tours.name', 'LIKE', '%' . $request->tour_name . '%');
+        // }
+
+        // Lấy danh sách tours và số lượng từ bảng
+        $tours = tours::all(); // Lấy tất cả các tours để hiển thị trong select
+        $quantities = orders_tours::select('quantity')->distinct()->get(); // Lấy các giá trị unique của quantity
+        // Lọc theo tên tour (tour_name)
         if ($request->has('tour_name') && $request->tour_name != '') {
-            $query->where('tours.name', 'LIKE', '%' . $request->tour_name . '%');
+            $query->whereHas('tour', function ($q) use ($request) {
+                $q->where('id', $request->tour_name); // Lọc theo tour ID
+            });
+        }
+        // Lọc theo số lượng (quantity)
+        if ($request->has('quantity') && $request->quantity != '') {
+            $query->where('quantity', '=', $request->quantity);
+        }
+        // Lọc theo khoảng total (total amount range)
+        if ($request->has('total_range') && $request->total_range != '') {
+            $ranges = explode('-', $request->total_range); // Ví dụ: 0-5000000
+            if (count($ranges) == 2) {
+                $min = (int)trim($ranges[0]);
+                $max = (int)trim($ranges[1]);
+                $query->whereBetween('total', [$min, $max]);
+            }
         }
 
         // Sắp xếp theo cột 'created_at' từ mới đến cũ
@@ -38,7 +61,7 @@ class AdminOrderController extends Controller
 
         // Phân trang 15 user mỗi trang
         $orders = $query->paginate(15);  
-        return view('admin.order.index', compact('orders'));
+        return view('admin.order.index', compact('orders', 'tours', 'quantities'));
     }
 
     // Display the order edit form
@@ -78,9 +101,14 @@ class AdminOrderController extends Controller
     // Delete order
         public function destroy($id)
     {
-        $order = orders_tours::findOrFail($id);
-        $order->delete();
-        return redirect()->route('admin.order.index')->with('success', 'Order deleted successfully.');
+        $order = orders_tours::find($id);
+        
+        if ($order) {
+            $order->delete();
+            return response()->json(['success' => true]);
+        }
+        
+        return response()->json(['success' => false], 404);
     }
 
     // Function to calculate total amount

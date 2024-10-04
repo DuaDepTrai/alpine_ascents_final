@@ -201,10 +201,10 @@
                   @foreach ($branches as $key => $branches)
                   <tr>
                     <td class="text-center text-nowrap align-middle">{{ $key + 1  }}</td>
-                    <td class="text-center text-nowrap align-middle">{{ $branches->name }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $branches->address }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $branches->phone }}</td>
-                    <td class="text-center text-nowrap align-middle">{{  $branches->positioning }}</td>
+                    <td class="text-left text-nowrap align-middle">{{ $branches->name }}</td>
+                    <td class="text-left text-nowrap align-middle">{{  $branches->address }}</td>
+                    <td class="text-left text-nowrap align-middle">{{  $branches->phone }}</td>
+                    <td class="text-left text-nowrap align-middle">{{  $branches->positioning }}</td>
                     <td>
                         <a href="{{ route('admin.branches.edit', $branches->id) }}" class="btn btn-primary btn-sm">Edit</a>
                           <form action="{{ route('admin.branches.destroy', $branches->id) }}" method="POST" style="display:inline;">

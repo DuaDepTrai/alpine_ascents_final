@@ -361,7 +361,9 @@
                         <td class="text-center text-nowrap align-middle">{{ $key + 1 }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->name }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->price }}</td>
-                        <td class="text-center text-nowrap align-middle">{{ $tours->image }}</td>
+                        <td class="text-center text-nowrap align-middle">
+                          <img src="{{ asset($tours->image) }}" alt="{{ $tours->name }}" style="width: 100px;">
+                        </td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->location }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->features }}</td>
                         <td class="text-center text-nowrap align-middle">{{ $tours->besttime }}</td>

@@ -39,15 +39,16 @@
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <style>
     .search_bar {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) auto;
         align-items: center;
         gap: 10px; /* Khoảng cách giữa các phần tử */
+        margin-bottom: 3px;
     }
 
-    .search_bar input {
-        flex: 1; /* Để các input có kích thước linh hoạt */
-        min-width: 150px; /* Đặt độ rộng tối thiểu để tránh bị quá nhỏ */
+    .search_bar input,
+    .search_bar select {
+      width: 100%;
     }
 
     .search_bar button {
@@ -58,12 +59,111 @@
         border: none;
         border-radius: 4px;
         cursor: pointer;
+        width: 80px;
+        height: 35px;
     }
 
     .search_bar button:hover {
         background-color: #dd4b39; /* Màu nền khi hover */
     }
   </style>
+  <style>
+    /* Modal Styles */
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        text-align: left;
+    }
+
+    .close-btn {
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-order-btn'); // Chọn tất cả nút delete
+    const modal = document.getElementById('deleteOrderModal');
+    const closeModal = document.querySelector('.close-btn');
+    const cancelDelete = document.getElementById('cancelDelete');
+    const confirmDelete = document.getElementById('confirmDelete');
+    
+    let orderIdToDelete = null;
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Lấy thông tin order từ data-attribute
+            const orderId = this.dataset.orderId;
+            const orderName = this.dataset.orderName;
+            const orderPhone = this.dataset.orderPhone;
+            const orderEmail = this.dataset.orderEmail;
+            const orderTour = this.dataset.orderTour;
+            const orderQuantity = this.dataset.orderQuantity;
+            const orderTotal = this.dataset.orderTotal;
+
+            // Hiển thị thông tin vào popup
+            document.getElementById('orderName').innerText = orderName;
+            document.getElementById('orderPhone').innerText = orderPhone;
+            document.getElementById('orderEmail').innerText = orderEmail;
+            document.getElementById('orderTour').innerText = orderTour;
+            document.getElementById('orderQuantity').innerText = orderQuantity;
+            document.getElementById('orderTotal').innerText = orderTotal;
+
+            // Lưu ID order để xử lý xóa
+            orderIdToDelete = orderId;
+
+            // Hiển thị modal
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Đóng popup khi click vào nút "No" hoặc "X"
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    cancelDelete.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Xác nhận xóa khi click vào nút "Yes"
+    confirmDelete.addEventListener('click', function () {
+        if (orderIdToDelete) {
+            // Gửi yêu cầu xóa tới server bằng AJAX
+            fetch(`/admin/order/${orderIdToDelete}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Thêm CSRF token
+                    'Content-Type': 'application/json',
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Xóa thành công, reload lại trang
+                    window.location.href = '/admin/order';
+                } else {
+                    alert('Failed to delete order.');
+                }
+            }); 
+            }
+        });
+    });
+  </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -214,18 +314,52 @@
               </div>
         
                 <div class="box-body">
-                <form action="{{ route('admin.order.index') }}" method="GET" class="mb-4">
-                  <div class="search_bar">
-                    <input type="text" name="name" class="form-control" placeholder="Search by name..." aria-label="Search">
-                    <input type="text" name="phone" class="form-control" placeholder="Search by phone..." aria-label="Search">
-                    <input type="text" name="email" class="form-control" placeholder="Search by email..." aria-label="Search">
-                    <input type="text" name="tour_name" class="form-control" placeholder="Search by tour name..." aria-label="Search">
-                    <button class="btn btn-default" type="submit">Search</button>
-                    <div class="input-group-btn">
-                    
+                <!-- search bar -->
+                <div>
+                  <form action="{{ route('admin.order.index') }}" method="GET" class="mb-4">
+                    <div class="search_bar">
+                      <input type="text" name="name" class="form-control" placeholder="Search by name..." aria-label="Search">
+                      <input type="text" name="phone" class="form-control" placeholder="Search by phone..." aria-label="Search">
+                      <input type="text" name="email" class="form-control" placeholder="Search by email..." aria-label="Search">
+                      <button class="btn btn-default" type="submit">Search</button>
+                      <div class="input-group-btn">
+                      
+                      </div>
                     </div>
-                  </div>
+                  </form>
+                </div>
+
+                <!-- Filter bar -->
+                <div>
+                  <form action="{{ route('admin.order.index') }}" method="GET" class="mb-4">
+                    <div class="search_bar">
+                      <select name="tour_name" class="form-control">
+                          <option value="">Select tour</option>
+                          @foreach($tours as $tour)
+                              <option value="{{ $tour->id }}" {{ request('tour_name') == $tour->id ? 'selected' : '' }}>
+                                  {{ $tour->name }}
+                              </option>
+                          @endforeach
+                      </select>
+                      <select name="quantity" class="form-control">
+                          <option value="">Select quantity</option>
+                          @foreach($quantities as $quantity)
+                              <option value="{{ $quantity->quantity }}" {{ request('quantity') == $quantity->quantity ? 'selected' : '' }}>
+                                  {{ $quantity->quantity }}
+                              </option>
+                          @endforeach
+                      </select>
+                      <select name="total_range" class="form-control">
+                          <option value="">Select total range</option>
+                          <option value="0-5000000" {{ request('total_range') == '0-5000000' ? 'selected' : '' }}>0 - 5,000,000</option>
+                          <option value="5000000-10000000" {{ request('total_range') == '5000000-10000000' ? 'selected' : '' }}>5,000,000 - 10,000,000</option>
+                          <option value="10000000-15000000" {{ request('total_range') == '10000000-15000000' ? 'selected' : '' }}>10,000,000 - 15,000,000</option>
+                          <option value="15000000-2500000000" {{ request('total_range') == '15000000-2500000000' ? 'selected' : '' }}>>= 15,000,000</option>
+                      </select>
+                      <button class="btn btn-primary" type="submit">Filter</button>
+                    </div>
                 </form>
+                </div>
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
@@ -257,11 +391,16 @@
                                 <td>{{ $order->created_at->format('d-m-Y H:i:s') }}</td>
                                 <td>
                                     <a href="{{ route('admin.order.edit', $order->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                    <form action="{{ route('admin.order.destroy', $order->id) }}" method="POST" style="display:inline;">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                    </form>
+                                    <button class="delete-order-btn btn btn-danger btn-sm" 
+                                            data-order-id="{{ $order->id }}" 
+                                            data-order-name="{{ $order->name }}"
+                                            data-order-phone="{{ $order->phone }}"
+                                            data-order-email="{{ $order->email }}"
+                                            data-order-tour="{{ $order->tour->name }}"
+                                            data-order-quantity="{{ $order->quantity }}"
+                                            data-order-total="{{ $order->total }}">
+                                        Delete
+                                    </button>
                                 </td>
                             </tr>
                             @endforeach
@@ -279,6 +418,22 @@
             <!-- /.box -->
         </section>  
         
+        <!-- Popup Modal -->
+        <div id="deleteOrderModal" class="modal" style="display:none;">
+          <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Order Information</h2>
+              <p><strong>Name:</strong> <span id="orderName"></span></p>
+              <p><strong>Phone:</strong> <span id="orderPhone"></span></p>
+              <p><strong>Email:</strong> <span id="orderEmail"></span></p>
+              <p><strong>Tour:</strong> <span id="orderTour"></span></p>
+              <p><strong>Quantity:</strong> <span id="orderQuantity"></span></p>
+              <p><strong>Total:</strong> <span id="orderTotal"></span></p>
+              <p style="color: red; font-weight: bold;">Are you sure to delete this order?</p>
+              <button id="confirmDelete" class="btn btn-danger">YES</button>
+              <button id="cancelDelete" class="btn btn-secondary">NO</button>
+          </div>
+        </div>
 
     <!-- right col -->
       </div>
