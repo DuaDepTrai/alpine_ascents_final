@@ -4,7 +4,10 @@
 <div class="container">
     <h2>Order placed successfully!</h2>
     <p>{{ session('success') }}</p>
-    <a href="{{ route('home') }}" class="btn custom-btn">Go back</a>
+    <a href="{{ route('home') }}" class="btn custom-btn">Back to Home</a>
+    @if(auth()->check()) <!-- Kiểm tra xem người dùng đã đăng nhập hay chưa -->
+        <a href="{{ route('users.bookingHistory') }}" class="btn custom-btn">Xem lịch sử đặt tour</a>
+    @endif
 </div>
 
 <style>

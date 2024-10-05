@@ -65,6 +65,100 @@
         background-color: #dd4b39; /* Màu nền khi hover */
     }
   </style>
+  <style>
+    /* Modal Styles */
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        text-align: left;
+    }
+
+    .close-btn {
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-user-btn'); // Chọn tất cả nút delete
+    const modal = document.getElementById('deleteUserModal');
+    const closeModal = document.querySelector('.close-btn');
+    const cancelDelete = document.getElementById('cancelDelete');
+    const confirmDelete = document.getElementById('confirmDelete');
+    
+    let userIdToDelete = null;
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Lấy thông tin user từ data-attribute
+            const userId = this.dataset.userId;
+            const userName = this.dataset.userName;
+            const userPhone = this.dataset.userPhone;
+            const userEmail = this.dataset.userEmail;
+            const userRole = this.dataset.userRole;
+
+            // Hiển thị thông tin vào popup
+            document.getElementById('userName').innerText = userName;
+            document.getElementById('userPhone').innerText = userPhone;
+            document.getElementById('userEmail').innerText = userEmail;
+            document.getElementById('userRole').innerText = userRole; // Sửa lại thành userRole
+
+            // Lưu ID user để xử lý xóa
+            userIdToDelete = userId;
+
+            // Hiển thị modal
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Đóng popup khi click vào nút "No" hoặc "X"
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    cancelDelete.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Xác nhận xóa khi click vào nút "Yes"
+    confirmDelete.addEventListener('click', function () {
+        if (userIdToDelete) {
+            // Gửi yêu cầu xóa tới server bằng AJAX
+            fetch(`/admin/UserManagement/${userIdToDelete}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Thêm CSRF token
+                    'Content-Type': 'application/json',
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Xóa thành công, reload lại trang
+                    window.location.href = '/admin/UserManagement';
+                } else {
+                    alert('Failed to delete user.');
+                }
+            });
+        }
+    });
+  }); 
+
+  </script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -252,12 +346,15 @@
                     <td class="text-center text-nowrap align-middle">{{ $user->role == 1 ? 'Admin' : 'User' }}</td>
                     <td>
                       <a href="{{ route('admin.UserManagement.edit', $user->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                      <form action="{{ route('admin.UserManagement.destroy', $user->id) }}" method="POST" style="display:inline;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                      </form>
-                    </td>
+                      <button class="delete-user-btn btn btn-danger btn-sm" 
+                              data-user-id="{{ $user->id }}" 
+                              data-user-name="{{ $user->name }}"
+                              data-user-phone="{{ $user->phone }}"
+                              data-user-email="{{ $user->email }}"
+                              data-user-role="{{ $user->role }}">
+                          Delete
+                      </button>
+                      </td>
                   </tr>
                   @endforeach
                 </tbody>
@@ -275,10 +372,25 @@
         </div>
       </section>
 
+      <!-- Popup Modal -->
+      <div id="deleteUserModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>User Information</h2>
+            <p><strong>Name:</strong> <span id="userName"></span></p>
+            <p><strong>Phone:</strong> <span id="userPhone"></span></p>
+            <p><strong>Email:</strong> <span id="userEmail"></span></p>
+            <p><strong>Role:</strong> <span id="userRole"></span></p>
+            <p style="color: red; font-weight: bold;">Are you sure to delete this user?</p>
+            <button id="confirmDelete" class="btn btn-danger">YES</button>
+            <button id="cancelDelete" class="btn btn-secondary">NO</button>
+        </div>
+      </div>
+
       <!-- right col -->
     </div>
     <!-- /.row (main row) -->
-
+    
     </section>
 
     <!-- right col -->
@@ -523,6 +635,8 @@
   <script src="dist/js/pages/dashboard.js"></script>
   <!-- AdminLTE for demo purposes -->
   <script src="dist/js/demo.js"></script>
+
+  
 </body>
 
 </html>

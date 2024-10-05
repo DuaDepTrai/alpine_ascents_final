@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\users;
 use Illuminate\Http\Request;
 use App\Mail\mymail;
+use App\Models\orders_tours;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -241,4 +242,13 @@ class UsersController extends Controller
         $user->delete();
         return redirect()->route('users.index')->with('success', 'User deleted successfully.');
     }
+
+    public function bookingHistory()
+    {
+        $user = auth()->user(); // Lấy thông tin người dùng đang đăng nhập
+        $orders = orders_tours::where('user_id', $user->id)->get(); // Lấy các đơn hàng của người dùng
+
+        return view('users.bookingHistory', compact('orders', 'user')); // Trả về view với thông tin đơn hàng
+    }
+
 }

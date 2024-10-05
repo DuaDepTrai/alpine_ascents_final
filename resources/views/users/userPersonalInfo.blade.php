@@ -6,6 +6,7 @@
     <div class="btn_container w-25">
         <button class="btn_personal_infor mx-auto mb-3 mt-4" id="btn_personal_infor">Personal Info</button>
         <button class="btn_account_setting mx-auto mb-3" id="btn_account_setting">Account Setting</button>
+        <button class="btn_booking_history mx-auto mb-3" id="btn_booking_history">Tour Booking History</button>
         <button class="btn_logout mx-auto mb-3" id="btn_logout">Log Out</button>
     </div>
     <div class="seperate1 h-100"></div>
@@ -200,6 +201,7 @@ button{
 addEventListener('DOMContentLoaded',function(){
     var btn_personal_infor = this.document.getElementById('btn_personal_infor');
     var btn_account_setting = this.document.getElementById('btn_account_setting');
+    var btn_booking_history = this.document.getElementById('btn_booking_history');
     var btn_logout = this.document.getElementById('btn_logout');
     var logout_messagebox = this.document.getElementById("logout_messagebox");
 

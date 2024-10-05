@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Spatie\Permission\Traits\HasRoles;
+// use Spatie\Permission\Traits\HasRoles;
 
 class users extends Authenticatable
 {
     use HasFactory, Notifiable;
-    use HasRoles;
+    // use HasRoles;
 
     protected $guard_name = 'web';
 
@@ -40,9 +40,9 @@ class users extends Authenticatable
         return $this->hasMany(orders_tours::class);
     }
 
-    public function hasRole($role)
-{
-    return $this->roles()->where('name', $role)->exists();
-}
+//     public function hasRole($role)
+// {
+//     return $this->roles()->where('name', $role)->exists();
+// }
 
 }

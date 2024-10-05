@@ -64,6 +64,93 @@
         background-color: #dd4b39; /* Màu nền khi hover */
     }
   </style>
+  <style>
+    /* Modal Styles */
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        text-align: left;
+    }
+
+    .close-btn {
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-gallery-btn'); // Chọn tất cả nút delete
+    const modal = document.getElementById('deleteGalleryModal');
+    const closeModal = document.querySelector('.close-btn');
+    const cancelDelete = document.getElementById('cancelDelete');
+    const confirmDelete = document.getElementById('confirmDelete');
+    
+    let galleryIdToDelete = null;
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Lấy thông tin gallery từ data-attribute
+            const galleryId = this.dataset.galleryId;
+            const galleryName = this.dataset.galleryName;
+
+            // Hiển thị thông tin vào popup
+            document.getElementById('galleryName').innerText = galleryName;
+
+            // Lưu ID gallery để xử lý xóa
+            galleryIdToDelete = galleryId;
+
+            // Hiển thị modal
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Đóng popup khi click vào nút "No" hoặc "X"
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    cancelDelete.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Xác nhận xóa khi click vào nút "Yes"
+    confirmDelete.addEventListener('click', function () {
+        if (galleryIdToDelete) {
+            // Gửi yêu cầu xóa tới server bằng AJAX
+            fetch(`/admin/galleries/${galleryIdToDelete}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Thêm CSRF token
+                    'Content-Type': 'application/json',
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Xóa thành công, reload lại trang
+                    window.location.href = '/admin/galleries';
+                } else {
+                    alert('Failed to delete gallery.');
+                }
+            }); 
+            }
+        });
+    });
+  </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -290,11 +377,11 @@
                                 <td>{{ $gallery->updated_at }}</td>
                                 <td>
                                   <a href="{{ route('admin.galleries.edit', $gallery->id) }}" class="btn btn-primary btn-sm" style="margin: 3px">Edit</a>
-                                    <form action="{{ route('admin.galleries.destroy', $gallery->id) }}" method="POST" style="display:inline;">
-                                      @csrf
-                                      @method('DELETE')
-                                      <button type="submit" class="btn btn-danger btn-sm" style="margin: 3px">Delete</button>
-                                    </form>
+                                  <button class="delete-gallery-btn btn btn-danger btn-sm" 
+                                          data-gallery-id="{{ $gallery->id }}" 
+                                          data-gallery-name="{{ $gallery->tour->name }}">
+                                          Delete
+                                  </button>
                               </td>
                             </tr>
                         @endforeach
@@ -313,6 +400,19 @@
     </div>
     </div>
     </section>
+
+    <!-- Popup Modal -->
+    <div id="deleteGalleryModal" class="modal" style="display:none;">
+      <div class="modal-content">
+          <span class="close-btn">&times;</span>
+          <h2>Gallery</h2>
+          <p><strong></strong> <span id="galleryName"></span></p>
+          <p style="color: red; font-weight: bold;">Are you sure to delete this gallery?</p>
+          <button id="confirmDelete" class="btn btn-danger">YES</button>
+          <button id="cancelDelete" class="btn btn-secondary">NO</button>
+      </div>
+    </div>
+
     <!-- right col -->
       </div>
       <!-- /.row (main row) -->

@@ -126,9 +126,13 @@ class AdminUserManagementController extends Controller
     // Handle deleting a user
     public function destroy($id)
     {
-        $user = users::findOrFail($id);
-        $user->delete();
-
-        return redirect()->route('admin.UserManagement.index')->with('success', 'User has been successfully deleted!');
+        $user = users::find($id);
+        
+        if ($user) {
+            $user->delete();
+            return response()->json(['success' => true]);
+        }
+        
+        return response()->json(['success' => false], 404);
     }
 }

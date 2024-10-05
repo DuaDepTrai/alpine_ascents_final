@@ -13,20 +13,20 @@ class AdminGalleriesController extends Controller
     public function index(Request $request)
     {
         // Retrieve the list of all tours
-        // Khởi tạo query cho galleries
+        // Initialize query for galleries
         $query = galleries::with('tour');
 
-        // Kiểm tra và áp dụng tìm kiếm theo tên tour
+        // Check and apply search by tour name
         if ($request->has('tour_name') && $request->tour_name != '') {
             $query->whereHas('tour', function($q) use ($request) {
                 $q->where('name', 'LIKE', '%' . $request->tour_name . '%');
             });
         }
 
-        // Lấy danh sách gallery với điều kiện tìm kiếm nếu có
+        // Retrieve the gallery list with search conditions if available
         $galleries = $query->get();
 
-        // Lấy danh sách tất cả tours để hiển thị
+        // Retrieve the list of all tours for display
         $tours = Tours::all();
         
         return view('admin.galleries.index', compact('tours', 'galleries'));
@@ -62,7 +62,7 @@ class AdminGalleriesController extends Controller
         if ($request->hasFile('images')) {
             foreach ($request->file('images') as $image) {
                 $path = $image->move(public_path('images'), $image->getClientOriginalName());
-                $currentImages[] = 'images/' . $image->getClientOriginalName();  // Lưu đường dẫn ảnh
+                $currentImages[] = 'images/' . $image->getClientOriginalName();  // Save image path
             }
         }
 
@@ -109,7 +109,7 @@ class AdminGalleriesController extends Controller
         $gallery->images = json_encode(array_values($images));
         $gallery->save();
 
-        return redirect()->back()->with('success', 'Ảnh đã được xóa thành công.');
+        return redirect()->back()->with('success', 'Image has been successfully deleted.');
     }
 
     public function destroy($id)
@@ -117,7 +117,7 @@ class AdminGalleriesController extends Controller
         // Find gallery by ID
         $gallery = galleries::findOrFail($id);
 
-        // Lấy đường dẫn đến các ảnh
+        // Retrieve the paths to the images
         $images = json_decode($gallery->images);
 
         // Delete image from the public/images folder
@@ -129,9 +129,12 @@ class AdminGalleriesController extends Controller
         }
 
         // Delete gallery from the database
-        $gallery->delete();
+        if ($gallery) {
+            $gallery->delete();
+            return response()->json(['success' => true]);
+        }
 
         // Return to the gallery list page with a success message
-        return redirect()->route('admin.galleries.index')->with('success', 'All images of the tour have been successfully deleted.');
+        return response()->json(['success' => false], 404);
     }
 }

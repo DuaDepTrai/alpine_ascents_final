@@ -5,82 +5,69 @@
 <div class="mycontainer w-75 mx-auto d-flex rounded">
     <div class="btn_container w-25">
         <form action="{{ route('users.personalinfo') }}">
-            <button type="submit" class="btn_personal_infor mx-auto mb-3 mt-4" id="btn_personal_infor">Personal Info</button>
+            <button class="btn_personal_infor mx-auto mb-3 mt-4" id="btn_personal_infor">Personal Info</button>
         </form>
         <form action="{{ route('users.settings') }}">
             <button class="btn_account_setting mx-auto mb-3" id="btn_account_setting" onclick="window.location'{{ route('users.settings') }}'">Account Setting</button>
-        </form>        
+        </form>  
         <form action="{{ route('users.bookingHistory') }}">
             <button class="btn_booking_history mx-auto mb-3" id="btn_booking_history">Tour Booking History</button>
         </form>
-        <button class="btn_logout mx-auto mb-3" id="btn_logout">Log Out</button>
+            <button class="btn_logout mx-auto mb-3" id="btn_logout">Log Out</button>    
     </div>
+
     <div class="seperate1 h-100"></div>
 
-    <div class="content_container w-75 d-block">
-        <div class="row">
-            <div class="col-3">
-                <div class="mt-4 border-0">
-                    <img class="avatar" src="{{ $user->avatar }}" alt="">            
-                </div>
-            </div>
-            <div class="col mt-4 ms-4 lh-lg fs-5">
-                <div class="name">Username : {{ $user->name }}</div>
-                <div class="phone">Phone number : {{ $user->phone }}</div>
-                <div class="email">Email : {{ $user->email }}</div>
-            </div>
-        </div>
+    <div class="content_container w-75 d-block" style="margin: 20px">
+        <h3 class="mb-4" style="text-align: center">Booking History</h3>
 
-        <div class="row">
-            <div class="col-10 mt-4">
-                <form action="{{ route('users.update',['user'=> $user]) }}" class="form-control ms-4" method="post">
-                    @csrf
-                    @method('put')
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    
-                    <div class="form-group mb-3">
-                        <label for="name">New Name</label>
-                        <input type="text" name="name" class="form-control" id="name" value="{{ $user->name }}">                       
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="email">New Email</label>
-                        <input type="email" name="email" class="form-control" id="email" value="{{ $user->email }}">
-                    </div>
-                    <div class="form-group mb-3">
-                        <label for="phone">New Phone Number</label>
-                        <input type="number" name="phone" class="form-control" id="phone" value="{{ $user->phone }}">
-                    </div> 
-                    <button type="submit" class="btn btn-primary">Confirm</button>
-                    <button type="button" class="btn btn-primary ms-3" onclick="window.location='{{ route('forgetpass.form') }}'">Forgot password ?</button>
-                    <button type="button" class="btn btn-primary ms-3" onclick="window.location='{{ route('changepass.form') }}'">Change your password</button>
-                </form>
-            </div>
+    @if($orders->isEmpty())
+        <div class="alert alert-warning">
+            Quý khách chưa book tour!
         </div>
-    </div>
-
-    <div class="logout_messagebox" id="logout_messagebox">
-        <p class="fs-3 text-center text-primary mt-5">Alert !</p>
-        <p class="fs-4 text-center mt-2">Do you want to log out ?</p>
-        <div class="logout d-flex">
-            <form action="{{ route('logout') }}">
-                <button class="btn_logout_yes btn btn-primary" id="btn_logout_yes">Yes</button>
-            </form>
-            <button class="btn_logout_no btn btn-primary" id="btn_logout_no">No</button>    
-        </div>
-    </div>
+    @else
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Tour</th>
+                    <th>Quantity</th>
+                    <th>Total</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($orders as $order)
+                <tr>
+                    <td>{{ $order->name }}</td>
+                    <td>{{ $order->tour->name }}</td>
+                    <td>{{ $order->quantity }}</td>
+                    <td>{{ number_format($order->total, 0, ',', '.') }} VNĐ</td>
+                    <td>{{ $order->email }}</td>
+                    <td>{{ $order->phone }}</td>
+                    <td>{{ $order->note }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    @endif
+</div>
 </div>
 
 @endsection
+
+
 @push('styles')
 <style>
+    .table {
+        background-color: #fff;
+        border: 1px solid #999999;
+    }
+    .table thead {
+        text-align: center;
+    }
     .mycontainer{
         height: 39vw;
         border: 1px solid #d6d6d6;

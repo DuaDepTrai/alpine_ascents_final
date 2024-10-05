@@ -9,16 +9,16 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminToursController extends Controller
 {
-    // Hiển thị form để thêm tour mới
+    // Display the form to add a new tour
     public function create()
     {
         return view('admin.tours.create');
     }
 
-    // Lưu thông tin tour mới vào database
+    // Save the new tour information to the database
     public function store(Request $request)
     {
-        // Validate dữ liệu đầu vào
+        // Validate input data
         $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|integer|min:1',
@@ -33,22 +33,22 @@ class AdminToursController extends Controller
             'requirements' => 'required|string',
         ]);
 
-        // Xử lý upload ảnh
+        // Handle image upload
         $imagePath = null;
         if ($request->hasFile('image')) {
-            // Lưu ảnh vào thư mục public/images
+            // Save images to folder public/images
             $imageName = time() . '-' . $request->file('image')->getClientOriginalName();
             $request->file('image')->move(public_path('images/upload/'), $imageName);
 
-            // Lưu đường dẫn tương đối của ảnh
+            // Save the relative path of the image
             $imagePath = 'images/upload/' . $imageName;
         }
 
-        // Tạo tour mới với đường dẫn ảnh
+        // Create a new tour with the image path
         tours::create([
             'name' => $request->name,
             'price' => $request->price,
-            'image' => $imagePath, // Lưu đường dẫn ảnh
+            'image' => $imagePath, // Save images path
             'location' => $request->location,
             'features' => $request->features,
             'besttime' => $request->besttime,
@@ -59,17 +59,17 @@ class AdminToursController extends Controller
             'requirements' => $request->requirements,
         ]);
 
-        // Chuyển hướng sau khi thêm thành công
+        // Redirect after successful addition
         return redirect()->route('admin.tours.index')->with('success', 'Tour added successfully');
     }
 
-    // Hiển thị danh sách các tours
+    // Display list of tours
     public function index(Request $request)
     {
-        // Tạo query để có thể áp dụng các điều kiện tìm kiếm và sắp xếp
+        // Create a query to enable search conditions and sorting
     $query = tours::query();
 
-    // Kiểm tra và áp dụng tìm kiếm theo tên
+    // Check and apply search by name
     if ($request->has('name') && $request->name != '') {
         $query->where('name', 'LIKE', '%' . $request->name . '%');
     }
@@ -164,9 +164,12 @@ public function destroy($id)
     }
 
     // Xóa tour khỏi database
-    $tour->delete();
+    if ($tour) {
+        $tour->delete();
+        return response()->json(['success' => true]);
+    }
 
     // Chuyển hướng sau khi xóa thành công
-    return redirect()->route('admin.tours.index')->with('success', 'Tour deleted successfully');
+    return response()->json(['success' => false], 404);
 }
 }

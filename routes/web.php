@@ -85,9 +85,10 @@ Route::middleware(['auth','user'])->group(function () {
     Route::get('/users/{user}',[UsersController::class,'index'])->name('users.index');
     Route::get('/users/{user}/edit',[UsersController::class,'edit'])->name('users.edit');
     Route::put('/users/{user}',[UsersController::class,'update'])->name('users.update');
-
+    
     Route::get('/personalinfo', [UsersController::class, 'personalInfo'])->name('users.personalinfo');
     Route::get('/settings', [UsersController::class, 'settings'])->name('users.settings');
+    Route::get('/bookinghistory', [UsersController::class, 'bookingHistory'])->name('users.bookingHistory');
 });
 
 Route::get('/register', [UsersController::class, 'showRegistrationForm']);

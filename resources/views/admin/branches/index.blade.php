@@ -37,6 +37,99 @@
 
   <!-- Google Font -->
   <link rel="stylesheet" href="{{asset('AdminLTE-2.4.18')}}/https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <style>
+    /* Modal Styles */
+    .modal {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        width: 400px;
+        text-align: left;
+    }
+
+    .close-btn {
+        float: right;
+        font-size: 24px;
+        cursor: pointer;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const deleteButtons = document.querySelectorAll('.delete-branch-btn'); // Chọn tất cả nút delete
+    const modal = document.getElementById('deleteBranchModal');
+    const closeModal = document.querySelector('.close-btn');
+    const cancelDelete = document.getElementById('cancelDelete');
+    const confirmDelete = document.getElementById('confirmDelete');
+    
+    let branchIdToDelete = null;
+
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Lấy thông tin branch từ data-attribute
+            const branchId = this.dataset.branchId;
+            const branchName = this.dataset.branchName;
+            const branchAddress = this.dataset.branchAddress;
+            const branchPhone = this.dataset.branchPhone;
+            const branchPositioning = this.dataset.branchPositioning;
+
+            // Hiển thị thông tin vào popup
+            document.getElementById('branchName').innerText = branchName;
+            document.getElementById('branchAddress').innerText = branchAddress;
+            document.getElementById('branchPhone').innerText = branchPhone;
+            document.getElementById('branchPositioning').innerText = branchPositioning;
+
+            // Lưu ID branch để xử lý xóa
+            branchIdToDelete = branchId;
+
+            // Hiển thị modal
+            modal.style.display = 'flex';
+        });
+    });
+
+    // Đóng popup khi click vào nút "No" hoặc "X"
+    closeModal.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    cancelDelete.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // Xác nhận xóa khi click vào nút "Yes"
+    confirmDelete.addEventListener('click', function () {
+        if (branchIdToDelete) {
+            // Gửi yêu cầu xóa tới server bằng AJAX
+            fetch(`/admin/branches/${branchIdToDelete}`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}', // Thêm CSRF token
+                    'Content-Type': 'application/json',
+                }
+            }).then(response => {
+                if (response.ok) {
+                    // Xóa thành công, reload lại trang
+                    window.location.href = '/admin/branches';
+                } else {
+                    alert('Failed to delete branch.');
+                }
+            }); 
+            }
+        });
+    });
+  </script>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -207,11 +300,14 @@
                     <td class="text-left text-nowrap align-middle">{{  $branches->positioning }}</td>
                     <td>
                         <a href="{{ route('admin.branches.edit', $branches->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                          <form action="{{ route('admin.branches.destroy', $branches->id) }}" method="POST" style="display:inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                          </form>
+                        <button class="delete-branch-btn btn btn-danger btn-sm" 
+                                data-branch-id="{{ $branches->id }}" 
+                                data-branch-name="{{ $branches->name }}"
+                                data-branch-address="{{ $branches->address }}"
+                                data-branch-phone="{{ $branches->phone }}"
+                                data-branch-positioning="{{ $branches->positioning }}">
+                            Delete
+                        </button>
                     </td>
                   </tr>
                   @endforeach
@@ -223,6 +319,21 @@
             </div>
           </div>
         </section>
+
+        <!-- Popup Modal -->
+        <div id="deleteBranchModal" class="modal" style="display:none;">
+          <div class="modal-content">
+              <span class="close-btn">&times;</span>
+              <h2>Branch Information</h2>
+              <p><strong>Name:</strong> <span id="branchName"></span></p>
+              <p><strong>Address:</strong> <span id="branchAddress"></span></p>
+              <p><strong>Phone:</strong> <span id="branchPhone"></span></p>
+              <p><strong>Positioning:</strong> <span id="branchPositioning"></span></p>
+              <p style="color: red; font-weight: bold;">Are you sure to delete this branch?</p>
+              <button id="confirmDelete" class="btn btn-danger">YES</button>
+              <button id="cancelDelete" class="btn btn-secondary">NO</button>
+          </div>
+        </div>
 
     <!-- right col -->
       </div>

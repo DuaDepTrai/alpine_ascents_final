@@ -48,7 +48,7 @@ class AdminBranchesController extends Controller
         return view('admin.branches.edit', compact('branch'));
     }
 
-    // Xử lý cập nhật người dùng
+    // Handle user updates
     public function update(Request $request, $id)
     {
         $branch = branches::findOrFail($id);
@@ -74,9 +74,13 @@ class AdminBranchesController extends Controller
     // Handle user deletion
     public function destroy($id)
     {
-        $branch = branches::findOrFail($id);
-        $branch->delete();
-
-        return redirect()->route('admin.branches.index')->with('success', 'Branch was deleted successfully!');
+        $branch = branches::find($id);
+        
+        if ($branch) {
+            $branch->delete();
+            return response()->json(['success' => true]);
+        }
+        
+        return response()->json(['success' => false], 404);
     }
 }

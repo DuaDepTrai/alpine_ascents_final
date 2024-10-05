@@ -7,6 +7,7 @@
     <div class="container_sidebar_uac">
         <button id="personalinfo">Personal Info</button>
         <button id="account_setting">Account Setting</button>
+        <button id="bookingHistory">Tour Booking History</button>
         <button id="logout">Log Out</button>
     </div>
     <div class="container_content_uac">

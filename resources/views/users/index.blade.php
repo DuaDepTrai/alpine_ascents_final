@@ -9,6 +9,9 @@
         <form action="{{ route('users.settings') }}">
             <button class="btn_account_setting mx-auto mb-3" id="btn_account_setting" onclick="window.location'{{ route('users.settings') }}'">Account Setting</button>
         </form>  
+        <form action="{{ route('users.bookingHistory') }}">
+            <button class="btn_booking_history mx-auto mb-3" id="btn_booking_history">Tour Booking History</button>
+        </form>
             <button class="btn_logout mx-auto mb-3" id="btn_logout">Log Out</button>    
     </div>
 
@@ -80,7 +83,10 @@
     }
     
     /* Buttons */
-    .btn_personal_infor,.btn_account_setting,.btn_logout{
+    .btn_personal_infor,
+    .btn_account_setting,
+    .btn_booking_history,
+    .btn_logout{
         display: block;
         width: 80%;
         height: 40px;
@@ -141,6 +147,7 @@
     addEventListener('DOMContentLoaded',function(){
         var btn_personal_infor = this.document.getElementById('btn_personal_infor');
         var btn_account_setting = this.document.getElementById('btn_account_setting');
+        var btn_booking_history = this.document.getElementById('btn_booking_history');
         var btn_logout = this.document.getElementById('btn_logout');
         var logout_messagebox = this.document.getElementById("logout_messagebox");
     
