@@ -6,7 +6,7 @@
     <p>{{ session('success') }}</p>
     <a href="{{ route('home') }}" class="btn custom-btn">Back to Home</a>
     @if(auth()->check()) <!-- Kiểm tra xem người dùng đã đăng nhập hay chưa -->
-        <a href="{{ route('users.bookingHistory') }}" class="btn custom-btn">Xem lịch sử đặt tour</a>
+        <a href="{{ route('users.bookingHistory') }}" class="btn custom-btn">Tour Booking History</a>
     @endif
 </div>
 
